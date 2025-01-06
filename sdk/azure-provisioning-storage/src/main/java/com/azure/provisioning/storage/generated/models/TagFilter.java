@@ -10,15 +10,15 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class TagFilter extends ProvisioningConstruct {
 
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<String> op;
-    private final BicepValue<String> value;
     private final BicepValue<String> name;
+    private final BicepValue<String> value;
+    private final BicepValue<String> op;
 
     public TagFilter() {
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        op = BicepValue.defineProperty(this, "op", new String[] { "temp", "op" }, null);
-        value = BicepValue.defineProperty(this, "value", new String[] { "temp", "value" }, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "temp", "name" }, null);
+        value = BicepValue.defineProperty(this, "value", new String[] { "temp", "value" }, null);
+        op = BicepValue.defineProperty(this, "op", new String[] { "temp", "op" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {
@@ -29,12 +29,12 @@ public class TagFilter extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<String> getOp() {
-        return this.op;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public TagFilter setOp(BicepValue<String> op) {
-        this.op.assign(op);
+    public TagFilter setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
     public BicepValue<String> getValue() {
@@ -45,12 +45,12 @@ public class TagFilter extends ProvisioningConstruct {
         this.value.assign(value);
         return this;
     }
-    public BicepValue<String> getName() {
-        return this.name;
+    public BicepValue<String> getOp() {
+        return this.op;
     }
 
-    public TagFilter setName(BicepValue<String> name) {
-        this.name.assign(name);
+    public TagFilter setOp(BicepValue<String> op) {
+        this.op.assign(op);
         return this;
     }
 }

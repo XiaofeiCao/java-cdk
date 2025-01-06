@@ -10,24 +10,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ImmutableStorageWithVersioning extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> enabled;
     private final BicepValue<MigrationState> migrationState;
     private final BicepValue<OffsetDateTime> timestamp;
+    private final BicepValue<Boolean> enabled;
 
     public ImmutableStorageWithVersioning() {
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "temp", "enabled" }, null);
         migrationState = BicepValue.defineProperty(this, "migrationState", new String[] { "temp", "migrationState" }, null);
         timestamp = BicepValue.defineProperty(this, "timestamp", new String[] { "temp", "timestamp" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "temp", "enabled" }, null);
     }
 
-    public BicepValue<Boolean> getEnabled() {
-        return this.enabled;
-    }
-
-    public ImmutableStorageWithVersioning setEnabled(BicepValue<Boolean> enabled) {
-        this.enabled.assign(enabled);
-        return this;
-    }
     public BicepValue<MigrationState> getMigrationState() {
         return this.migrationState;
     }
@@ -42,6 +34,14 @@ public class ImmutableStorageWithVersioning extends ProvisioningConstruct {
 
     public ImmutableStorageWithVersioning setTimestamp(BicepValue<OffsetDateTime> timestamp) {
         this.timestamp.assign(timestamp);
+        return this;
+    }
+    public BicepValue<Boolean> getEnabled() {
+        return this.enabled;
+    }
+
+    public ImmutableStorageWithVersioning setEnabled(BicepValue<Boolean> enabled) {
+        this.enabled.assign(enabled);
         return this;
     }
 }

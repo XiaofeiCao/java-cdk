@@ -11,17 +11,17 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
 
     private final BicepValue<String> destinationContainer;
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<ObjectReplicationPolicyFilter> filters;
-    private final BicepValue<String> sourceContainer;
+    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<String> ruleId;
+    private final BicepValue<String> sourceContainer;
 
     public ObjectReplicationPolicyRule() {
         destinationContainer = BicepValue.defineProperty(this, "destinationContainer", new String[] { "temp", "destinationContainer" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
         filters = BicepValue.defineProperty(this, "filters", new String[] { "temp", "filters" }, null);
-        sourceContainer = BicepValue.defineProperty(this, "sourceContainer", new String[] { "temp", "sourceContainer" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
         ruleId = BicepValue.defineProperty(this, "ruleId", new String[] { "temp", "ruleId" }, null);
+        sourceContainer = BicepValue.defineProperty(this, "sourceContainer", new String[] { "temp", "sourceContainer" }, null);
     }
 
     public BicepValue<String> getDestinationContainer() {
@@ -32,14 +32,6 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.destinationContainer.assign(destinationContainer);
         return this;
     }
-    public BicepValue<ClientLogger> getLOGGER() {
-        return this.lOGGER;
-    }
-
-    public ObjectReplicationPolicyRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
-        this.lOGGER.assign(lOGGER);
-        return this;
-    }
     public BicepValue<ObjectReplicationPolicyFilter> getFilters() {
         return this.filters;
     }
@@ -48,12 +40,12 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.filters.assign(filters);
         return this;
     }
-    public BicepValue<String> getSourceContainer() {
-        return this.sourceContainer;
+    public BicepValue<ClientLogger> getLOGGER() {
+        return this.lOGGER;
     }
 
-    public ObjectReplicationPolicyRule setSourceContainer(BicepValue<String> sourceContainer) {
-        this.sourceContainer.assign(sourceContainer);
+    public ObjectReplicationPolicyRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
+        this.lOGGER.assign(lOGGER);
         return this;
     }
     public BicepValue<String> getRuleId() {
@@ -62,6 +54,14 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
 
     public ObjectReplicationPolicyRule setRuleId(BicepValue<String> ruleId) {
         this.ruleId.assign(ruleId);
+        return this;
+    }
+    public BicepValue<String> getSourceContainer() {
+        return this.sourceContainer;
+    }
+
+    public ObjectReplicationPolicyRule setSourceContainer(BicepValue<String> sourceContainer) {
+        this.sourceContainer.assign(sourceContainer);
         return this;
     }
 }

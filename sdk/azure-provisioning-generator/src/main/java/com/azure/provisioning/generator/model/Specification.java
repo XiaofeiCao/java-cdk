@@ -230,7 +230,9 @@ public abstract class Specification extends ModelBase {
                         Property property = new Property(resource, getOrCreateModelType(param.getType(), resource), field, param);
 //                        property.setRequired(true);
                         properties.add(property);
-                    } else if (ReflectionUtils.isResourceType(param.getType())) {
+                    } else
+//                        if (ReflectionUtils.isResourceType(param.getType()))
+                        {
                         properties.addAll(getPropertiesFromResource(resource, param));
                     }
                 });
@@ -242,7 +244,7 @@ public abstract class Specification extends ModelBase {
         Set<Property> properties = new HashSet<>();
         Class<?> currentType = param.getType();
 
-        while (currentType != ProxyResource.class) {
+        while (currentType != ProxyResource.class && currentType != null) {
             Arrays.stream(currentType.getDeclaredFields())
                     .filter(field -> field.getType() != ClientLogger.class)
                     .forEach(field -> {

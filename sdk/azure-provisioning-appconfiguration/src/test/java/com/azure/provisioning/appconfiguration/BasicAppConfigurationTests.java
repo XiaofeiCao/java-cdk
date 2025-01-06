@@ -1,6 +1,8 @@
 package com.azure.provisioning.appconfiguration;
 
 import com.azure.provisioning.*;
+import com.azure.provisioning.appconfiguration.generated.ConfigurationStoreResource;
+import com.azure.provisioning.appconfiguration.generated.KeyValueResource;
 import com.azure.provisioning.bicep.BicepErrorMessage;
 import com.azure.provisioning.implementation.bicep.syntax.BicepFunction;
 import org.junit.jupiter.api.Test;
@@ -105,7 +107,7 @@ public class BasicAppConfigurationTests { // extends ProvisioningTestBase {
         }}));
         infra.add(flag);
 
-        KeyValueResource featureFlag = new KeyValueResource("featureFlag", KeyValueResource.ResourceVersions.V2022_05_01);
+        KeyValueResource featureFlag = new KeyValueResource("featureFlag", KeyValueResource.ResourceVersions.V2024_06_01_PREVIEW);
 //        featureFlag.setParent(configStore); // FIXME Parent is missing
 //        featureFlag.setResourceGroupName(BicepFunction.interpolate(".appconfig.featureflag~2F{featureFlagKey}").getValue()); // FIXME need interpolation, should output `name: '.appconfig.featureflag~2F${featureFlagKey}'`
         featureFlag.setContentType("application/vnd.microsoft.appconfig.ff+json;charset=utf-8");

@@ -1,0 +1,119 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+package com.azure.provisioning.storage.generated.models;
+
+import com.azure.provisioning.storage.generated.models.EncryptionServices;
+import java.time.OffsetDateTime;
+import com.azure.provisioning.storage.generated.models.EncryptionIdentity;
+import com.azure.provisioning.storage.generated.models.KeySource;
+import com.azure.provisioning.BicepValue;
+import com.azure.provisioning.primitives.ProvisioningConstruct;
+
+public class Encryption extends ProvisioningConstruct {
+
+    private final BicepValue<EncryptionServices> services;
+    private final BicepValue<String> keyName;
+    private final BicepValue<OffsetDateTime> lastKeyRotationTimestamp;
+    private final BicepValue<String> keyVersion;
+    private final BicepValue<String> currentVersionedKeyIdentifier;
+    private final BicepValue<EncryptionIdentity> encryptionIdentity;
+    private final BicepValue<OffsetDateTime> currentVersionedKeyExpirationTimestamp;
+    private final BicepValue<Boolean> requireInfrastructureEncryption;
+    private final BicepValue<KeySource> keySource;
+    private final BicepValue<String> keyVaultUri;
+
+    public Encryption() {
+        services = BicepValue.defineProperty(this, "services", new String[] { "temp", "services" }, null);
+        keyName = BicepValue.defineProperty(this, "keyName", new String[] { "temp", "keyName" }, null);
+        lastKeyRotationTimestamp = BicepValue.defineProperty(this, "lastKeyRotationTimestamp", new String[] { "temp", "lastKeyRotationTimestamp" }, null);
+        keyVersion = BicepValue.defineProperty(this, "keyVersion", new String[] { "temp", "keyVersion" }, null);
+        currentVersionedKeyIdentifier = BicepValue.defineProperty(this, "currentVersionedKeyIdentifier", new String[] { "temp", "currentVersionedKeyIdentifier" }, null);
+        encryptionIdentity = BicepValue.defineProperty(this, "encryptionIdentity", new String[] { "temp", "encryptionIdentity" }, null);
+        currentVersionedKeyExpirationTimestamp = BicepValue.defineProperty(this, "currentVersionedKeyExpirationTimestamp", new String[] { "temp", "currentVersionedKeyExpirationTimestamp" }, null);
+        requireInfrastructureEncryption = BicepValue.defineProperty(this, "requireInfrastructureEncryption", new String[] { "temp", "requireInfrastructureEncryption" }, null);
+        keySource = BicepValue.defineProperty(this, "keySource", new String[] { "temp", "keySource" }, null);
+        keyVaultUri = BicepValue.defineProperty(this, "keyVaultUri", new String[] { "temp", "keyVaultUri" }, null);
+    }
+
+    public BicepValue<EncryptionServices> getServices() {
+        return this.services;
+    }
+
+    public Encryption setServices(BicepValue<EncryptionServices> services) {
+        this.services.assign(services);
+        return this;
+    }
+    public BicepValue<String> getKeyName() {
+        return this.keyName;
+    }
+
+    public Encryption setKeyName(BicepValue<String> keyName) {
+        this.keyName.assign(keyName);
+        return this;
+    }
+    public BicepValue<OffsetDateTime> getLastKeyRotationTimestamp() {
+        return this.lastKeyRotationTimestamp;
+    }
+
+    public Encryption setLastKeyRotationTimestamp(BicepValue<OffsetDateTime> lastKeyRotationTimestamp) {
+        this.lastKeyRotationTimestamp.assign(lastKeyRotationTimestamp);
+        return this;
+    }
+    public BicepValue<String> getKeyVersion() {
+        return this.keyVersion;
+    }
+
+    public Encryption setKeyVersion(BicepValue<String> keyVersion) {
+        this.keyVersion.assign(keyVersion);
+        return this;
+    }
+    public BicepValue<String> getCurrentVersionedKeyIdentifier() {
+        return this.currentVersionedKeyIdentifier;
+    }
+
+    public Encryption setCurrentVersionedKeyIdentifier(BicepValue<String> currentVersionedKeyIdentifier) {
+        this.currentVersionedKeyIdentifier.assign(currentVersionedKeyIdentifier);
+        return this;
+    }
+    public BicepValue<EncryptionIdentity> getEncryptionIdentity() {
+        return this.encryptionIdentity;
+    }
+
+    public Encryption setEncryptionIdentity(BicepValue<EncryptionIdentity> encryptionIdentity) {
+        this.encryptionIdentity.assign(encryptionIdentity);
+        return this;
+    }
+    public BicepValue<OffsetDateTime> getCurrentVersionedKeyExpirationTimestamp() {
+        return this.currentVersionedKeyExpirationTimestamp;
+    }
+
+    public Encryption setCurrentVersionedKeyExpirationTimestamp(BicepValue<OffsetDateTime> currentVersionedKeyExpirationTimestamp) {
+        this.currentVersionedKeyExpirationTimestamp.assign(currentVersionedKeyExpirationTimestamp);
+        return this;
+    }
+    public BicepValue<Boolean> getRequireInfrastructureEncryption() {
+        return this.requireInfrastructureEncryption;
+    }
+
+    public Encryption setRequireInfrastructureEncryption(BicepValue<Boolean> requireInfrastructureEncryption) {
+        this.requireInfrastructureEncryption.assign(requireInfrastructureEncryption);
+        return this;
+    }
+    public BicepValue<KeySource> getKeySource() {
+        return this.keySource;
+    }
+
+    public Encryption setKeySource(BicepValue<KeySource> keySource) {
+        this.keySource.assign(keySource);
+        return this;
+    }
+    public BicepValue<String> getKeyVaultUri() {
+        return this.keyVaultUri;
+    }
+
+    public Encryption setKeyVaultUri(BicepValue<String> keyVaultUri) {
+        this.keyVaultUri.assign(keyVaultUri);
+        return this;
+    }
+}

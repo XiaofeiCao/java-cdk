@@ -12,13 +12,13 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class ManagementPolicyDefinition extends ProvisioningConstruct {
 
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<ManagementPolicyAction> actions;
     private final BicepValue<ManagementPolicyFilter> filters;
+    private final BicepValue<ManagementPolicyAction> actions;
 
     public ManagementPolicyDefinition() {
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        actions = BicepValue.defineProperty(this, "actions", new String[] { "temp", "actions" }, null);
         filters = BicepValue.defineProperty(this, "filters", new String[] { "temp", "filters" }, null);
+        actions = BicepValue.defineProperty(this, "actions", new String[] { "temp", "actions" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {
@@ -29,20 +29,20 @@ public class ManagementPolicyDefinition extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<ManagementPolicyAction> getActions() {
-        return this.actions;
-    }
-
-    public ManagementPolicyDefinition setActions(BicepValue<ManagementPolicyAction> actions) {
-        this.actions.assign(actions);
-        return this;
-    }
     public BicepValue<ManagementPolicyFilter> getFilters() {
         return this.filters;
     }
 
     public ManagementPolicyDefinition setFilters(BicepValue<ManagementPolicyFilter> filters) {
         this.filters.assign(filters);
+        return this;
+    }
+    public BicepValue<ManagementPolicyAction> getActions() {
+        return this.actions;
+    }
+
+    public ManagementPolicyDefinition setActions(BicepValue<ManagementPolicyAction> actions) {
+        this.actions.assign(actions);
         return this;
     }
 }
