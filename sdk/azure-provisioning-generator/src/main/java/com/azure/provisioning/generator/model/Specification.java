@@ -18,12 +18,22 @@ import org.reflections.util.ConfigurationBuilder;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -162,6 +172,7 @@ public abstract class Specification extends ModelBase {
             this.modelArmTypeMapping.put(resource.getArmType(), resource);
             resource.setProvisioningPackage(this.getProvisioningPackage() + ".generated");
 
+            Method creatorMethod = resources.get(resource.getArmType());
             Field type = null;
             try {
                 type = getType(resource);
@@ -177,7 +188,6 @@ public abstract class Specification extends ModelBase {
             } catch (NoSuchFieldException e) {
                 // do nothing - the field doesn't exist
             }
-            Method creatorMethod = resources.get(resource.getArmType());
             resource.setProperties(findProperties(resource, creatorMethod, type));
         });
 
@@ -195,7 +205,7 @@ public abstract class Specification extends ModelBase {
                                             .collect(Collectors.toUnmodifiableList());
                                     resource.setResourceVersions(stableVersions);
                                     if (stableVersions.isEmpty()) {
-                                        resource.setResourceVersions(List.of(resourceType.apiVersions().stream().sorted().collect(Collectors.toList()).getLast()));
+                                        resource.setResourceVersions(resourceType.apiVersions().stream().sorted().collect(Collectors.toList()));
                                     }
                                     resource.setDefaultResourceVersion(resource.getResourceVersions().getLast());
                                 }
@@ -345,6 +355,7 @@ public abstract class Specification extends ModelBase {
     private Map<Type, Method> findConstructibleResources() {
         Map<Type, Method> resources = new HashMap<>();
         Reflections reflections = getReflections();
+        ResourceNamespaceMapper.initializeNamespace(reflections);
         Set<Method> methodsAnnotatedWith = reflections.getMethodsAnnotatedWith(ServiceMethod.class);
         methodsAnnotatedWith.stream()
                 .filter(method -> method.getName().startsWith("create"))
