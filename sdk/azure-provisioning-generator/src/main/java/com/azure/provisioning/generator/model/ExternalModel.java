@@ -21,9 +21,4 @@ public class ExternalModel extends ModelBase {
         super(((Class<?>) armType).getSimpleName(),((Class<?>) armType).getPackageName(), armType, null);
         setExternal(true);
     }
-
-    @Override
-    public String getTypeReference() {
-        return getName();
-    }
 }

@@ -11,12 +11,44 @@
 
     <artifactId>azure-provisioning-storage</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <javaModulesSurefireArgLine>
+            --add-opens com.azure.resourcemanager.storage/com.azure.resourcemanager.storage=ALL-UNNAMED
+            --add-opens com.azure.core/com.azure.core.http=com.azure.resourcemanager.resources
+            --add-opens com.azure.core/com.azure.core.http.policy=com.azure.resourcemanager.resources
+
+            --add-opens com.azure.resourcemanager.authorization/com.azure.resourcemanager.authorization=ALL-UNNAMED
+            --add-opens com.azure.resourcemanager.msi/com.azure.resourcemanager.msi=ALL-UNNAMED
+            --add-opens com.azure.core/com.azure.core.implementation.util=ALL-UNNAMED
+        </javaModulesSurefireArgLine>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.azure.provisioning</groupId>
             <artifactId>azure-provisioning-core</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core-test</artifactId>
+            <version>1.27.0-beta.4</version> <!-- {x-version-update;com.azure:azure-core-test;dependency} -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core</artifactId>
+            <version>1.54.1</version> <!-- {x-version-update;com.azure:azure-core;dependency} -->
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core-management</artifactId>
+            <version>1.15.6</version> <!-- {x-version-update;com.azure:azure-core-management;dependency} -->
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-identity</artifactId>
+            <version>1.15.0</version> <!-- {x-version-update;com.azure:azure-identity;dependency} -->
         </dependency>
     </dependencies>
     <build>

@@ -155,9 +155,13 @@ public abstract class Specification extends ModelBase {
             pomTemplate = pomTemplate.replace("{artifact-name}", getProvisioningPackage().replace("com.", "").replace(".", "-"));
 
             Path path = Paths.get(getBaseDir(), "pom.xml");
-            System.out.println("Writing to " + path);
-            Files.createDirectories(path.getParent());
-            Files.write(path, pomTemplate.getBytes(StandardCharsets.UTF_8));
+            if (!path.toFile().exists()) {
+                System.out.println("Writing to " + path);
+                Files.createDirectories(path.getParent());
+                Files.write(path, pomTemplate.getBytes(StandardCharsets.UTF_8));
+            } else {
+                System.out.println("pom.xml already exists, ");
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

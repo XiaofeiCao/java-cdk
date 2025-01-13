@@ -131,6 +131,8 @@ public class BicepTypeMapping {
 //        } catch (NoSuchFieldException e) {
 //            return value.toString();
 //        }
-        throw new RuntimeException("Not implemented");
+//        throw new RuntimeException("Not implemented");
+        //FIXME non-string enums
+        return value.toString();
     }
 }

@@ -82,7 +82,20 @@ public abstract class ModelBase {
     }
 
     public String getTypeReference() {
-        return name;
+        return getNullable();
+    }
+
+    private String getNullable() {
+        return switch (name) {
+            case "boolean" -> "Boolean";
+            case "byte" -> "Byte";
+            case "int" -> "Integer";
+            case "long" -> "Long";
+            case "float" -> "Float";
+            case "double" -> "Double";
+            case "char" -> "Character";
+            default -> name;
+        };
     }
 
     /**
