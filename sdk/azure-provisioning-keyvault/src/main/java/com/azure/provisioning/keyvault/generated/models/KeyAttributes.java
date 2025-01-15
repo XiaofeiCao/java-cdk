@@ -9,40 +9,24 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class KeyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<DeletionRecoveryLevel> recoveryLevel;
-    private final BicepValue<Long> created;
     private final BicepValue<Boolean> exportable;
     private final BicepValue<Long> updated;
-    private final BicepValue<Boolean> enabled;
     private final BicepValue<Long> expires;
+    private final BicepValue<Long> created;
+    private final BicepValue<DeletionRecoveryLevel> recoveryLevel;
+    private final BicepValue<Boolean> enabled;
     private final BicepValue<Long> notBefore;
 
     public KeyAttributes() {
-        recoveryLevel = BicepValue.defineProperty(this, "recoveryLevel", new String[] { "recoveryLevel" }, null);
-        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
         exportable = BicepValue.defineProperty(this, "exportable", new String[] { "exportable" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
         expires = BicepValue.defineProperty(this, "expires", new String[] { "expires" }, null);
+        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        recoveryLevel = BicepValue.defineProperty(this, "recoveryLevel", new String[] { "recoveryLevel" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
         notBefore = BicepValue.defineProperty(this, "notBefore", new String[] { "notBefore" }, null);
     }
 
-    public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
-        return this.recoveryLevel;
-    }
-
-    public KeyAttributes setRecoveryLevel(BicepValue<DeletionRecoveryLevel> recoveryLevel) {
-        this.recoveryLevel.assign(recoveryLevel);
-        return this;
-    }
-    public BicepValue<Long> getCreated() {
-        return this.created;
-    }
-
-    public KeyAttributes setCreated(BicepValue<Long> created) {
-        this.created.assign(created);
-        return this;
-    }
     public BicepValue<Boolean> getExportable() {
         return this.exportable;
     }
@@ -59,20 +43,36 @@ public class KeyAttributes extends ProvisioningConstruct {
         this.updated.assign(updated);
         return this;
     }
-    public BicepValue<Boolean> getEnabled() {
-        return this.enabled;
-    }
-
-    public KeyAttributes setEnabled(BicepValue<Boolean> enabled) {
-        this.enabled.assign(enabled);
-        return this;
-    }
     public BicepValue<Long> getExpires() {
         return this.expires;
     }
 
     public KeyAttributes setExpires(BicepValue<Long> expires) {
         this.expires.assign(expires);
+        return this;
+    }
+    public BicepValue<Long> getCreated() {
+        return this.created;
+    }
+
+    public KeyAttributes setCreated(BicepValue<Long> created) {
+        this.created.assign(created);
+        return this;
+    }
+    public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
+        return this.recoveryLevel;
+    }
+
+    public KeyAttributes setRecoveryLevel(BicepValue<DeletionRecoveryLevel> recoveryLevel) {
+        this.recoveryLevel.assign(recoveryLevel);
+        return this;
+    }
+    public BicepValue<Boolean> getEnabled() {
+        return this.enabled;
+    }
+
+    public KeyAttributes setEnabled(BicepValue<Boolean> enabled) {
+        this.enabled.assign(enabled);
         return this;
     }
     public BicepValue<Long> getNotBefore() {

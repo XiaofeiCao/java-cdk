@@ -9,16 +9,24 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class VirtualNetworkRule extends ProvisioningConstruct {
 
+    private final BicepValue<Boolean> ignoreMissingVnetServiceEndpoint;
     private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<String> id;
-    private final BicepValue<Boolean> ignoreMissingVnetServiceEndpoint;
 
     public VirtualNetworkRule() {
+        ignoreMissingVnetServiceEndpoint = BicepValue.defineProperty(this, "ignoreMissingVnetServiceEndpoint", new String[] { "ignoreMissingVnetServiceEndpoint" }, null);
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
         id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
-        ignoreMissingVnetServiceEndpoint = BicepValue.defineProperty(this, "ignoreMissingVnetServiceEndpoint", new String[] { "ignoreMissingVnetServiceEndpoint" }, null);
     }
 
+    public BicepValue<Boolean> getIgnoreMissingVnetServiceEndpoint() {
+        return this.ignoreMissingVnetServiceEndpoint;
+    }
+
+    public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(BicepValue<Boolean> ignoreMissingVnetServiceEndpoint) {
+        this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
+        return this;
+    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -33,14 +41,6 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
 
     public VirtualNetworkRule setId(BicepValue<String> id) {
         this.id.assign(id);
-        return this;
-    }
-    public BicepValue<Boolean> getIgnoreMissingVnetServiceEndpoint() {
-        return this.ignoreMissingVnetServiceEndpoint;
-    }
-
-    public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(BicepValue<Boolean> ignoreMissingVnetServiceEndpoint) {
-        this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
         return this;
     }
 }

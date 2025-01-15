@@ -11,36 +11,20 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
 
-    private final BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState;
-    private final BicepValue<String> id;
     private final BicepValue<MhsmPrivateEndpoint> privateEndpoint;
     private final BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState;
+    private final BicepValue<String> id;
     private final BicepValue<String> etag;
+    private final BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState;
 
     public MhsmPrivateEndpointConnectionItem() {
-        privateLinkServiceConnectionState = BicepValue.defineProperty(this, "privateLinkServiceConnectionState", new String[] { "privateLinkServiceConnectionState" }, null);
-        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
         privateEndpoint = BicepValue.defineProperty(this, "privateEndpoint", new String[] { "privateEndpoint" }, null);
         provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
+        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
         etag = BicepValue.defineProperty(this, "etag", new String[] { "etag" }, null);
+        privateLinkServiceConnectionState = BicepValue.defineProperty(this, "privateLinkServiceConnectionState", new String[] { "privateLinkServiceConnectionState" }, null);
     }
 
-    public BicepValue<MhsmPrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
-        return this.privateLinkServiceConnectionState;
-    }
-
-    public MhsmPrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState) {
-        this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
-        return this;
-    }
-    public BicepValue<String> getId() {
-        return this.id;
-    }
-
-    public MhsmPrivateEndpointConnectionItem setId(BicepValue<String> id) {
-        this.id.assign(id);
-        return this;
-    }
     public BicepValue<MhsmPrivateEndpoint> getPrivateEndpoint() {
         return this.privateEndpoint;
     }
@@ -57,12 +41,28 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public BicepValue<String> getId() {
+        return this.id;
+    }
+
+    public MhsmPrivateEndpointConnectionItem setId(BicepValue<String> id) {
+        this.id.assign(id);
+        return this;
+    }
     public BicepValue<String> getEtag() {
         return this.etag;
     }
 
     public MhsmPrivateEndpointConnectionItem setEtag(BicepValue<String> etag) {
         this.etag.assign(etag);
+        return this;
+    }
+    public BicepValue<MhsmPrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
+        return this.privateLinkServiceConnectionState;
+    }
+
+    public MhsmPrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState) {
+        this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
 }

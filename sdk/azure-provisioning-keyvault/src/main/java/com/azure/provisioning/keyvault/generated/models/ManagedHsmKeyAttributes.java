@@ -9,30 +9,30 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<Long> created;
+    private final BicepValue<DeletionRecoveryLevel> recoveryLevel;
     private final BicepValue<Boolean> exportable;
     private final BicepValue<Long> updated;
-    private final BicepValue<Boolean> enabled;
     private final BicepValue<Long> expires;
+    private final BicepValue<Long> created;
+    private final BicepValue<Boolean> enabled;
     private final BicepValue<Long> notBefore;
-    private final BicepValue<DeletionRecoveryLevel> recoveryLevel;
 
     public ManagedHsmKeyAttributes() {
-        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        recoveryLevel = BicepValue.defineProperty(this, "recoveryLevel", new String[] { "recoveryLevel" }, null);
         exportable = BicepValue.defineProperty(this, "exportable", new String[] { "exportable" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
         expires = BicepValue.defineProperty(this, "expires", new String[] { "expires" }, null);
+        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
         notBefore = BicepValue.defineProperty(this, "notBefore", new String[] { "notBefore" }, null);
-        recoveryLevel = BicepValue.defineProperty(this, "recoveryLevel", new String[] { "recoveryLevel" }, null);
     }
 
-    public BicepValue<Long> getCreated() {
-        return this.created;
+    public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
+        return this.recoveryLevel;
     }
 
-    public ManagedHsmKeyAttributes setCreated(BicepValue<Long> created) {
-        this.created.assign(created);
+    public ManagedHsmKeyAttributes setRecoveryLevel(BicepValue<DeletionRecoveryLevel> recoveryLevel) {
+        this.recoveryLevel.assign(recoveryLevel);
         return this;
     }
     public BicepValue<Boolean> getExportable() {
@@ -51,14 +51,6 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.updated.assign(updated);
         return this;
     }
-    public BicepValue<Boolean> getEnabled() {
-        return this.enabled;
-    }
-
-    public ManagedHsmKeyAttributes setEnabled(BicepValue<Boolean> enabled) {
-        this.enabled.assign(enabled);
-        return this;
-    }
     public BicepValue<Long> getExpires() {
         return this.expires;
     }
@@ -67,20 +59,28 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.expires.assign(expires);
         return this;
     }
+    public BicepValue<Long> getCreated() {
+        return this.created;
+    }
+
+    public ManagedHsmKeyAttributes setCreated(BicepValue<Long> created) {
+        this.created.assign(created);
+        return this;
+    }
+    public BicepValue<Boolean> getEnabled() {
+        return this.enabled;
+    }
+
+    public ManagedHsmKeyAttributes setEnabled(BicepValue<Boolean> enabled) {
+        this.enabled.assign(enabled);
+        return this;
+    }
     public BicepValue<Long> getNotBefore() {
         return this.notBefore;
     }
 
     public ManagedHsmKeyAttributes setNotBefore(BicepValue<Long> notBefore) {
         this.notBefore.assign(notBefore);
-        return this;
-    }
-    public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
-        return this.recoveryLevel;
-    }
-
-    public ManagedHsmKeyAttributes setRecoveryLevel(BicepValue<DeletionRecoveryLevel> recoveryLevel) {
-        this.recoveryLevel.assign(recoveryLevel);
         return this;
     }
 }

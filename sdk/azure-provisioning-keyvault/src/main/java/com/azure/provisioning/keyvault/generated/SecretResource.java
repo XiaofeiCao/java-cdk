@@ -11,9 +11,8 @@ import com.azure.provisioning.tmp.ResourceType;
 public class SecretResource extends Resource {
 
     private final BicepValue<SecretProperties> properties;
-    private final BicepValue<String> secretName;
-    private final BicepValue<String> resourceGroupName;
-    private final BicepValue<String> vaultName;
+    private final BicepValue<String> location;
+    private final BicepValue<String> name;
 
     public SecretResource(String identifierName) {
         this(identifierName, null);
@@ -22,9 +21,8 @@ public class SecretResource extends Resource {
     public SecretResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults/secrets"), resourceVersion);
         properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
-        secretName = BicepValue.defineProperty(this, "secretName", new String[] { "secretName" }, false, false, false, null);
-        resourceGroupName = BicepValue.defineProperty(this, "resourceGroupName", new String[] { "resourceGroupName" }, false, false, false, null);
-        vaultName = BicepValue.defineProperty(this, "vaultName", new String[] { "vaultName" }, false, false, false, null);
+        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
     }
 
     public BicepValue<SecretProperties> getProperties() {
@@ -40,43 +38,30 @@ public class SecretResource extends Resource {
         return this.setProperties(BicepValue.from(properties));
     }
 
-    public BicepValue<String> getSecretName() {
-        return this.secretName;
+    public BicepValue<String> getLocation() {
+        return this.location;
     }
 
-    public SecretResource setSecretName(BicepValue<String> secretName) {
-        this.secretName.assign(secretName);
+    public SecretResource setLocation(BicepValue<String> location) {
+        this.location.assign(location);
         return this;
     }
 
-    public SecretResource setSecretName(String secretName) {
-        return this.setSecretName(BicepValue.from(secretName));
+    public SecretResource setLocation(String location) {
+        return this.setLocation(BicepValue.from(location));
     }
 
-    public BicepValue<String> getResourceGroupName() {
-        return this.resourceGroupName;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public SecretResource setResourceGroupName(BicepValue<String> resourceGroupName) {
-        this.resourceGroupName.assign(resourceGroupName);
+    public SecretResource setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
 
-    public SecretResource setResourceGroupName(String resourceGroupName) {
-        return this.setResourceGroupName(BicepValue.from(resourceGroupName));
-    }
-
-    public BicepValue<String> getVaultName() {
-        return this.vaultName;
-    }
-
-    public SecretResource setVaultName(BicepValue<String> vaultName) {
-        this.vaultName.assign(vaultName);
-        return this;
-    }
-
-    public SecretResource setVaultName(String vaultName) {
-        return this.setVaultName(BicepValue.from(vaultName));
+    public SecretResource setName(String name) {
+        return this.setName(BicepValue.from(name));
     }
 
 

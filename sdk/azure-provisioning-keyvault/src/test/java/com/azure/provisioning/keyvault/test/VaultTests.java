@@ -58,7 +58,7 @@ public class VaultTests extends TestBase {
         VaultResource vaultResource = new VaultResource(vaultName, VaultResource.ResourceVersions.V2023_07_01);
 //        vaultResource.setResourceGroupName(testResourceNamer.randomName("rg", 15));
         vaultResource.setLocation(region.name());
-        vaultResource.setVaultName(vaultName);
+        vaultResource.setName(vaultName);
         VaultProperties vaultProperties = new VaultProperties();
         vaultProperties.setTenantId(BicepValue.from(UUID.fromString("72f988bf-86f1-41af-91ab-2d7cd011db47")))
             .setSku(BicepValue.from(new Sku().setFamily(BicepValue.from(SkuFamily.A)).setName(BicepValue.from(SkuName.STANDARD))))

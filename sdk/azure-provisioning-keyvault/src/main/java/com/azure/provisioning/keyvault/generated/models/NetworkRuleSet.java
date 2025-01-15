@@ -14,26 +14,18 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class NetworkRuleSet extends ProvisioningConstruct {
 
-    private final BicepList<IpRule> ipRules;
     private final BicepValue<NetworkRuleAction> defaultAction;
-    private final BicepList<VirtualNetworkRule> virtualNetworkRules;
+    private final BicepList<IpRule> ipRules;
     private final BicepValue<NetworkRuleBypassOptions> bypass;
+    private final BicepList<VirtualNetworkRule> virtualNetworkRules;
 
     public NetworkRuleSet() {
-        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
         defaultAction = BicepValue.defineProperty(this, "defaultAction", new String[] { "defaultAction" }, null);
-        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
+        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
         bypass = BicepValue.defineProperty(this, "bypass", new String[] { "bypass" }, null);
+        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
     }
 
-    public BicepList<IpRule> getIpRules() {
-        return this.ipRules;
-    }
-
-    public NetworkRuleSet setIpRules(BicepList<IpRule> ipRules) {
-        this.ipRules.assign(ipRules);
-        return this;
-    }
     public BicepValue<NetworkRuleAction> getDefaultAction() {
         return this.defaultAction;
     }
@@ -42,12 +34,12 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.defaultAction.assign(defaultAction);
         return this;
     }
-    public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
-        return this.virtualNetworkRules;
+    public BicepList<IpRule> getIpRules() {
+        return this.ipRules;
     }
 
-    public NetworkRuleSet setVirtualNetworkRules(BicepList<VirtualNetworkRule> virtualNetworkRules) {
-        this.virtualNetworkRules.assign(virtualNetworkRules);
+    public NetworkRuleSet setIpRules(BicepList<IpRule> ipRules) {
+        this.ipRules.assign(ipRules);
         return this;
     }
     public BicepValue<NetworkRuleBypassOptions> getBypass() {
@@ -56,6 +48,14 @@ public class NetworkRuleSet extends ProvisioningConstruct {
 
     public NetworkRuleSet setBypass(BicepValue<NetworkRuleBypassOptions> bypass) {
         this.bypass.assign(bypass);
+        return this;
+    }
+    public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
+        return this.virtualNetworkRules;
+    }
+
+    public NetworkRuleSet setVirtualNetworkRules(BicepList<VirtualNetworkRule> virtualNetworkRules) {
+        this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
 }

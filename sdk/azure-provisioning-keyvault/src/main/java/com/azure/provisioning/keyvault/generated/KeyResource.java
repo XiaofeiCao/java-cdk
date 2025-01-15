@@ -10,10 +10,9 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class KeyResource extends Resource {
 
-    private final BicepValue<String> resourceGroupName;
-    private final BicepValue<String> vaultName;
-    private final BicepValue<String> keyName;
-    private final BicepValue<KeyProperties> properties;
+    private final BicepValue<KeyProperties> innerProperties;
+    private final BicepValue<String> location;
+    private final BicepValue<String> name;
 
     public KeyResource(String identifierName) {
         this(identifierName, null);
@@ -21,62 +20,48 @@ public class KeyResource extends Resource {
 
     public KeyResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults/keys"), resourceVersion);
-        resourceGroupName = BicepValue.defineProperty(this, "resourceGroupName", new String[] { "resourceGroupName" }, false, false, false, null);
-        vaultName = BicepValue.defineProperty(this, "vaultName", new String[] { "vaultName" }, false, false, false, null);
-        keyName = BicepValue.defineProperty(this, "keyName", new String[] { "keyName" }, false, false, false, null);
-        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
+        innerProperties = BicepValue.defineProperty(this, "innerProperties", new String[] { "innerProperties" }, false, false, false, null);
+        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
     }
 
-    public BicepValue<String> getResourceGroupName() {
-        return this.resourceGroupName;
+    public BicepValue<KeyProperties> getInnerProperties() {
+        return this.innerProperties;
     }
 
-    public KeyResource setResourceGroupName(BicepValue<String> resourceGroupName) {
-        this.resourceGroupName.assign(resourceGroupName);
+    public KeyResource setInnerProperties(BicepValue<KeyProperties> innerProperties) {
+        this.innerProperties.assign(innerProperties);
         return this;
     }
 
-    public KeyResource setResourceGroupName(String resourceGroupName) {
-        return this.setResourceGroupName(BicepValue.from(resourceGroupName));
+    public KeyResource setInnerProperties(KeyProperties innerProperties) {
+        return this.setInnerProperties(BicepValue.from(innerProperties));
     }
 
-    public BicepValue<String> getVaultName() {
-        return this.vaultName;
+    public BicepValue<String> getLocation() {
+        return this.location;
     }
 
-    public KeyResource setVaultName(BicepValue<String> vaultName) {
-        this.vaultName.assign(vaultName);
+    public KeyResource setLocation(BicepValue<String> location) {
+        this.location.assign(location);
         return this;
     }
 
-    public KeyResource setVaultName(String vaultName) {
-        return this.setVaultName(BicepValue.from(vaultName));
+    public KeyResource setLocation(String location) {
+        return this.setLocation(BicepValue.from(location));
     }
 
-    public BicepValue<String> getKeyName() {
-        return this.keyName;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public KeyResource setKeyName(BicepValue<String> keyName) {
-        this.keyName.assign(keyName);
+    public KeyResource setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
 
-    public KeyResource setKeyName(String keyName) {
-        return this.setKeyName(BicepValue.from(keyName));
-    }
-
-    public BicepValue<KeyProperties> getProperties() {
-        return this.properties;
-    }
-
-    public KeyResource setProperties(BicepValue<KeyProperties> properties) {
-        this.properties.assign(properties);
-        return this;
-    }
-
-    public KeyResource setProperties(KeyProperties properties) {
-        return this.setProperties(BicepValue.from(properties));
+    public KeyResource setName(String name) {
+        return this.setName(BicepValue.from(name));
     }
 
 

@@ -8,28 +8,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class SecretAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<Long> created;
     private final BicepValue<Long> updated;
+    private final BicepValue<Long> created;
 
     public SecretAttributes() {
-        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
+        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
     }
 
-    public BicepValue<Long> getCreated() {
-        return this.created;
-    }
-
-    public SecretAttributes setCreated(BicepValue<Long> created) {
-        this.created.assign(created);
-        return this;
-    }
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
 
     public SecretAttributes setUpdated(BicepValue<Long> updated) {
         this.updated.assign(updated);
+        return this;
+    }
+    public BicepValue<Long> getCreated() {
+        return this.created;
+    }
+
+    public SecretAttributes setCreated(BicepValue<Long> created) {
+        this.created.assign(created);
         return this;
     }
 }

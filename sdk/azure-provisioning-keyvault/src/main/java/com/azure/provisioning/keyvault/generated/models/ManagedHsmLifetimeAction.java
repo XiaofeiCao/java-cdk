@@ -10,28 +10,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmLifetimeAction extends ProvisioningConstruct {
 
-    private final BicepValue<ManagedHsmTrigger> trigger;
     private final BicepValue<ManagedHsmAction> action;
+    private final BicepValue<ManagedHsmTrigger> trigger;
 
     public ManagedHsmLifetimeAction() {
-        trigger = BicepValue.defineProperty(this, "trigger", new String[] { "trigger" }, null);
         action = BicepValue.defineProperty(this, "action", new String[] { "action" }, null);
+        trigger = BicepValue.defineProperty(this, "trigger", new String[] { "trigger" }, null);
     }
 
-    public BicepValue<ManagedHsmTrigger> getTrigger() {
-        return this.trigger;
-    }
-
-    public ManagedHsmLifetimeAction setTrigger(BicepValue<ManagedHsmTrigger> trigger) {
-        this.trigger.assign(trigger);
-        return this;
-    }
     public BicepValue<ManagedHsmAction> getAction() {
         return this.action;
     }
 
     public ManagedHsmLifetimeAction setAction(BicepValue<ManagedHsmAction> action) {
         this.action.assign(action);
+        return this;
+    }
+    public BicepValue<ManagedHsmTrigger> getTrigger() {
+        return this.trigger;
+    }
+
+    public ManagedHsmLifetimeAction setTrigger(BicepValue<ManagedHsmTrigger> trigger) {
+        this.trigger.assign(trigger);
         return this;
     }
 }

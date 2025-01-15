@@ -9,22 +9,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
 
-    private final BicepValue<String> name;
-    private final BicepValue<GeoReplicationRegionProvisioningState> provisioningState;
     private final BicepValue<Boolean> isPrimary;
+    private final BicepValue<GeoReplicationRegionProvisioningState> provisioningState;
+    private final BicepValue<String> name;
 
     public MhsmGeoReplicatedRegionInner() {
-        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
-        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
         isPrimary = BicepValue.defineProperty(this, "isPrimary", new String[] { "isPrimary" }, null);
+        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
     }
 
-    public BicepValue<String> getName() {
-        return this.name;
+    public BicepValue<Boolean> getIsPrimary() {
+        return this.isPrimary;
     }
 
-    public MhsmGeoReplicatedRegionInner setName(BicepValue<String> name) {
-        this.name.assign(name);
+    public MhsmGeoReplicatedRegionInner setIsPrimary(BicepValue<Boolean> isPrimary) {
+        this.isPrimary.assign(isPrimary);
         return this;
     }
     public BicepValue<GeoReplicationRegionProvisioningState> getProvisioningState() {
@@ -35,12 +35,12 @@ public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
-    public BicepValue<Boolean> getIsPrimary() {
-        return this.isPrimary;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public MhsmGeoReplicatedRegionInner setIsPrimary(BicepValue<Boolean> isPrimary) {
-        this.isPrimary.assign(isPrimary);
+    public MhsmGeoReplicatedRegionInner setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
 }

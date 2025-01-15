@@ -9,42 +9,34 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class SecretProperties extends ProvisioningConstruct {
 
-    private final BicepValue<String> value;
-    private final BicepValue<String> secretUri;
     private final BicepValue<String> secretUriWithVersion;
+    private final BicepValue<String> value;
     private final BicepValue<String> contentType;
     private final BicepValue<SecretAttributes> attributes;
+    private final BicepValue<String> secretUri;
 
     public SecretProperties() {
-        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
-        secretUri = BicepValue.defineProperty(this, "secretUri", new String[] { "secretUri" }, null);
         secretUriWithVersion = BicepValue.defineProperty(this, "secretUriWithVersion", new String[] { "secretUriWithVersion" }, null);
+        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
         contentType = BicepValue.defineProperty(this, "contentType", new String[] { "contentType" }, null);
         attributes = BicepValue.defineProperty(this, "attributes", new String[] { "attributes" }, null);
+        secretUri = BicepValue.defineProperty(this, "secretUri", new String[] { "secretUri" }, null);
     }
 
-    public BicepValue<String> getValue() {
-        return this.value;
-    }
-
-    public SecretProperties setValue(BicepValue<String> value) {
-        this.value.assign(value);
-        return this;
-    }
-    public BicepValue<String> getSecretUri() {
-        return this.secretUri;
-    }
-
-    public SecretProperties setSecretUri(BicepValue<String> secretUri) {
-        this.secretUri.assign(secretUri);
-        return this;
-    }
     public BicepValue<String> getSecretUriWithVersion() {
         return this.secretUriWithVersion;
     }
 
     public SecretProperties setSecretUriWithVersion(BicepValue<String> secretUriWithVersion) {
         this.secretUriWithVersion.assign(secretUriWithVersion);
+        return this;
+    }
+    public BicepValue<String> getValue() {
+        return this.value;
+    }
+
+    public SecretProperties setValue(BicepValue<String> value) {
+        this.value.assign(value);
         return this;
     }
     public BicepValue<String> getContentType() {
@@ -61,6 +53,14 @@ public class SecretProperties extends ProvisioningConstruct {
 
     public SecretProperties setAttributes(BicepValue<SecretAttributes> attributes) {
         this.attributes.assign(attributes);
+        return this;
+    }
+    public BicepValue<String> getSecretUri() {
+        return this.secretUri;
+    }
+
+    public SecretProperties setSecretUri(BicepValue<String> secretUri) {
+        this.secretUri.assign(secretUri);
         return this;
     }
 }

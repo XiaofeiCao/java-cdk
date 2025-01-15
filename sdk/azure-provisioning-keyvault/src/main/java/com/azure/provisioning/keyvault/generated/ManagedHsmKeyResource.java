@@ -10,10 +10,8 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmKeyResource extends Resource {
 
+    private final BicepValue<ManagedHsmKeyProperties> innerProperties;
     private final BicepValue<String> name;
-    private final BicepValue<String> resourceGroupName;
-    private final BicepValue<ManagedHsmKeyProperties> properties;
-    private final BicepValue<String> keyName;
 
     public ManagedHsmKeyResource(String identifierName) {
         this(identifierName, null);
@@ -21,10 +19,21 @@ public class ManagedHsmKeyResource extends Resource {
 
     public ManagedHsmKeyResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs/keys"), resourceVersion);
+        innerProperties = BicepValue.defineProperty(this, "innerProperties", new String[] { "innerProperties" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
-        resourceGroupName = BicepValue.defineProperty(this, "resourceGroupName", new String[] { "resourceGroupName" }, false, false, false, null);
-        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
-        keyName = BicepValue.defineProperty(this, "keyName", new String[] { "keyName" }, false, false, false, null);
+    }
+
+    public BicepValue<ManagedHsmKeyProperties> getInnerProperties() {
+        return this.innerProperties;
+    }
+
+    public ManagedHsmKeyResource setInnerProperties(BicepValue<ManagedHsmKeyProperties> innerProperties) {
+        this.innerProperties.assign(innerProperties);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setInnerProperties(ManagedHsmKeyProperties innerProperties) {
+        return this.setInnerProperties(BicepValue.from(innerProperties));
     }
 
     public BicepValue<String> getName() {
@@ -38,45 +47,6 @@ public class ManagedHsmKeyResource extends Resource {
 
     public ManagedHsmKeyResource setName(String name) {
         return this.setName(BicepValue.from(name));
-    }
-
-    public BicepValue<String> getResourceGroupName() {
-        return this.resourceGroupName;
-    }
-
-    public ManagedHsmKeyResource setResourceGroupName(BicepValue<String> resourceGroupName) {
-        this.resourceGroupName.assign(resourceGroupName);
-        return this;
-    }
-
-    public ManagedHsmKeyResource setResourceGroupName(String resourceGroupName) {
-        return this.setResourceGroupName(BicepValue.from(resourceGroupName));
-    }
-
-    public BicepValue<ManagedHsmKeyProperties> getProperties() {
-        return this.properties;
-    }
-
-    public ManagedHsmKeyResource setProperties(BicepValue<ManagedHsmKeyProperties> properties) {
-        this.properties.assign(properties);
-        return this;
-    }
-
-    public ManagedHsmKeyResource setProperties(ManagedHsmKeyProperties properties) {
-        return this.setProperties(BicepValue.from(properties));
-    }
-
-    public BicepValue<String> getKeyName() {
-        return this.keyName;
-    }
-
-    public ManagedHsmKeyResource setKeyName(BicepValue<String> keyName) {
-        this.keyName.assign(keyName);
-        return this;
-    }
-
-    public ManagedHsmKeyResource setKeyName(String keyName) {
-        return this.setKeyName(BicepValue.from(keyName));
     }
 
 

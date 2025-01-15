@@ -9,28 +9,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class IpRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> value;
     private final BicepValue<ClientLogger> lOGGER;
+    private final BicepValue<String> value;
 
     public IpRule() {
-        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
     }
 
-    public BicepValue<String> getValue() {
-        return this.value;
-    }
-
-    public IpRule setValue(BicepValue<String> value) {
-        this.value.assign(value);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
 
     public IpRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
         this.lOGGER.assign(lOGGER);
+        return this;
+    }
+    public BicepValue<String> getValue() {
+        return this.value;
+    }
+
+    public IpRule setValue(BicepValue<String> value) {
+        this.value.assign(value);
         return this;
     }
 }

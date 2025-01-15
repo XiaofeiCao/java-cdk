@@ -9,28 +9,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmipRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> value;
     private final BicepValue<ClientLogger> lOGGER;
+    private final BicepValue<String> value;
 
     public MhsmipRule() {
-        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
     }
 
-    public BicepValue<String> getValue() {
-        return this.value;
-    }
-
-    public MhsmipRule setValue(BicepValue<String> value) {
-        this.value.assign(value);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
 
     public MhsmipRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
         this.lOGGER.assign(lOGGER);
+        return this;
+    }
+    public BicepValue<String> getValue() {
+        return this.value;
+    }
+
+    public MhsmipRule setValue(BicepValue<String> value) {
+        this.value.assign(value);
         return this;
     }
 }

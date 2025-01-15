@@ -8,24 +8,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<Long> created;
     private final BicepValue<String> expiryTime;
     private final BicepValue<Long> updated;
+    private final BicepValue<Long> created;
 
     public ManagedHsmKeyRotationPolicyAttributes() {
-        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
         expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
+        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
     }
 
-    public BicepValue<Long> getCreated() {
-        return this.created;
-    }
-
-    public ManagedHsmKeyRotationPolicyAttributes setCreated(BicepValue<Long> created) {
-        this.created.assign(created);
-        return this;
-    }
     public BicepValue<String> getExpiryTime() {
         return this.expiryTime;
     }
@@ -40,6 +32,14 @@ public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct
 
     public ManagedHsmKeyRotationPolicyAttributes setUpdated(BicepValue<Long> updated) {
         this.updated.assign(updated);
+        return this;
+    }
+    public BicepValue<Long> getCreated() {
+        return this.created;
+    }
+
+    public ManagedHsmKeyRotationPolicyAttributes setCreated(BicepValue<Long> created) {
+        this.created.assign(created);
         return this;
     }
 }

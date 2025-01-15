@@ -10,12 +10,9 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmResource extends Resource {
 
-    private final BicepValue<String> name;
-    private final BicepValue<String> type;
-    private final BicepValue<String> id;
-    private final BicepValue<String> resourceGroupName;
-    private final BicepValue<String> location;
     private final BicepValue<ManagedHsmProperties> properties;
+    private final BicepValue<String> location;
+    private final BicepValue<String> name;
 
     public ManagedHsmResource(String identifierName) {
         this(identifierName, null);
@@ -23,64 +20,22 @@ public class ManagedHsmResource extends Resource {
 
     public ManagedHsmResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs"), resourceVersion);
-        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
-        type = BicepValue.defineProperty(this, "type", new String[] { "type" }, false, false, false, null);
-        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, false, false, false, null);
-        resourceGroupName = BicepValue.defineProperty(this, "resourceGroupName", new String[] { "resourceGroupName" }, false, false, false, null);
-        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
         properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
+        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
     }
 
-    public BicepValue<String> getName() {
-        return this.name;
+    public BicepValue<ManagedHsmProperties> getProperties() {
+        return this.properties;
     }
 
-    public ManagedHsmResource setName(BicepValue<String> name) {
-        this.name.assign(name);
+    public ManagedHsmResource setProperties(BicepValue<ManagedHsmProperties> properties) {
+        this.properties.assign(properties);
         return this;
     }
 
-    public ManagedHsmResource setName(String name) {
-        return this.setName(BicepValue.from(name));
-    }
-
-    public BicepValue<String> getType() {
-        return this.type;
-    }
-
-    public ManagedHsmResource setType(BicepValue<String> type) {
-        this.type.assign(type);
-        return this;
-    }
-
-    public ManagedHsmResource setType(String type) {
-        return this.setType(BicepValue.from(type));
-    }
-
-    public BicepValue<String> getId() {
-        return this.id;
-    }
-
-    public ManagedHsmResource setId(BicepValue<String> id) {
-        this.id.assign(id);
-        return this;
-    }
-
-    public ManagedHsmResource setId(String id) {
-        return this.setId(BicepValue.from(id));
-    }
-
-    public BicepValue<String> getResourceGroupName() {
-        return this.resourceGroupName;
-    }
-
-    public ManagedHsmResource setResourceGroupName(BicepValue<String> resourceGroupName) {
-        this.resourceGroupName.assign(resourceGroupName);
-        return this;
-    }
-
-    public ManagedHsmResource setResourceGroupName(String resourceGroupName) {
-        return this.setResourceGroupName(BicepValue.from(resourceGroupName));
+    public ManagedHsmResource setProperties(ManagedHsmProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
     public BicepValue<String> getLocation() {
@@ -96,17 +51,17 @@ public class ManagedHsmResource extends Resource {
         return this.setLocation(BicepValue.from(location));
     }
 
-    public BicepValue<ManagedHsmProperties> getProperties() {
-        return this.properties;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public ManagedHsmResource setProperties(BicepValue<ManagedHsmProperties> properties) {
-        this.properties.assign(properties);
+    public ManagedHsmResource setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
 
-    public ManagedHsmResource setProperties(ManagedHsmProperties properties) {
-        return this.setProperties(BicepValue.from(properties));
+    public ManagedHsmResource setName(String name) {
+        return this.setName(BicepValue.from(name));
     }
 
 

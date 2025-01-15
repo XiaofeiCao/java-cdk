@@ -12,13 +12,13 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class Sku extends ProvisioningConstruct {
 
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<SkuFamily> family;
     private final BicepValue<SkuName> name;
+    private final BicepValue<SkuFamily> family;
 
     public Sku() {
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
-        family = BicepValue.defineProperty(this, "family", new String[] { "family" }, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
+        family = BicepValue.defineProperty(this, "family", new String[] { "family" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {
@@ -29,20 +29,20 @@ public class Sku extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<SkuFamily> getFamily() {
-        return this.family;
-    }
-
-    public Sku setFamily(BicepValue<SkuFamily> family) {
-        this.family.assign(family);
-        return this;
-    }
     public BicepValue<SkuName> getName() {
         return this.name;
     }
 
     public Sku setName(BicepValue<SkuName> name) {
         this.name.assign(name);
+        return this;
+    }
+    public BicepValue<SkuFamily> getFamily() {
+        return this.family;
+    }
+
+    public Sku setFamily(BicepValue<SkuFamily> family) {
+        this.family.assign(family);
         return this;
     }
 }

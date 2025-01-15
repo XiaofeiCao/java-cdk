@@ -235,21 +235,22 @@ public abstract class Specification extends ModelBase {
 
     private Set<Property> findProperties(Resource resource, Method creatorMethod, Field field) {
         Set<Property> properties = new HashSet<>();
-        Arrays.stream(creatorMethod.getParameters())
-                .forEach(param -> {
-                    if (param.getType().equals(Context.class)) {
-                        return;
-                    }
-                    if (ReflectionUtils.isSimpleType(param.getType())) {
-                        Property property = new Property(resource, getOrCreateModelType(param.getType(), resource), field, param);
-//                        property.setRequired(true);
-                        properties.add(property);
-                    } else
-//                        if (ReflectionUtils.isResourceType(param.getType()))
-                        {
-                        properties.addAll(getPropertiesFromResource(resource, param));
-                    }
-                });
+        properties.addAll(getPropertiesFromResource(resource, resource.getArmType()));
+//        Arrays.stream(creatorMethod.getParameters())
+//                .forEach(param -> {
+//                    if (param.getType().equals(Context.class)) {
+//                        return;
+//                    }
+//                    if (ReflectionUtils.isSimpleType(param.getType())) {
+//                        Property property = new Property(resource, getOrCreateModelType(param.getType(), resource), field, param);
+////                        property.setRequired(true);
+//                        properties.add(property);
+//                    } else
+////                        if (ReflectionUtils.isResourceType(param.getType()))
+//                        {
+//                        properties.addAll(getPropertiesFromResource(resource, param));
+//                    }
+//                });
 
         return properties;
     }
@@ -270,6 +271,27 @@ public abstract class Specification extends ModelBase {
                             properties.add(new Property(resource, getOrCreateModelType(field.getType(), resource), field, null));
                         }
                     });
+            currentType = currentType.getSuperclass();
+        }
+        return properties;
+    }
+
+    private Set<Property> getPropertiesFromResource(Resource resource, Type type) {
+        Set<Property> properties = new HashSet<>();
+        Class<?> currentType = (Class<?>) type;
+
+        while (currentType != ProxyResource.class && currentType != null) {
+            Arrays.stream(currentType.getDeclaredFields())
+                .filter(field -> field.getType() != ClientLogger.class && !field.getName().equals("id") && !field.getName().equals("type"))
+                .forEach(field -> {
+                    if (ReflectionUtils.isSimpleType(field.getType())) {
+                        Property property = new Property(resource, getOrCreateModelType(field.getType(), resource), field, null);
+//                            property.setRequired(true);
+                        properties.add(property);
+                    } else if (ReflectionUtils.isPropertiesTypes(field)) {
+                        properties.add(new Property(resource, getOrCreateModelType(field.getType(), resource), field, null));
+                    }
+                });
             currentType = currentType.getSuperclass();
         }
         return properties;
