@@ -25,11 +25,11 @@ public class Main {
 //                .add(new AppConfigurationSpecification("AppConfiguration",
 //                        "com.azure.provisioning.appconfiguration", AppConfigurationManager.class, null,
 //                        "Microsoft.AppConfiguration", List.of()));
-        main.specifications
-                .add(new StorageSpecification("Storage", "com.azure.provisioning.storage", StorageManager.class, null, "Microsoft.Storage"));
-
 //        main.specifications
-//                .add(new KeyVaultSpecification("KeyVault", "com.azure.provisioning.keyvault", KeyVaultManager.class, null, "Microsoft.KeyVault"));
+//                .add(new StorageSpecification("Storage", "com.azure.provisioning.storage", StorageManager.class, null, "Microsoft.Storage"));
+
+        main.specifications
+                .add(new KeyVaultSpecification("KeyVault", "com.azure.provisioning.keyvault", KeyVaultManager.class, null, "Microsoft.KeyVault"));
 
         main.generate();
     }

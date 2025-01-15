@@ -3,19 +3,94 @@
 
 package com.azure.provisioning.keyvault.generated;
 
+import com.azure.provisioning.keyvault.generated.models.ManagedHsmKeyProperties;
 import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.primitives.Resource;
 import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmKeyResource extends Resource {
 
+    private final BicepValue<String> name;
+    private final BicepValue<String> resourceGroupName;
+    private final BicepValue<ManagedHsmKeyProperties> properties;
+    private final BicepValue<String> keyName;
 
     public ManagedHsmKeyResource(String identifierName) {
         this(identifierName, null);
     }
 
     public ManagedHsmKeyResource(String identifierName, String resourceVersion) {
-        super(identifierName, new ResourceType("null"), resourceVersion);
+        super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs/keys"), resourceVersion);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
+        resourceGroupName = BicepValue.defineProperty(this, "resourceGroupName", new String[] { "resourceGroupName" }, false, false, false, null);
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
+        keyName = BicepValue.defineProperty(this, "keyName", new String[] { "keyName" }, false, false, false, null);
     }
 
+    public BicepValue<String> getName() {
+        return this.name;
+    }
+
+    public ManagedHsmKeyResource setName(BicepValue<String> name) {
+        this.name.assign(name);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
+    public BicepValue<String> getResourceGroupName() {
+        return this.resourceGroupName;
+    }
+
+    public ManagedHsmKeyResource setResourceGroupName(BicepValue<String> resourceGroupName) {
+        this.resourceGroupName.assign(resourceGroupName);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setResourceGroupName(String resourceGroupName) {
+        return this.setResourceGroupName(BicepValue.from(resourceGroupName));
+    }
+
+    public BicepValue<ManagedHsmKeyProperties> getProperties() {
+        return this.properties;
+    }
+
+    public ManagedHsmKeyResource setProperties(BicepValue<ManagedHsmKeyProperties> properties) {
+        this.properties.assign(properties);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setProperties(ManagedHsmKeyProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
+    }
+
+    public BicepValue<String> getKeyName() {
+        return this.keyName;
+    }
+
+    public ManagedHsmKeyResource setKeyName(BicepValue<String> keyName) {
+        this.keyName.assign(keyName);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setKeyName(String keyName) {
+        return this.setKeyName(BicepValue.from(keyName));
+    }
+
+
+    public static class ResourceVersions {
+
+        public static final String V2024_11_01 = "2024-11-01";
+
+        public static final String V2023_08_01_PREVIEW = "2023-08-01-PREVIEW";
+
+        public static final String V2023_07_01 = "2023-07-01";
+
+        public static final String V2023_02_01 = "2023-02-01";
+
+        public static final String V2022_11_01 = "2022-11-01";
+
+    }
 }

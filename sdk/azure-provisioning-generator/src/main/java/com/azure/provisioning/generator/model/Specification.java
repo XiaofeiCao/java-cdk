@@ -267,7 +267,7 @@ public abstract class Specification extends ModelBase {
 //                            property.setRequired(true);
                             properties.add(property);
                         } else if (ReflectionUtils.isPropertiesTypes(field)) {
-                            properties.addAll(getPropertiesFromModel(resource, field));
+                            properties.add(new Property(resource, getOrCreateModelType(field.getType(), resource), field, null));
                         }
                     });
             currentType = currentType.getSuperclass();

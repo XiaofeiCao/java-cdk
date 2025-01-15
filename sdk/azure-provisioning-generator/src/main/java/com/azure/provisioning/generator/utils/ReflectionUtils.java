@@ -52,7 +52,7 @@ public class ReflectionUtils {
     }
 
     public static boolean isPropertiesTypes(Field field) {
-        return field.getName().endsWith("Properties");
+        return field.getName().endsWith("Properties") || field.getName().equals("properties");
     }
 
     public static boolean isEnumType(Class<?> type) {

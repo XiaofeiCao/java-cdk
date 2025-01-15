@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Represents an enumeration model in the Azure provisioning model.
@@ -57,12 +58,29 @@ public class EnumModel extends ModelBase {
 
             for (int i = 0; i < values.size(); i++) {
                 writer.writeLine();
+                String enumMember = String.format("%s(\"%s\")", values.get(i).toUpperCase(), values.get(i));
                 if (i == values.size() - 1) {
-                    writer.writeLine(values.get(i) + ";");
+                    writer.writeLine(enumMember + ";");
                 } else {
-                    writer.writeLine(values.get(i) + ",");
+                    writer.writeLine(enumMember + ",");
                 }
             }
+
+            //FIXME non-string value
+            writer.writeLine("private final String value;");
+            writer.writeLine(String.format("%s(String value) {", getName()));
+
+            writer.indent();
+            writer.writeLine("this.value = value;");
+            writer.unindent();
+            writer.writeLine("}");
+
+            writer.writeLine("@Override");
+            writer.writeLine("public String toString() {");
+            writer.indent();
+            writer.writeLine("return this.value;");
+            writer.unindent();
+            writer.writeLine("}");
 
             writer.unindent();
             writer.writeLine("}");

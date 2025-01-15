@@ -48,7 +48,7 @@ abstract class ExternalBicepTool {
     String getArmTemplate(String bicepPath) {
         try {
             ToolResult result = runAndBlock(getToolFullPath(), getArmBuildArguments(bicepPath));
-            if (result.getExitCode() != 0 || result.getOutput().isPresent()) {
+            if (result.getExitCode() != 0 || result.getOutput().isEmpty()) {
                 throw new IllegalStateException("Building ARM Template failed with exit code " + result.getExitCode() + " and error: " + result.getError().get());
             }
             return result.getOutput().orElse("");
