@@ -11,20 +11,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
 
-    private final BicepValue<MhsmPrivateEndpoint> privateEndpoint;
-    private final BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState;
     private final BicepValue<String> id;
-    private final BicepValue<String> etag;
+    private final BicepValue<MhsmPrivateEndpoint> privateEndpoint;
     private final BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState;
+    private final BicepValue<String> etag;
+    private final BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState;
 
     public MhsmPrivateEndpointConnectionItem() {
-        privateEndpoint = BicepValue.defineProperty(this, "privateEndpoint", new String[] { "privateEndpoint" }, null);
-        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
         id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
-        etag = BicepValue.defineProperty(this, "etag", new String[] { "etag" }, null);
+        privateEndpoint = BicepValue.defineProperty(this, "privateEndpoint", new String[] { "privateEndpoint" }, null);
         privateLinkServiceConnectionState = BicepValue.defineProperty(this, "privateLinkServiceConnectionState", new String[] { "privateLinkServiceConnectionState" }, null);
+        etag = BicepValue.defineProperty(this, "etag", new String[] { "etag" }, null);
+        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
     }
 
+    public BicepValue<String> getId() {
+        return this.id;
+    }
+
+    public MhsmPrivateEndpointConnectionItem setId(BicepValue<String> id) {
+        this.id.assign(id);
+        return this;
+    }
     public BicepValue<MhsmPrivateEndpoint> getPrivateEndpoint() {
         return this.privateEndpoint;
     }
@@ -33,20 +41,12 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.privateEndpoint.assign(privateEndpoint);
         return this;
     }
-    public BicepValue<PrivateEndpointConnectionProvisioningState> getProvisioningState() {
-        return this.provisioningState;
+    public BicepValue<MhsmPrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
+        return this.privateLinkServiceConnectionState;
     }
 
-    public MhsmPrivateEndpointConnectionItem setProvisioningState(BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState) {
-        this.provisioningState.assign(provisioningState);
-        return this;
-    }
-    public BicepValue<String> getId() {
-        return this.id;
-    }
-
-    public MhsmPrivateEndpointConnectionItem setId(BicepValue<String> id) {
-        this.id.assign(id);
+    public MhsmPrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState) {
+        this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
     public BicepValue<String> getEtag() {
@@ -57,12 +57,12 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.etag.assign(etag);
         return this;
     }
-    public BicepValue<MhsmPrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
-        return this.privateLinkServiceConnectionState;
+    public BicepValue<PrivateEndpointConnectionProvisioningState> getProvisioningState() {
+        return this.provisioningState;
     }
 
-    public MhsmPrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(BicepValue<MhsmPrivateLinkServiceConnectionState> privateLinkServiceConnectionState) {
-        this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
+    public MhsmPrivateEndpointConnectionItem setProvisioningState(BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState) {
+        this.provisioningState.assign(provisioningState);
         return this;
     }
 }

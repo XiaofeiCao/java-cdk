@@ -15,15 +15,15 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class Permissions extends ProvisioningConstruct {
 
     private final BicepList<CertificatePermissions> certificates;
-    private final BicepList<StoragePermissions> storage;
     private final BicepList<KeyPermissions> keys;
     private final BicepList<SecretPermissions> secrets;
+    private final BicepList<StoragePermissions> storage;
 
     public Permissions() {
         certificates = BicepList.defineProperty(this, "certificates", new String[] { "certificates" }, false, false);
-        storage = BicepList.defineProperty(this, "storage", new String[] { "storage" }, false, false);
         keys = BicepList.defineProperty(this, "keys", new String[] { "keys" }, false, false);
         secrets = BicepList.defineProperty(this, "secrets", new String[] { "secrets" }, false, false);
+        storage = BicepList.defineProperty(this, "storage", new String[] { "storage" }, false, false);
     }
 
     public BicepList<CertificatePermissions> getCertificates() {
@@ -32,14 +32,6 @@ public class Permissions extends ProvisioningConstruct {
 
     public Permissions setCertificates(BicepList<CertificatePermissions> certificates) {
         this.certificates.assign(certificates);
-        return this;
-    }
-    public BicepList<StoragePermissions> getStorage() {
-        return this.storage;
-    }
-
-    public Permissions setStorage(BicepList<StoragePermissions> storage) {
-        this.storage.assign(storage);
         return this;
     }
     public BicepList<KeyPermissions> getKeys() {
@@ -56,6 +48,14 @@ public class Permissions extends ProvisioningConstruct {
 
     public Permissions setSecrets(BicepList<SecretPermissions> secrets) {
         this.secrets.assign(secrets);
+        return this;
+    }
+    public BicepList<StoragePermissions> getStorage() {
+        return this.storage;
+    }
+
+    public Permissions setStorage(BicepList<StoragePermissions> storage) {
+        this.storage.assign(storage);
         return this;
     }
 }

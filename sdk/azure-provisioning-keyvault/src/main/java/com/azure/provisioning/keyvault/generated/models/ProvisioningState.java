@@ -5,21 +5,21 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum ProvisioningState {
 
-    SUCCEEDED("SUCCEEDED"),
+    SUCCEEDED("Succeeded"),
 
-    PROVISIONING("PROVISIONING"),
+    PROVISIONING("Provisioning"),
 
-    FAILED("FAILED"),
+    FAILED("Failed"),
 
-    UPDATING("UPDATING"),
+    UPDATING("Updating"),
 
-    DELETING("DELETING"),
+    DELETING("Deleting"),
 
-    ACTIVATED("ACTIVATED"),
+    ACTIVATED("Activated"),
 
-    SECURITY_DOMAIN_RESTORE("SECURITY_DOMAIN_RESTORE"),
+    SECURITY_DOMAIN_RESTORE("SecurityDomainRestore"),
 
-    RESTORING("RESTORING");
+    RESTORING("Restoring");
     private final String value;
     ProvisioningState(String value) {
         this.value = value;

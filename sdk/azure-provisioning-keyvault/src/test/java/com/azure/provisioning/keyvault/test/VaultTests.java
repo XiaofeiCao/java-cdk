@@ -5,7 +5,6 @@ import com.azure.core.management.AzureEnvironment;
 import com.azure.core.management.Region;
 import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.test.TestBase;
-import com.azure.core.test.TestProxyTestBase;
 import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.azure.provisioning.BicepList;
 import com.azure.provisioning.BicepValue;
@@ -13,9 +12,16 @@ import com.azure.provisioning.Infrastructure;
 import com.azure.provisioning.ProvisioningContext;
 import com.azure.provisioning.ProvisioningPlan;
 import com.azure.provisioning.bicep.BicepProvisioningPlan;
+import com.azure.provisioning.implementation.bicep.syntax.BicepTypeMapping;
 import com.azure.provisioning.keyvault.generated.VaultResource;
+import com.azure.provisioning.keyvault.generated.models.AccessPolicyEntry;
+import com.azure.provisioning.keyvault.generated.models.CertificatePermissions;
+import com.azure.provisioning.keyvault.generated.models.IpRule;
+import com.azure.provisioning.keyvault.generated.models.KeyPermissions;
 import com.azure.provisioning.keyvault.generated.models.NetworkRuleBypassOptions;
 import com.azure.provisioning.keyvault.generated.models.NetworkRuleSet;
+import com.azure.provisioning.keyvault.generated.models.Permissions;
+import com.azure.provisioning.keyvault.generated.models.SecretPermissions;
 import com.azure.provisioning.keyvault.generated.models.Sku;
 import com.azure.provisioning.keyvault.generated.models.SkuFamily;
 import com.azure.provisioning.keyvault.generated.models.SkuName;
@@ -27,6 +33,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 public class VaultTests extends TestBase {
@@ -53,6 +60,26 @@ public class VaultTests extends TestBase {
     }
 
     @Test
+    public void bicepTest() {
+        VaultProperties vaultProperties = new VaultProperties();
+        vaultProperties.setTenantId(BicepValue.from(UUID.fromString("72f988bf-86f1-41af-91ab-2d7cd011db47")))
+                .setSku(BicepValue.from(new Sku().setFamily(BicepValue.from(SkuFamily.A)).setName(BicepValue.from(SkuName.STANDARD))))
+                .setNetworkAcls(BicepValue.from(new NetworkRuleSet().setBypass(BicepValue.from(NetworkRuleBypassOptions.AZURE_SERVICES))
+                        .setIpRules(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(new IpRule().setValue(BicepValue.from("0.0.0.0/0"))))))))
+                .setAccessPolicies(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(
+                        new AccessPolicyEntry()
+                                .setTenantId(BicepValue.from(UUID.fromString("72f988bf-86f1-41af-91ab-2d7cd011db47")))
+                                .setObjectId(BicepValue.from("68fa401c-df61-4145-9310-3eda0ec5f3c3"))
+                                .setPermissions(BicepValue.from(
+                                        new Permissions()
+                                                .setKeys(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(KeyPermissions.ALL))))
+                                                .setCertificates(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(CertificatePermissions.GET, CertificatePermissions.LIST, CertificatePermissions.CREATE))))
+                                                .setSecrets(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(SecretPermissions.ALL))))
+                                ))
+                ))));
+    }
+
+    @Test
     public void testCreateVault() throws IOException {
         String vaultName = testResourceNamer.randomName("vt", 15);
         VaultResource vaultResource = new VaultResource(vaultName, VaultResource.ResourceVersions.V2023_07_01);
@@ -61,9 +88,20 @@ public class VaultTests extends TestBase {
         vaultResource.setName(vaultName);
         VaultProperties vaultProperties = new VaultProperties();
         vaultProperties.setTenantId(BicepValue.from(UUID.fromString("72f988bf-86f1-41af-91ab-2d7cd011db47")))
-            .setSku(BicepValue.from(new Sku().setFamily(BicepValue.from(SkuFamily.A)).setName(BicepValue.from(SkuName.STANDARD))))
-//            .setNetworkAcls(BicepValue.from(new NetworkRuleSet().setBypass(BicepValue.from(NetworkRuleBypassOptions.AZURE_SERVICES)).setIpRules(BicepList.defineProperty())))
-        ;
+                .setSku(BicepValue.from(new Sku().setFamily(BicepValue.from(SkuFamily.A)).setName(BicepValue.from(SkuName.STANDARD))))
+                .setNetworkAcls(BicepValue.from(new NetworkRuleSet().setBypass(BicepValue.from(NetworkRuleBypassOptions.AZURE_SERVICES))
+                        .setIpRules(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(new IpRule().setValue(BicepValue.from("0.0.0.0/0"))))))))
+                .setAccessPolicies(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(
+                        new AccessPolicyEntry()
+                                .setTenantId(BicepValue.from(UUID.fromString("72f988bf-86f1-41af-91ab-2d7cd011db47")))
+                                .setObjectId(BicepValue.from("68fa401c-df61-4145-9310-3eda0ec5f3c3"))
+                                .setPermissions(BicepValue.from(
+                                        new Permissions()
+                                                .setKeys(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(KeyPermissions.ALL))))
+                                                .setCertificates(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(CertificatePermissions.GET, CertificatePermissions.LIST, CertificatePermissions.CREATE))))
+                                                .setSecrets(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(SecretPermissions.ALL))))
+                                ))
+                ))));
 
         vaultResource.setProperties(vaultProperties);
         Infrastructure infrastructure = new Infrastructure();

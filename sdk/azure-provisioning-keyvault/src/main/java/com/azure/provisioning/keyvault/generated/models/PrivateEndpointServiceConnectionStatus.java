@@ -5,13 +5,13 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum PrivateEndpointServiceConnectionStatus {
 
-    PENDING("PENDING"),
+    PENDING("Pending"),
 
-    APPROVED("APPROVED"),
+    APPROVED("Approved"),
 
-    REJECTED("REJECTED"),
+    REJECTED("Rejected"),
 
-    DISCONNECTED("DISCONNECTED");
+    DISCONNECTED("Disconnected");
     private final String value;
     PrivateEndpointServiceConnectionStatus(String value) {
         this.value = value;

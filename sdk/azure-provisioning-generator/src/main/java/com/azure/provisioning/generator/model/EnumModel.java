@@ -2,6 +2,7 @@ package com.azure.provisioning.generator.model;
 
 import com.azure.provisioning.generator.Main;
 import com.azure.provisioning.generator.utils.IndentWriter;
+import com.azure.provisioning.generator.utils.NameUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -58,7 +59,7 @@ public class EnumModel extends ModelBase {
 
             for (int i = 0; i < values.size(); i++) {
                 writer.writeLine();
-                String enumMember = String.format("%s(\"%s\")", values.get(i).toUpperCase(), values.get(i));
+                String enumMember = String.format("%s(\"%s\")", NameUtils.getEnumMemberName(values.get(i)), values.get(i));
                 if (i == values.size() - 1) {
                     writer.writeLine(enumMember + ";");
                 } else {

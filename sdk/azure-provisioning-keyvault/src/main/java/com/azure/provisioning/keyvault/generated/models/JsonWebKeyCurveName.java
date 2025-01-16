@@ -5,13 +5,13 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum JsonWebKeyCurveName {
 
-    P_256("P_256"),
+    P_256("P-256"),
 
-    P_384("P_384"),
+    P_384("P-384"),
 
-    P_521("P_521"),
+    P_521("P-521"),
 
-    P_256K("P_256K");
+    P_256K("P-256K");
     private final String value;
     JsonWebKeyCurveName(String value) {
         this.value = value;

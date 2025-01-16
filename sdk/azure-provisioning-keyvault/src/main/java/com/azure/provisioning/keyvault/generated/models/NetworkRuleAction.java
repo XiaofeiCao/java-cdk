@@ -5,9 +5,9 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum NetworkRuleAction {
 
-    ALLOW("ALLOW"),
+    ALLOW("Allow"),
 
-    DENY("DENY");
+    DENY("Deny");
     private final String value;
     NetworkRuleAction(String value) {
         this.value = value;

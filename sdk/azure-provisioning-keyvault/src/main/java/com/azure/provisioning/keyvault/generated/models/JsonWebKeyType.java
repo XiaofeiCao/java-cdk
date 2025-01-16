@@ -7,11 +7,11 @@ public enum JsonWebKeyType {
 
     EC("EC"),
 
-    EC_HSM("EC_HSM"),
+    EC_HSM("EC-HSM"),
 
     RSA("RSA"),
 
-    RSA_HSM("RSA_HSM");
+    RSA_HSM("RSA-HSM");
     private final String value;
     JsonWebKeyType(String value) {
         this.value = value;

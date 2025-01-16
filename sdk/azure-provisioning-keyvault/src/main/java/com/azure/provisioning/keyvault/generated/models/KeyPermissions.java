@@ -5,47 +5,47 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum KeyPermissions {
 
-    ALL("ALL"),
+    ALL("all"),
 
-    ENCRYPT("ENCRYPT"),
+    ENCRYPT("encrypt"),
 
-    DECRYPT("DECRYPT"),
+    DECRYPT("decrypt"),
 
-    WRAP_KEY("WRAP_KEY"),
+    WRAP_KEY("wrapKey"),
 
-    UNWRAP_KEY("UNWRAP_KEY"),
+    UNWRAP_KEY("unwrapKey"),
 
-    SIGN("SIGN"),
+    SIGN("sign"),
 
-    VERIFY("VERIFY"),
+    VERIFY("verify"),
 
-    GET("GET"),
+    GET("get"),
 
-    LIST("LIST"),
+    LIST("list"),
 
-    CREATE("CREATE"),
+    CREATE("create"),
 
-    UPDATE("UPDATE"),
+    UPDATE("update"),
 
-    IMPORT("IMPORT"),
+    IMPORT("import"),
 
-    DELETE("DELETE"),
+    DELETE("delete"),
 
-    BACKUP("BACKUP"),
+    BACKUP("backup"),
 
-    RESTORE("RESTORE"),
+    RESTORE("restore"),
 
-    RECOVER("RECOVER"),
+    RECOVER("recover"),
 
-    PURGE("PURGE"),
+    PURGE("purge"),
 
-    RELEASE("RELEASE"),
+    RELEASE("release"),
 
-    ROTATE("ROTATE"),
+    ROTATE("rotate"),
 
-    GETROTATIONPOLICY("GETROTATIONPOLICY"),
+    GETROTATIONPOLICY("getrotationpolicy"),
 
-    SETROTATIONPOLICY("SETROTATIONPOLICY");
+    SETROTATIONPOLICY("setrotationpolicy");
     private final String value;
     KeyPermissions(String value) {
         this.value = value;

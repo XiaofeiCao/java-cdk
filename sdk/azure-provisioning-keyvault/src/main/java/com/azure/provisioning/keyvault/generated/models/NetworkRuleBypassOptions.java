@@ -5,9 +5,9 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum NetworkRuleBypassOptions {
 
-    AZURE_SERVICES("AZURE_SERVICES"),
+    AZURE_SERVICES("AzureServices"),
 
-    NONE("NONE");
+    NONE("None");
     private final String value;
     NetworkRuleBypassOptions(String value) {
         this.value = value;

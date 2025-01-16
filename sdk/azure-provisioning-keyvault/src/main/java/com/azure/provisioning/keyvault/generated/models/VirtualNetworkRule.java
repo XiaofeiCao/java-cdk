@@ -9,22 +9,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class VirtualNetworkRule extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> ignoreMissingVnetServiceEndpoint;
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<String> id;
+    private final BicepValue<ClientLogger> lOGGER;
+    private final BicepValue<Boolean> ignoreMissingVnetServiceEndpoint;
 
     public VirtualNetworkRule() {
-        ignoreMissingVnetServiceEndpoint = BicepValue.defineProperty(this, "ignoreMissingVnetServiceEndpoint", new String[] { "ignoreMissingVnetServiceEndpoint" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
         id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        ignoreMissingVnetServiceEndpoint = BicepValue.defineProperty(this, "ignoreMissingVnetServiceEndpoint", new String[] { "ignoreMissingVnetServiceEndpoint" }, null);
     }
 
-    public BicepValue<Boolean> getIgnoreMissingVnetServiceEndpoint() {
-        return this.ignoreMissingVnetServiceEndpoint;
+    public BicepValue<String> getId() {
+        return this.id;
     }
 
-    public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(BicepValue<Boolean> ignoreMissingVnetServiceEndpoint) {
-        this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
+    public VirtualNetworkRule setId(BicepValue<String> id) {
+        this.id.assign(id);
         return this;
     }
     public BicepValue<ClientLogger> getLOGGER() {
@@ -35,12 +35,12 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<String> getId() {
-        return this.id;
+    public BicepValue<Boolean> getIgnoreMissingVnetServiceEndpoint() {
+        return this.ignoreMissingVnetServiceEndpoint;
     }
 
-    public VirtualNetworkRule setId(BicepValue<String> id) {
-        this.id.assign(id);
+    public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(BicepValue<Boolean> ignoreMissingVnetServiceEndpoint) {
+        this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
         return this;
     }
 }

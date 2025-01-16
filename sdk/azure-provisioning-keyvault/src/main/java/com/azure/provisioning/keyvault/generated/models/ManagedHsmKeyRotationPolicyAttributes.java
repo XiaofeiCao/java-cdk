@@ -8,24 +8,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<String> expiryTime;
     private final BicepValue<Long> updated;
     private final BicepValue<Long> created;
+    private final BicepValue<String> expiryTime;
 
     public ManagedHsmKeyRotationPolicyAttributes() {
-        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
         created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
     }
 
-    public BicepValue<String> getExpiryTime() {
-        return this.expiryTime;
-    }
-
-    public ManagedHsmKeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
-        this.expiryTime.assign(expiryTime);
-        return this;
-    }
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
@@ -40,6 +32,14 @@ public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct
 
     public ManagedHsmKeyRotationPolicyAttributes setCreated(BicepValue<Long> created) {
         this.created.assign(created);
+        return this;
+    }
+    public BicepValue<String> getExpiryTime() {
+        return this.expiryTime;
+    }
+
+    public ManagedHsmKeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
+        this.expiryTime.assign(expiryTime);
         return this;
     }
 }

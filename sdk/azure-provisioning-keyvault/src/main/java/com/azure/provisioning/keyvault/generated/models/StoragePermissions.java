@@ -5,35 +5,35 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum StoragePermissions {
 
-    ALL("ALL"),
+    ALL("all"),
 
-    GET("GET"),
+    GET("get"),
 
-    LIST("LIST"),
+    LIST("list"),
 
-    DELETE("DELETE"),
+    DELETE("delete"),
 
-    SET("SET"),
+    SET("set"),
 
-    UPDATE("UPDATE"),
+    UPDATE("update"),
 
-    REGENERATEKEY("REGENERATEKEY"),
+    REGENERATEKEY("regeneratekey"),
 
-    RECOVER("RECOVER"),
+    RECOVER("recover"),
 
-    PURGE("PURGE"),
+    PURGE("purge"),
 
-    BACKUP("BACKUP"),
+    BACKUP("backup"),
 
-    RESTORE("RESTORE"),
+    RESTORE("restore"),
 
-    SETSAS("SETSAS"),
+    SETSAS("setsas"),
 
-    LISTSAS("LISTSAS"),
+    LISTSAS("listsas"),
 
-    GETSAS("GETSAS"),
+    GETSAS("getsas"),
 
-    DELETESAS("DELETESAS");
+    DELETESAS("deletesas");
     private final String value;
     StoragePermissions(String value) {
         this.value = value;

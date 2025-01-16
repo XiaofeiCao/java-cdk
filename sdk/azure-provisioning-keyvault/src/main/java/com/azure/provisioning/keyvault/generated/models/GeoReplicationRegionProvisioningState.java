@@ -5,17 +5,17 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum GeoReplicationRegionProvisioningState {
 
-    PREPROVISIONING("PREPROVISIONING"),
+    PREPROVISIONING("Preprovisioning"),
 
-    PROVISIONING("PROVISIONING"),
+    PROVISIONING("Provisioning"),
 
-    SUCCEEDED("SUCCEEDED"),
+    SUCCEEDED("Succeeded"),
 
-    FAILED("FAILED"),
+    FAILED("Failed"),
 
-    DELETING("DELETING"),
+    DELETING("Deleting"),
 
-    CLEANUP("CLEANUP");
+    CLEANUP("Cleanup");
     private final String value;
     GeoReplicationRegionProvisioningState(String value) {
         this.value = value;

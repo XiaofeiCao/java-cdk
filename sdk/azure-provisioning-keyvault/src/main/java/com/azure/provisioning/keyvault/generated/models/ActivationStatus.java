@@ -5,13 +5,13 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum ActivationStatus {
 
-    ACTIVE("ACTIVE"),
+    ACTIVE("Active"),
 
-    NOT_ACTIVATED("NOT_ACTIVATED"),
+    NOT_ACTIVATED("NotActivated"),
 
-    UNKNOWN("UNKNOWN"),
+    UNKNOWN("Unknown"),
 
-    FAILED("FAILED");
+    FAILED("Failed");
     private final String value;
     ActivationStatus(String value) {
         this.value = value;

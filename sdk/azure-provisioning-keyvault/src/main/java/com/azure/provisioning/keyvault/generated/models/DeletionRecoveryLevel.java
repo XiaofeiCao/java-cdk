@@ -5,13 +5,13 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum DeletionRecoveryLevel {
 
-    PURGEABLE("PURGEABLE"),
+    PURGEABLE("Purgeable"),
 
-    RECOVERABLE_PURGEABLE("RECOVERABLE_PURGEABLE"),
+    RECOVERABLE_PURGEABLE("Recoverable+Purgeable"),
 
-    RECOVERABLE("RECOVERABLE"),
+    RECOVERABLE("Recoverable"),
 
-    RECOVERABLE_PROTECTED_SUBSCRIPTION("RECOVERABLE_PROTECTED_SUBSCRIPTION");
+    RECOVERABLE_PROTECTED_SUBSCRIPTION("Recoverable+ProtectedSubscription");
     private final String value;
     DeletionRecoveryLevel(String value) {
         this.value = value;

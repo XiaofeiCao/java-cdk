@@ -5,23 +5,23 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum SecretPermissions {
 
-    ALL("ALL"),
+    ALL("all"),
 
-    GET("GET"),
+    GET("get"),
 
-    LIST("LIST"),
+    LIST("list"),
 
-    SET("SET"),
+    SET("set"),
 
-    DELETE("DELETE"),
+    DELETE("delete"),
 
-    BACKUP("BACKUP"),
+    BACKUP("backup"),
 
-    RESTORE("RESTORE"),
+    RESTORE("restore"),
 
-    RECOVER("RECOVER"),
+    RECOVER("recover"),
 
-    PURGE("PURGE");
+    PURGE("purge");
     private final String value;
     SecretPermissions(String value) {
         this.value = value;

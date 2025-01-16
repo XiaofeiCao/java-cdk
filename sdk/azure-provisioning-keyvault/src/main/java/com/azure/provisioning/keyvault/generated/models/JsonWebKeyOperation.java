@@ -5,21 +5,21 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum JsonWebKeyOperation {
 
-    ENCRYPT("ENCRYPT"),
+    ENCRYPT("encrypt"),
 
-    DECRYPT("DECRYPT"),
+    DECRYPT("decrypt"),
 
-    SIGN("SIGN"),
+    SIGN("sign"),
 
-    VERIFY("VERIFY"),
+    VERIFY("verify"),
 
-    WRAP_KEY("WRAP_KEY"),
+    WRAP_KEY("wrapKey"),
 
-    UNWRAP_KEY("UNWRAP_KEY"),
+    UNWRAP_KEY("unwrapKey"),
 
-    IMPORT("IMPORT"),
+    IMPORT("import"),
 
-    RELEASE("RELEASE");
+    RELEASE("release");
     private final String value;
     JsonWebKeyOperation(String value) {
         this.value = value;

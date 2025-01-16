@@ -8,24 +8,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class KeyRotationPolicyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<String> expiryTime;
     private final BicepValue<Long> updated;
     private final BicepValue<Long> created;
+    private final BicepValue<String> expiryTime;
 
     public KeyRotationPolicyAttributes() {
-        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
         created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
     }
 
-    public BicepValue<String> getExpiryTime() {
-        return this.expiryTime;
-    }
-
-    public KeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
-        this.expiryTime.assign(expiryTime);
-        return this;
-    }
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
@@ -40,6 +32,14 @@ public class KeyRotationPolicyAttributes extends ProvisioningConstruct {
 
     public KeyRotationPolicyAttributes setCreated(BicepValue<Long> created) {
         this.created.assign(created);
+        return this;
+    }
+    public BicepValue<String> getExpiryTime() {
+        return this.expiryTime;
+    }
+
+    public KeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
+        this.expiryTime.assign(expiryTime);
         return this;
     }
 }

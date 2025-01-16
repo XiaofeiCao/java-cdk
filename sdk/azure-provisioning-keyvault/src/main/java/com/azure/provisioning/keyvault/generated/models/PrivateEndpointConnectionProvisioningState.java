@@ -5,17 +5,17 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum PrivateEndpointConnectionProvisioningState {
 
-    SUCCEEDED("SUCCEEDED"),
+    SUCCEEDED("Succeeded"),
 
-    CREATING("CREATING"),
+    CREATING("Creating"),
 
-    UPDATING("UPDATING"),
+    UPDATING("Updating"),
 
-    DELETING("DELETING"),
+    DELETING("Deleting"),
 
-    FAILED("FAILED"),
+    FAILED("Failed"),
 
-    DISCONNECTED("DISCONNECTED");
+    DISCONNECTED("Disconnected");
     private final String value;
     PrivateEndpointConnectionProvisioningState(String value) {
         this.value = value;

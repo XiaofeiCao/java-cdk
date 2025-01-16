@@ -9,30 +9,30 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> isPrimary;
     private final BicepValue<GeoReplicationRegionProvisioningState> provisioningState;
+    private final BicepValue<Boolean> isPrimary;
     private final BicepValue<String> name;
 
     public MhsmGeoReplicatedRegionInner() {
-        isPrimary = BicepValue.defineProperty(this, "isPrimary", new String[] { "isPrimary" }, null);
         provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
+        isPrimary = BicepValue.defineProperty(this, "isPrimary", new String[] { "isPrimary" }, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
     }
 
-    public BicepValue<Boolean> getIsPrimary() {
-        return this.isPrimary;
-    }
-
-    public MhsmGeoReplicatedRegionInner setIsPrimary(BicepValue<Boolean> isPrimary) {
-        this.isPrimary.assign(isPrimary);
-        return this;
-    }
     public BicepValue<GeoReplicationRegionProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
 
     public MhsmGeoReplicatedRegionInner setProvisioningState(BicepValue<GeoReplicationRegionProvisioningState> provisioningState) {
         this.provisioningState.assign(provisioningState);
+        return this;
+    }
+    public BicepValue<Boolean> getIsPrimary() {
+        return this.isPrimary;
+    }
+
+    public MhsmGeoReplicatedRegionInner setIsPrimary(BicepValue<Boolean> isPrimary) {
+        this.isPrimary.assign(isPrimary);
         return this;
     }
     public BicepValue<String> getName() {

@@ -5,7 +5,7 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum ActionsRequired {
 
-    NONE("NONE");
+    NONE("None");
     private final String value;
     ActionsRequired(String value) {
         this.value = value;

@@ -5,9 +5,9 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum VaultProvisioningState {
 
-    SUCCEEDED("SUCCEEDED"),
+    SUCCEEDED("Succeeded"),
 
-    REGISTERING_DNS("REGISTERING_DNS");
+    REGISTERING_DNS("RegisteringDns");
     private final String value;
     VaultProvisioningState(String value) {
         this.value = value;

@@ -8,6 +8,7 @@ import com.azure.provisioning.generator.model.ListModel;
 import com.azure.provisioning.generator.model.Property;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -76,8 +77,27 @@ public class ReflectionUtils {
         }
 
         return Arrays.stream(type.getDeclaredFields())
-                .map(field -> field.getName())
-                .collect(Collectors.toUnmodifiableList());
+                .map(field -> getMemberValue(type, field))
+                .toList();
+    }
+
+    private static String getMemberValue(Class<?> type, Field field) {
+        try {
+            return (String) getMethod(type, "toString").invoke(field.get(null));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static Method getMethod(Class<?> clazz, String name) throws NoSuchMethodException {
+        try {
+            return clazz.getDeclaredMethod(name);
+        } catch (NoSuchMethodException e) {
+            if (clazz == Object.class) {
+                throw e;
+            }
+            return getMethod(clazz.getSuperclass(), name);
+        }
     }
 
     public static Set<String> getImportPackages(Set<Property> properties) {

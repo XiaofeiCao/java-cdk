@@ -5,9 +5,9 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum PublicNetworkAccess {
 
-    ENABLED("ENABLED"),
+    ENABLED("Enabled"),
 
-    DISABLED("DISABLED");
+    DISABLED("Disabled");
     private final String value;
     PublicNetworkAccess(String value) {
         this.value = value;

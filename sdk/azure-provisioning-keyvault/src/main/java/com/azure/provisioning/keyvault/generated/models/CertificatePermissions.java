@@ -5,39 +5,39 @@ package com.azure.provisioning.keyvault.generated.models;
 
 public enum CertificatePermissions {
 
-    ALL("ALL"),
+    ALL("all"),
 
-    GET("GET"),
+    GET("get"),
 
-    LIST("LIST"),
+    LIST("list"),
 
-    DELETE("DELETE"),
+    DELETE("delete"),
 
-    CREATE("CREATE"),
+    CREATE("create"),
 
-    IMPORT("IMPORT"),
+    IMPORT("import"),
 
-    UPDATE("UPDATE"),
+    UPDATE("update"),
 
-    MANAGECONTACTS("MANAGECONTACTS"),
+    MANAGECONTACTS("managecontacts"),
 
-    GETISSUERS("GETISSUERS"),
+    GETISSUERS("getissuers"),
 
-    LISTISSUERS("LISTISSUERS"),
+    LISTISSUERS("listissuers"),
 
-    SETISSUERS("SETISSUERS"),
+    SETISSUERS("setissuers"),
 
-    DELETEISSUERS("DELETEISSUERS"),
+    DELETEISSUERS("deleteissuers"),
 
-    MANAGEISSUERS("MANAGEISSUERS"),
+    MANAGEISSUERS("manageissuers"),
 
-    RECOVER("RECOVER"),
+    RECOVER("recover"),
 
-    PURGE("PURGE"),
+    PURGE("purge"),
 
-    BACKUP("BACKUP"),
+    BACKUP("backup"),
 
-    RESTORE("RESTORE");
+    RESTORE("restore");
     private final String value;
     CertificatePermissions(String value) {
         this.value = value;
