@@ -8,7 +8,6 @@ import com.azure.resourcemanager.resources.fluentcore.arm.ResourceId;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.lang.reflect.Method;
@@ -23,9 +22,22 @@ public class ResourceNamespaceMapper {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ResourceNamespaceMapper.class);
 
-    private static final Map<Type, String> RESOURCE_NAMESPACES = new HashMap<>();
+    private static final Map<Type, ResourceId> RESOURCE_NAMESPACES = new HashMap<>();
+    private static final Map<ResourceId, Type> RESOURCE_ARM_TYPES = new HashMap<>();
 
     public static String getNamespace(Type armType) {
+        ResourceId resourceIdTemplate = getResourceIdTemplate(armType);
+        if (resourceIdTemplate == null) {
+            return null;
+        }
+        return resourceIdTemplate.fullResourceType();
+    }
+
+    public static Type getResourceType(ResourceId resourceIdTemplate) {
+        return RESOURCE_ARM_TYPES.get(resourceIdTemplate);
+    }
+
+    public static ResourceId getResourceIdTemplate(Type armType) {
         return RESOURCE_NAMESPACES.get(armType);
     }
 
@@ -49,7 +61,8 @@ public class ResourceNamespaceMapper {
                     && !ParameterizedType.class.isAssignableFrom(resourceType.getClass())) {
                     try {
                         ResourceId resourceId = ResourceId.fromString(put.value());
-                        RESOURCE_NAMESPACES.put(resourceType, resourceId.fullResourceType());
+                        RESOURCE_NAMESPACES.put(resourceType, resourceId);
+                        RESOURCE_ARM_TYPES.put(resourceId, resourceType);
                     } catch (Exception e) {
                         LOGGER.warn("Invalid resourceId found on ProxyMethod. Method: {}, resourceId: {}", proxyMethod, put.value());
                     }
@@ -57,7 +70,9 @@ public class ResourceNamespaceMapper {
                     Method getMethod = getMethods.get(put.value());
                     if (getMethod != null) {
                         ResourceId resourceId = ResourceId.fromString(put.value());
-                        RESOURCE_NAMESPACES.put(getResourceType(getMethod), resourceId.fullResourceType());
+                        Type armType = getResourceType(getMethod);
+                        RESOURCE_NAMESPACES.put(armType, resourceId);
+                        RESOURCE_ARM_TYPES.put(resourceId, armType);
                     } else {
                         LOGGER.warn("Invalid resourceId found on ProxyMethod. Method: {}, resourceId: {}", proxyMethod, put.value());
                     }

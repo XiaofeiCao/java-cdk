@@ -1,11 +1,13 @@
 package com.azure.provisioning;
 
 import com.azure.provisioning.implementation.bicep.syntax.BicepSyntax;
+import com.azure.provisioning.implementation.bicep.syntax.BicepTypeMapping;
 import com.azure.provisioning.implementation.bicep.syntax.Expression;
 import com.azure.provisioning.primitives.BicepValueReference;
 import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
@@ -146,6 +148,10 @@ public class BicepList<T> extends BicepValueBase { // implements List<BicepValue
         BicepList<T> list = new BicepList<>(expression);
         list.referenceFactory = referenceFactory;
         return list;
+    }
+
+    public static <T> BicepList<T> from(Collection<T> values) {
+        return BicepList.fromExpression(null, BicepTypeMapping.toBicep(values));
     }
 
 //    @EditorBrowsable(EditorBrowsableState.NEVER)

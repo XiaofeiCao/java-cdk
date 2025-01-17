@@ -5,13 +5,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.AzureEnvironment;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.profile.AzureProfile;
-import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.azure.provisioning.generator.Main;
 import com.azure.provisioning.generator.utils.ReflectionUtils;
 import com.azure.provisioning.generator.utils.ResourceNamespaceMapper;
 import com.azure.resourcemanager.AzureResourceManager;
+import com.azure.resourcemanager.resources.fluentcore.arm.ResourceId;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ConfigurationBuilder;
@@ -170,10 +170,13 @@ public abstract class Specification extends ModelBase {
     // Placeholder methods for analyze, customize, lint, and getGenerationPath
     public void analyze() {
         Map<Type, Method> resources = findConstructibleResources();
-        this.resources = resources.keySet().stream().map(type -> new Resource(this, type)).toList();
-        this.resources.forEach(resource -> {
+        this.resources = resources.keySet().stream().map(type -> {
+            Resource resource = new Resource(this, type);
             this.modelNameMapping.put(resource.getName(), resource);
             this.modelArmTypeMapping.put(resource.getArmType(), resource);
+            return resource;
+        }).toList();
+        this.resources.forEach(resource -> {
             resource.setProvisioningPackage(this.getProvisioningPackage() + ".generated");
 
             Method creatorMethod = resources.get(resource.getArmType());
@@ -188,6 +191,13 @@ public abstract class Specification extends ModelBase {
                         return;
                     }
                     resource.setResourceNamespace(namespace);
+                    ResourceId resourceIdTemplate = ResourceNamespaceMapper.getResourceIdTemplate(resource.getArmType());
+                    if (resourceIdTemplate.parent() != null) {
+                        Type parentType = ResourceNamespaceMapper.getResourceType(resourceIdTemplate.parent());
+                        if (parentType != null) {
+                            resource.setParentResource((Resource) this.modelArmTypeMapping.get(parentType));
+                        }
+                    }
                 }
             } catch (NoSuchFieldException e) {
                 // do nothing - the field doesn't exist
@@ -236,21 +246,6 @@ public abstract class Specification extends ModelBase {
     private Set<Property> findProperties(Resource resource, Method creatorMethod, Field field) {
         Set<Property> properties = new HashSet<>();
         properties.addAll(getPropertiesFromResource(resource, resource.getArmType()));
-//        Arrays.stream(creatorMethod.getParameters())
-//                .forEach(param -> {
-//                    if (param.getType().equals(Context.class)) {
-//                        return;
-//                    }
-//                    if (ReflectionUtils.isSimpleType(param.getType())) {
-//                        Property property = new Property(resource, getOrCreateModelType(param.getType(), resource), field, param);
-////                        property.setRequired(true);
-//                        properties.add(property);
-//                    } else
-////                        if (ReflectionUtils.isResourceType(param.getType()))
-//                        {
-//                        properties.addAll(getPropertiesFromResource(resource, param));
-//                    }
-//                });
 
         return properties;
     }

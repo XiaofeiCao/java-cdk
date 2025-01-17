@@ -1,5 +1,7 @@
 package com.azure.provisioning.generator.model;
 
+import com.azure.provisioning.generator.utils.ReflectionUtils;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class Property {
         this.parent = parent;
         this.armMember = armMember;
         this.armParameter = armParameter;
-        this.name = armParameter != null ? toCamelCase(armParameter.getName()) : toCamelCase(armMember.getName());
+        this.name = parseName(armParameter, armMember);
         this.propertyType = propertyType;
         this.description = parent.getSpec().getDocComments();
         this.isReadOnly = false;
@@ -39,6 +41,16 @@ public class Property {
         this.generateDefaultValue = false;
         this.hideAccessors = false;
         this.path = new ArrayList<>();
+    }
+
+    private String parseName(Parameter armParameter, Field armMember) {
+        if (armParameter != null) {
+            return toCamelCase(armParameter.getName());
+        } else if (ReflectionUtils.isPropertiesTypes(armMember)) {
+            return "properties";
+        } else {
+            return toCamelCase(armMember.getName());
+        }
     }
 
     public TypeModel getParent() {

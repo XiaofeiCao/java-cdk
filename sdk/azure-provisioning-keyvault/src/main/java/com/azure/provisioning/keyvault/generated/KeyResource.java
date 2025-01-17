@@ -10,7 +10,7 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class KeyResource extends Resource {
 
-    private final BicepValue<KeyProperties> innerProperties;
+    private final BicepValue<KeyProperties> properties;
     private final BicepValue<String> location;
     private final BicepValue<String> name;
 
@@ -20,22 +20,22 @@ public class KeyResource extends Resource {
 
     public KeyResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults/keys"), resourceVersion);
-        innerProperties = BicepValue.defineProperty(this, "innerProperties", new String[] { "innerProperties" }, false, false, false, null);
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
     }
 
-    public BicepValue<KeyProperties> getInnerProperties() {
-        return this.innerProperties;
+    public BicepValue<KeyProperties> getProperties() {
+        return this.properties;
     }
 
-    public KeyResource setInnerProperties(BicepValue<KeyProperties> innerProperties) {
-        this.innerProperties.assign(innerProperties);
+    public KeyResource setProperties(BicepValue<KeyProperties> properties) {
+        this.properties.assign(properties);
         return this;
     }
 
-    public KeyResource setInnerProperties(KeyProperties innerProperties) {
-        return this.setInnerProperties(BicepValue.from(innerProperties));
+    public KeyResource setProperties(KeyProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
     public BicepValue<String> getLocation() {

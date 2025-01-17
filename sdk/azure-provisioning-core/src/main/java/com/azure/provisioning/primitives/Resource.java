@@ -14,6 +14,8 @@ public abstract class Resource extends NamedProvisioningConstruct {
     private boolean isExistingResource = false;
     private final List<Resource> dependsOn = new ArrayList<>();
 
+    private Resource parent;
+
     public Resource(String resourceName, ResourceType resourceType) {
         this(resourceName, resourceType, null);
     }
@@ -46,6 +48,11 @@ public abstract class Resource extends NamedProvisioningConstruct {
 
     public List<Resource> getDependsOn() {
         return dependsOn;
+    }
+
+    // FIXME probably better to put it in subclass, to avoid property naming conflict and resource with no parent
+    public void setParent(Resource parent) {
+        this.parent = parent;
     }
 
     public ProvisioningPlan build(ProvisioningContext context) {
@@ -97,6 +104,13 @@ public abstract class Resource extends NamedProvisioningConstruct {
 //            body = new ObjectExpression([.. obj.Properties, new PropertyExpression("dependsOn", dependencies)]);
             // and I translated it to the following (which, adds the property to the existing instance):
             ((ObjectExpression) body).addProperty(new PropertyExpression("dependsOn", dependencies));
+        }
+
+        if (parent != null) {
+            if (!(body instanceof ObjectExpression)) {
+                throw new IllegalStateException(getClass().getSimpleName() + " resource " + getIdentifierName() + " cannot have dependencies if it's an existing resource or an expression override.");
+            }
+            ((ObjectExpression) body).addProperty(new PropertyExpression("parent", BicepSyntax.var(parent.getIdentifierName())));
         }
 
         // FIXME I'm fairly certain that this code is expecting the C# string itnterpolation feature, and is using

@@ -10,7 +10,7 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmKeyResource extends Resource {
 
-    private final BicepValue<ManagedHsmKeyProperties> innerProperties;
+    private final BicepValue<ManagedHsmKeyProperties> properties;
     private final BicepValue<String> name;
 
     public ManagedHsmKeyResource(String identifierName) {
@@ -19,21 +19,21 @@ public class ManagedHsmKeyResource extends Resource {
 
     public ManagedHsmKeyResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs/keys"), resourceVersion);
-        innerProperties = BicepValue.defineProperty(this, "innerProperties", new String[] { "innerProperties" }, false, false, false, null);
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
     }
 
-    public BicepValue<ManagedHsmKeyProperties> getInnerProperties() {
-        return this.innerProperties;
+    public BicepValue<ManagedHsmKeyProperties> getProperties() {
+        return this.properties;
     }
 
-    public ManagedHsmKeyResource setInnerProperties(BicepValue<ManagedHsmKeyProperties> innerProperties) {
-        this.innerProperties.assign(innerProperties);
+    public ManagedHsmKeyResource setProperties(BicepValue<ManagedHsmKeyProperties> properties) {
+        this.properties.assign(properties);
         return this;
     }
 
-    public ManagedHsmKeyResource setInnerProperties(ManagedHsmKeyProperties innerProperties) {
-        return this.setInnerProperties(BicepValue.from(innerProperties));
+    public ManagedHsmKeyResource setProperties(ManagedHsmKeyProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
     public BicepValue<String> getName() {
