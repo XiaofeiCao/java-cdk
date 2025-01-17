@@ -5,7 +5,15 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum CreateMode {
 
-    Recover,
+    RECOVER("Recover"),
 
-    Default;
+    DEFAULT("Default");
+    private final String value;
+    CreateMode(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

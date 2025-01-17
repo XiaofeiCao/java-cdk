@@ -5,9 +5,17 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum ImmutabilityPolicyUpdateType {
 
-    PUT,
+    PUT("put"),
 
-    LOCK,
+    LOCK("lock"),
 
-    EXTEND;
+    EXTEND("extend");
+    private final String value;
+    ImmutabilityPolicyUpdateType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -10,16 +10,24 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class PrivateLinkServiceConnectionState extends ProvisioningConstruct {
 
+    private final BicepValue<ConnectionStatus> status;
     private final BicepValue<ActionsRequired> actionsRequired;
     private final BicepValue<String> description;
-    private final BicepValue<ConnectionStatus> status;
 
     public PrivateLinkServiceConnectionState() {
-        actionsRequired = BicepValue.defineProperty(this, "actionsRequired", new String[] { "temp", "actionsRequired" }, null);
-        description = BicepValue.defineProperty(this, "description", new String[] { "temp", "description" }, null);
-        status = BicepValue.defineProperty(this, "status", new String[] { "temp", "status" }, null);
+        status = BicepValue.defineProperty(this, "status", new String[] { "status" }, null);
+        actionsRequired = BicepValue.defineProperty(this, "actionsRequired", new String[] { "actionsRequired" }, null);
+        description = BicepValue.defineProperty(this, "description", new String[] { "description" }, null);
     }
 
+    public BicepValue<ConnectionStatus> getStatus() {
+        return this.status;
+    }
+
+    public PrivateLinkServiceConnectionState setStatus(BicepValue<ConnectionStatus> status) {
+        this.status.assign(status);
+        return this;
+    }
     public BicepValue<ActionsRequired> getActionsRequired() {
         return this.actionsRequired;
     }
@@ -34,14 +42,6 @@ public class PrivateLinkServiceConnectionState extends ProvisioningConstruct {
 
     public PrivateLinkServiceConnectionState setDescription(BicepValue<String> description) {
         this.description.assign(description);
-        return this;
-    }
-    public BicepValue<ConnectionStatus> getStatus() {
-        return this.status;
-    }
-
-    public PrivateLinkServiceConnectionState setStatus(BicepValue<ConnectionStatus> status) {
-        this.status.assign(status);
         return this;
     }
 }

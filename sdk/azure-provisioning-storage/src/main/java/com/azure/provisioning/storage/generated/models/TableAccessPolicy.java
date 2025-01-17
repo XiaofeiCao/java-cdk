@@ -10,26 +10,18 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class TableAccessPolicy extends ProvisioningConstruct {
 
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<OffsetDateTime> expiryTime;
-    private final BicepValue<OffsetDateTime> startTime;
+    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<String> permission;
+    private final BicepValue<OffsetDateTime> startTime;
 
     public TableAccessPolicy() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "temp", "expiryTime" }, null);
-        startTime = BicepValue.defineProperty(this, "startTime", new String[] { "temp", "startTime" }, null);
-        permission = BicepValue.defineProperty(this, "permission", new String[] { "temp", "permission" }, null);
+        expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        permission = BicepValue.defineProperty(this, "permission", new String[] { "permission" }, null);
+        startTime = BicepValue.defineProperty(this, "startTime", new String[] { "startTime" }, null);
     }
 
-    public BicepValue<ClientLogger> getLOGGER() {
-        return this.lOGGER;
-    }
-
-    public TableAccessPolicy setLOGGER(BicepValue<ClientLogger> lOGGER) {
-        this.lOGGER.assign(lOGGER);
-        return this;
-    }
     public BicepValue<OffsetDateTime> getExpiryTime() {
         return this.expiryTime;
     }
@@ -38,12 +30,12 @@ public class TableAccessPolicy extends ProvisioningConstruct {
         this.expiryTime.assign(expiryTime);
         return this;
     }
-    public BicepValue<OffsetDateTime> getStartTime() {
-        return this.startTime;
+    public BicepValue<ClientLogger> getLOGGER() {
+        return this.lOGGER;
     }
 
-    public TableAccessPolicy setStartTime(BicepValue<OffsetDateTime> startTime) {
-        this.startTime.assign(startTime);
+    public TableAccessPolicy setLOGGER(BicepValue<ClientLogger> lOGGER) {
+        this.lOGGER.assign(lOGGER);
         return this;
     }
     public BicepValue<String> getPermission() {
@@ -52,6 +44,14 @@ public class TableAccessPolicy extends ProvisioningConstruct {
 
     public TableAccessPolicy setPermission(BicepValue<String> permission) {
         this.permission.assign(permission);
+        return this;
+    }
+    public BicepValue<OffsetDateTime> getStartTime() {
+        return this.startTime;
+    }
+
+    public TableAccessPolicy setStartTime(BicepValue<OffsetDateTime> startTime) {
+        this.startTime.assign(startTime);
         return this;
     }
 }

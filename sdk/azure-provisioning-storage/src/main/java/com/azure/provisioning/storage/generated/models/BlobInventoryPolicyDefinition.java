@@ -16,28 +16,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
 
-    private final BicepValue<ObjectType> objectType;
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<BlobInventoryPolicyFilter> filters;
-    private final BicepValue<Format> format;
+    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<Schedule> schedule;
+    private final BicepValue<ObjectType> objectType;
     private final BicepList<String> schemaFields;
+    private final BicepValue<Format> format;
 
     public BlobInventoryPolicyDefinition() {
-        objectType = BicepValue.defineProperty(this, "objectType", new String[] { "temp", "objectType" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        filters = BicepValue.defineProperty(this, "filters", new String[] { "temp", "filters" }, null);
-        format = BicepValue.defineProperty(this, "format", new String[] { "temp", "format" }, null);
-        schedule = BicepValue.defineProperty(this, "schedule", new String[] { "temp", "schedule" }, null);
-        schemaFields = BicepList.defineProperty(this, "schemaFields", new String[] { "temp", "schemaFields" }, false, false);
+        filters = BicepValue.defineProperty(this, "filters", new String[] { "filters" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        schedule = BicepValue.defineProperty(this, "schedule", new String[] { "schedule" }, null);
+        objectType = BicepValue.defineProperty(this, "objectType", new String[] { "objectType" }, null);
+        schemaFields = BicepList.defineProperty(this, "schemaFields", new String[] { "schemaFields" }, false, false);
+        format = BicepValue.defineProperty(this, "format", new String[] { "format" }, null);
     }
 
-    public BicepValue<ObjectType> getObjectType() {
-        return this.objectType;
+    public BicepValue<BlobInventoryPolicyFilter> getFilters() {
+        return this.filters;
     }
 
-    public BlobInventoryPolicyDefinition setObjectType(BicepValue<ObjectType> objectType) {
-        this.objectType.assign(objectType);
+    public BlobInventoryPolicyDefinition setFilters(BicepValue<BlobInventoryPolicyFilter> filters) {
+        this.filters.assign(filters);
         return this;
     }
     public BicepValue<ClientLogger> getLOGGER() {
@@ -48,22 +48,6 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<BlobInventoryPolicyFilter> getFilters() {
-        return this.filters;
-    }
-
-    public BlobInventoryPolicyDefinition setFilters(BicepValue<BlobInventoryPolicyFilter> filters) {
-        this.filters.assign(filters);
-        return this;
-    }
-    public BicepValue<Format> getFormat() {
-        return this.format;
-    }
-
-    public BlobInventoryPolicyDefinition setFormat(BicepValue<Format> format) {
-        this.format.assign(format);
-        return this;
-    }
     public BicepValue<Schedule> getSchedule() {
         return this.schedule;
     }
@@ -72,12 +56,28 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.schedule.assign(schedule);
         return this;
     }
-    public BicepValue<List<String>> getSchemaFields() {
+    public BicepValue<ObjectType> getObjectType() {
+        return this.objectType;
+    }
+
+    public BlobInventoryPolicyDefinition setObjectType(BicepValue<ObjectType> objectType) {
+        this.objectType.assign(objectType);
+        return this;
+    }
+    public BicepList<String> getSchemaFields() {
         return this.schemaFields;
     }
 
-    public BlobInventoryPolicyDefinition setSchemaFields(BicepValue<List<String>> schemaFields) {
+    public BlobInventoryPolicyDefinition setSchemaFields(BicepList<String> schemaFields) {
         this.schemaFields.assign(schemaFields);
+        return this;
+    }
+    public BicepValue<Format> getFormat() {
+        return this.format;
+    }
+
+    public BlobInventoryPolicyDefinition setFormat(BicepValue<Format> format) {
+        this.format.assign(format);
         return this;
     }
 }

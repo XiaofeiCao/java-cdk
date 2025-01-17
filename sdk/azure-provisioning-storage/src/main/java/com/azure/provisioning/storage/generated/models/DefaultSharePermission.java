@@ -5,11 +5,19 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum DefaultSharePermission {
 
-    NONE,
+    NONE("None"),
 
-    STORAGE_FILE_DATA_SMB_SHARE_READER,
+    STORAGE_FILE_DATA_SMB_SHARE_READER("StorageFileDataSmbShareReader"),
 
-    STORAGE_FILE_DATA_SMB_SHARE_CONTRIBUTOR,
+    STORAGE_FILE_DATA_SMB_SHARE_CONTRIBUTOR("StorageFileDataSmbShareContributor"),
 
-    STORAGE_FILE_DATA_SMB_SHARE_ELEVATED_CONTRIBUTOR;
+    STORAGE_FILE_DATA_SMB_SHARE_ELEVATED_CONTRIBUTOR("StorageFileDataSmbShareElevatedContributor");
+    private final String value;
+    DefaultSharePermission(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

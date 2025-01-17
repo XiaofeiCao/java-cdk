@@ -5,13 +5,21 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum ReplicaProvisioningState {
 
-    CREATING,
+    CREATING("Creating"),
 
-    SUCCEEDED,
+    SUCCEEDED("Succeeded"),
 
-    DELETING,
+    DELETING("Deleting"),
 
-    FAILED,
+    FAILED("Failed"),
 
-    CANCELED;
+    CANCELED("Canceled");
+    private final String value;
+    ReplicaProvisioningState(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum LargeFileSharesState {
 
-    DISABLED,
+    DISABLED("Disabled"),
 
-    ENABLED;
+    ENABLED("Enabled");
+    private final String value;
+    LargeFileSharesState(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

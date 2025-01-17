@@ -5,11 +5,19 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum DirectoryServiceOptions {
 
-    NONE,
+    NONE("None"),
 
-    AADDS,
+    AADDS("AADDS"),
 
-    AD,
+    AD("AD"),
 
-    AADKERB;
+    AADKERB("AADKERB");
+    private final String value;
+    DirectoryServiceOptions(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

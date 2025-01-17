@@ -12,8 +12,8 @@ public class EncryptionIdentity extends ProvisioningConstruct {
     private final BicepValue<String> encryptionFederatedIdentityClientId;
 
     public EncryptionIdentity() {
-        encryptionUserAssignedIdentity = BicepValue.defineProperty(this, "encryptionUserAssignedIdentity", new String[] { "temp", "encryptionUserAssignedIdentity" }, null);
-        encryptionFederatedIdentityClientId = BicepValue.defineProperty(this, "encryptionFederatedIdentityClientId", new String[] { "temp", "encryptionFederatedIdentityClientId" }, null);
+        encryptionUserAssignedIdentity = BicepValue.defineProperty(this, "encryptionUserAssignedIdentity", new String[] { "encryptionUserAssignedIdentity" }, null);
+        encryptionFederatedIdentityClientId = BicepValue.defineProperty(this, "encryptionFederatedIdentityClientId", new String[] { "encryptionFederatedIdentityClientId" }, null);
     }
 
     public BicepValue<String> getEncryptionUserAssignedIdentity() {

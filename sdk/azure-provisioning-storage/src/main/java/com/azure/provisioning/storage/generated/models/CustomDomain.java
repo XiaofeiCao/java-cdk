@@ -14,9 +14,9 @@ public class CustomDomain extends ProvisioningConstruct {
     private final BicepValue<Boolean> useSubDomainName;
 
     public CustomDomain() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        name = BicepValue.defineProperty(this, "name", new String[] { "temp", "name" }, null);
-        useSubDomainName = BicepValue.defineProperty(this, "useSubDomainName", new String[] { "temp", "useSubDomainName" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
+        useSubDomainName = BicepValue.defineProperty(this, "useSubDomainName", new String[] { "useSubDomainName" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {

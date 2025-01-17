@@ -5,7 +5,15 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum ActionsRequired {
 
-    NONE,
+    NONE("None"),
 
-    RECREATE;
+    RECREATE("Recreate");
+    private final String value;
+    ActionsRequired(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

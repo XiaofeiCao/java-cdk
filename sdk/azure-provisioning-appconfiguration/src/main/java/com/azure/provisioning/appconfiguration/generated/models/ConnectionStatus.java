@@ -5,11 +5,19 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum ConnectionStatus {
 
-    PENDING,
+    PENDING("Pending"),
 
-    APPROVED,
+    APPROVED("Approved"),
 
-    REJECTED,
+    REJECTED("Rejected"),
 
-    DISCONNECTED;
+    DISCONNECTED("Disconnected");
+    private final String value;
+    ConnectionStatus(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

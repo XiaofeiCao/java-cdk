@@ -11,30 +11,30 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagementPolicyDefinition extends ProvisioningConstruct {
 
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<ManagementPolicyFilter> filters;
+    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<ManagementPolicyAction> actions;
 
     public ManagementPolicyDefinition() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        filters = BicepValue.defineProperty(this, "filters", new String[] { "temp", "filters" }, null);
-        actions = BicepValue.defineProperty(this, "actions", new String[] { "temp", "actions" }, null);
+        filters = BicepValue.defineProperty(this, "filters", new String[] { "filters" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        actions = BicepValue.defineProperty(this, "actions", new String[] { "actions" }, null);
     }
 
-    public BicepValue<ClientLogger> getLOGGER() {
-        return this.lOGGER;
-    }
-
-    public ManagementPolicyDefinition setLOGGER(BicepValue<ClientLogger> lOGGER) {
-        this.lOGGER.assign(lOGGER);
-        return this;
-    }
     public BicepValue<ManagementPolicyFilter> getFilters() {
         return this.filters;
     }
 
     public ManagementPolicyDefinition setFilters(BicepValue<ManagementPolicyFilter> filters) {
         this.filters.assign(filters);
+        return this;
+    }
+    public BicepValue<ClientLogger> getLOGGER() {
+        return this.lOGGER;
+    }
+
+    public ManagementPolicyDefinition setLOGGER(BicepValue<ClientLogger> lOGGER) {
+        this.lOGGER.assign(lOGGER);
         return this;
     }
     public BicepValue<ManagementPolicyAction> getActions() {

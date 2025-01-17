@@ -15,15 +15,15 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class NetworkRuleSet extends ProvisioningConstruct {
 
     private final BicepList<VirtualNetworkRule> virtualNetworkRules;
+    private final BicepValue<NetworkRuleAction> defaultAction;
     private final BicepValue<NetworkRuleBypassOptions> bypass;
     private final BicepList<IpRule> ipRules;
-    private final BicepValue<NetworkRuleAction> defaultAction;
 
     public NetworkRuleSet() {
         virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
+        defaultAction = BicepValue.defineProperty(this, "defaultAction", new String[] { "defaultAction" }, null);
         bypass = BicepValue.defineProperty(this, "bypass", new String[] { "bypass" }, null);
         ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
-        defaultAction = BicepValue.defineProperty(this, "defaultAction", new String[] { "defaultAction" }, null);
     }
 
     public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
@@ -32,6 +32,14 @@ public class NetworkRuleSet extends ProvisioningConstruct {
 
     public NetworkRuleSet setVirtualNetworkRules(BicepList<VirtualNetworkRule> virtualNetworkRules) {
         this.virtualNetworkRules.assign(virtualNetworkRules);
+        return this;
+    }
+    public BicepValue<NetworkRuleAction> getDefaultAction() {
+        return this.defaultAction;
+    }
+
+    public NetworkRuleSet setDefaultAction(BicepValue<NetworkRuleAction> defaultAction) {
+        this.defaultAction.assign(defaultAction);
         return this;
     }
     public BicepValue<NetworkRuleBypassOptions> getBypass() {
@@ -48,14 +56,6 @@ public class NetworkRuleSet extends ProvisioningConstruct {
 
     public NetworkRuleSet setIpRules(BicepList<IpRule> ipRules) {
         this.ipRules.assign(ipRules);
-        return this;
-    }
-    public BicepValue<NetworkRuleAction> getDefaultAction() {
-        return this.defaultAction;
-    }
-
-    public NetworkRuleSet setDefaultAction(BicepValue<NetworkRuleAction> defaultAction) {
-        this.defaultAction.assign(defaultAction);
         return this;
     }
 }

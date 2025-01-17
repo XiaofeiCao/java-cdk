@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum Format {
 
-    CSV,
+    CSV("Csv"),
 
-    PARQUET;
+    PARQUET("Parquet");
+    private final String value;
+    Format(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

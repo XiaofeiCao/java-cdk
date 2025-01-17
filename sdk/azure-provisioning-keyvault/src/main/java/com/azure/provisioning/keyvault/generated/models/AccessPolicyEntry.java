@@ -13,16 +13,16 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
 
     private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<UUID> tenantId;
-    private final BicepValue<String> objectId;
-    private final BicepValue<Permissions> permissions;
     private final BicepValue<UUID> applicationId;
+    private final BicepValue<Permissions> permissions;
+    private final BicepValue<String> objectId;
 
     public AccessPolicyEntry() {
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
         tenantId = BicepValue.defineProperty(this, "tenantId", new String[] { "tenantId" }, null);
-        objectId = BicepValue.defineProperty(this, "objectId", new String[] { "objectId" }, null);
-        permissions = BicepValue.defineProperty(this, "permissions", new String[] { "permissions" }, null);
         applicationId = BicepValue.defineProperty(this, "applicationId", new String[] { "applicationId" }, null);
+        permissions = BicepValue.defineProperty(this, "permissions", new String[] { "permissions" }, null);
+        objectId = BicepValue.defineProperty(this, "objectId", new String[] { "objectId" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {
@@ -41,12 +41,12 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
-    public BicepValue<String> getObjectId() {
-        return this.objectId;
+    public BicepValue<UUID> getApplicationId() {
+        return this.applicationId;
     }
 
-    public AccessPolicyEntry setObjectId(BicepValue<String> objectId) {
-        this.objectId.assign(objectId);
+    public AccessPolicyEntry setApplicationId(BicepValue<UUID> applicationId) {
+        this.applicationId.assign(applicationId);
         return this;
     }
     public BicepValue<Permissions> getPermissions() {
@@ -57,12 +57,12 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.permissions.assign(permissions);
         return this;
     }
-    public BicepValue<UUID> getApplicationId() {
-        return this.applicationId;
+    public BicepValue<String> getObjectId() {
+        return this.objectId;
     }
 
-    public AccessPolicyEntry setApplicationId(BicepValue<UUID> applicationId) {
-        this.applicationId.assign(applicationId);
+    public AccessPolicyEntry setObjectId(BicepValue<String> objectId) {
+        this.objectId.assign(objectId);
         return this;
     }
 }

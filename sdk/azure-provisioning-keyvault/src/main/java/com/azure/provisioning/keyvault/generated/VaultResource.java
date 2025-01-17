@@ -10,9 +10,9 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class VaultResource extends Resource {
 
-    private final BicepValue<VaultProperties> properties;
-    private final BicepValue<String> location;
     private final BicepValue<String> name;
+    private final BicepValue<String> location;
+    private final BicepValue<VaultProperties> properties;
 
     public VaultResource(String identifierName) {
         this(identifierName, null);
@@ -20,22 +20,22 @@ public class VaultResource extends Resource {
 
     public VaultResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults"), resourceVersion);
-        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
-        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
+        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
     }
 
-    public BicepValue<VaultProperties> getProperties() {
-        return this.properties;
+    public BicepValue<String> getName() {
+        return this.name;
     }
 
-    public VaultResource setProperties(BicepValue<VaultProperties> properties) {
-        this.properties.assign(properties);
+    public VaultResource setName(BicepValue<String> name) {
+        this.name.assign(name);
         return this;
     }
 
-    public VaultResource setProperties(VaultProperties properties) {
-        return this.setProperties(BicepValue.from(properties));
+    public VaultResource setName(String name) {
+        return this.setName(BicepValue.from(name));
     }
 
     public BicepValue<String> getLocation() {
@@ -51,17 +51,17 @@ public class VaultResource extends Resource {
         return this.setLocation(BicepValue.from(location));
     }
 
-    public BicepValue<String> getName() {
-        return this.name;
+    public BicepValue<VaultProperties> getProperties() {
+        return this.properties;
     }
 
-    public VaultResource setName(BicepValue<String> name) {
-        this.name.assign(name);
+    public VaultResource setProperties(BicepValue<VaultProperties> properties) {
+        this.properties.assign(properties);
         return this;
     }
 
-    public VaultResource setName(String name) {
-        return this.setName(BicepValue.from(name));
+    public VaultResource setProperties(VaultProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
 

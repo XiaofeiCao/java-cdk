@@ -5,7 +5,15 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum PublicNetworkAccess {
 
-    ENABLED,
+    ENABLED("Enabled"),
 
-    DISABLED;
+    DISABLED("Disabled");
+    private final String value;
+    PublicNetworkAccess(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

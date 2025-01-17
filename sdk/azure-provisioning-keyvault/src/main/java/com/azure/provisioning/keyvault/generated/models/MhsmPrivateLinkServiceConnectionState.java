@@ -10,30 +10,30 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmPrivateLinkServiceConnectionState extends ProvisioningConstruct {
 
-    private final BicepValue<String> description;
     private final BicepValue<PrivateEndpointServiceConnectionStatus> status;
+    private final BicepValue<String> description;
     private final BicepValue<ActionsRequired> actionsRequired;
 
     public MhsmPrivateLinkServiceConnectionState() {
-        description = BicepValue.defineProperty(this, "description", new String[] { "description" }, null);
         status = BicepValue.defineProperty(this, "status", new String[] { "status" }, null);
+        description = BicepValue.defineProperty(this, "description", new String[] { "description" }, null);
         actionsRequired = BicepValue.defineProperty(this, "actionsRequired", new String[] { "actionsRequired" }, null);
     }
 
-    public BicepValue<String> getDescription() {
-        return this.description;
-    }
-
-    public MhsmPrivateLinkServiceConnectionState setDescription(BicepValue<String> description) {
-        this.description.assign(description);
-        return this;
-    }
     public BicepValue<PrivateEndpointServiceConnectionStatus> getStatus() {
         return this.status;
     }
 
     public MhsmPrivateLinkServiceConnectionState setStatus(BicepValue<PrivateEndpointServiceConnectionStatus> status) {
         this.status.assign(status);
+        return this;
+    }
+    public BicepValue<String> getDescription() {
+        return this.description;
+    }
+
+    public MhsmPrivateLinkServiceConnectionState setDescription(BicepValue<String> description) {
+        this.description.assign(description);
         return this;
     }
     public BicepValue<ActionsRequired> getActionsRequired() {

@@ -12,38 +12,38 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
 
-    private final BicepList<String> prefixMatch;
-    private final BicepList<String> blobTypes;
-    private final BicepValue<Boolean> includeSnapshots;
-    private final BicepList<String> excludePrefix;
     private final BicepValue<Boolean> includeBlobVersions;
-    private final BicepValue<BlobInventoryCreationTime> creationTime;
     private final BicepValue<Boolean> includeDeleted;
+    private final BicepValue<Boolean> includeSnapshots;
+    private final BicepList<String> blobTypes;
+    private final BicepList<String> prefixMatch;
+    private final BicepValue<BlobInventoryCreationTime> creationTime;
+    private final BicepList<String> excludePrefix;
 
     public BlobInventoryPolicyFilter() {
-        prefixMatch = BicepList.defineProperty(this, "prefixMatch", new String[] { "temp", "prefixMatch" }, false, false);
-        blobTypes = BicepList.defineProperty(this, "blobTypes", new String[] { "temp", "blobTypes" }, false, false);
-        includeSnapshots = BicepValue.defineProperty(this, "includeSnapshots", new String[] { "temp", "includeSnapshots" }, null);
-        excludePrefix = BicepList.defineProperty(this, "excludePrefix", new String[] { "temp", "excludePrefix" }, false, false);
-        includeBlobVersions = BicepValue.defineProperty(this, "includeBlobVersions", new String[] { "temp", "includeBlobVersions" }, null);
-        creationTime = BicepValue.defineProperty(this, "creationTime", new String[] { "temp", "creationTime" }, null);
-        includeDeleted = BicepValue.defineProperty(this, "includeDeleted", new String[] { "temp", "includeDeleted" }, null);
+        includeBlobVersions = BicepValue.defineProperty(this, "includeBlobVersions", new String[] { "includeBlobVersions" }, null);
+        includeDeleted = BicepValue.defineProperty(this, "includeDeleted", new String[] { "includeDeleted" }, null);
+        includeSnapshots = BicepValue.defineProperty(this, "includeSnapshots", new String[] { "includeSnapshots" }, null);
+        blobTypes = BicepList.defineProperty(this, "blobTypes", new String[] { "blobTypes" }, false, false);
+        prefixMatch = BicepList.defineProperty(this, "prefixMatch", new String[] { "prefixMatch" }, false, false);
+        creationTime = BicepValue.defineProperty(this, "creationTime", new String[] { "creationTime" }, null);
+        excludePrefix = BicepList.defineProperty(this, "excludePrefix", new String[] { "excludePrefix" }, false, false);
     }
 
-    public BicepValue<List<String>> getPrefixMatch() {
-        return this.prefixMatch;
+    public BicepValue<Boolean> getIncludeBlobVersions() {
+        return this.includeBlobVersions;
     }
 
-    public BlobInventoryPolicyFilter setPrefixMatch(BicepValue<List<String>> prefixMatch) {
-        this.prefixMatch.assign(prefixMatch);
+    public BlobInventoryPolicyFilter setIncludeBlobVersions(BicepValue<Boolean> includeBlobVersions) {
+        this.includeBlobVersions.assign(includeBlobVersions);
         return this;
     }
-    public BicepValue<List<String>> getBlobTypes() {
-        return this.blobTypes;
+    public BicepValue<Boolean> getIncludeDeleted() {
+        return this.includeDeleted;
     }
 
-    public BlobInventoryPolicyFilter setBlobTypes(BicepValue<List<String>> blobTypes) {
-        this.blobTypes.assign(blobTypes);
+    public BlobInventoryPolicyFilter setIncludeDeleted(BicepValue<Boolean> includeDeleted) {
+        this.includeDeleted.assign(includeDeleted);
         return this;
     }
     public BicepValue<Boolean> getIncludeSnapshots() {
@@ -54,20 +54,20 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.includeSnapshots.assign(includeSnapshots);
         return this;
     }
-    public BicepValue<List<String>> getExcludePrefix() {
-        return this.excludePrefix;
+    public BicepList<String> getBlobTypes() {
+        return this.blobTypes;
     }
 
-    public BlobInventoryPolicyFilter setExcludePrefix(BicepValue<List<String>> excludePrefix) {
-        this.excludePrefix.assign(excludePrefix);
+    public BlobInventoryPolicyFilter setBlobTypes(BicepList<String> blobTypes) {
+        this.blobTypes.assign(blobTypes);
         return this;
     }
-    public BicepValue<Boolean> getIncludeBlobVersions() {
-        return this.includeBlobVersions;
+    public BicepList<String> getPrefixMatch() {
+        return this.prefixMatch;
     }
 
-    public BlobInventoryPolicyFilter setIncludeBlobVersions(BicepValue<Boolean> includeBlobVersions) {
-        this.includeBlobVersions.assign(includeBlobVersions);
+    public BlobInventoryPolicyFilter setPrefixMatch(BicepList<String> prefixMatch) {
+        this.prefixMatch.assign(prefixMatch);
         return this;
     }
     public BicepValue<BlobInventoryCreationTime> getCreationTime() {
@@ -78,12 +78,12 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.creationTime.assign(creationTime);
         return this;
     }
-    public BicepValue<Boolean> getIncludeDeleted() {
-        return this.includeDeleted;
+    public BicepList<String> getExcludePrefix() {
+        return this.excludePrefix;
     }
 
-    public BlobInventoryPolicyFilter setIncludeDeleted(BicepValue<Boolean> includeDeleted) {
-        this.includeDeleted.assign(includeDeleted);
+    public BlobInventoryPolicyFilter setExcludePrefix(BicepList<String> excludePrefix) {
+        this.excludePrefix.assign(excludePrefix);
         return this;
     }
 }

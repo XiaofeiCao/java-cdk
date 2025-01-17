@@ -8,22 +8,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<Long> updated;
-    private final BicepValue<Long> created;
     private final BicepValue<String> expiryTime;
+    private final BicepValue<Long> created;
+    private final BicepValue<Long> updated;
 
     public ManagedHsmKeyRotationPolicyAttributes() {
-        updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
-        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
         expiryTime = BicepValue.defineProperty(this, "expiryTime", new String[] { "expiryTime" }, null);
+        created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
+        updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
     }
 
-    public BicepValue<Long> getUpdated() {
-        return this.updated;
+    public BicepValue<String> getExpiryTime() {
+        return this.expiryTime;
     }
 
-    public ManagedHsmKeyRotationPolicyAttributes setUpdated(BicepValue<Long> updated) {
-        this.updated.assign(updated);
+    public ManagedHsmKeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
+        this.expiryTime.assign(expiryTime);
         return this;
     }
     public BicepValue<Long> getCreated() {
@@ -34,12 +34,12 @@ public class ManagedHsmKeyRotationPolicyAttributes extends ProvisioningConstruct
         this.created.assign(created);
         return this;
     }
-    public BicepValue<String> getExpiryTime() {
-        return this.expiryTime;
+    public BicepValue<Long> getUpdated() {
+        return this.updated;
     }
 
-    public ManagedHsmKeyRotationPolicyAttributes setExpiryTime(BicepValue<String> expiryTime) {
-        this.expiryTime.assign(expiryTime);
+    public ManagedHsmKeyRotationPolicyAttributes setUpdated(BicepValue<Long> updated) {
+        this.updated.assign(updated);
         return this;
     }
 }

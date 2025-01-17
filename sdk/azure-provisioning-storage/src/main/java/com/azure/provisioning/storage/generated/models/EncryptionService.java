@@ -15,9 +15,9 @@ public class EncryptionService extends ProvisioningConstruct {
     private final BicepValue<OffsetDateTime> lastEnabledTime;
 
     public EncryptionService() {
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "temp", "enabled" }, null);
-        keyType = BicepValue.defineProperty(this, "keyType", new String[] { "temp", "keyType" }, null);
-        lastEnabledTime = BicepValue.defineProperty(this, "lastEnabledTime", new String[] { "temp", "lastEnabledTime" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
+        keyType = BicepValue.defineProperty(this, "keyType", new String[] { "keyType" }, null);
+        lastEnabledTime = BicepValue.defineProperty(this, "lastEnabledTime", new String[] { "lastEnabledTime" }, null);
     }
 
     public BicepValue<Boolean> getEnabled() {

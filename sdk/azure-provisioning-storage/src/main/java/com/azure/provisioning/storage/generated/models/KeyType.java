@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum KeyType {
 
-    SERVICE,
+    SERVICE("Service"),
 
-    ACCOUNT;
+    ACCOUNT("Account");
+    private final String value;
+    KeyType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

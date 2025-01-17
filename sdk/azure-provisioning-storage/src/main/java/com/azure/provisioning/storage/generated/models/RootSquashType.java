@@ -5,9 +5,17 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum RootSquashType {
 
-    NO_ROOT_SQUASH,
+    NO_ROOT_SQUASH("NoRootSquash"),
 
-    ROOT_SQUASH,
+    ROOT_SQUASH("RootSquash"),
 
-    ALL_SQUASH;
+    ALL_SQUASH("AllSquash");
+    private final String value;
+    RootSquashType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -10,22 +10,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class IpRule extends ProvisioningConstruct {
 
-    private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<Action> action;
     private final BicepValue<String> ipAddressOrRange;
+    private final BicepValue<Action> action;
+    private final BicepValue<ClientLogger> lOGGER;
 
     public IpRule() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        action = BicepValue.defineProperty(this, "action", new String[] { "temp", "action" }, null);
-        ipAddressOrRange = BicepValue.defineProperty(this, "ipAddressOrRange", new String[] { "temp", "ipAddressOrRange" }, null);
+        ipAddressOrRange = BicepValue.defineProperty(this, "ipAddressOrRange", new String[] { "ipAddressOrRange" }, null);
+        action = BicepValue.defineProperty(this, "action", new String[] { "action" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
     }
 
-    public BicepValue<ClientLogger> getLOGGER() {
-        return this.lOGGER;
+    public BicepValue<String> getIpAddressOrRange() {
+        return this.ipAddressOrRange;
     }
 
-    public IpRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
-        this.lOGGER.assign(lOGGER);
+    public IpRule setIpAddressOrRange(BicepValue<String> ipAddressOrRange) {
+        this.ipAddressOrRange.assign(ipAddressOrRange);
         return this;
     }
     public BicepValue<Action> getAction() {
@@ -36,12 +36,12 @@ public class IpRule extends ProvisioningConstruct {
         this.action.assign(action);
         return this;
     }
-    public BicepValue<String> getIpAddressOrRange() {
-        return this.ipAddressOrRange;
+    public BicepValue<ClientLogger> getLOGGER() {
+        return this.lOGGER;
     }
 
-    public IpRule setIpAddressOrRange(BicepValue<String> ipAddressOrRange) {
-        this.ipAddressOrRange.assign(ipAddressOrRange);
+    public IpRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
+        this.lOGGER.assign(lOGGER);
         return this;
     }
 }

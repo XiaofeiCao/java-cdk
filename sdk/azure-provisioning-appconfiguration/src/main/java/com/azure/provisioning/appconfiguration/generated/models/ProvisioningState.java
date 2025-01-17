@@ -5,15 +5,23 @@ package com.azure.provisioning.appconfiguration.generated.models;
 
 public enum ProvisioningState {
 
-    CREATING,
+    CREATING("Creating"),
 
-    UPDATING,
+    UPDATING("Updating"),
 
-    DELETING,
+    DELETING("Deleting"),
 
-    SUCCEEDED,
+    SUCCEEDED("Succeeded"),
 
-    FAILED,
+    FAILED("Failed"),
 
-    CANCELED;
+    CANCELED("Canceled");
+    private final String value;
+    ProvisioningState(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -5,13 +5,21 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum LeaseState {
 
-    AVAILABLE,
+    AVAILABLE("Available"),
 
-    LEASED,
+    LEASED("Leased"),
 
-    EXPIRED,
+    EXPIRED("Expired"),
 
-    BREAKING,
+    BREAKING("Breaking"),
 
-    BROKEN;
+    BROKEN("Broken");
+    private final String value;
+    LeaseState(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

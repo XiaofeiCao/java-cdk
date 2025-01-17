@@ -5,11 +5,19 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum AccessTier {
 
-    Hot,
+    HOT("Hot"),
 
-    Cool,
+    COOL("Cool"),
 
-    Premium,
+    PREMIUM("Premium"),
 
-    Cold;
+    COLD("Cold");
+    private final String value;
+    AccessTier(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

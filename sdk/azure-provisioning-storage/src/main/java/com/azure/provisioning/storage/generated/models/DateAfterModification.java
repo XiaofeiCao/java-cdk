@@ -8,34 +8,18 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class DateAfterModification extends ProvisioningConstruct {
 
-    private final BicepValue<Float> daysAfterLastTierChangeGreaterThan;
-    private final BicepValue<Float> daysAfterModificationGreaterThan;
     private final BicepValue<Float> daysAfterLastAccessTimeGreaterThan;
     private final BicepValue<Float> daysAfterCreationGreaterThan;
+    private final BicepValue<Float> daysAfterLastTierChangeGreaterThan;
+    private final BicepValue<Float> daysAfterModificationGreaterThan;
 
     public DateAfterModification() {
-        daysAfterLastTierChangeGreaterThan = BicepValue.defineProperty(this, "daysAfterLastTierChangeGreaterThan", new String[] { "temp", "daysAfterLastTierChangeGreaterThan" }, null);
-        daysAfterModificationGreaterThan = BicepValue.defineProperty(this, "daysAfterModificationGreaterThan", new String[] { "temp", "daysAfterModificationGreaterThan" }, null);
-        daysAfterLastAccessTimeGreaterThan = BicepValue.defineProperty(this, "daysAfterLastAccessTimeGreaterThan", new String[] { "temp", "daysAfterLastAccessTimeGreaterThan" }, null);
-        daysAfterCreationGreaterThan = BicepValue.defineProperty(this, "daysAfterCreationGreaterThan", new String[] { "temp", "daysAfterCreationGreaterThan" }, null);
+        daysAfterLastAccessTimeGreaterThan = BicepValue.defineProperty(this, "daysAfterLastAccessTimeGreaterThan", new String[] { "daysAfterLastAccessTimeGreaterThan" }, null);
+        daysAfterCreationGreaterThan = BicepValue.defineProperty(this, "daysAfterCreationGreaterThan", new String[] { "daysAfterCreationGreaterThan" }, null);
+        daysAfterLastTierChangeGreaterThan = BicepValue.defineProperty(this, "daysAfterLastTierChangeGreaterThan", new String[] { "daysAfterLastTierChangeGreaterThan" }, null);
+        daysAfterModificationGreaterThan = BicepValue.defineProperty(this, "daysAfterModificationGreaterThan", new String[] { "daysAfterModificationGreaterThan" }, null);
     }
 
-    public BicepValue<Float> getDaysAfterLastTierChangeGreaterThan() {
-        return this.daysAfterLastTierChangeGreaterThan;
-    }
-
-    public DateAfterModification setDaysAfterLastTierChangeGreaterThan(BicepValue<Float> daysAfterLastTierChangeGreaterThan) {
-        this.daysAfterLastTierChangeGreaterThan.assign(daysAfterLastTierChangeGreaterThan);
-        return this;
-    }
-    public BicepValue<Float> getDaysAfterModificationGreaterThan() {
-        return this.daysAfterModificationGreaterThan;
-    }
-
-    public DateAfterModification setDaysAfterModificationGreaterThan(BicepValue<Float> daysAfterModificationGreaterThan) {
-        this.daysAfterModificationGreaterThan.assign(daysAfterModificationGreaterThan);
-        return this;
-    }
     public BicepValue<Float> getDaysAfterLastAccessTimeGreaterThan() {
         return this.daysAfterLastAccessTimeGreaterThan;
     }
@@ -50,6 +34,22 @@ public class DateAfterModification extends ProvisioningConstruct {
 
     public DateAfterModification setDaysAfterCreationGreaterThan(BicepValue<Float> daysAfterCreationGreaterThan) {
         this.daysAfterCreationGreaterThan.assign(daysAfterCreationGreaterThan);
+        return this;
+    }
+    public BicepValue<Float> getDaysAfterLastTierChangeGreaterThan() {
+        return this.daysAfterLastTierChangeGreaterThan;
+    }
+
+    public DateAfterModification setDaysAfterLastTierChangeGreaterThan(BicepValue<Float> daysAfterLastTierChangeGreaterThan) {
+        this.daysAfterLastTierChangeGreaterThan.assign(daysAfterLastTierChangeGreaterThan);
+        return this;
+    }
+    public BicepValue<Float> getDaysAfterModificationGreaterThan() {
+        return this.daysAfterModificationGreaterThan;
+    }
+
+    public DateAfterModification setDaysAfterModificationGreaterThan(BicepValue<Float> daysAfterModificationGreaterThan) {
+        this.daysAfterModificationGreaterThan.assign(daysAfterModificationGreaterThan);
         return this;
     }
 }

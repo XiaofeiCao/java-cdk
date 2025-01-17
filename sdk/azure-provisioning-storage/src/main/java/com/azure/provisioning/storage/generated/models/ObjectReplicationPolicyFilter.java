@@ -15,8 +15,8 @@ public class ObjectReplicationPolicyFilter extends ProvisioningConstruct {
     private final BicepList<String> prefixMatch;
 
     public ObjectReplicationPolicyFilter() {
-        minCreationTime = BicepValue.defineProperty(this, "minCreationTime", new String[] { "temp", "minCreationTime" }, null);
-        prefixMatch = BicepList.defineProperty(this, "prefixMatch", new String[] { "temp", "prefixMatch" }, false, false);
+        minCreationTime = BicepValue.defineProperty(this, "minCreationTime", new String[] { "minCreationTime" }, null);
+        prefixMatch = BicepList.defineProperty(this, "prefixMatch", new String[] { "prefixMatch" }, false, false);
     }
 
     public BicepValue<String> getMinCreationTime() {
@@ -27,11 +27,11 @@ public class ObjectReplicationPolicyFilter extends ProvisioningConstruct {
         this.minCreationTime.assign(minCreationTime);
         return this;
     }
-    public BicepValue<List<String>> getPrefixMatch() {
+    public BicepList<String> getPrefixMatch() {
         return this.prefixMatch;
     }
 
-    public ObjectReplicationPolicyFilter setPrefixMatch(BicepValue<List<String>> prefixMatch) {
+    public ObjectReplicationPolicyFilter setPrefixMatch(BicepList<String> prefixMatch) {
         this.prefixMatch.assign(prefixMatch);
         return this;
     }

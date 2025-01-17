@@ -16,8 +16,8 @@ public class ManagementPolicySchema extends ProvisioningConstruct {
     private final BicepList<ManagementPolicyRule> rules;
 
     public ManagementPolicySchema() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        rules = BicepList.defineProperty(this, "rules", new String[] { "temp", "rules" }, false, false);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        rules = BicepList.defineProperty(this, "rules", new String[] { "rules" }, false, false);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {
@@ -28,11 +28,11 @@ public class ManagementPolicySchema extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<List<ManagementPolicyRule>> getRules() {
+    public BicepList<ManagementPolicyRule> getRules() {
         return this.rules;
     }
 
-    public ManagementPolicySchema setRules(BicepValue<List<ManagementPolicyRule>> rules) {
+    public ManagementPolicySchema setRules(BicepList<ManagementPolicyRule> rules) {
         this.rules.assign(rules);
         return this;
     }

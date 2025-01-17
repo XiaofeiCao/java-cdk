@@ -10,30 +10,30 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class SasPolicy extends ProvisioningConstruct {
 
-    private final BicepValue<ExpirationAction> expirationAction;
     private final BicepValue<ClientLogger> lOGGER;
+    private final BicepValue<ExpirationAction> expirationAction;
     private final BicepValue<String> sasExpirationPeriod;
 
     public SasPolicy() {
-        expirationAction = BicepValue.defineProperty(this, "expirationAction", new String[] { "temp", "expirationAction" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        sasExpirationPeriod = BicepValue.defineProperty(this, "sasExpirationPeriod", new String[] { "temp", "sasExpirationPeriod" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        expirationAction = BicepValue.defineProperty(this, "expirationAction", new String[] { "expirationAction" }, null);
+        sasExpirationPeriod = BicepValue.defineProperty(this, "sasExpirationPeriod", new String[] { "sasExpirationPeriod" }, null);
     }
 
-    public BicepValue<ExpirationAction> getExpirationAction() {
-        return this.expirationAction;
-    }
-
-    public SasPolicy setExpirationAction(BicepValue<ExpirationAction> expirationAction) {
-        this.expirationAction.assign(expirationAction);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
 
     public SasPolicy setLOGGER(BicepValue<ClientLogger> lOGGER) {
         this.lOGGER.assign(lOGGER);
+        return this;
+    }
+    public BicepValue<ExpirationAction> getExpirationAction() {
+        return this.expirationAction;
+    }
+
+    public SasPolicy setExpirationAction(BicepValue<ExpirationAction> expirationAction) {
+        this.expirationAction.assign(expirationAction);
         return this;
     }
     public BicepValue<String> getSasExpirationPeriod() {

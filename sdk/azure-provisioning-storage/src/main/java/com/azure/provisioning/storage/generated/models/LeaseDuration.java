@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum LeaseDuration {
 
-    INFINITE,
+    INFINITE("Infinite"),
 
-    FIXED;
+    FIXED("Fixed");
+    private final String value;
+    LeaseDuration(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -3,24 +3,32 @@
 
 package com.azure.provisioning.storage.generated.models;
 
-import com.azure.provisioning.storage.generated.models.ManagementPolicyBaseBlob;
 import com.azure.provisioning.storage.generated.models.ManagementPolicyVersion;
+import com.azure.provisioning.storage.generated.models.ManagementPolicyBaseBlob;
 import com.azure.provisioning.storage.generated.models.ManagementPolicySnapShot;
 import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagementPolicyAction extends ProvisioningConstruct {
 
+    private final BicepValue<ManagementPolicyVersion> version;
     private final BicepValue<ManagementPolicyBaseBlob> baseBlob;
     private final BicepValue<ManagementPolicySnapShot> snapshot;
-    private final BicepValue<ManagementPolicyVersion> version;
 
     public ManagementPolicyAction() {
-        baseBlob = BicepValue.defineProperty(this, "baseBlob", new String[] { "temp", "baseBlob" }, null);
-        snapshot = BicepValue.defineProperty(this, "snapshot", new String[] { "temp", "snapshot" }, null);
-        version = BicepValue.defineProperty(this, "version", new String[] { "temp", "version" }, null);
+        version = BicepValue.defineProperty(this, "version", new String[] { "version" }, null);
+        baseBlob = BicepValue.defineProperty(this, "baseBlob", new String[] { "baseBlob" }, null);
+        snapshot = BicepValue.defineProperty(this, "snapshot", new String[] { "snapshot" }, null);
     }
 
+    public BicepValue<ManagementPolicyVersion> getVersion() {
+        return this.version;
+    }
+
+    public ManagementPolicyAction setVersion(BicepValue<ManagementPolicyVersion> version) {
+        this.version.assign(version);
+        return this;
+    }
     public BicepValue<ManagementPolicyBaseBlob> getBaseBlob() {
         return this.baseBlob;
     }
@@ -35,14 +43,6 @@ public class ManagementPolicyAction extends ProvisioningConstruct {
 
     public ManagementPolicyAction setSnapshot(BicepValue<ManagementPolicySnapShot> snapshot) {
         this.snapshot.assign(snapshot);
-        return this;
-    }
-    public BicepValue<ManagementPolicyVersion> getVersion() {
-        return this.version;
-    }
-
-    public ManagementPolicyAction setVersion(BicepValue<ManagementPolicyVersion> version) {
-        this.version.assign(version);
         return this;
     }
 }

@@ -5,9 +5,17 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum PublicNetworkAccess {
 
-    ENABLED,
+    ENABLED("Enabled"),
 
-    DISABLED,
+    DISABLED("Disabled"),
 
-    SECURED_BY_PERIMETER;
+    SECURED_BY_PERIMETER("SecuredByPerimeter");
+    private final String value;
+    PublicNetworkAccess(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -9,24 +9,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
 
-    private final BicepValue<GeoReplicationRegionProvisioningState> provisioningState;
     private final BicepValue<Boolean> isPrimary;
     private final BicepValue<String> name;
+    private final BicepValue<GeoReplicationRegionProvisioningState> provisioningState;
 
     public MhsmGeoReplicatedRegionInner() {
-        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
         isPrimary = BicepValue.defineProperty(this, "isPrimary", new String[] { "isPrimary" }, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
+        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
     }
 
-    public BicepValue<GeoReplicationRegionProvisioningState> getProvisioningState() {
-        return this.provisioningState;
-    }
-
-    public MhsmGeoReplicatedRegionInner setProvisioningState(BicepValue<GeoReplicationRegionProvisioningState> provisioningState) {
-        this.provisioningState.assign(provisioningState);
-        return this;
-    }
     public BicepValue<Boolean> getIsPrimary() {
         return this.isPrimary;
     }
@@ -41,6 +33,14 @@ public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
 
     public MhsmGeoReplicatedRegionInner setName(BicepValue<String> name) {
         this.name.assign(name);
+        return this;
+    }
+    public BicepValue<GeoReplicationRegionProvisioningState> getProvisioningState() {
+        return this.provisioningState;
+    }
+
+    public MhsmGeoReplicatedRegionInner setProvisioningState(BicepValue<GeoReplicationRegionProvisioningState> provisioningState) {
+        this.provisioningState.assign(provisioningState);
         return this;
     }
 }

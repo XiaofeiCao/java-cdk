@@ -13,8 +13,8 @@ public class ProtectedAppendWritesHistory extends ProvisioningConstruct {
     private final BicepValue<OffsetDateTime> timestamp;
 
     public ProtectedAppendWritesHistory() {
-        allowProtectedAppendWritesAll = BicepValue.defineProperty(this, "allowProtectedAppendWritesAll", new String[] { "temp", "allowProtectedAppendWritesAll" }, null);
-        timestamp = BicepValue.defineProperty(this, "timestamp", new String[] { "temp", "timestamp" }, null);
+        allowProtectedAppendWritesAll = BicepValue.defineProperty(this, "allowProtectedAppendWritesAll", new String[] { "allowProtectedAppendWritesAll" }, null);
+        timestamp = BicepValue.defineProperty(this, "timestamp", new String[] { "timestamp" }, null);
     }
 
     public BicepValue<Boolean> getAllowProtectedAppendWritesAll() {

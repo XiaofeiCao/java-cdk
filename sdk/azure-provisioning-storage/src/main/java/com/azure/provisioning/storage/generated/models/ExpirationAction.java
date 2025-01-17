@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum ExpirationAction {
 
-    LOG,
+    LOG("Log"),
 
-    BLOCK;
+    BLOCK("Block");
+    private final String value;
+    ExpirationAction(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

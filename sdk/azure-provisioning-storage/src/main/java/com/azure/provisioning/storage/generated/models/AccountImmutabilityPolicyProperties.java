@@ -9,22 +9,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class AccountImmutabilityPolicyProperties extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> allowProtectedAppendWrites;
-    private final BicepValue<Integer> immutabilityPeriodSinceCreationInDays;
     private final BicepValue<AccountImmutabilityPolicyState> state;
+    private final BicepValue<Integer> immutabilityPeriodSinceCreationInDays;
+    private final BicepValue<Boolean> allowProtectedAppendWrites;
 
     public AccountImmutabilityPolicyProperties() {
-        allowProtectedAppendWrites = BicepValue.defineProperty(this, "allowProtectedAppendWrites", new String[] { "temp", "allowProtectedAppendWrites" }, null);
-        immutabilityPeriodSinceCreationInDays = BicepValue.defineProperty(this, "immutabilityPeriodSinceCreationInDays", new String[] { "temp", "immutabilityPeriodSinceCreationInDays" }, null);
-        state = BicepValue.defineProperty(this, "state", new String[] { "temp", "state" }, null);
+        state = BicepValue.defineProperty(this, "state", new String[] { "state" }, null);
+        immutabilityPeriodSinceCreationInDays = BicepValue.defineProperty(this, "immutabilityPeriodSinceCreationInDays", new String[] { "immutabilityPeriodSinceCreationInDays" }, null);
+        allowProtectedAppendWrites = BicepValue.defineProperty(this, "allowProtectedAppendWrites", new String[] { "allowProtectedAppendWrites" }, null);
     }
 
-    public BicepValue<Boolean> getAllowProtectedAppendWrites() {
-        return this.allowProtectedAppendWrites;
+    public BicepValue<AccountImmutabilityPolicyState> getState() {
+        return this.state;
     }
 
-    public AccountImmutabilityPolicyProperties setAllowProtectedAppendWrites(BicepValue<Boolean> allowProtectedAppendWrites) {
-        this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
+    public AccountImmutabilityPolicyProperties setState(BicepValue<AccountImmutabilityPolicyState> state) {
+        this.state.assign(state);
         return this;
     }
     public BicepValue<Integer> getImmutabilityPeriodSinceCreationInDays() {
@@ -35,12 +35,12 @@ public class AccountImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.immutabilityPeriodSinceCreationInDays.assign(immutabilityPeriodSinceCreationInDays);
         return this;
     }
-    public BicepValue<AccountImmutabilityPolicyState> getState() {
-        return this.state;
+    public BicepValue<Boolean> getAllowProtectedAppendWrites() {
+        return this.allowProtectedAppendWrites;
     }
 
-    public AccountImmutabilityPolicyProperties setState(BicepValue<AccountImmutabilityPolicyState> state) {
-        this.state.assign(state);
+    public AccountImmutabilityPolicyProperties setAllowProtectedAppendWrites(BicepValue<Boolean> allowProtectedAppendWrites) {
+        this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
         return this;
     }
 }

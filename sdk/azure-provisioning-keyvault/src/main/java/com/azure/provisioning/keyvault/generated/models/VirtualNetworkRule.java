@@ -9,24 +9,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class VirtualNetworkRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> id;
     private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<Boolean> ignoreMissingVnetServiceEndpoint;
+    private final BicepValue<String> id;
 
     public VirtualNetworkRule() {
-        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
         ignoreMissingVnetServiceEndpoint = BicepValue.defineProperty(this, "ignoreMissingVnetServiceEndpoint", new String[] { "ignoreMissingVnetServiceEndpoint" }, null);
+        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
     }
 
-    public BicepValue<String> getId() {
-        return this.id;
-    }
-
-    public VirtualNetworkRule setId(BicepValue<String> id) {
-        this.id.assign(id);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -41,6 +33,14 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
 
     public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(BicepValue<Boolean> ignoreMissingVnetServiceEndpoint) {
         this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
+        return this;
+    }
+    public BicepValue<String> getId() {
+        return this.id;
+    }
+
+    public VirtualNetworkRule setId(BicepValue<String> id) {
+        this.id.assign(id);
         return this;
     }
 }

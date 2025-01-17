@@ -5,9 +5,17 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum PublicAccess {
 
-    Container,
+    CONTAINER("Container"),
 
-    Blob,
+    BLOB("Blob"),
 
-    None;
+    NONE("None");
+    private final String value;
+    PublicAccess(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

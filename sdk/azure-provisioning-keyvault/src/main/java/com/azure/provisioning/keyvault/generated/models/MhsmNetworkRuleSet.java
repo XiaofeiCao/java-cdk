@@ -14,32 +14,32 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmNetworkRuleSet extends ProvisioningConstruct {
 
-    private final BicepList<MhsmipRule> ipRules;
     private final BicepValue<NetworkRuleBypassOptions> bypass;
-    private final BicepList<MhsmVirtualNetworkRule> virtualNetworkRules;
     private final BicepValue<NetworkRuleAction> defaultAction;
+    private final BicepList<MhsmVirtualNetworkRule> virtualNetworkRules;
+    private final BicepList<MhsmipRule> ipRules;
 
     public MhsmNetworkRuleSet() {
-        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
         bypass = BicepValue.defineProperty(this, "bypass", new String[] { "bypass" }, null);
-        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
         defaultAction = BicepValue.defineProperty(this, "defaultAction", new String[] { "defaultAction" }, null);
+        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
+        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
     }
 
-    public BicepList<MhsmipRule> getIpRules() {
-        return this.ipRules;
-    }
-
-    public MhsmNetworkRuleSet setIpRules(BicepList<MhsmipRule> ipRules) {
-        this.ipRules.assign(ipRules);
-        return this;
-    }
     public BicepValue<NetworkRuleBypassOptions> getBypass() {
         return this.bypass;
     }
 
     public MhsmNetworkRuleSet setBypass(BicepValue<NetworkRuleBypassOptions> bypass) {
         this.bypass.assign(bypass);
+        return this;
+    }
+    public BicepValue<NetworkRuleAction> getDefaultAction() {
+        return this.defaultAction;
+    }
+
+    public MhsmNetworkRuleSet setDefaultAction(BicepValue<NetworkRuleAction> defaultAction) {
+        this.defaultAction.assign(defaultAction);
         return this;
     }
     public BicepList<MhsmVirtualNetworkRule> getVirtualNetworkRules() {
@@ -50,12 +50,12 @@ public class MhsmNetworkRuleSet extends ProvisioningConstruct {
         this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
-    public BicepValue<NetworkRuleAction> getDefaultAction() {
-        return this.defaultAction;
+    public BicepList<MhsmipRule> getIpRules() {
+        return this.ipRules;
     }
 
-    public MhsmNetworkRuleSet setDefaultAction(BicepValue<NetworkRuleAction> defaultAction) {
-        this.defaultAction.assign(defaultAction);
+    public MhsmNetworkRuleSet setIpRules(BicepList<MhsmipRule> ipRules) {
+        this.ipRules.assign(ipRules);
         return this;
     }
 }

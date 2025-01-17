@@ -13,8 +13,8 @@ public class ImmutableStorageAccount extends ProvisioningConstruct {
     private final BicepValue<AccountImmutabilityPolicyProperties> immutabilityPolicy;
 
     public ImmutableStorageAccount() {
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "temp", "enabled" }, null);
-        immutabilityPolicy = BicepValue.defineProperty(this, "immutabilityPolicy", new String[] { "temp", "immutabilityPolicy" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
+        immutabilityPolicy = BicepValue.defineProperty(this, "immutabilityPolicy", new String[] { "immutabilityPolicy" }, null);
     }
 
     public BicepValue<Boolean> getEnabled() {

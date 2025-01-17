@@ -5,11 +5,19 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum ShareAccessTier {
 
-    TRANSACTION_OPTIMIZED,
+    TRANSACTION_OPTIMIZED("TransactionOptimized"),
 
-    HOT,
+    HOT("Hot"),
 
-    COOL,
+    COOL("Cool"),
 
-    PREMIUM;
+    PREMIUM("Premium");
+    private final String value;
+    ShareAccessTier(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -12,28 +12,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmRotationPolicy extends ProvisioningConstruct {
 
-    private final BicepList<ManagedHsmLifetimeAction> lifetimeActions;
     private final BicepValue<ManagedHsmKeyRotationPolicyAttributes> attributes;
+    private final BicepList<ManagedHsmLifetimeAction> lifetimeActions;
 
     public ManagedHsmRotationPolicy() {
-        lifetimeActions = BicepList.defineProperty(this, "lifetimeActions", new String[] { "lifetimeActions" }, false, false);
         attributes = BicepValue.defineProperty(this, "attributes", new String[] { "attributes" }, null);
+        lifetimeActions = BicepList.defineProperty(this, "lifetimeActions", new String[] { "lifetimeActions" }, false, false);
     }
 
-    public BicepList<ManagedHsmLifetimeAction> getLifetimeActions() {
-        return this.lifetimeActions;
-    }
-
-    public ManagedHsmRotationPolicy setLifetimeActions(BicepList<ManagedHsmLifetimeAction> lifetimeActions) {
-        this.lifetimeActions.assign(lifetimeActions);
-        return this;
-    }
     public BicepValue<ManagedHsmKeyRotationPolicyAttributes> getAttributes() {
         return this.attributes;
     }
 
     public ManagedHsmRotationPolicy setAttributes(BicepValue<ManagedHsmKeyRotationPolicyAttributes> attributes) {
         this.attributes.assign(attributes);
+        return this;
+    }
+    public BicepList<ManagedHsmLifetimeAction> getLifetimeActions() {
+        return this.lifetimeActions;
+    }
+
+    public ManagedHsmRotationPolicy setLifetimeActions(BicepList<ManagedHsmLifetimeAction> lifetimeActions) {
+        this.lifetimeActions.assign(lifetimeActions);
         return this;
     }
 }

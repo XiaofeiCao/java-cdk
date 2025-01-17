@@ -5,13 +5,21 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum State {
 
-    PROVISIONING,
+    PROVISIONING("Provisioning"),
 
-    DEPROVISIONING,
+    DEPROVISIONING("Deprovisioning"),
 
-    SUCCEEDED,
+    SUCCEEDED("Succeeded"),
 
-    FAILED,
+    FAILED("Failed"),
 
-    NETWORK_SOURCE_DELETED;
+    NETWORK_SOURCE_DELETED("NetworkSourceDeleted");
+    private final String value;
+    State(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

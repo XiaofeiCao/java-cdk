@@ -5,9 +5,17 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum AccountImmutabilityPolicyState {
 
-    UNLOCKED,
+    UNLOCKED("Unlocked"),
 
-    LOCKED,
+    LOCKED("Locked"),
 
-    DISABLED;
+    DISABLED("Disabled");
+    private final String value;
+    AccountImmutabilityPolicyState(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -9,28 +9,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class MhsmVirtualNetworkRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> id;
     private final BicepValue<ClientLogger> lOGGER;
+    private final BicepValue<String> id;
 
     public MhsmVirtualNetworkRule() {
-        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
         lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
     }
 
-    public BicepValue<String> getId() {
-        return this.id;
-    }
-
-    public MhsmVirtualNetworkRule setId(BicepValue<String> id) {
-        this.id.assign(id);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
 
     public MhsmVirtualNetworkRule setLOGGER(BicepValue<ClientLogger> lOGGER) {
         this.lOGGER.assign(lOGGER);
+        return this;
+    }
+    public BicepValue<String> getId() {
+        return this.id;
+    }
+
+    public MhsmVirtualNetworkRule setId(BicepValue<String> id) {
+        this.id.assign(id);
         return this;
     }
 }

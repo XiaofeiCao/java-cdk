@@ -17,9 +17,9 @@ public class LegalHoldProperties extends ProvisioningConstruct {
     private final BicepList<TagProperty> tags;
 
     public LegalHoldProperties() {
-        protectedAppendWritesHistory = BicepValue.defineProperty(this, "protectedAppendWritesHistory", new String[] { "temp", "protectedAppendWritesHistory" }, null);
-        hasLegalHold = BicepValue.defineProperty(this, "hasLegalHold", new String[] { "temp", "hasLegalHold" }, null);
-        tags = BicepList.defineProperty(this, "tags", new String[] { "temp", "tags" }, false, false);
+        protectedAppendWritesHistory = BicepValue.defineProperty(this, "protectedAppendWritesHistory", new String[] { "protectedAppendWritesHistory" }, null);
+        hasLegalHold = BicepValue.defineProperty(this, "hasLegalHold", new String[] { "hasLegalHold" }, null);
+        tags = BicepList.defineProperty(this, "tags", new String[] { "tags" }, false, false);
     }
 
     public BicepValue<ProtectedAppendWritesHistory> getProtectedAppendWritesHistory() {
@@ -38,11 +38,11 @@ public class LegalHoldProperties extends ProvisioningConstruct {
         this.hasLegalHold.assign(hasLegalHold);
         return this;
     }
-    public BicepValue<List<TagProperty>> getTags() {
+    public BicepList<TagProperty> getTags() {
         return this.tags;
     }
 
-    public LegalHoldProperties setTags(BicepValue<List<TagProperty>> tags) {
+    public LegalHoldProperties setTags(BicepList<TagProperty> tags) {
         this.tags.assign(tags);
         return this;
     }

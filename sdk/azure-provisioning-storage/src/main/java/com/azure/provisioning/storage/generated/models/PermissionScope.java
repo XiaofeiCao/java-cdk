@@ -9,26 +9,18 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class PermissionScope extends ProvisioningConstruct {
 
-    private final BicepValue<String> permissions;
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<String> service;
+    private final BicepValue<String> permissions;
     private final BicepValue<String> resourceName;
+    private final BicepValue<String> service;
 
     public PermissionScope() {
-        permissions = BicepValue.defineProperty(this, "permissions", new String[] { "temp", "permissions" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        service = BicepValue.defineProperty(this, "service", new String[] { "temp", "service" }, null);
-        resourceName = BicepValue.defineProperty(this, "resourceName", new String[] { "temp", "resourceName" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        permissions = BicepValue.defineProperty(this, "permissions", new String[] { "permissions" }, null);
+        resourceName = BicepValue.defineProperty(this, "resourceName", new String[] { "resourceName" }, null);
+        service = BicepValue.defineProperty(this, "service", new String[] { "service" }, null);
     }
 
-    public BicepValue<String> getPermissions() {
-        return this.permissions;
-    }
-
-    public PermissionScope setPermissions(BicepValue<String> permissions) {
-        this.permissions.assign(permissions);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -37,12 +29,12 @@ public class PermissionScope extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<String> getService() {
-        return this.service;
+    public BicepValue<String> getPermissions() {
+        return this.permissions;
     }
 
-    public PermissionScope setService(BicepValue<String> service) {
-        this.service.assign(service);
+    public PermissionScope setPermissions(BicepValue<String> permissions) {
+        this.permissions.assign(permissions);
         return this;
     }
     public BicepValue<String> getResourceName() {
@@ -51,6 +43,14 @@ public class PermissionScope extends ProvisioningConstruct {
 
     public PermissionScope setResourceName(BicepValue<String> resourceName) {
         this.resourceName.assign(resourceName);
+        return this;
+    }
+    public BicepValue<String> getService() {
+        return this.service;
+    }
+
+    public PermissionScope setService(BicepValue<String> service) {
+        this.service.assign(service);
         return this;
     }
 }

@@ -5,5 +5,13 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum InventoryRuleType {
 
-    INVENTORY;
+    INVENTORY("Inventory");
+    private final String value;
+    InventoryRuleType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

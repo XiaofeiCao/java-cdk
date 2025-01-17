@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum ObjectType {
 
-    BLOB,
+    BLOB("Blob"),
 
-    CONTAINER;
+    CONTAINER("Container");
+    private final String value;
+    ObjectType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

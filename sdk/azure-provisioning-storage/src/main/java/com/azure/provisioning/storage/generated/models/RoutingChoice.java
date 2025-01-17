@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum RoutingChoice {
 
-    MICROSOFT_ROUTING,
+    MICROSOFT_ROUTING("MicrosoftRouting"),
 
-    INTERNET_ROUTING;
+    INTERNET_ROUTING("InternetRouting");
+    private final String value;
+    RoutingChoice(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

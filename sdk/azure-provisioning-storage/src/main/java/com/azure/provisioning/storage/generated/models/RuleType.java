@@ -5,5 +5,13 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum RuleType {
 
-    LIFECYCLE;
+    LIFECYCLE("Lifecycle");
+    private final String value;
+    RuleType(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

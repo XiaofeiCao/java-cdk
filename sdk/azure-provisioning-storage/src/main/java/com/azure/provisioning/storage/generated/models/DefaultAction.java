@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum DefaultAction {
 
-    Allow,
+    ALLOW("Allow"),
 
-    Deny;
+    DENY("Deny");
+    private final String value;
+    DefaultAction(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

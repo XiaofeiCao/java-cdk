@@ -11,26 +11,18 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class VirtualNetworkRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> virtualNetworkResourceId;
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<Action> action;
+    private final BicepValue<String> virtualNetworkResourceId;
     private final BicepValue<State> state;
+    private final BicepValue<Action> action;
 
     public VirtualNetworkRule() {
-        virtualNetworkResourceId = BicepValue.defineProperty(this, "virtualNetworkResourceId", new String[] { "temp", "virtualNetworkResourceId" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        action = BicepValue.defineProperty(this, "action", new String[] { "temp", "action" }, null);
-        state = BicepValue.defineProperty(this, "state", new String[] { "temp", "state" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        virtualNetworkResourceId = BicepValue.defineProperty(this, "virtualNetworkResourceId", new String[] { "virtualNetworkResourceId" }, null);
+        state = BicepValue.defineProperty(this, "state", new String[] { "state" }, null);
+        action = BicepValue.defineProperty(this, "action", new String[] { "action" }, null);
     }
 
-    public BicepValue<String> getVirtualNetworkResourceId() {
-        return this.virtualNetworkResourceId;
-    }
-
-    public VirtualNetworkRule setVirtualNetworkResourceId(BicepValue<String> virtualNetworkResourceId) {
-        this.virtualNetworkResourceId.assign(virtualNetworkResourceId);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -39,12 +31,12 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<Action> getAction() {
-        return this.action;
+    public BicepValue<String> getVirtualNetworkResourceId() {
+        return this.virtualNetworkResourceId;
     }
 
-    public VirtualNetworkRule setAction(BicepValue<Action> action) {
-        this.action.assign(action);
+    public VirtualNetworkRule setVirtualNetworkResourceId(BicepValue<String> virtualNetworkResourceId) {
+        this.virtualNetworkResourceId.assign(virtualNetworkResourceId);
         return this;
     }
     public BicepValue<State> getState() {
@@ -53,6 +45,14 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
 
     public VirtualNetworkRule setState(BicepValue<State> state) {
         this.state.assign(state);
+        return this;
+    }
+    public BicepValue<Action> getAction() {
+        return this.action;
+    }
+
+    public VirtualNetworkRule setAction(BicepValue<Action> action) {
+        this.action.assign(action);
         return this;
     }
 }

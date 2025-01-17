@@ -5,7 +5,15 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum LeaseStatus {
 
-    LOCKED,
+    LOCKED("Locked"),
 
-    UNLOCKED;
+    UNLOCKED("Unlocked");
+    private final String value;
+    LeaseStatus(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

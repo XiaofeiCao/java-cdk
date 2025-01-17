@@ -12,38 +12,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
 
-    private final BicepValue<ImmutabilityPolicyState> state;
-    private final BicepValue<Boolean> allowProtectedAppendWrites;
     private final BicepValue<Boolean> allowProtectedAppendWritesAll;
     private final BicepValue<Integer> immutabilityPeriodSinceCreationInDays;
     private final BicepList<UpdateHistoryProperty> updateHistory;
+    private final BicepValue<ImmutabilityPolicyState> state;
+    private final BicepValue<Boolean> allowProtectedAppendWrites;
     private final BicepValue<String> etag;
 
     public ImmutabilityPolicyProperties() {
-        state = BicepValue.defineProperty(this, "state", new String[] { "temp", "state" }, null);
-        allowProtectedAppendWrites = BicepValue.defineProperty(this, "allowProtectedAppendWrites", new String[] { "temp", "allowProtectedAppendWrites" }, null);
-        allowProtectedAppendWritesAll = BicepValue.defineProperty(this, "allowProtectedAppendWritesAll", new String[] { "temp", "allowProtectedAppendWritesAll" }, null);
-        immutabilityPeriodSinceCreationInDays = BicepValue.defineProperty(this, "immutabilityPeriodSinceCreationInDays", new String[] { "temp", "immutabilityPeriodSinceCreationInDays" }, null);
-        updateHistory = BicepList.defineProperty(this, "updateHistory", new String[] { "temp", "updateHistory" }, false, false);
-        etag = BicepValue.defineProperty(this, "etag", new String[] { "temp", "etag" }, null);
+        allowProtectedAppendWritesAll = BicepValue.defineProperty(this, "allowProtectedAppendWritesAll", new String[] { "allowProtectedAppendWritesAll" }, null);
+        immutabilityPeriodSinceCreationInDays = BicepValue.defineProperty(this, "immutabilityPeriodSinceCreationInDays", new String[] { "immutabilityPeriodSinceCreationInDays" }, null);
+        updateHistory = BicepList.defineProperty(this, "updateHistory", new String[] { "updateHistory" }, false, false);
+        state = BicepValue.defineProperty(this, "state", new String[] { "state" }, null);
+        allowProtectedAppendWrites = BicepValue.defineProperty(this, "allowProtectedAppendWrites", new String[] { "allowProtectedAppendWrites" }, null);
+        etag = BicepValue.defineProperty(this, "etag", new String[] { "etag" }, null);
     }
 
-    public BicepValue<ImmutabilityPolicyState> getState() {
-        return this.state;
-    }
-
-    public ImmutabilityPolicyProperties setState(BicepValue<ImmutabilityPolicyState> state) {
-        this.state.assign(state);
-        return this;
-    }
-    public BicepValue<Boolean> getAllowProtectedAppendWrites() {
-        return this.allowProtectedAppendWrites;
-    }
-
-    public ImmutabilityPolicyProperties setAllowProtectedAppendWrites(BicepValue<Boolean> allowProtectedAppendWrites) {
-        this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
-        return this;
-    }
     public BicepValue<Boolean> getAllowProtectedAppendWritesAll() {
         return this.allowProtectedAppendWritesAll;
     }
@@ -60,12 +44,28 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.immutabilityPeriodSinceCreationInDays.assign(immutabilityPeriodSinceCreationInDays);
         return this;
     }
-    public BicepValue<List<UpdateHistoryProperty>> getUpdateHistory() {
+    public BicepList<UpdateHistoryProperty> getUpdateHistory() {
         return this.updateHistory;
     }
 
-    public ImmutabilityPolicyProperties setUpdateHistory(BicepValue<List<UpdateHistoryProperty>> updateHistory) {
+    public ImmutabilityPolicyProperties setUpdateHistory(BicepList<UpdateHistoryProperty> updateHistory) {
         this.updateHistory.assign(updateHistory);
+        return this;
+    }
+    public BicepValue<ImmutabilityPolicyState> getState() {
+        return this.state;
+    }
+
+    public ImmutabilityPolicyProperties setState(BicepValue<ImmutabilityPolicyState> state) {
+        this.state.assign(state);
+        return this;
+    }
+    public BicepValue<Boolean> getAllowProtectedAppendWrites() {
+        return this.allowProtectedAppendWrites;
+    }
+
+    public ImmutabilityPolicyProperties setAllowProtectedAppendWrites(BicepValue<Boolean> allowProtectedAppendWrites) {
+        this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
         return this;
     }
     public BicepValue<String> getEtag() {

@@ -10,13 +10,13 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class RoutingPreference extends ProvisioningConstruct {
 
     private final BicepValue<Boolean> publishMicrosoftEndpoints;
-    private final BicepValue<RoutingChoice> routingChoice;
     private final BicepValue<Boolean> publishInternetEndpoints;
+    private final BicepValue<RoutingChoice> routingChoice;
 
     public RoutingPreference() {
-        publishMicrosoftEndpoints = BicepValue.defineProperty(this, "publishMicrosoftEndpoints", new String[] { "temp", "publishMicrosoftEndpoints" }, null);
-        routingChoice = BicepValue.defineProperty(this, "routingChoice", new String[] { "temp", "routingChoice" }, null);
-        publishInternetEndpoints = BicepValue.defineProperty(this, "publishInternetEndpoints", new String[] { "temp", "publishInternetEndpoints" }, null);
+        publishMicrosoftEndpoints = BicepValue.defineProperty(this, "publishMicrosoftEndpoints", new String[] { "publishMicrosoftEndpoints" }, null);
+        publishInternetEndpoints = BicepValue.defineProperty(this, "publishInternetEndpoints", new String[] { "publishInternetEndpoints" }, null);
+        routingChoice = BicepValue.defineProperty(this, "routingChoice", new String[] { "routingChoice" }, null);
     }
 
     public BicepValue<Boolean> getPublishMicrosoftEndpoints() {
@@ -27,20 +27,20 @@ public class RoutingPreference extends ProvisioningConstruct {
         this.publishMicrosoftEndpoints.assign(publishMicrosoftEndpoints);
         return this;
     }
-    public BicepValue<RoutingChoice> getRoutingChoice() {
-        return this.routingChoice;
-    }
-
-    public RoutingPreference setRoutingChoice(BicepValue<RoutingChoice> routingChoice) {
-        this.routingChoice.assign(routingChoice);
-        return this;
-    }
     public BicepValue<Boolean> getPublishInternetEndpoints() {
         return this.publishInternetEndpoints;
     }
 
     public RoutingPreference setPublishInternetEndpoints(BicepValue<Boolean> publishInternetEndpoints) {
         this.publishInternetEndpoints.assign(publishInternetEndpoints);
+        return this;
+    }
+    public BicepValue<RoutingChoice> getRoutingChoice() {
+        return this.routingChoice;
+    }
+
+    public RoutingPreference setRoutingChoice(BicepValue<RoutingChoice> routingChoice) {
+        this.routingChoice.assign(routingChoice);
         return this;
     }
 }

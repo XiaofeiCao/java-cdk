@@ -8,17 +8,17 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class KeyPolicy extends ProvisioningConstruct {
 
-    private final BicepValue<int> keyExpirationPeriodInDays;
+    private final BicepValue<Integer> keyExpirationPeriodInDays;
 
     public KeyPolicy() {
-        keyExpirationPeriodInDays = BicepValue.defineProperty(this, "keyExpirationPeriodInDays", new String[] { "temp", "keyExpirationPeriodInDays" }, null);
+        keyExpirationPeriodInDays = BicepValue.defineProperty(this, "keyExpirationPeriodInDays", new String[] { "keyExpirationPeriodInDays" }, null);
     }
 
-    public BicepValue<int> getKeyExpirationPeriodInDays() {
+    public BicepValue<Integer> getKeyExpirationPeriodInDays() {
         return this.keyExpirationPeriodInDays;
     }
 
-    public KeyPolicy setKeyExpirationPeriodInDays(BicepValue<int> keyExpirationPeriodInDays) {
+    public KeyPolicy setKeyExpirationPeriodInDays(BicepValue<Integer> keyExpirationPeriodInDays) {
         this.keyExpirationPeriodInDays.assign(keyExpirationPeriodInDays);
         return this;
     }

@@ -10,36 +10,20 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class BlobInventoryPolicyRule extends ProvisioningConstruct {
 
-    private final BicepValue<String> destination;
-    private final BicepValue<BlobInventoryPolicyDefinition> definition;
     private final BicepValue<ClientLogger> lOGGER;
-    private final BicepValue<boolean> enabled;
+    private final BicepValue<String> destination;
     private final BicepValue<String> name;
+    private final BicepValue<Boolean> enabled;
+    private final BicepValue<BlobInventoryPolicyDefinition> definition;
 
     public BlobInventoryPolicyRule() {
-        destination = BicepValue.defineProperty(this, "destination", new String[] { "temp", "destination" }, null);
-        definition = BicepValue.defineProperty(this, "definition", new String[] { "temp", "definition" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "temp", "enabled" }, null);
-        name = BicepValue.defineProperty(this, "name", new String[] { "temp", "name" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        destination = BicepValue.defineProperty(this, "destination", new String[] { "destination" }, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
+        definition = BicepValue.defineProperty(this, "definition", new String[] { "definition" }, null);
     }
 
-    public BicepValue<String> getDestination() {
-        return this.destination;
-    }
-
-    public BlobInventoryPolicyRule setDestination(BicepValue<String> destination) {
-        this.destination.assign(destination);
-        return this;
-    }
-    public BicepValue<BlobInventoryPolicyDefinition> getDefinition() {
-        return this.definition;
-    }
-
-    public BlobInventoryPolicyRule setDefinition(BicepValue<BlobInventoryPolicyDefinition> definition) {
-        this.definition.assign(definition);
-        return this;
-    }
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -48,12 +32,12 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
-    public BicepValue<boolean> getEnabled() {
-        return this.enabled;
+    public BicepValue<String> getDestination() {
+        return this.destination;
     }
 
-    public BlobInventoryPolicyRule setEnabled(BicepValue<boolean> enabled) {
-        this.enabled.assign(enabled);
+    public BlobInventoryPolicyRule setDestination(BicepValue<String> destination) {
+        this.destination.assign(destination);
         return this;
     }
     public BicepValue<String> getName() {
@@ -62,6 +46,22 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
 
     public BlobInventoryPolicyRule setName(BicepValue<String> name) {
         this.name.assign(name);
+        return this;
+    }
+    public BicepValue<Boolean> getEnabled() {
+        return this.enabled;
+    }
+
+    public BlobInventoryPolicyRule setEnabled(BicepValue<Boolean> enabled) {
+        this.enabled.assign(enabled);
+        return this;
+    }
+    public BicepValue<BlobInventoryPolicyDefinition> getDefinition() {
+        return this.definition;
+    }
+
+    public BlobInventoryPolicyRule setDefinition(BicepValue<BlobInventoryPolicyDefinition> definition) {
+        this.definition.assign(definition);
         return this;
     }
 }

@@ -15,10 +15,10 @@ public class TagFilter extends ProvisioningConstruct {
     private final BicepValue<String> op;
 
     public TagFilter() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        name = BicepValue.defineProperty(this, "name", new String[] { "temp", "name" }, null);
-        value = BicepValue.defineProperty(this, "value", new String[] { "temp", "value" }, null);
-        op = BicepValue.defineProperty(this, "op", new String[] { "temp", "op" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, null);
+        value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
+        op = BicepValue.defineProperty(this, "op", new String[] { "op" }, null);
     }
 
     public BicepValue<ClientLogger> getLOGGER() {

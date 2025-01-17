@@ -9,28 +9,28 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> enableAutoTierToHotFromCool;
+    private final BicepValue<DateAfterModification> tierToHot;
     private final BicepValue<DateAfterModification> tierToCool;
-    private final BicepValue<DateAfterModification> delete;
     private final BicepValue<DateAfterModification> tierToArchive;
     private final BicepValue<DateAfterModification> tierToCold;
-    private final BicepValue<DateAfterModification> tierToHot;
+    private final BicepValue<DateAfterModification> delete;
+    private final BicepValue<Boolean> enableAutoTierToHotFromCool;
 
     public ManagementPolicyBaseBlob() {
-        enableAutoTierToHotFromCool = BicepValue.defineProperty(this, "enableAutoTierToHotFromCool", new String[] { "temp", "enableAutoTierToHotFromCool" }, null);
-        tierToCool = BicepValue.defineProperty(this, "tierToCool", new String[] { "temp", "tierToCool" }, null);
-        delete = BicepValue.defineProperty(this, "delete", new String[] { "temp", "delete" }, null);
-        tierToArchive = BicepValue.defineProperty(this, "tierToArchive", new String[] { "temp", "tierToArchive" }, null);
-        tierToCold = BicepValue.defineProperty(this, "tierToCold", new String[] { "temp", "tierToCold" }, null);
-        tierToHot = BicepValue.defineProperty(this, "tierToHot", new String[] { "temp", "tierToHot" }, null);
+        tierToHot = BicepValue.defineProperty(this, "tierToHot", new String[] { "tierToHot" }, null);
+        tierToCool = BicepValue.defineProperty(this, "tierToCool", new String[] { "tierToCool" }, null);
+        tierToArchive = BicepValue.defineProperty(this, "tierToArchive", new String[] { "tierToArchive" }, null);
+        tierToCold = BicepValue.defineProperty(this, "tierToCold", new String[] { "tierToCold" }, null);
+        delete = BicepValue.defineProperty(this, "delete", new String[] { "delete" }, null);
+        enableAutoTierToHotFromCool = BicepValue.defineProperty(this, "enableAutoTierToHotFromCool", new String[] { "enableAutoTierToHotFromCool" }, null);
     }
 
-    public BicepValue<Boolean> getEnableAutoTierToHotFromCool() {
-        return this.enableAutoTierToHotFromCool;
+    public BicepValue<DateAfterModification> getTierToHot() {
+        return this.tierToHot;
     }
 
-    public ManagementPolicyBaseBlob setEnableAutoTierToHotFromCool(BicepValue<Boolean> enableAutoTierToHotFromCool) {
-        this.enableAutoTierToHotFromCool.assign(enableAutoTierToHotFromCool);
+    public ManagementPolicyBaseBlob setTierToHot(BicepValue<DateAfterModification> tierToHot) {
+        this.tierToHot.assign(tierToHot);
         return this;
     }
     public BicepValue<DateAfterModification> getTierToCool() {
@@ -39,14 +39,6 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
 
     public ManagementPolicyBaseBlob setTierToCool(BicepValue<DateAfterModification> tierToCool) {
         this.tierToCool.assign(tierToCool);
-        return this;
-    }
-    public BicepValue<DateAfterModification> getDelete() {
-        return this.delete;
-    }
-
-    public ManagementPolicyBaseBlob setDelete(BicepValue<DateAfterModification> delete) {
-        this.delete.assign(delete);
         return this;
     }
     public BicepValue<DateAfterModification> getTierToArchive() {
@@ -65,12 +57,20 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.tierToCold.assign(tierToCold);
         return this;
     }
-    public BicepValue<DateAfterModification> getTierToHot() {
-        return this.tierToHot;
+    public BicepValue<DateAfterModification> getDelete() {
+        return this.delete;
     }
 
-    public ManagementPolicyBaseBlob setTierToHot(BicepValue<DateAfterModification> tierToHot) {
-        this.tierToHot.assign(tierToHot);
+    public ManagementPolicyBaseBlob setDelete(BicepValue<DateAfterModification> delete) {
+        this.delete.assign(delete);
+        return this;
+    }
+    public BicepValue<Boolean> getEnableAutoTierToHotFromCool() {
+        return this.enableAutoTierToHotFromCool;
+    }
+
+    public ManagementPolicyBaseBlob setEnableAutoTierToHotFromCool(BicepValue<Boolean> enableAutoTierToHotFromCool) {
+        this.enableAutoTierToHotFromCool.assign(enableAutoTierToHotFromCool);
         return this;
     }
 }

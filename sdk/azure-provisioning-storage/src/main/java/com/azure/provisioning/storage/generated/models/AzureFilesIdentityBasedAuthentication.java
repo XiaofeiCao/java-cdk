@@ -12,46 +12,46 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct {
 
+    private final BicepValue<String> samAccountName;
     private final BicepValue<String> domainName;
-    private final BicepValue<String> domainGuid;
     private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<DirectoryServiceOptions> directoryServiceOptions;
-    private final BicepValue<String> samAccountName;
     private final BicepValue<String> azureStorageSid;
-    private final BicepValue<String> forestName;
-    private final BicepValue<ActiveDirectoryPropertiesAccountType> accountType;
-    private final BicepValue<DefaultSharePermission> defaultSharePermission;
     private final BicepValue<String> netBiosDomainName;
+    private final BicepValue<String> domainGuid;
+    private final BicepValue<ActiveDirectoryPropertiesAccountType> accountType;
+    private final BicepValue<String> forestName;
+    private final BicepValue<DefaultSharePermission> defaultSharePermission;
     private final BicepValue<String> domainSid;
 
     public AzureFilesIdentityBasedAuthentication() {
-        domainName = BicepValue.defineProperty(this, "domainName", new String[] { "temp", "domainName" }, null);
-        domainGuid = BicepValue.defineProperty(this, "domainGuid", new String[] { "temp", "domainGuid" }, null);
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "temp", "lOGGER" }, null);
-        directoryServiceOptions = BicepValue.defineProperty(this, "directoryServiceOptions", new String[] { "temp", "directoryServiceOptions" }, null);
-        samAccountName = BicepValue.defineProperty(this, "samAccountName", new String[] { "temp", "samAccountName" }, null);
-        azureStorageSid = BicepValue.defineProperty(this, "azureStorageSid", new String[] { "temp", "azureStorageSid" }, null);
-        forestName = BicepValue.defineProperty(this, "forestName", new String[] { "temp", "forestName" }, null);
-        accountType = BicepValue.defineProperty(this, "accountType", new String[] { "temp", "accountType" }, null);
-        defaultSharePermission = BicepValue.defineProperty(this, "defaultSharePermission", new String[] { "temp", "defaultSharePermission" }, null);
-        netBiosDomainName = BicepValue.defineProperty(this, "netBiosDomainName", new String[] { "temp", "netBiosDomainName" }, null);
-        domainSid = BicepValue.defineProperty(this, "domainSid", new String[] { "temp", "domainSid" }, null);
+        samAccountName = BicepValue.defineProperty(this, "samAccountName", new String[] { "samAccountName" }, null);
+        domainName = BicepValue.defineProperty(this, "domainName", new String[] { "domainName" }, null);
+        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
+        directoryServiceOptions = BicepValue.defineProperty(this, "directoryServiceOptions", new String[] { "directoryServiceOptions" }, null);
+        azureStorageSid = BicepValue.defineProperty(this, "azureStorageSid", new String[] { "azureStorageSid" }, null);
+        netBiosDomainName = BicepValue.defineProperty(this, "netBiosDomainName", new String[] { "netBiosDomainName" }, null);
+        domainGuid = BicepValue.defineProperty(this, "domainGuid", new String[] { "domainGuid" }, null);
+        accountType = BicepValue.defineProperty(this, "accountType", new String[] { "accountType" }, null);
+        forestName = BicepValue.defineProperty(this, "forestName", new String[] { "forestName" }, null);
+        defaultSharePermission = BicepValue.defineProperty(this, "defaultSharePermission", new String[] { "defaultSharePermission" }, null);
+        domainSid = BicepValue.defineProperty(this, "domainSid", new String[] { "domainSid" }, null);
     }
 
+    public BicepValue<String> getSamAccountName() {
+        return this.samAccountName;
+    }
+
+    public AzureFilesIdentityBasedAuthentication setSamAccountName(BicepValue<String> samAccountName) {
+        this.samAccountName.assign(samAccountName);
+        return this;
+    }
     public BicepValue<String> getDomainName() {
         return this.domainName;
     }
 
     public AzureFilesIdentityBasedAuthentication setDomainName(BicepValue<String> domainName) {
         this.domainName.assign(domainName);
-        return this;
-    }
-    public BicepValue<String> getDomainGuid() {
-        return this.domainGuid;
-    }
-
-    public AzureFilesIdentityBasedAuthentication setDomainGuid(BicepValue<String> domainGuid) {
-        this.domainGuid.assign(domainGuid);
         return this;
     }
     public BicepValue<ClientLogger> getLOGGER() {
@@ -70,14 +70,6 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.directoryServiceOptions.assign(directoryServiceOptions);
         return this;
     }
-    public BicepValue<String> getSamAccountName() {
-        return this.samAccountName;
-    }
-
-    public AzureFilesIdentityBasedAuthentication setSamAccountName(BicepValue<String> samAccountName) {
-        this.samAccountName.assign(samAccountName);
-        return this;
-    }
     public BicepValue<String> getAzureStorageSid() {
         return this.azureStorageSid;
     }
@@ -86,12 +78,20 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.azureStorageSid.assign(azureStorageSid);
         return this;
     }
-    public BicepValue<String> getForestName() {
-        return this.forestName;
+    public BicepValue<String> getNetBiosDomainName() {
+        return this.netBiosDomainName;
     }
 
-    public AzureFilesIdentityBasedAuthentication setForestName(BicepValue<String> forestName) {
-        this.forestName.assign(forestName);
+    public AzureFilesIdentityBasedAuthentication setNetBiosDomainName(BicepValue<String> netBiosDomainName) {
+        this.netBiosDomainName.assign(netBiosDomainName);
+        return this;
+    }
+    public BicepValue<String> getDomainGuid() {
+        return this.domainGuid;
+    }
+
+    public AzureFilesIdentityBasedAuthentication setDomainGuid(BicepValue<String> domainGuid) {
+        this.domainGuid.assign(domainGuid);
         return this;
     }
     public BicepValue<ActiveDirectoryPropertiesAccountType> getAccountType() {
@@ -102,20 +102,20 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.accountType.assign(accountType);
         return this;
     }
+    public BicepValue<String> getForestName() {
+        return this.forestName;
+    }
+
+    public AzureFilesIdentityBasedAuthentication setForestName(BicepValue<String> forestName) {
+        this.forestName.assign(forestName);
+        return this;
+    }
     public BicepValue<DefaultSharePermission> getDefaultSharePermission() {
         return this.defaultSharePermission;
     }
 
     public AzureFilesIdentityBasedAuthentication setDefaultSharePermission(BicepValue<DefaultSharePermission> defaultSharePermission) {
         this.defaultSharePermission.assign(defaultSharePermission);
-        return this;
-    }
-    public BicepValue<String> getNetBiosDomainName() {
-        return this.netBiosDomainName;
-    }
-
-    public AzureFilesIdentityBasedAuthentication setNetBiosDomainName(BicepValue<String> netBiosDomainName) {
-        this.netBiosDomainName.assign(netBiosDomainName);
         return this;
     }
     public BicepValue<String> getDomainSid() {

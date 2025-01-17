@@ -10,9 +10,9 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class SecretResource extends Resource {
 
+    private final BicepValue<String> name;
     private final BicepValue<SecretProperties> properties;
     private final BicepValue<String> location;
-    private final BicepValue<String> name;
 
     public SecretResource(String identifierName) {
         this(identifierName, null);
@@ -20,9 +20,22 @@ public class SecretResource extends Resource {
 
     public SecretResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults/secrets"), resourceVersion);
+        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
         properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
-        name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
+    }
+
+    public BicepValue<String> getName() {
+        return this.name;
+    }
+
+    public SecretResource setName(BicepValue<String> name) {
+        this.name.assign(name);
+        return this;
+    }
+
+    public SecretResource setName(String name) {
+        return this.setName(BicepValue.from(name));
     }
 
     public BicepValue<SecretProperties> getProperties() {
@@ -49,19 +62,6 @@ public class SecretResource extends Resource {
 
     public SecretResource setLocation(String location) {
         return this.setLocation(BicepValue.from(location));
-    }
-
-    public BicepValue<String> getName() {
-        return this.name;
-    }
-
-    public SecretResource setName(BicepValue<String> name) {
-        this.name.assign(name);
-        return this;
-    }
-
-    public SecretResource setName(String name) {
-        return this.setName(BicepValue.from(name));
     }
 
 

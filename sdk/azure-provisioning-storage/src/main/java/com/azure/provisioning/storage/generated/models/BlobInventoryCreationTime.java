@@ -11,7 +11,7 @@ public class BlobInventoryCreationTime extends ProvisioningConstruct {
     private final BicepValue<Integer> lastNDays;
 
     public BlobInventoryCreationTime() {
-        lastNDays = BicepValue.defineProperty(this, "lastNDays", new String[] { "temp", "lastNDays" }, null);
+        lastNDays = BicepValue.defineProperty(this, "lastNDays", new String[] { "lastNDays" }, null);
     }
 
     public BicepValue<Integer> getLastNDays() {

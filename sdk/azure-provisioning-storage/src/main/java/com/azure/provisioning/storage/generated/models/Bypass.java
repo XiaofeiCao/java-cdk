@@ -5,11 +5,19 @@ package com.azure.provisioning.storage.generated.models;
 
 public enum Bypass {
 
-    NONE,
+    NONE("None"),
 
-    LOGGING,
+    LOGGING("Logging"),
 
-    METRICS,
+    METRICS("Metrics"),
 
-    AZURE_SERVICES;
+    AZURE_SERVICES("AzureServices");
+    private final String value;
+    Bypass(String value) {
+        this.value = value;
+    }
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }
