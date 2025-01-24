@@ -33,6 +33,10 @@ public class ManagementPolicyRule extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public ManagementPolicyRule setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<ManagementPolicyDefinition> getDefinition() {
         return this.definition;
     }
@@ -41,6 +45,10 @@ public class ManagementPolicyRule extends ProvisioningConstruct {
         this.definition.assign(definition);
         return this;
     }
+    public ManagementPolicyRule setDefinition(ManagementPolicyDefinition definition) {
+        return this.setDefinition(BicepValue.from(definition));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -49,6 +57,10 @@ public class ManagementPolicyRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ManagementPolicyRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -57,6 +69,10 @@ public class ManagementPolicyRule extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public ManagementPolicyRule setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<RuleType> getType() {
         return this.type;
     }
@@ -65,4 +81,8 @@ public class ManagementPolicyRule extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public ManagementPolicyRule setType(RuleType type) {
+        return this.setType(BicepValue.from(type));
+    }
+
 }

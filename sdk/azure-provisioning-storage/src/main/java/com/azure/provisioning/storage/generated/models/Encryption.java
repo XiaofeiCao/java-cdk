@@ -44,6 +44,10 @@ public class Encryption extends ProvisioningConstruct {
         this.currentVersionedKeyIdentifier.assign(currentVersionedKeyIdentifier);
         return this;
     }
+    public Encryption setCurrentVersionedKeyIdentifier(String currentVersionedKeyIdentifier) {
+        return this.setCurrentVersionedKeyIdentifier(BicepValue.from(currentVersionedKeyIdentifier));
+    }
+
     public BicepValue<KeySource> getKeySource() {
         return this.keySource;
     }
@@ -52,6 +56,10 @@ public class Encryption extends ProvisioningConstruct {
         this.keySource.assign(keySource);
         return this;
     }
+    public Encryption setKeySource(KeySource keySource) {
+        return this.setKeySource(BicepValue.from(keySource));
+    }
+
     public BicepValue<String> getKeyVersion() {
         return this.keyVersion;
     }
@@ -60,6 +68,10 @@ public class Encryption extends ProvisioningConstruct {
         this.keyVersion.assign(keyVersion);
         return this;
     }
+    public Encryption setKeyVersion(String keyVersion) {
+        return this.setKeyVersion(BicepValue.from(keyVersion));
+    }
+
     public BicepValue<String> getKeyVaultUri() {
         return this.keyVaultUri;
     }
@@ -68,6 +80,10 @@ public class Encryption extends ProvisioningConstruct {
         this.keyVaultUri.assign(keyVaultUri);
         return this;
     }
+    public Encryption setKeyVaultUri(String keyVaultUri) {
+        return this.setKeyVaultUri(BicepValue.from(keyVaultUri));
+    }
+
     public BicepValue<Boolean> getRequireInfrastructureEncryption() {
         return this.requireInfrastructureEncryption;
     }
@@ -76,6 +92,10 @@ public class Encryption extends ProvisioningConstruct {
         this.requireInfrastructureEncryption.assign(requireInfrastructureEncryption);
         return this;
     }
+    public Encryption setRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        return this.setRequireInfrastructureEncryption(BicepValue.from(requireInfrastructureEncryption));
+    }
+
     public BicepValue<EncryptionIdentity> getEncryptionIdentity() {
         return this.encryptionIdentity;
     }
@@ -84,6 +104,10 @@ public class Encryption extends ProvisioningConstruct {
         this.encryptionIdentity.assign(encryptionIdentity);
         return this;
     }
+    public Encryption setEncryptionIdentity(EncryptionIdentity encryptionIdentity) {
+        return this.setEncryptionIdentity(BicepValue.from(encryptionIdentity));
+    }
+
     public BicepValue<OffsetDateTime> getLastKeyRotationTimestamp() {
         return this.lastKeyRotationTimestamp;
     }
@@ -92,6 +116,10 @@ public class Encryption extends ProvisioningConstruct {
         this.lastKeyRotationTimestamp.assign(lastKeyRotationTimestamp);
         return this;
     }
+    public Encryption setLastKeyRotationTimestamp(OffsetDateTime lastKeyRotationTimestamp) {
+        return this.setLastKeyRotationTimestamp(BicepValue.from(lastKeyRotationTimestamp));
+    }
+
     public BicepValue<String> getKeyName() {
         return this.keyName;
     }
@@ -100,6 +128,10 @@ public class Encryption extends ProvisioningConstruct {
         this.keyName.assign(keyName);
         return this;
     }
+    public Encryption setKeyName(String keyName) {
+        return this.setKeyName(BicepValue.from(keyName));
+    }
+
     public BicepValue<OffsetDateTime> getCurrentVersionedKeyExpirationTimestamp() {
         return this.currentVersionedKeyExpirationTimestamp;
     }
@@ -108,6 +140,10 @@ public class Encryption extends ProvisioningConstruct {
         this.currentVersionedKeyExpirationTimestamp.assign(currentVersionedKeyExpirationTimestamp);
         return this;
     }
+    public Encryption setCurrentVersionedKeyExpirationTimestamp(OffsetDateTime currentVersionedKeyExpirationTimestamp) {
+        return this.setCurrentVersionedKeyExpirationTimestamp(BicepValue.from(currentVersionedKeyExpirationTimestamp));
+    }
+
     public BicepValue<EncryptionServices> getServices() {
         return this.services;
     }
@@ -116,4 +152,8 @@ public class Encryption extends ProvisioningConstruct {
         this.services.assign(services);
         return this;
     }
+    public Encryption setServices(EncryptionServices services) {
+        return this.setServices(BicepValue.from(services));
+    }
+
 }

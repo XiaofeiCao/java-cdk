@@ -28,6 +28,10 @@ public class SasPolicy extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public SasPolicy setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<ExpirationAction> getExpirationAction() {
         return this.expirationAction;
     }
@@ -36,6 +40,10 @@ public class SasPolicy extends ProvisioningConstruct {
         this.expirationAction.assign(expirationAction);
         return this;
     }
+    public SasPolicy setExpirationAction(ExpirationAction expirationAction) {
+        return this.setExpirationAction(BicepValue.from(expirationAction));
+    }
+
     public BicepValue<String> getSasExpirationPeriod() {
         return this.sasExpirationPeriod;
     }
@@ -44,4 +52,8 @@ public class SasPolicy extends ProvisioningConstruct {
         this.sasExpirationPeriod.assign(sasExpirationPeriod);
         return this;
     }
+    public SasPolicy setSasExpirationPeriod(String sasExpirationPeriod) {
+        return this.setSasExpirationPeriod(BicepValue.from(sasExpirationPeriod));
+    }
+
 }

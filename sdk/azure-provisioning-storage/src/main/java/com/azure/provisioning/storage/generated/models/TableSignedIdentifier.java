@@ -28,6 +28,10 @@ public class TableSignedIdentifier extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public TableSignedIdentifier setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -36,6 +40,10 @@ public class TableSignedIdentifier extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public TableSignedIdentifier setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
     public BicepValue<TableAccessPolicy> getAccessPolicy() {
         return this.accessPolicy;
     }
@@ -44,4 +52,8 @@ public class TableSignedIdentifier extends ProvisioningConstruct {
         this.accessPolicy.assign(accessPolicy);
         return this;
     }
+    public TableSignedIdentifier setAccessPolicy(TableAccessPolicy accessPolicy) {
+        return this.setAccessPolicy(BicepValue.from(accessPolicy));
+    }
+
 }

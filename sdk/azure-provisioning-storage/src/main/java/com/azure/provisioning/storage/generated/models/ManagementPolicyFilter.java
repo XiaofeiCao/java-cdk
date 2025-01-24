@@ -33,6 +33,10 @@ public class ManagementPolicyFilter extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ManagementPolicyFilter setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepList<TagFilter> getBlobIndexMatch() {
         return this.blobIndexMatch;
     }
@@ -41,6 +45,10 @@ public class ManagementPolicyFilter extends ProvisioningConstruct {
         this.blobIndexMatch.assign(blobIndexMatch);
         return this;
     }
+    public ManagementPolicyFilter setBlobIndexMatch(List<TagFilter> blobIndexMatch) {
+        return this.setBlobIndexMatch(BicepList.from(blobIndexMatch));
+    }
+
     public BicepList<String> getPrefixMatch() {
         return this.prefixMatch;
     }
@@ -49,6 +57,10 @@ public class ManagementPolicyFilter extends ProvisioningConstruct {
         this.prefixMatch.assign(prefixMatch);
         return this;
     }
+    public ManagementPolicyFilter setPrefixMatch(List<String> prefixMatch) {
+        return this.setPrefixMatch(BicepList.from(prefixMatch));
+    }
+
     public BicepList<String> getBlobTypes() {
         return this.blobTypes;
     }
@@ -57,4 +69,8 @@ public class ManagementPolicyFilter extends ProvisioningConstruct {
         this.blobTypes.assign(blobTypes);
         return this;
     }
+    public ManagementPolicyFilter setBlobTypes(List<String> blobTypes) {
+        return this.setBlobTypes(BicepList.from(blobTypes));
+    }
+
 }

@@ -35,6 +35,10 @@ public class BlobInventoryPolicySchema extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobInventoryPolicySchema setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepList<BlobInventoryPolicyRule> getRules() {
         return this.rules;
     }
@@ -43,6 +47,10 @@ public class BlobInventoryPolicySchema extends ProvisioningConstruct {
         this.rules.assign(rules);
         return this;
     }
+    public BlobInventoryPolicySchema setRules(List<BlobInventoryPolicyRule> rules) {
+        return this.setRules(BicepList.from(rules));
+    }
+
     public BicepValue<String> getDestination() {
         return this.destination;
     }
@@ -51,6 +59,10 @@ public class BlobInventoryPolicySchema extends ProvisioningConstruct {
         this.destination.assign(destination);
         return this;
     }
+    public BlobInventoryPolicySchema setDestination(String destination) {
+        return this.setDestination(BicepValue.from(destination));
+    }
+
     public BicepValue<Boolean> getEnabled() {
         return this.enabled;
     }
@@ -59,6 +71,10 @@ public class BlobInventoryPolicySchema extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public BlobInventoryPolicySchema setEnabled(boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<InventoryRuleType> getType() {
         return this.type;
     }
@@ -67,4 +83,8 @@ public class BlobInventoryPolicySchema extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public BlobInventoryPolicySchema setType(InventoryRuleType type) {
+        return this.setType(BicepValue.from(type));
+    }
+
 }

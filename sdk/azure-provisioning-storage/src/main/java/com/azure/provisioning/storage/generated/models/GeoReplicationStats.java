@@ -36,6 +36,10 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.status.assign(status);
         return this;
     }
+    public GeoReplicationStats setStatus(GeoReplicationStatus status) {
+        return this.setStatus(BicepValue.from(status));
+    }
+
     public BicepValue<OffsetDateTime> getLastSyncTime() {
         return this.lastSyncTime;
     }
@@ -44,6 +48,10 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.lastSyncTime.assign(lastSyncTime);
         return this;
     }
+    public GeoReplicationStats setLastSyncTime(OffsetDateTime lastSyncTime) {
+        return this.setLastSyncTime(BicepValue.from(lastSyncTime));
+    }
+
     public BicepValue<Boolean> getCanFailover() {
         return this.canFailover;
     }
@@ -52,6 +60,10 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.canFailover.assign(canFailover);
         return this;
     }
+    public GeoReplicationStats setCanFailover(Boolean canFailover) {
+        return this.setCanFailover(BicepValue.from(canFailover));
+    }
+
     public BicepValue<PostFailoverRedundancy> getPostFailoverRedundancy() {
         return this.postFailoverRedundancy;
     }
@@ -60,6 +72,10 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.postFailoverRedundancy.assign(postFailoverRedundancy);
         return this;
     }
+    public GeoReplicationStats setPostFailoverRedundancy(PostFailoverRedundancy postFailoverRedundancy) {
+        return this.setPostFailoverRedundancy(BicepValue.from(postFailoverRedundancy));
+    }
+
     public BicepValue<PostPlannedFailoverRedundancy> getPostPlannedFailoverRedundancy() {
         return this.postPlannedFailoverRedundancy;
     }
@@ -68,6 +84,10 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.postPlannedFailoverRedundancy.assign(postPlannedFailoverRedundancy);
         return this;
     }
+    public GeoReplicationStats setPostPlannedFailoverRedundancy(PostPlannedFailoverRedundancy postPlannedFailoverRedundancy) {
+        return this.setPostPlannedFailoverRedundancy(BicepValue.from(postPlannedFailoverRedundancy));
+    }
+
     public BicepValue<Boolean> getCanPlannedFailover() {
         return this.canPlannedFailover;
     }
@@ -76,4 +96,8 @@ public class GeoReplicationStats extends ProvisioningConstruct {
         this.canPlannedFailover.assign(canPlannedFailover);
         return this;
     }
+    public GeoReplicationStats setCanPlannedFailover(Boolean canPlannedFailover) {
+        return this.setCanPlannedFailover(BicepValue.from(canPlannedFailover));
+    }
+
 }

@@ -29,6 +29,10 @@ public class StorageTaskAssignmentExecutionContext extends ProvisioningConstruct
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public StorageTaskAssignmentExecutionContext setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<ExecutionTarget> getTarget() {
         return this.target;
     }
@@ -37,6 +41,10 @@ public class StorageTaskAssignmentExecutionContext extends ProvisioningConstruct
         this.target.assign(target);
         return this;
     }
+    public StorageTaskAssignmentExecutionContext setTarget(ExecutionTarget target) {
+        return this.setTarget(BicepValue.from(target));
+    }
+
     public BicepValue<ExecutionTrigger> getTrigger() {
         return this.trigger;
     }
@@ -45,4 +53,8 @@ public class StorageTaskAssignmentExecutionContext extends ProvisioningConstruct
         this.trigger.assign(trigger);
         return this;
     }
+    public StorageTaskAssignmentExecutionContext setTrigger(ExecutionTrigger trigger) {
+        return this.setTrigger(BicepValue.from(trigger));
+    }
+
 }

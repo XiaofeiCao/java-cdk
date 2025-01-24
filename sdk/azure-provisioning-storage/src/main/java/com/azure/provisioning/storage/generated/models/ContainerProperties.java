@@ -69,6 +69,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.leaseState.assign(leaseState);
         return this;
     }
+    public ContainerProperties setLeaseState(LeaseState leaseState) {
+        return this.setLeaseState(BicepValue.from(leaseState));
+    }
+
     public BicepValue<Boolean> getDenyEncryptionScopeOverride() {
         return this.denyEncryptionScopeOverride;
     }
@@ -77,6 +81,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.denyEncryptionScopeOverride.assign(denyEncryptionScopeOverride);
         return this;
     }
+    public ContainerProperties setDenyEncryptionScopeOverride(Boolean denyEncryptionScopeOverride) {
+        return this.setDenyEncryptionScopeOverride(BicepValue.from(denyEncryptionScopeOverride));
+    }
+
     public BicepValue<Boolean> getDeleted() {
         return this.deleted;
     }
@@ -85,6 +93,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.deleted.assign(deleted);
         return this;
     }
+    public ContainerProperties setDeleted(Boolean deleted) {
+        return this.setDeleted(BicepValue.from(deleted));
+    }
+
     public BicepValue<Boolean> getEnableNfsV3AllSquash() {
         return this.enableNfsV3AllSquash;
     }
@@ -93,6 +105,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.enableNfsV3AllSquash.assign(enableNfsV3AllSquash);
         return this;
     }
+    public ContainerProperties setEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash) {
+        return this.setEnableNfsV3AllSquash(BicepValue.from(enableNfsV3AllSquash));
+    }
+
     public BicepValue<ImmutableStorageWithVersioning> getImmutableStorageWithVersioning() {
         return this.immutableStorageWithVersioning;
     }
@@ -101,6 +117,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.immutableStorageWithVersioning.assign(immutableStorageWithVersioning);
         return this;
     }
+    public ContainerProperties setImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning) {
+        return this.setImmutableStorageWithVersioning(BicepValue.from(immutableStorageWithVersioning));
+    }
+
     public BicepValue<LeaseDuration> getLeaseDuration() {
         return this.leaseDuration;
     }
@@ -109,6 +129,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.leaseDuration.assign(leaseDuration);
         return this;
     }
+    public ContainerProperties setLeaseDuration(LeaseDuration leaseDuration) {
+        return this.setLeaseDuration(BicepValue.from(leaseDuration));
+    }
+
     public BicepValue<Boolean> getEnableNfsV3RootSquash() {
         return this.enableNfsV3RootSquash;
     }
@@ -117,6 +141,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.enableNfsV3RootSquash.assign(enableNfsV3RootSquash);
         return this;
     }
+    public ContainerProperties setEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash) {
+        return this.setEnableNfsV3RootSquash(BicepValue.from(enableNfsV3RootSquash));
+    }
+
     public BicepValue<Boolean> getHasImmutabilityPolicy() {
         return this.hasImmutabilityPolicy;
     }
@@ -125,6 +153,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.hasImmutabilityPolicy.assign(hasImmutabilityPolicy);
         return this;
     }
+    public ContainerProperties setHasImmutabilityPolicy(Boolean hasImmutabilityPolicy) {
+        return this.setHasImmutabilityPolicy(BicepValue.from(hasImmutabilityPolicy));
+    }
+
     public BicepValue<OffsetDateTime> getDeletedTime() {
         return this.deletedTime;
     }
@@ -133,6 +165,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.deletedTime.assign(deletedTime);
         return this;
     }
+    public ContainerProperties setDeletedTime(OffsetDateTime deletedTime) {
+        return this.setDeletedTime(BicepValue.from(deletedTime));
+    }
+
     public BicepDictionary<String> getMetadata() {
         return this.metadata;
     }
@@ -141,6 +177,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.metadata.assign(metadata);
         return this;
     }
+    public ContainerProperties setMetadata(Map<String,String> metadata) {
+        return this.setMetadata(BicepValue.from(metadata));
+    }
+
     public BicepValue<ImmutabilityPolicyProperties> getImmutabilityPolicy() {
         return this.immutabilityPolicy;
     }
@@ -149,6 +189,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.immutabilityPolicy.assign(immutabilityPolicy);
         return this;
     }
+    public ContainerProperties setImmutabilityPolicy(ImmutabilityPolicyProperties immutabilityPolicy) {
+        return this.setImmutabilityPolicy(BicepValue.from(immutabilityPolicy));
+    }
+
     public BicepValue<Boolean> getHasLegalHold() {
         return this.hasLegalHold;
     }
@@ -157,6 +201,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.hasLegalHold.assign(hasLegalHold);
         return this;
     }
+    public ContainerProperties setHasLegalHold(Boolean hasLegalHold) {
+        return this.setHasLegalHold(BicepValue.from(hasLegalHold));
+    }
+
     public BicepValue<LegalHoldProperties> getLegalHold() {
         return this.legalHold;
     }
@@ -165,6 +213,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.legalHold.assign(legalHold);
         return this;
     }
+    public ContainerProperties setLegalHold(LegalHoldProperties legalHold) {
+        return this.setLegalHold(BicepValue.from(legalHold));
+    }
+
     public BicepValue<String> getDefaultEncryptionScope() {
         return this.defaultEncryptionScope;
     }
@@ -173,6 +225,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.defaultEncryptionScope.assign(defaultEncryptionScope);
         return this;
     }
+    public ContainerProperties setDefaultEncryptionScope(String defaultEncryptionScope) {
+        return this.setDefaultEncryptionScope(BicepValue.from(defaultEncryptionScope));
+    }
+
     public BicepValue<String> getVersion() {
         return this.version;
     }
@@ -181,6 +237,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.version.assign(version);
         return this;
     }
+    public ContainerProperties setVersion(String version) {
+        return this.setVersion(BicepValue.from(version));
+    }
+
     public BicepValue<OffsetDateTime> getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -189,6 +249,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.lastModifiedTime.assign(lastModifiedTime);
         return this;
     }
+    public ContainerProperties setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+        return this.setLastModifiedTime(BicepValue.from(lastModifiedTime));
+    }
+
     public BicepValue<LeaseStatus> getLeaseStatus() {
         return this.leaseStatus;
     }
@@ -197,6 +261,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.leaseStatus.assign(leaseStatus);
         return this;
     }
+    public ContainerProperties setLeaseStatus(LeaseStatus leaseStatus) {
+        return this.setLeaseStatus(BicepValue.from(leaseStatus));
+    }
+
     public BicepValue<Integer> getRemainingRetentionDays() {
         return this.remainingRetentionDays;
     }
@@ -205,6 +273,10 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.remainingRetentionDays.assign(remainingRetentionDays);
         return this;
     }
+    public ContainerProperties setRemainingRetentionDays(Integer remainingRetentionDays) {
+        return this.setRemainingRetentionDays(BicepValue.from(remainingRetentionDays));
+    }
+
     public BicepValue<PublicAccess> getPublicAccess() {
         return this.publicAccess;
     }
@@ -213,4 +285,8 @@ public class ContainerProperties extends ProvisioningConstruct {
         this.publicAccess.assign(publicAccess);
         return this;
     }
+    public ContainerProperties setPublicAccess(PublicAccess publicAccess) {
+        return this.setPublicAccess(BicepValue.from(publicAccess));
+    }
+
 }

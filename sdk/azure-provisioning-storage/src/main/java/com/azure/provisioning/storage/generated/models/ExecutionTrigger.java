@@ -29,6 +29,10 @@ public class ExecutionTrigger extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ExecutionTrigger setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<TriggerParameters> getParameters() {
         return this.parameters;
     }
@@ -37,6 +41,10 @@ public class ExecutionTrigger extends ProvisioningConstruct {
         this.parameters.assign(parameters);
         return this;
     }
+    public ExecutionTrigger setParameters(TriggerParameters parameters) {
+        return this.setParameters(BicepValue.from(parameters));
+    }
+
     public BicepValue<TriggerType> getType() {
         return this.type;
     }
@@ -45,4 +53,8 @@ public class ExecutionTrigger extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public ExecutionTrigger setType(TriggerType type) {
+        return this.setType(BicepValue.from(type));
+    }
+
 }

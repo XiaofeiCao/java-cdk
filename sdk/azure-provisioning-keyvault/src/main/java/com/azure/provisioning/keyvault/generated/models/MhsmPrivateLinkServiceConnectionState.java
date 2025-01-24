@@ -28,6 +28,10 @@ public class MhsmPrivateLinkServiceConnectionState extends ProvisioningConstruct
         this.status.assign(status);
         return this;
     }
+    public MhsmPrivateLinkServiceConnectionState setStatus(PrivateEndpointServiceConnectionStatus status) {
+        return this.setStatus(BicepValue.from(status));
+    }
+
     public BicepValue<String> getDescription() {
         return this.description;
     }
@@ -36,6 +40,10 @@ public class MhsmPrivateLinkServiceConnectionState extends ProvisioningConstruct
         this.description.assign(description);
         return this;
     }
+    public MhsmPrivateLinkServiceConnectionState setDescription(String description) {
+        return this.setDescription(BicepValue.from(description));
+    }
+
     public BicepValue<ActionsRequired> getActionsRequired() {
         return this.actionsRequired;
     }
@@ -44,4 +52,8 @@ public class MhsmPrivateLinkServiceConnectionState extends ProvisioningConstruct
         this.actionsRequired.assign(actionsRequired);
         return this;
     }
+    public MhsmPrivateLinkServiceConnectionState setActionsRequired(ActionsRequired actionsRequired) {
+        return this.setActionsRequired(BicepValue.from(actionsRequired));
+    }
+
 }

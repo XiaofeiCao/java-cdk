@@ -29,6 +29,10 @@ public class ImmutabilityPolicyProperty extends ProvisioningConstruct {
         this.state.assign(state);
         return this;
     }
+    public ImmutabilityPolicyProperty setState(ImmutabilityPolicyState state) {
+        return this.setState(BicepValue.from(state));
+    }
+
     public BicepValue<Boolean> getAllowProtectedAppendWritesAll() {
         return this.allowProtectedAppendWritesAll;
     }
@@ -37,6 +41,10 @@ public class ImmutabilityPolicyProperty extends ProvisioningConstruct {
         this.allowProtectedAppendWritesAll.assign(allowProtectedAppendWritesAll);
         return this;
     }
+    public ImmutabilityPolicyProperty setAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll) {
+        return this.setAllowProtectedAppendWritesAll(BicepValue.from(allowProtectedAppendWritesAll));
+    }
+
     public BicepValue<Integer> getImmutabilityPeriodSinceCreationInDays() {
         return this.immutabilityPeriodSinceCreationInDays;
     }
@@ -45,6 +53,10 @@ public class ImmutabilityPolicyProperty extends ProvisioningConstruct {
         this.immutabilityPeriodSinceCreationInDays.assign(immutabilityPeriodSinceCreationInDays);
         return this;
     }
+    public ImmutabilityPolicyProperty setImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays) {
+        return this.setImmutabilityPeriodSinceCreationInDays(BicepValue.from(immutabilityPeriodSinceCreationInDays));
+    }
+
     public BicepValue<Boolean> getAllowProtectedAppendWrites() {
         return this.allowProtectedAppendWrites;
     }
@@ -53,4 +65,8 @@ public class ImmutabilityPolicyProperty extends ProvisioningConstruct {
         this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
         return this;
     }
+    public ImmutabilityPolicyProperty setAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
+        return this.setAllowProtectedAppendWrites(BicepValue.from(allowProtectedAppendWrites));
+    }
+
 }

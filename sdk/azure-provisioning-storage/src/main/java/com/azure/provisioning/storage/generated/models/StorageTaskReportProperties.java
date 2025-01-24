@@ -50,6 +50,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.taskVersion.assign(taskVersion);
         return this;
     }
+    public StorageTaskReportProperties setTaskVersion(String taskVersion) {
+        return this.setTaskVersion(BicepValue.from(taskVersion));
+    }
+
     public BicepValue<String> getFinishTime() {
         return this.finishTime;
     }
@@ -58,6 +62,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.finishTime.assign(finishTime);
         return this;
     }
+    public StorageTaskReportProperties setFinishTime(String finishTime) {
+        return this.setFinishTime(BicepValue.from(finishTime));
+    }
+
     public BicepValue<String> getObjectsTargetedCount() {
         return this.objectsTargetedCount;
     }
@@ -66,6 +74,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.objectsTargetedCount.assign(objectsTargetedCount);
         return this;
     }
+    public StorageTaskReportProperties setObjectsTargetedCount(String objectsTargetedCount) {
+        return this.setObjectsTargetedCount(BicepValue.from(objectsTargetedCount));
+    }
+
     public BicepValue<String> getObjectsOperatedOnCount() {
         return this.objectsOperatedOnCount;
     }
@@ -74,6 +86,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.objectsOperatedOnCount.assign(objectsOperatedOnCount);
         return this;
     }
+    public StorageTaskReportProperties setObjectsOperatedOnCount(String objectsOperatedOnCount) {
+        return this.setObjectsOperatedOnCount(BicepValue.from(objectsOperatedOnCount));
+    }
+
     public BicepValue<String> getObjectFailedCount() {
         return this.objectFailedCount;
     }
@@ -82,6 +98,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.objectFailedCount.assign(objectFailedCount);
         return this;
     }
+    public StorageTaskReportProperties setObjectFailedCount(String objectFailedCount) {
+        return this.setObjectFailedCount(BicepValue.from(objectFailedCount));
+    }
+
     public BicepValue<String> getSummaryReportPath() {
         return this.summaryReportPath;
     }
@@ -90,6 +110,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.summaryReportPath.assign(summaryReportPath);
         return this;
     }
+    public StorageTaskReportProperties setSummaryReportPath(String summaryReportPath) {
+        return this.setSummaryReportPath(BicepValue.from(summaryReportPath));
+    }
+
     public BicepValue<String> getStorageAccountId() {
         return this.storageAccountId;
     }
@@ -98,6 +122,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.storageAccountId.assign(storageAccountId);
         return this;
     }
+    public StorageTaskReportProperties setStorageAccountId(String storageAccountId) {
+        return this.setStorageAccountId(BicepValue.from(storageAccountId));
+    }
+
     public BicepValue<String> getTaskAssignmentId() {
         return this.taskAssignmentId;
     }
@@ -106,6 +134,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.taskAssignmentId.assign(taskAssignmentId);
         return this;
     }
+    public StorageTaskReportProperties setTaskAssignmentId(String taskAssignmentId) {
+        return this.setTaskAssignmentId(BicepValue.from(taskAssignmentId));
+    }
+
     public BicepValue<String> getStartTime() {
         return this.startTime;
     }
@@ -114,6 +146,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.startTime.assign(startTime);
         return this;
     }
+    public StorageTaskReportProperties setStartTime(String startTime) {
+        return this.setStartTime(BicepValue.from(startTime));
+    }
+
     public BicepValue<String> getObjectsSucceededCount() {
         return this.objectsSucceededCount;
     }
@@ -122,6 +158,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.objectsSucceededCount.assign(objectsSucceededCount);
         return this;
     }
+    public StorageTaskReportProperties setObjectsSucceededCount(String objectsSucceededCount) {
+        return this.setObjectsSucceededCount(BicepValue.from(objectsSucceededCount));
+    }
+
     public BicepValue<RunStatusEnum> getRunStatusEnum() {
         return this.runStatusEnum;
     }
@@ -130,6 +170,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.runStatusEnum.assign(runStatusEnum);
         return this;
     }
+    public StorageTaskReportProperties setRunStatusEnum(RunStatusEnum runStatusEnum) {
+        return this.setRunStatusEnum(BicepValue.from(runStatusEnum));
+    }
+
     public BicepValue<String> getRunStatusError() {
         return this.runStatusError;
     }
@@ -138,6 +182,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.runStatusError.assign(runStatusError);
         return this;
     }
+    public StorageTaskReportProperties setRunStatusError(String runStatusError) {
+        return this.setRunStatusError(BicepValue.from(runStatusError));
+    }
+
     public BicepValue<RunResult> getRunResult() {
         return this.runResult;
     }
@@ -146,6 +194,10 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.runResult.assign(runResult);
         return this;
     }
+    public StorageTaskReportProperties setRunResult(RunResult runResult) {
+        return this.setRunResult(BicepValue.from(runResult));
+    }
+
     public BicepValue<String> getTaskId() {
         return this.taskId;
     }
@@ -154,4 +206,8 @@ public class StorageTaskReportProperties extends ProvisioningConstruct {
         this.taskId.assign(taskId);
         return this;
     }
+    public StorageTaskReportProperties setTaskId(String taskId) {
+        return this.setTaskId(BicepValue.from(taskId));
+    }
+
 }

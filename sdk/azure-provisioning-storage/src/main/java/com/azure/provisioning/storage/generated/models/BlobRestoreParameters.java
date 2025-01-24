@@ -31,6 +31,10 @@ public class BlobRestoreParameters extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobRestoreParameters setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<OffsetDateTime> getTimeToRestore() {
         return this.timeToRestore;
     }
@@ -39,6 +43,10 @@ public class BlobRestoreParameters extends ProvisioningConstruct {
         this.timeToRestore.assign(timeToRestore);
         return this;
     }
+    public BlobRestoreParameters setTimeToRestore(OffsetDateTime timeToRestore) {
+        return this.setTimeToRestore(BicepValue.from(timeToRestore));
+    }
+
     public BicepList<BlobRestoreRange> getBlobRanges() {
         return this.blobRanges;
     }
@@ -47,4 +55,8 @@ public class BlobRestoreParameters extends ProvisioningConstruct {
         this.blobRanges.assign(blobRanges);
         return this;
     }
+    public BlobRestoreParameters setBlobRanges(List<BlobRestoreRange> blobRanges) {
+        return this.setBlobRanges(BicepList.from(blobRanges));
+    }
+
 }

@@ -32,6 +32,10 @@ public class TriggerParameters extends ProvisioningConstruct {
         this.startFrom.assign(startFrom);
         return this;
     }
+    public TriggerParameters setStartFrom(OffsetDateTime startFrom) {
+        return this.setStartFrom(BicepValue.from(startFrom));
+    }
+
     public BicepValue<IntervalUnit> getIntervalUnit() {
         return this.intervalUnit;
     }
@@ -40,6 +44,10 @@ public class TriggerParameters extends ProvisioningConstruct {
         this.intervalUnit.assign(intervalUnit);
         return this;
     }
+    public TriggerParameters setIntervalUnit(IntervalUnit intervalUnit) {
+        return this.setIntervalUnit(BicepValue.from(intervalUnit));
+    }
+
     public BicepValue<OffsetDateTime> getEndBy() {
         return this.endBy;
     }
@@ -48,6 +56,10 @@ public class TriggerParameters extends ProvisioningConstruct {
         this.endBy.assign(endBy);
         return this;
     }
+    public TriggerParameters setEndBy(OffsetDateTime endBy) {
+        return this.setEndBy(BicepValue.from(endBy));
+    }
+
     public BicepValue<OffsetDateTime> getStartOn() {
         return this.startOn;
     }
@@ -56,6 +68,10 @@ public class TriggerParameters extends ProvisioningConstruct {
         this.startOn.assign(startOn);
         return this;
     }
+    public TriggerParameters setStartOn(OffsetDateTime startOn) {
+        return this.setStartOn(BicepValue.from(startOn));
+    }
+
     public BicepValue<Integer> getInterval() {
         return this.interval;
     }
@@ -64,4 +80,8 @@ public class TriggerParameters extends ProvisioningConstruct {
         this.interval.assign(interval);
         return this;
     }
+    public TriggerParameters setInterval(Integer interval) {
+        return this.setInterval(BicepValue.from(interval));
+    }
+
 }

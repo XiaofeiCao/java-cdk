@@ -29,6 +29,10 @@ public class ManagementPolicyDefinition extends ProvisioningConstruct {
         this.filters.assign(filters);
         return this;
     }
+    public ManagementPolicyDefinition setFilters(ManagementPolicyFilter filters) {
+        return this.setFilters(BicepValue.from(filters));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -37,6 +41,10 @@ public class ManagementPolicyDefinition extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ManagementPolicyDefinition setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<ManagementPolicyAction> getActions() {
         return this.actions;
     }
@@ -45,4 +53,8 @@ public class ManagementPolicyDefinition extends ProvisioningConstruct {
         this.actions.assign(actions);
         return this;
     }
+    public ManagementPolicyDefinition setActions(ManagementPolicyAction actions) {
+        return this.setActions(BicepValue.from(actions));
+    }
+
 }

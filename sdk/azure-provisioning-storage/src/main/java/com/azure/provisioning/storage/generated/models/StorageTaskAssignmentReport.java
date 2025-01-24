@@ -25,6 +25,10 @@ public class StorageTaskAssignmentReport extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public StorageTaskAssignmentReport setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getPrefix() {
         return this.prefix;
     }
@@ -33,4 +37,8 @@ public class StorageTaskAssignmentReport extends ProvisioningConstruct {
         this.prefix.assign(prefix);
         return this;
     }
+    public StorageTaskAssignmentReport setPrefix(String prefix) {
+        return this.setPrefix(BicepValue.from(prefix));
+    }
+
 }

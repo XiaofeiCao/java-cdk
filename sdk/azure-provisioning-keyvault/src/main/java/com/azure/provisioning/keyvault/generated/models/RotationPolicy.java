@@ -28,6 +28,10 @@ public class RotationPolicy extends ProvisioningConstruct {
         this.attributes.assign(attributes);
         return this;
     }
+    public RotationPolicy setAttributes(KeyRotationPolicyAttributes attributes) {
+        return this.setAttributes(BicepValue.from(attributes));
+    }
+
     public BicepList<LifetimeAction> getLifetimeActions() {
         return this.lifetimeActions;
     }
@@ -36,4 +40,8 @@ public class RotationPolicy extends ProvisioningConstruct {
         this.lifetimeActions.assign(lifetimeActions);
         return this;
     }
+    public RotationPolicy setLifetimeActions(List<LifetimeAction> lifetimeActions) {
+        return this.setLifetimeActions(BicepList.from(lifetimeActions));
+    }
+
 }

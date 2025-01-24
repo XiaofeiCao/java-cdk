@@ -30,6 +30,10 @@ public class LegalHoldProperties extends ProvisioningConstruct {
         this.protectedAppendWritesHistory.assign(protectedAppendWritesHistory);
         return this;
     }
+    public LegalHoldProperties setProtectedAppendWritesHistory(ProtectedAppendWritesHistory protectedAppendWritesHistory) {
+        return this.setProtectedAppendWritesHistory(BicepValue.from(protectedAppendWritesHistory));
+    }
+
     public BicepValue<Boolean> getHasLegalHold() {
         return this.hasLegalHold;
     }
@@ -38,6 +42,10 @@ public class LegalHoldProperties extends ProvisioningConstruct {
         this.hasLegalHold.assign(hasLegalHold);
         return this;
     }
+    public LegalHoldProperties setHasLegalHold(Boolean hasLegalHold) {
+        return this.setHasLegalHold(BicepValue.from(hasLegalHold));
+    }
+
     public BicepList<TagProperty> getTags() {
         return this.tags;
     }
@@ -46,4 +54,8 @@ public class LegalHoldProperties extends ProvisioningConstruct {
         this.tags.assign(tags);
         return this;
     }
+    public LegalHoldProperties setTags(List<TagProperty> tags) {
+        return this.setTags(BicepList.from(tags));
+    }
+
 }

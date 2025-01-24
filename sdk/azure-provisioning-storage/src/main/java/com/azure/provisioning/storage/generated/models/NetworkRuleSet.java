@@ -40,6 +40,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public NetworkRuleSet setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepList<ResourceAccessRule> getResourceAccessRules() {
         return this.resourceAccessRules;
     }
@@ -48,6 +52,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.resourceAccessRules.assign(resourceAccessRules);
         return this;
     }
+    public NetworkRuleSet setResourceAccessRules(List<ResourceAccessRule> resourceAccessRules) {
+        return this.setResourceAccessRules(BicepList.from(resourceAccessRules));
+    }
+
     public BicepValue<DefaultAction> getDefaultAction() {
         return this.defaultAction;
     }
@@ -56,6 +64,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.defaultAction.assign(defaultAction);
         return this;
     }
+    public NetworkRuleSet setDefaultAction(DefaultAction defaultAction) {
+        return this.setDefaultAction(BicepValue.from(defaultAction));
+    }
+
     public BicepValue<Bypass> getBypass() {
         return this.bypass;
     }
@@ -64,6 +76,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.bypass.assign(bypass);
         return this;
     }
+    public NetworkRuleSet setBypass(Bypass bypass) {
+        return this.setBypass(BicepValue.from(bypass));
+    }
+
     public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
         return this.virtualNetworkRules;
     }
@@ -72,6 +88,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
+    public NetworkRuleSet setVirtualNetworkRules(List<VirtualNetworkRule> virtualNetworkRules) {
+        return this.setVirtualNetworkRules(BicepList.from(virtualNetworkRules));
+    }
+
     public BicepList<IpRule> getIpRules() {
         return this.ipRules;
     }
@@ -80,4 +100,8 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.ipRules.assign(ipRules);
         return this;
     }
+    public NetworkRuleSet setIpRules(List<IpRule> ipRules) {
+        return this.setIpRules(BicepList.from(ipRules));
+    }
+
 }

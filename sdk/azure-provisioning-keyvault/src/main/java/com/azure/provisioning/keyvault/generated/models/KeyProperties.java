@@ -46,6 +46,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.kty.assign(kty);
         return this;
     }
+    public KeyProperties setKty(JsonWebKeyType kty) {
+        return this.setKty(BicepValue.from(kty));
+    }
+
     public BicepValue<String> getKeyUri() {
         return this.keyUri;
     }
@@ -54,6 +58,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.keyUri.assign(keyUri);
         return this;
     }
+    public KeyProperties setKeyUri(String keyUri) {
+        return this.setKeyUri(BicepValue.from(keyUri));
+    }
+
     public BicepList<JsonWebKeyOperation> getKeyOps() {
         return this.keyOps;
     }
@@ -62,6 +70,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.keyOps.assign(keyOps);
         return this;
     }
+    public KeyProperties setKeyOps(List<JsonWebKeyOperation> keyOps) {
+        return this.setKeyOps(BicepList.from(keyOps));
+    }
+
     public BicepValue<RotationPolicy> getRotationPolicy() {
         return this.rotationPolicy;
     }
@@ -70,6 +82,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.rotationPolicy.assign(rotationPolicy);
         return this;
     }
+    public KeyProperties setRotationPolicy(RotationPolicy rotationPolicy) {
+        return this.setRotationPolicy(BicepValue.from(rotationPolicy));
+    }
+
     public BicepValue<KeyReleasePolicy> getReleasePolicy() {
         return this.releasePolicy;
     }
@@ -78,6 +94,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.releasePolicy.assign(releasePolicy);
         return this;
     }
+    public KeyProperties setReleasePolicy(KeyReleasePolicy releasePolicy) {
+        return this.setReleasePolicy(BicepValue.from(releasePolicy));
+    }
+
     public BicepValue<KeyAttributes> getAttributes() {
         return this.attributes;
     }
@@ -86,6 +106,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.attributes.assign(attributes);
         return this;
     }
+    public KeyProperties setAttributes(KeyAttributes attributes) {
+        return this.setAttributes(BicepValue.from(attributes));
+    }
+
     public BicepValue<Integer> getKeySize() {
         return this.keySize;
     }
@@ -94,6 +118,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.keySize.assign(keySize);
         return this;
     }
+    public KeyProperties setKeySize(Integer keySize) {
+        return this.setKeySize(BicepValue.from(keySize));
+    }
+
     public BicepValue<String> getKeyUriWithVersion() {
         return this.keyUriWithVersion;
     }
@@ -102,6 +130,10 @@ public class KeyProperties extends ProvisioningConstruct {
         this.keyUriWithVersion.assign(keyUriWithVersion);
         return this;
     }
+    public KeyProperties setKeyUriWithVersion(String keyUriWithVersion) {
+        return this.setKeyUriWithVersion(BicepValue.from(keyUriWithVersion));
+    }
+
     public BicepValue<JsonWebKeyCurveName> getCurveName() {
         return this.curveName;
     }
@@ -110,4 +142,8 @@ public class KeyProperties extends ProvisioningConstruct {
         this.curveName.assign(curveName);
         return this;
     }
+    public KeyProperties setCurveName(JsonWebKeyCurveName curveName) {
+        return this.setCurveName(BicepValue.from(curveName));
+    }
+
 }

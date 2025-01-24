@@ -28,6 +28,10 @@ public class DateAfterModification extends ProvisioningConstruct {
         this.daysAfterLastAccessTimeGreaterThan.assign(daysAfterLastAccessTimeGreaterThan);
         return this;
     }
+    public DateAfterModification setDaysAfterLastAccessTimeGreaterThan(Float daysAfterLastAccessTimeGreaterThan) {
+        return this.setDaysAfterLastAccessTimeGreaterThan(BicepValue.from(daysAfterLastAccessTimeGreaterThan));
+    }
+
     public BicepValue<Float> getDaysAfterCreationGreaterThan() {
         return this.daysAfterCreationGreaterThan;
     }
@@ -36,6 +40,10 @@ public class DateAfterModification extends ProvisioningConstruct {
         this.daysAfterCreationGreaterThan.assign(daysAfterCreationGreaterThan);
         return this;
     }
+    public DateAfterModification setDaysAfterCreationGreaterThan(Float daysAfterCreationGreaterThan) {
+        return this.setDaysAfterCreationGreaterThan(BicepValue.from(daysAfterCreationGreaterThan));
+    }
+
     public BicepValue<Float> getDaysAfterLastTierChangeGreaterThan() {
         return this.daysAfterLastTierChangeGreaterThan;
     }
@@ -44,6 +52,10 @@ public class DateAfterModification extends ProvisioningConstruct {
         this.daysAfterLastTierChangeGreaterThan.assign(daysAfterLastTierChangeGreaterThan);
         return this;
     }
+    public DateAfterModification setDaysAfterLastTierChangeGreaterThan(Float daysAfterLastTierChangeGreaterThan) {
+        return this.setDaysAfterLastTierChangeGreaterThan(BicepValue.from(daysAfterLastTierChangeGreaterThan));
+    }
+
     public BicepValue<Float> getDaysAfterModificationGreaterThan() {
         return this.daysAfterModificationGreaterThan;
     }
@@ -52,4 +64,8 @@ public class DateAfterModification extends ProvisioningConstruct {
         this.daysAfterModificationGreaterThan.assign(daysAfterModificationGreaterThan);
         return this;
     }
+    public DateAfterModification setDaysAfterModificationGreaterThan(Float daysAfterModificationGreaterThan) {
+        return this.setDaysAfterModificationGreaterThan(BicepValue.from(daysAfterModificationGreaterThan));
+    }
+
 }

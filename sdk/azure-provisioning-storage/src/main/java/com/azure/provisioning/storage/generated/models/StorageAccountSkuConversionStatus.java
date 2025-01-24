@@ -30,6 +30,10 @@ public class StorageAccountSkuConversionStatus extends ProvisioningConstruct {
         this.skuConversionStatus.assign(skuConversionStatus);
         return this;
     }
+    public StorageAccountSkuConversionStatus setSkuConversionStatus(SkuConversionStatus skuConversionStatus) {
+        return this.setSkuConversionStatus(BicepValue.from(skuConversionStatus));
+    }
+
     public BicepValue<SkuName> getTargetSkuName() {
         return this.targetSkuName;
     }
@@ -38,6 +42,10 @@ public class StorageAccountSkuConversionStatus extends ProvisioningConstruct {
         this.targetSkuName.assign(targetSkuName);
         return this;
     }
+    public StorageAccountSkuConversionStatus setTargetSkuName(SkuName targetSkuName) {
+        return this.setTargetSkuName(BicepValue.from(targetSkuName));
+    }
+
     public BicepValue<String> getEndTime() {
         return this.endTime;
     }
@@ -46,6 +54,10 @@ public class StorageAccountSkuConversionStatus extends ProvisioningConstruct {
         this.endTime.assign(endTime);
         return this;
     }
+    public StorageAccountSkuConversionStatus setEndTime(String endTime) {
+        return this.setEndTime(BicepValue.from(endTime));
+    }
+
     public BicepValue<String> getStartTime() {
         return this.startTime;
     }
@@ -54,4 +66,8 @@ public class StorageAccountSkuConversionStatus extends ProvisioningConstruct {
         this.startTime.assign(startTime);
         return this;
     }
+    public StorageAccountSkuConversionStatus setStartTime(String startTime) {
+        return this.setStartTime(BicepValue.from(startTime));
+    }
+
 }

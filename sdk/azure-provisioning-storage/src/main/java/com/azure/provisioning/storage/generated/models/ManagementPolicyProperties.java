@@ -29,6 +29,10 @@ public class ManagementPolicyProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ManagementPolicyProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<OffsetDateTime> getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -37,6 +41,10 @@ public class ManagementPolicyProperties extends ProvisioningConstruct {
         this.lastModifiedTime.assign(lastModifiedTime);
         return this;
     }
+    public ManagementPolicyProperties setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+        return this.setLastModifiedTime(BicepValue.from(lastModifiedTime));
+    }
+
     public BicepValue<ManagementPolicySchema> getPolicy() {
         return this.policy;
     }
@@ -45,4 +53,8 @@ public class ManagementPolicyProperties extends ProvisioningConstruct {
         this.policy.assign(policy);
         return this;
     }
+    public ManagementPolicyProperties setPolicy(ManagementPolicySchema policy) {
+        return this.setPolicy(BicepValue.from(policy));
+    }
+
 }

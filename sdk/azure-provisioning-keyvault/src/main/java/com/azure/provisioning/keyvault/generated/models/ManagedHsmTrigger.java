@@ -24,6 +24,10 @@ public class ManagedHsmTrigger extends ProvisioningConstruct {
         this.timeBeforeExpiry.assign(timeBeforeExpiry);
         return this;
     }
+    public ManagedHsmTrigger setTimeBeforeExpiry(String timeBeforeExpiry) {
+        return this.setTimeBeforeExpiry(BicepValue.from(timeBeforeExpiry));
+    }
+
     public BicepValue<String> getTimeAfterCreate() {
         return this.timeAfterCreate;
     }
@@ -32,4 +36,8 @@ public class ManagedHsmTrigger extends ProvisioningConstruct {
         this.timeAfterCreate.assign(timeAfterCreate);
         return this;
     }
+    public ManagedHsmTrigger setTimeAfterCreate(String timeAfterCreate) {
+        return this.setTimeAfterCreate(BicepValue.from(timeAfterCreate));
+    }
+
 }

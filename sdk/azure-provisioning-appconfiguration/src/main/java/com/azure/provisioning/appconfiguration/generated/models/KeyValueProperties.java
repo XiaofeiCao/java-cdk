@@ -40,6 +40,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.contentType.assign(contentType);
         return this;
     }
+    public KeyValueProperties setContentType(String contentType) {
+        return this.setContentType(BicepValue.from(contentType));
+    }
+
     public BicepValue<String> getKey() {
         return this.key;
     }
@@ -48,6 +52,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.key.assign(key);
         return this;
     }
+    public KeyValueProperties setKey(String key) {
+        return this.setKey(BicepValue.from(key));
+    }
+
     public BicepValue<String> getLabel() {
         return this.label;
     }
@@ -56,6 +64,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.label.assign(label);
         return this;
     }
+    public KeyValueProperties setLabel(String label) {
+        return this.setLabel(BicepValue.from(label));
+    }
+
     public BicepValue<String> getValue() {
         return this.value;
     }
@@ -64,6 +76,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.value.assign(value);
         return this;
     }
+    public KeyValueProperties setValue(String value) {
+        return this.setValue(BicepValue.from(value));
+    }
+
     public BicepValue<OffsetDateTime> getLastModified() {
         return this.lastModified;
     }
@@ -72,6 +88,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.lastModified.assign(lastModified);
         return this;
     }
+    public KeyValueProperties setLastModified(OffsetDateTime lastModified) {
+        return this.setLastModified(BicepValue.from(lastModified));
+    }
+
     public BicepValue<Boolean> getLocked() {
         return this.locked;
     }
@@ -80,6 +100,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.locked.assign(locked);
         return this;
     }
+    public KeyValueProperties setLocked(Boolean locked) {
+        return this.setLocked(BicepValue.from(locked));
+    }
+
     public BicepValue<String> getEtag() {
         return this.etag;
     }
@@ -88,6 +112,10 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.etag.assign(etag);
         return this;
     }
+    public KeyValueProperties setEtag(String etag) {
+        return this.setEtag(BicepValue.from(etag));
+    }
+
     public BicepDictionary<String> getTags() {
         return this.tags;
     }
@@ -96,4 +124,8 @@ public class KeyValueProperties extends ProvisioningConstruct {
         this.tags.assign(tags);
         return this;
     }
+    public KeyValueProperties setTags(Map<String,String> tags) {
+        return this.setTags(BicepValue.from(tags));
+    }
+
 }

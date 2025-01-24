@@ -27,6 +27,10 @@ public class TableProperties extends ProvisioningConstruct {
         this.signedIdentifiers.assign(signedIdentifiers);
         return this;
     }
+    public TableProperties setSignedIdentifiers(List<TableSignedIdentifier> signedIdentifiers) {
+        return this.setSignedIdentifiers(BicepList.from(signedIdentifiers));
+    }
+
     public BicepValue<String> getTableName() {
         return this.tableName;
     }
@@ -35,4 +39,8 @@ public class TableProperties extends ProvisioningConstruct {
         this.tableName.assign(tableName);
         return this;
     }
+    public TableProperties setTableName(String tableName) {
+        return this.setTableName(BicepValue.from(tableName));
+    }
+
 }

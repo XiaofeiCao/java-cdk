@@ -25,6 +25,10 @@ public class ProtectedAppendWritesHistory extends ProvisioningConstruct {
         this.allowProtectedAppendWritesAll.assign(allowProtectedAppendWritesAll);
         return this;
     }
+    public ProtectedAppendWritesHistory setAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll) {
+        return this.setAllowProtectedAppendWritesAll(BicepValue.from(allowProtectedAppendWritesAll));
+    }
+
     public BicepValue<OffsetDateTime> getTimestamp() {
         return this.timestamp;
     }
@@ -33,4 +37,8 @@ public class ProtectedAppendWritesHistory extends ProvisioningConstruct {
         this.timestamp.assign(timestamp);
         return this;
     }
+    public ProtectedAppendWritesHistory setTimestamp(OffsetDateTime timestamp) {
+        return this.setTimestamp(BicepValue.from(timestamp));
+    }
+
 }

@@ -22,4 +22,8 @@ public class BlobInventoryCreationTime extends ProvisioningConstruct {
         this.lastNDays.assign(lastNDays);
         return this;
     }
+    public BlobInventoryCreationTime setLastNDays(Integer lastNDays) {
+        return this.setLastNDays(BicepValue.from(lastNDays));
+    }
+
 }

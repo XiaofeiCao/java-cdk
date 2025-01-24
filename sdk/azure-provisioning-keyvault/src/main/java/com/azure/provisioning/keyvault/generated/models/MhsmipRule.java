@@ -25,6 +25,10 @@ public class MhsmipRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public MhsmipRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getValue() {
         return this.value;
     }
@@ -33,4 +37,8 @@ public class MhsmipRule extends ProvisioningConstruct {
         this.value.assign(value);
         return this;
     }
+    public MhsmipRule setValue(String value) {
+        return this.setValue(BicepValue.from(value));
+    }
+
 }

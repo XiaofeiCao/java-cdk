@@ -32,6 +32,10 @@ public class PrivateEndpointConnectionProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public PrivateEndpointConnectionProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<PrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
         return this.privateLinkServiceConnectionState;
     }
@@ -40,6 +44,10 @@ public class PrivateEndpointConnectionProperties extends ProvisioningConstruct {
         this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
+    public PrivateEndpointConnectionProperties setPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        return this.setPrivateLinkServiceConnectionState(BicepValue.from(privateLinkServiceConnectionState));
+    }
+
     public BicepValue<PrivateEndpoint> getPrivateEndpoint() {
         return this.privateEndpoint;
     }
@@ -48,6 +56,10 @@ public class PrivateEndpointConnectionProperties extends ProvisioningConstruct {
         this.privateEndpoint.assign(privateEndpoint);
         return this;
     }
+    public PrivateEndpointConnectionProperties setPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        return this.setPrivateEndpoint(BicepValue.from(privateEndpoint));
+    }
+
     public BicepValue<ProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -56,4 +68,8 @@ public class PrivateEndpointConnectionProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public PrivateEndpointConnectionProperties setProvisioningState(ProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
 }

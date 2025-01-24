@@ -64,6 +64,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.createMode.assign(createMode);
         return this;
     }
+    public ManagedHsmProperties setCreateMode(CreateMode createMode) {
+        return this.setCreateMode(BicepValue.from(createMode));
+    }
+
     public BicepList<MhsmGeoReplicatedRegionInner> getRegions() {
         return this.regions;
     }
@@ -72,6 +76,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.regions.assign(regions);
         return this;
     }
+    public ManagedHsmProperties setRegions(List<MhsmGeoReplicatedRegionInner> regions) {
+        return this.setRegions(BicepList.from(regions));
+    }
+
     public BicepValue<ProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -80,6 +88,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public ManagedHsmProperties setProvisioningState(ProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<String> getActivationStatusMessage() {
         return this.activationStatusMessage;
     }
@@ -88,6 +100,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.activationStatusMessage.assign(activationStatusMessage);
         return this;
     }
+    public ManagedHsmProperties setActivationStatusMessage(String activationStatusMessage) {
+        return this.setActivationStatusMessage(BicepValue.from(activationStatusMessage));
+    }
+
     public BicepValue<Integer> getSoftDeleteRetentionInDays() {
         return this.softDeleteRetentionInDays;
     }
@@ -96,6 +112,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.softDeleteRetentionInDays.assign(softDeleteRetentionInDays);
         return this;
     }
+    public ManagedHsmProperties setSoftDeleteRetentionInDays(Integer softDeleteRetentionInDays) {
+        return this.setSoftDeleteRetentionInDays(BicepValue.from(softDeleteRetentionInDays));
+    }
+
     public BicepValue<Boolean> getEnablePurgeProtection() {
         return this.enablePurgeProtection;
     }
@@ -104,6 +124,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.enablePurgeProtection.assign(enablePurgeProtection);
         return this;
     }
+    public ManagedHsmProperties setEnablePurgeProtection(Boolean enablePurgeProtection) {
+        return this.setEnablePurgeProtection(BicepValue.from(enablePurgeProtection));
+    }
+
     public BicepValue<UUID> getTenantId() {
         return this.tenantId;
     }
@@ -112,6 +136,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
+    public ManagedHsmProperties setTenantId(UUID tenantId) {
+        return this.setTenantId(BicepValue.from(tenantId));
+    }
+
     public BicepValue<Boolean> getEnableSoftDelete() {
         return this.enableSoftDelete;
     }
@@ -120,6 +148,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.enableSoftDelete.assign(enableSoftDelete);
         return this;
     }
+    public ManagedHsmProperties setEnableSoftDelete(Boolean enableSoftDelete) {
+        return this.setEnableSoftDelete(BicepValue.from(enableSoftDelete));
+    }
+
     public BicepValue<ActivationStatus> getActivationStatus() {
         return this.activationStatus;
     }
@@ -128,6 +160,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.activationStatus.assign(activationStatus);
         return this;
     }
+    public ManagedHsmProperties setActivationStatus(ActivationStatus activationStatus) {
+        return this.setActivationStatus(BicepValue.from(activationStatus));
+    }
+
     public BicepValue<MhsmNetworkRuleSet> getNetworkAcls() {
         return this.networkAcls;
     }
@@ -136,6 +172,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.networkAcls.assign(networkAcls);
         return this;
     }
+    public ManagedHsmProperties setNetworkAcls(MhsmNetworkRuleSet networkAcls) {
+        return this.setNetworkAcls(BicepValue.from(networkAcls));
+    }
+
     public BicepValue<OffsetDateTime> getScheduledPurgeDate() {
         return this.scheduledPurgeDate;
     }
@@ -144,6 +184,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.scheduledPurgeDate.assign(scheduledPurgeDate);
         return this;
     }
+    public ManagedHsmProperties setScheduledPurgeDate(OffsetDateTime scheduledPurgeDate) {
+        return this.setScheduledPurgeDate(BicepValue.from(scheduledPurgeDate));
+    }
+
     public BicepList<String> getInitialAdminObjectIds() {
         return this.initialAdminObjectIds;
     }
@@ -152,6 +196,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.initialAdminObjectIds.assign(initialAdminObjectIds);
         return this;
     }
+    public ManagedHsmProperties setInitialAdminObjectIds(List<String> initialAdminObjectIds) {
+        return this.setInitialAdminObjectIds(BicepList.from(initialAdminObjectIds));
+    }
+
     public BicepList<MhsmPrivateEndpointConnectionItem> getPrivateEndpointConnections() {
         return this.privateEndpointConnections;
     }
@@ -160,6 +208,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.privateEndpointConnections.assign(privateEndpointConnections);
         return this;
     }
+    public ManagedHsmProperties setPrivateEndpointConnections(List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections) {
+        return this.setPrivateEndpointConnections(BicepList.from(privateEndpointConnections));
+    }
+
     public BicepValue<PublicNetworkAccess> getPublicNetworkAccess() {
         return this.publicNetworkAccess;
     }
@@ -168,6 +220,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.publicNetworkAccess.assign(publicNetworkAccess);
         return this;
     }
+    public ManagedHsmProperties setPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        return this.setPublicNetworkAccess(BicepValue.from(publicNetworkAccess));
+    }
+
     public BicepValue<String> getHsmUri() {
         return this.hsmUri;
     }
@@ -176,6 +232,10 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.hsmUri.assign(hsmUri);
         return this;
     }
+    public ManagedHsmProperties setHsmUri(String hsmUri) {
+        return this.setHsmUri(BicepValue.from(hsmUri));
+    }
+
     public BicepValue<String> getStatusMessage() {
         return this.statusMessage;
     }
@@ -184,4 +244,8 @@ public class ManagedHsmProperties extends ProvisioningConstruct {
         this.statusMessage.assign(statusMessage);
         return this;
     }
+    public ManagedHsmProperties setStatusMessage(String statusMessage) {
+        return this.setStatusMessage(BicepValue.from(statusMessage));
+    }
+
 }

@@ -26,6 +26,10 @@ public class LifetimeAction extends ProvisioningConstruct {
         this.action.assign(action);
         return this;
     }
+    public LifetimeAction setAction(Action action) {
+        return this.setAction(BicepValue.from(action));
+    }
+
     public BicepValue<Trigger> getTrigger() {
         return this.trigger;
     }
@@ -34,4 +38,8 @@ public class LifetimeAction extends ProvisioningConstruct {
         this.trigger.assign(trigger);
         return this;
     }
+    public LifetimeAction setTrigger(Trigger trigger) {
+        return this.setTrigger(BicepValue.from(trigger));
+    }
+
 }

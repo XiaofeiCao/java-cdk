@@ -22,4 +22,8 @@ public class PrivateEndpoint extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public PrivateEndpoint setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
 }

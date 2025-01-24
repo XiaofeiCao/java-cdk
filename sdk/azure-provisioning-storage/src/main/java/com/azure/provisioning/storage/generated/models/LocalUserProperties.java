@@ -49,6 +49,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.groupId.assign(groupId);
         return this;
     }
+    public LocalUserProperties setGroupId(Integer groupId) {
+        return this.setGroupId(BicepValue.from(groupId));
+    }
+
     public BicepList<PermissionScope> getPermissionScopes() {
         return this.permissionScopes;
     }
@@ -57,6 +61,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.permissionScopes.assign(permissionScopes);
         return this;
     }
+    public LocalUserProperties setPermissionScopes(List<PermissionScope> permissionScopes) {
+        return this.setPermissionScopes(BicepList.from(permissionScopes));
+    }
+
     public BicepList<Integer> getExtendedGroups() {
         return this.extendedGroups;
     }
@@ -65,6 +73,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.extendedGroups.assign(extendedGroups);
         return this;
     }
+    public LocalUserProperties setExtendedGroups(List<Integer> extendedGroups) {
+        return this.setExtendedGroups(BicepList.from(extendedGroups));
+    }
+
     public BicepValue<String> getSid() {
         return this.sid;
     }
@@ -73,6 +85,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.sid.assign(sid);
         return this;
     }
+    public LocalUserProperties setSid(String sid) {
+        return this.setSid(BicepValue.from(sid));
+    }
+
     public BicepValue<Boolean> getHasSharedKey() {
         return this.hasSharedKey;
     }
@@ -81,6 +97,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.hasSharedKey.assign(hasSharedKey);
         return this;
     }
+    public LocalUserProperties setHasSharedKey(Boolean hasSharedKey) {
+        return this.setHasSharedKey(BicepValue.from(hasSharedKey));
+    }
+
     public BicepValue<Integer> getUserId() {
         return this.userId;
     }
@@ -89,6 +109,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.userId.assign(userId);
         return this;
     }
+    public LocalUserProperties setUserId(Integer userId) {
+        return this.setUserId(BicepValue.from(userId));
+    }
+
     public BicepValue<Boolean> getAllowAclAuthorization() {
         return this.allowAclAuthorization;
     }
@@ -97,6 +121,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.allowAclAuthorization.assign(allowAclAuthorization);
         return this;
     }
+    public LocalUserProperties setAllowAclAuthorization(Boolean allowAclAuthorization) {
+        return this.setAllowAclAuthorization(BicepValue.from(allowAclAuthorization));
+    }
+
     public BicepList<SshPublicKey> getSshAuthorizedKeys() {
         return this.sshAuthorizedKeys;
     }
@@ -105,6 +133,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.sshAuthorizedKeys.assign(sshAuthorizedKeys);
         return this;
     }
+    public LocalUserProperties setSshAuthorizedKeys(List<SshPublicKey> sshAuthorizedKeys) {
+        return this.setSshAuthorizedKeys(BicepList.from(sshAuthorizedKeys));
+    }
+
     public BicepValue<String> getHomeDirectory() {
         return this.homeDirectory;
     }
@@ -113,6 +145,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.homeDirectory.assign(homeDirectory);
         return this;
     }
+    public LocalUserProperties setHomeDirectory(String homeDirectory) {
+        return this.setHomeDirectory(BicepValue.from(homeDirectory));
+    }
+
     public BicepValue<Boolean> getHasSshKey() {
         return this.hasSshKey;
     }
@@ -121,6 +157,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.hasSshKey.assign(hasSshKey);
         return this;
     }
+    public LocalUserProperties setHasSshKey(Boolean hasSshKey) {
+        return this.setHasSshKey(BicepValue.from(hasSshKey));
+    }
+
     public BicepValue<Boolean> getHasSshPassword() {
         return this.hasSshPassword;
     }
@@ -129,6 +169,10 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.hasSshPassword.assign(hasSshPassword);
         return this;
     }
+    public LocalUserProperties setHasSshPassword(Boolean hasSshPassword) {
+        return this.setHasSshPassword(BicepValue.from(hasSshPassword));
+    }
+
     public BicepValue<Boolean> getIsNFSv3Enabled() {
         return this.isNFSv3Enabled;
     }
@@ -137,4 +181,8 @@ public class LocalUserProperties extends ProvisioningConstruct {
         this.isNFSv3Enabled.assign(isNFSv3Enabled);
         return this;
     }
+    public LocalUserProperties setIsNFSv3Enabled(Boolean isNFSv3Enabled) {
+        return this.setIsNFSv3Enabled(BicepValue.from(isNFSv3Enabled));
+    }
+
 }

@@ -27,6 +27,10 @@ public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
         this.isPrimary.assign(isPrimary);
         return this;
     }
+    public MhsmGeoReplicatedRegionInner setIsPrimary(Boolean isPrimary) {
+        return this.setIsPrimary(BicepValue.from(isPrimary));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -35,6 +39,10 @@ public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public MhsmGeoReplicatedRegionInner setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<GeoReplicationRegionProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -43,4 +51,8 @@ public class MhsmGeoReplicatedRegionInner extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public MhsmGeoReplicatedRegionInner setProvisioningState(GeoReplicationRegionProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
 }

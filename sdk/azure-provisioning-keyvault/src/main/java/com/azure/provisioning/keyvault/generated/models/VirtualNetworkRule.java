@@ -27,6 +27,10 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public VirtualNetworkRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<Boolean> getIgnoreMissingVnetServiceEndpoint() {
         return this.ignoreMissingVnetServiceEndpoint;
     }
@@ -35,6 +39,10 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.ignoreMissingVnetServiceEndpoint.assign(ignoreMissingVnetServiceEndpoint);
         return this;
     }
+    public VirtualNetworkRule setIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint) {
+        return this.setIgnoreMissingVnetServiceEndpoint(BicepValue.from(ignoreMissingVnetServiceEndpoint));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -43,4 +51,8 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public VirtualNetworkRule setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
 }

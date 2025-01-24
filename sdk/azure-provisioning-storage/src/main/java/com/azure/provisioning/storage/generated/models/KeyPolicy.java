@@ -22,4 +22,8 @@ public class KeyPolicy extends ProvisioningConstruct {
         this.keyExpirationPeriodInDays.assign(keyExpirationPeriodInDays);
         return this;
     }
+    public KeyPolicy setKeyExpirationPeriodInDays(int keyExpirationPeriodInDays) {
+        return this.setKeyExpirationPeriodInDays(BicepValue.from(keyExpirationPeriodInDays));
+    }
+
 }

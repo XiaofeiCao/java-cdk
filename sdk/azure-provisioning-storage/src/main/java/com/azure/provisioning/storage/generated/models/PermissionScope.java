@@ -29,6 +29,10 @@ public class PermissionScope extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public PermissionScope setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getPermissions() {
         return this.permissions;
     }
@@ -37,6 +41,10 @@ public class PermissionScope extends ProvisioningConstruct {
         this.permissions.assign(permissions);
         return this;
     }
+    public PermissionScope setPermissions(String permissions) {
+        return this.setPermissions(BicepValue.from(permissions));
+    }
+
     public BicepValue<String> getResourceName() {
         return this.resourceName;
     }
@@ -45,6 +53,10 @@ public class PermissionScope extends ProvisioningConstruct {
         this.resourceName.assign(resourceName);
         return this;
     }
+    public PermissionScope setResourceName(String resourceName) {
+        return this.setResourceName(BicepValue.from(resourceName));
+    }
+
     public BicepValue<String> getService() {
         return this.service;
     }
@@ -53,4 +65,8 @@ public class PermissionScope extends ProvisioningConstruct {
         this.service.assign(service);
         return this;
     }
+    public PermissionScope setService(String service) {
+        return this.setService(BicepValue.from(service));
+    }
+
 }

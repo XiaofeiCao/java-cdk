@@ -66,6 +66,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.sku.assign(sku);
         return this;
     }
+    public VaultProperties setSku(Sku sku) {
+        return this.setSku(BicepValue.from(sku));
+    }
+
     public BicepValue<CreateMode> getCreateMode() {
         return this.createMode;
     }
@@ -74,6 +78,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.createMode.assign(createMode);
         return this;
     }
+    public VaultProperties setCreateMode(CreateMode createMode) {
+        return this.setCreateMode(BicepValue.from(createMode));
+    }
+
     public BicepList<AccessPolicyEntry> getAccessPolicies() {
         return this.accessPolicies;
     }
@@ -82,6 +90,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.accessPolicies.assign(accessPolicies);
         return this;
     }
+    public VaultProperties setAccessPolicies(List<AccessPolicyEntry> accessPolicies) {
+        return this.setAccessPolicies(BicepList.from(accessPolicies));
+    }
+
     public BicepValue<VaultProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -90,6 +102,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public VaultProperties setProvisioningState(VaultProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<Integer> getSoftDeleteRetentionInDays() {
         return this.softDeleteRetentionInDays;
     }
@@ -98,6 +114,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.softDeleteRetentionInDays.assign(softDeleteRetentionInDays);
         return this;
     }
+    public VaultProperties setSoftDeleteRetentionInDays(Integer softDeleteRetentionInDays) {
+        return this.setSoftDeleteRetentionInDays(BicepValue.from(softDeleteRetentionInDays));
+    }
+
     public BicepValue<String> getVaultUri() {
         return this.vaultUri;
     }
@@ -106,6 +126,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.vaultUri.assign(vaultUri);
         return this;
     }
+    public VaultProperties setVaultUri(String vaultUri) {
+        return this.setVaultUri(BicepValue.from(vaultUri));
+    }
+
     public BicepValue<Boolean> getEnabledForDiskEncryption() {
         return this.enabledForDiskEncryption;
     }
@@ -114,6 +138,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enabledForDiskEncryption.assign(enabledForDiskEncryption);
         return this;
     }
+    public VaultProperties setEnabledForDiskEncryption(Boolean enabledForDiskEncryption) {
+        return this.setEnabledForDiskEncryption(BicepValue.from(enabledForDiskEncryption));
+    }
+
     public BicepValue<Boolean> getEnablePurgeProtection() {
         return this.enablePurgeProtection;
     }
@@ -122,6 +150,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enablePurgeProtection.assign(enablePurgeProtection);
         return this;
     }
+    public VaultProperties setEnablePurgeProtection(Boolean enablePurgeProtection) {
+        return this.setEnablePurgeProtection(BicepValue.from(enablePurgeProtection));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -130,6 +162,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public VaultProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<UUID> getTenantId() {
         return this.tenantId;
     }
@@ -138,6 +174,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
+    public VaultProperties setTenantId(UUID tenantId) {
+        return this.setTenantId(BicepValue.from(tenantId));
+    }
+
     public BicepValue<Boolean> getEnableSoftDelete() {
         return this.enableSoftDelete;
     }
@@ -146,6 +186,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enableSoftDelete.assign(enableSoftDelete);
         return this;
     }
+    public VaultProperties setEnableSoftDelete(Boolean enableSoftDelete) {
+        return this.setEnableSoftDelete(BicepValue.from(enableSoftDelete));
+    }
+
     public BicepValue<String> getHsmPoolResourceId() {
         return this.hsmPoolResourceId;
     }
@@ -154,6 +198,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.hsmPoolResourceId.assign(hsmPoolResourceId);
         return this;
     }
+    public VaultProperties setHsmPoolResourceId(String hsmPoolResourceId) {
+        return this.setHsmPoolResourceId(BicepValue.from(hsmPoolResourceId));
+    }
+
     public BicepList<PrivateEndpointConnectionItem> getPrivateEndpointConnections() {
         return this.privateEndpointConnections;
     }
@@ -162,6 +210,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.privateEndpointConnections.assign(privateEndpointConnections);
         return this;
     }
+    public VaultProperties setPrivateEndpointConnections(List<PrivateEndpointConnectionItem> privateEndpointConnections) {
+        return this.setPrivateEndpointConnections(BicepList.from(privateEndpointConnections));
+    }
+
     public BicepValue<Boolean> getEnabledForTemplateDeployment() {
         return this.enabledForTemplateDeployment;
     }
@@ -170,6 +222,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enabledForTemplateDeployment.assign(enabledForTemplateDeployment);
         return this;
     }
+    public VaultProperties setEnabledForTemplateDeployment(Boolean enabledForTemplateDeployment) {
+        return this.setEnabledForTemplateDeployment(BicepValue.from(enabledForTemplateDeployment));
+    }
+
     public BicepValue<Boolean> getEnabledForDeployment() {
         return this.enabledForDeployment;
     }
@@ -178,6 +234,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enabledForDeployment.assign(enabledForDeployment);
         return this;
     }
+    public VaultProperties setEnabledForDeployment(Boolean enabledForDeployment) {
+        return this.setEnabledForDeployment(BicepValue.from(enabledForDeployment));
+    }
+
     public BicepValue<NetworkRuleSet> getNetworkAcls() {
         return this.networkAcls;
     }
@@ -186,6 +246,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.networkAcls.assign(networkAcls);
         return this;
     }
+    public VaultProperties setNetworkAcls(NetworkRuleSet networkAcls) {
+        return this.setNetworkAcls(BicepValue.from(networkAcls));
+    }
+
     public BicepValue<Boolean> getEnableRbacAuthorization() {
         return this.enableRbacAuthorization;
     }
@@ -194,6 +258,10 @@ public class VaultProperties extends ProvisioningConstruct {
         this.enableRbacAuthorization.assign(enableRbacAuthorization);
         return this;
     }
+    public VaultProperties setEnableRbacAuthorization(Boolean enableRbacAuthorization) {
+        return this.setEnableRbacAuthorization(BicepValue.from(enableRbacAuthorization));
+    }
+
     public BicepValue<String> getPublicNetworkAccess() {
         return this.publicNetworkAccess;
     }
@@ -202,4 +270,8 @@ public class VaultProperties extends ProvisioningConstruct {
         this.publicNetworkAccess.assign(publicNetworkAccess);
         return this;
     }
+    public VaultProperties setPublicNetworkAccess(String publicNetworkAccess) {
+        return this.setPublicNetworkAccess(BicepValue.from(publicNetworkAccess));
+    }
+
 }

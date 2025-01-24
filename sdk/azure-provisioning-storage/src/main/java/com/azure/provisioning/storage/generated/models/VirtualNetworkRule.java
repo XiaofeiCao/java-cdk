@@ -31,6 +31,10 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public VirtualNetworkRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getVirtualNetworkResourceId() {
         return this.virtualNetworkResourceId;
     }
@@ -39,6 +43,10 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.virtualNetworkResourceId.assign(virtualNetworkResourceId);
         return this;
     }
+    public VirtualNetworkRule setVirtualNetworkResourceId(String virtualNetworkResourceId) {
+        return this.setVirtualNetworkResourceId(BicepValue.from(virtualNetworkResourceId));
+    }
+
     public BicepValue<State> getState() {
         return this.state;
     }
@@ -47,6 +55,10 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.state.assign(state);
         return this;
     }
+    public VirtualNetworkRule setState(State state) {
+        return this.setState(BicepValue.from(state));
+    }
+
     public BicepValue<Action> getAction() {
         return this.action;
     }
@@ -55,4 +67,8 @@ public class VirtualNetworkRule extends ProvisioningConstruct {
         this.action.assign(action);
         return this;
     }
+    public VirtualNetworkRule setAction(Action action) {
+        return this.setAction(BicepValue.from(action));
+    }
+
 }

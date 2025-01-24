@@ -26,6 +26,10 @@ public class KeyRotationPolicyAttributes extends ProvisioningConstruct {
         this.expiryTime.assign(expiryTime);
         return this;
     }
+    public KeyRotationPolicyAttributes setExpiryTime(String expiryTime) {
+        return this.setExpiryTime(BicepValue.from(expiryTime));
+    }
+
     public BicepValue<Long> getCreated() {
         return this.created;
     }
@@ -34,6 +38,10 @@ public class KeyRotationPolicyAttributes extends ProvisioningConstruct {
         this.created.assign(created);
         return this;
     }
+    public KeyRotationPolicyAttributes setCreated(Long created) {
+        return this.setCreated(BicepValue.from(created));
+    }
+
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
@@ -42,4 +50,8 @@ public class KeyRotationPolicyAttributes extends ProvisioningConstruct {
         this.updated.assign(updated);
         return this;
     }
+    public KeyRotationPolicyAttributes setUpdated(Long updated) {
+        return this.setUpdated(BicepValue.from(updated));
+    }
+
 }

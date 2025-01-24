@@ -32,6 +32,10 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.web.assign(web);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setWeb(String web) {
+        return this.setWeb(BicepValue.from(web));
+    }
+
     public BicepValue<String> getFile() {
         return this.file;
     }
@@ -40,6 +44,10 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.file.assign(file);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setFile(String file) {
+        return this.setFile(BicepValue.from(file));
+    }
+
     public BicepValue<String> getQueue() {
         return this.queue;
     }
@@ -48,6 +56,10 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.queue.assign(queue);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setQueue(String queue) {
+        return this.setQueue(BicepValue.from(queue));
+    }
+
     public BicepValue<String> getTable() {
         return this.table;
     }
@@ -56,6 +68,10 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.table.assign(table);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setTable(String table) {
+        return this.setTable(BicepValue.from(table));
+    }
+
     public BicepValue<String> getBlob() {
         return this.blob;
     }
@@ -64,6 +80,10 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.blob.assign(blob);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setBlob(String blob) {
+        return this.setBlob(BicepValue.from(blob));
+    }
+
     public BicepValue<String> getDfs() {
         return this.dfs;
     }
@@ -72,4 +92,8 @@ public class StorageAccountMicrosoftEndpoints extends ProvisioningConstruct {
         this.dfs.assign(dfs);
         return this;
     }
+    public StorageAccountMicrosoftEndpoints setDfs(String dfs) {
+        return this.setDfs(BicepValue.from(dfs));
+    }
+
 }

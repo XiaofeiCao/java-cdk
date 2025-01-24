@@ -25,6 +25,10 @@ public class KeyCreationTime extends ProvisioningConstruct {
         this.key1.assign(key1);
         return this;
     }
+    public KeyCreationTime setKey1(OffsetDateTime key1) {
+        return this.setKey1(BicepValue.from(key1));
+    }
+
     public BicepValue<OffsetDateTime> getKey2() {
         return this.key2;
     }
@@ -33,4 +37,8 @@ public class KeyCreationTime extends ProvisioningConstruct {
         this.key2.assign(key2);
         return this;
     }
+    public KeyCreationTime setKey2(OffsetDateTime key2) {
+        return this.setKey2(BicepValue.from(key2));
+    }
+
 }

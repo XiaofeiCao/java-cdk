@@ -34,6 +34,10 @@ public class MhsmNetworkRuleSet extends ProvisioningConstruct {
         this.bypass.assign(bypass);
         return this;
     }
+    public MhsmNetworkRuleSet setBypass(NetworkRuleBypassOptions bypass) {
+        return this.setBypass(BicepValue.from(bypass));
+    }
+
     public BicepValue<NetworkRuleAction> getDefaultAction() {
         return this.defaultAction;
     }
@@ -42,6 +46,10 @@ public class MhsmNetworkRuleSet extends ProvisioningConstruct {
         this.defaultAction.assign(defaultAction);
         return this;
     }
+    public MhsmNetworkRuleSet setDefaultAction(NetworkRuleAction defaultAction) {
+        return this.setDefaultAction(BicepValue.from(defaultAction));
+    }
+
     public BicepList<MhsmVirtualNetworkRule> getVirtualNetworkRules() {
         return this.virtualNetworkRules;
     }
@@ -50,6 +58,10 @@ public class MhsmNetworkRuleSet extends ProvisioningConstruct {
         this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
+    public MhsmNetworkRuleSet setVirtualNetworkRules(List<MhsmVirtualNetworkRule> virtualNetworkRules) {
+        return this.setVirtualNetworkRules(BicepList.from(virtualNetworkRules));
+    }
+
     public BicepList<MhsmipRule> getIpRules() {
         return this.ipRules;
     }
@@ -58,4 +70,8 @@ public class MhsmNetworkRuleSet extends ProvisioningConstruct {
         this.ipRules.assign(ipRules);
         return this;
     }
+    public MhsmNetworkRuleSet setIpRules(List<MhsmipRule> ipRules) {
+        return this.setIpRules(BicepList.from(ipRules));
+    }
+
 }

@@ -35,6 +35,10 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public PrivateEndpointConnectionInner setProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -43,6 +47,10 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public PrivateEndpointConnectionInner setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
     public BicepValue<PrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
         return this.privateLinkServiceConnectionState;
     }
@@ -51,6 +59,10 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
+    public PrivateEndpointConnectionInner setPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        return this.setPrivateLinkServiceConnectionState(BicepValue.from(privateLinkServiceConnectionState));
+    }
+
     public BicepValue<String> getType() {
         return this.type;
     }
@@ -59,6 +71,10 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public PrivateEndpointConnectionInner setType(String type) {
+        return this.setType(BicepValue.from(type));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -67,6 +83,10 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public PrivateEndpointConnectionInner setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<PrivateEndpoint> getPrivateEndpoint() {
         return this.privateEndpoint;
     }
@@ -75,4 +95,8 @@ public class PrivateEndpointConnectionInner extends ProvisioningConstruct {
         this.privateEndpoint.assign(privateEndpoint);
         return this;
     }
+    public PrivateEndpointConnectionInner setPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        return this.setPrivateEndpoint(BicepValue.from(privateEndpoint));
+    }
+
 }

@@ -31,6 +31,10 @@ public class ManagementPolicyVersion extends ProvisioningConstruct {
         this.tierToHot.assign(tierToHot);
         return this;
     }
+    public ManagementPolicyVersion setTierToHot(DateAfterCreation tierToHot) {
+        return this.setTierToHot(BicepValue.from(tierToHot));
+    }
+
     public BicepValue<DateAfterCreation> getTierToArchive() {
         return this.tierToArchive;
     }
@@ -39,6 +43,10 @@ public class ManagementPolicyVersion extends ProvisioningConstruct {
         this.tierToArchive.assign(tierToArchive);
         return this;
     }
+    public ManagementPolicyVersion setTierToArchive(DateAfterCreation tierToArchive) {
+        return this.setTierToArchive(BicepValue.from(tierToArchive));
+    }
+
     public BicepValue<DateAfterCreation> getTierToCool() {
         return this.tierToCool;
     }
@@ -47,6 +55,10 @@ public class ManagementPolicyVersion extends ProvisioningConstruct {
         this.tierToCool.assign(tierToCool);
         return this;
     }
+    public ManagementPolicyVersion setTierToCool(DateAfterCreation tierToCool) {
+        return this.setTierToCool(BicepValue.from(tierToCool));
+    }
+
     public BicepValue<DateAfterCreation> getTierToCold() {
         return this.tierToCold;
     }
@@ -55,6 +67,10 @@ public class ManagementPolicyVersion extends ProvisioningConstruct {
         this.tierToCold.assign(tierToCold);
         return this;
     }
+    public ManagementPolicyVersion setTierToCold(DateAfterCreation tierToCold) {
+        return this.setTierToCold(BicepValue.from(tierToCold));
+    }
+
     public BicepValue<DateAfterCreation> getDelete() {
         return this.delete;
     }
@@ -63,4 +79,8 @@ public class ManagementPolicyVersion extends ProvisioningConstruct {
         this.delete.assign(delete);
         return this;
     }
+    public ManagementPolicyVersion setDelete(DateAfterCreation delete) {
+        return this.setDelete(BicepValue.from(delete));
+    }
+
 }

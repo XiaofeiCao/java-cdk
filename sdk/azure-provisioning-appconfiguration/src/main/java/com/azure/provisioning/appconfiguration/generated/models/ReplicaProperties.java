@@ -25,6 +25,10 @@ public class ReplicaProperties extends ProvisioningConstruct {
         this.endpoint.assign(endpoint);
         return this;
     }
+    public ReplicaProperties setEndpoint(String endpoint) {
+        return this.setEndpoint(BicepValue.from(endpoint));
+    }
+
     public BicepValue<ReplicaProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -33,4 +37,8 @@ public class ReplicaProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public ReplicaProperties setProvisioningState(ReplicaProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
 }

@@ -33,6 +33,10 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
+    public MhsmPrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        return this.setPrivateLinkServiceConnectionState(BicepValue.from(privateLinkServiceConnectionState));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -41,6 +45,10 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public MhsmPrivateEndpointConnectionItem setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
     public BicepValue<MhsmPrivateEndpoint> getPrivateEndpoint() {
         return this.privateEndpoint;
     }
@@ -49,6 +57,10 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.privateEndpoint.assign(privateEndpoint);
         return this;
     }
+    public MhsmPrivateEndpointConnectionItem setPrivateEndpoint(MhsmPrivateEndpoint privateEndpoint) {
+        return this.setPrivateEndpoint(BicepValue.from(privateEndpoint));
+    }
+
     public BicepValue<String> getEtag() {
         return this.etag;
     }
@@ -57,6 +69,10 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.etag.assign(etag);
         return this;
     }
+    public MhsmPrivateEndpointConnectionItem setEtag(String etag) {
+        return this.setEtag(BicepValue.from(etag));
+    }
+
     public BicepValue<PrivateEndpointConnectionProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -65,4 +81,8 @@ public class MhsmPrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public MhsmPrivateEndpointConnectionItem setProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
 }

@@ -69,6 +69,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.accessTierChangeTime.assign(accessTierChangeTime);
         return this;
     }
+    public FileShareProperties setAccessTierChangeTime(OffsetDateTime accessTierChangeTime) {
+        return this.setAccessTierChangeTime(BicepValue.from(accessTierChangeTime));
+    }
+
     public BicepValue<Long> getShareUsageBytes() {
         return this.shareUsageBytes;
     }
@@ -77,6 +81,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.shareUsageBytes.assign(shareUsageBytes);
         return this;
     }
+    public FileShareProperties setShareUsageBytes(Long shareUsageBytes) {
+        return this.setShareUsageBytes(BicepValue.from(shareUsageBytes));
+    }
+
     public BicepValue<Boolean> getDeleted() {
         return this.deleted;
     }
@@ -85,6 +93,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.deleted.assign(deleted);
         return this;
     }
+    public FileShareProperties setDeleted(Boolean deleted) {
+        return this.setDeleted(BicepValue.from(deleted));
+    }
+
     public BicepValue<String> getAccessTierStatus() {
         return this.accessTierStatus;
     }
@@ -93,6 +105,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.accessTierStatus.assign(accessTierStatus);
         return this;
     }
+    public FileShareProperties setAccessTierStatus(String accessTierStatus) {
+        return this.setAccessTierStatus(BicepValue.from(accessTierStatus));
+    }
+
     public BicepValue<Integer> getShareQuota() {
         return this.shareQuota;
     }
@@ -101,6 +117,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.shareQuota.assign(shareQuota);
         return this;
     }
+    public FileShareProperties setShareQuota(Integer shareQuota) {
+        return this.setShareQuota(BicepValue.from(shareQuota));
+    }
+
     public BicepValue<RootSquashType> getRootSquash() {
         return this.rootSquash;
     }
@@ -109,6 +129,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.rootSquash.assign(rootSquash);
         return this;
     }
+    public FileShareProperties setRootSquash(RootSquashType rootSquash) {
+        return this.setRootSquash(BicepValue.from(rootSquash));
+    }
+
     public BicepList<SignedIdentifier> getSignedIdentifiers() {
         return this.signedIdentifiers;
     }
@@ -117,6 +141,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.signedIdentifiers.assign(signedIdentifiers);
         return this;
     }
+    public FileShareProperties setSignedIdentifiers(List<SignedIdentifier> signedIdentifiers) {
+        return this.setSignedIdentifiers(BicepList.from(signedIdentifiers));
+    }
+
     public BicepValue<OffsetDateTime> getSnapshotTime() {
         return this.snapshotTime;
     }
@@ -125,6 +153,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.snapshotTime.assign(snapshotTime);
         return this;
     }
+    public FileShareProperties setSnapshotTime(OffsetDateTime snapshotTime) {
+        return this.setSnapshotTime(BicepValue.from(snapshotTime));
+    }
+
     public BicepValue<LeaseStatus> getLeaseStatus() {
         return this.leaseStatus;
     }
@@ -133,6 +165,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.leaseStatus.assign(leaseStatus);
         return this;
     }
+    public FileShareProperties setLeaseStatus(LeaseStatus leaseStatus) {
+        return this.setLeaseStatus(BicepValue.from(leaseStatus));
+    }
+
     public BicepValue<OffsetDateTime> getDeletedTime() {
         return this.deletedTime;
     }
@@ -141,6 +177,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.deletedTime.assign(deletedTime);
         return this;
     }
+    public FileShareProperties setDeletedTime(OffsetDateTime deletedTime) {
+        return this.setDeletedTime(BicepValue.from(deletedTime));
+    }
+
     public BicepDictionary<String> getMetadata() {
         return this.metadata;
     }
@@ -149,6 +189,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.metadata.assign(metadata);
         return this;
     }
+    public FileShareProperties setMetadata(Map<String,String> metadata) {
+        return this.setMetadata(BicepValue.from(metadata));
+    }
+
     public BicepValue<EnabledProtocols> getEnabledProtocols() {
         return this.enabledProtocols;
     }
@@ -157,6 +201,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.enabledProtocols.assign(enabledProtocols);
         return this;
     }
+    public FileShareProperties setEnabledProtocols(EnabledProtocols enabledProtocols) {
+        return this.setEnabledProtocols(BicepValue.from(enabledProtocols));
+    }
+
     public BicepValue<LeaseDuration> getLeaseDuration() {
         return this.leaseDuration;
     }
@@ -165,6 +213,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.leaseDuration.assign(leaseDuration);
         return this;
     }
+    public FileShareProperties setLeaseDuration(LeaseDuration leaseDuration) {
+        return this.setLeaseDuration(BicepValue.from(leaseDuration));
+    }
+
     public BicepValue<OffsetDateTime> getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -173,6 +225,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.lastModifiedTime.assign(lastModifiedTime);
         return this;
     }
+    public FileShareProperties setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+        return this.setLastModifiedTime(BicepValue.from(lastModifiedTime));
+    }
+
     public BicepValue<String> getVersion() {
         return this.version;
     }
@@ -181,6 +237,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.version.assign(version);
         return this;
     }
+    public FileShareProperties setVersion(String version) {
+        return this.setVersion(BicepValue.from(version));
+    }
+
     public BicepValue<ShareAccessTier> getAccessTier() {
         return this.accessTier;
     }
@@ -189,6 +249,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.accessTier.assign(accessTier);
         return this;
     }
+    public FileShareProperties setAccessTier(ShareAccessTier accessTier) {
+        return this.setAccessTier(BicepValue.from(accessTier));
+    }
+
     public BicepValue<Integer> getRemainingRetentionDays() {
         return this.remainingRetentionDays;
     }
@@ -197,6 +261,10 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.remainingRetentionDays.assign(remainingRetentionDays);
         return this;
     }
+    public FileShareProperties setRemainingRetentionDays(Integer remainingRetentionDays) {
+        return this.setRemainingRetentionDays(BicepValue.from(remainingRetentionDays));
+    }
+
     public BicepValue<LeaseState> getLeaseState() {
         return this.leaseState;
     }
@@ -205,4 +273,8 @@ public class FileShareProperties extends ProvisioningConstruct {
         this.leaseState.assign(leaseState);
         return this;
     }
+    public FileShareProperties setLeaseState(LeaseState leaseState) {
+        return this.setLeaseState(BicepValue.from(leaseState));
+    }
+
 }

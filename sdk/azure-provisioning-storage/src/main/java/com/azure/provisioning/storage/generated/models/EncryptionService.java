@@ -28,6 +28,10 @@ public class EncryptionService extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public EncryptionService setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<KeyType> getKeyType() {
         return this.keyType;
     }
@@ -36,6 +40,10 @@ public class EncryptionService extends ProvisioningConstruct {
         this.keyType.assign(keyType);
         return this;
     }
+    public EncryptionService setKeyType(KeyType keyType) {
+        return this.setKeyType(BicepValue.from(keyType));
+    }
+
     public BicepValue<OffsetDateTime> getLastEnabledTime() {
         return this.lastEnabledTime;
     }
@@ -44,4 +52,8 @@ public class EncryptionService extends ProvisioningConstruct {
         this.lastEnabledTime.assign(lastEnabledTime);
         return this;
     }
+    public EncryptionService setLastEnabledTime(OffsetDateTime lastEnabledTime) {
+        return this.setLastEnabledTime(BicepValue.from(lastEnabledTime));
+    }
+
 }

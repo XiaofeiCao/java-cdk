@@ -65,12 +65,21 @@ public class SimpleModel extends TypeModel {
     }
 
     private void writeSetter(IndentWriter writer, Property property, String className) {
+        // set*(BicepValue)
         writer.writeLine("public " + className + " set" + NameUtils.toPascalCase(property.getName()) + "(" + property.getBicepTypeReference() + " " + property.getName() + ") {");
         writer.indent();
         writer.writeLine("this." + property.getName() + ".assign(" + property.getName() + ");");
         writer.writeLine("return this;");
         writer.unindent();
         writer.writeLine("}");
+
+        // set*(String)
+        writer.writeLine("public " + className + " set" + NameUtils.toPascalCase(property.getName()) + "(" + property.getPropertyType().getName() + " " + property.getName() + ") {");
+        writer.indent();
+        writer.writeLine("return this.set" + NameUtils.toPascalCase(property.getName()) + "(" + property.getPropertyType().bicepValueExpression(property.getName()) +");");
+        writer.unindent();
+        writer.writeLine("}");
+        writer.writeLine();
     }
 
     private static void writeGetter(IndentWriter writer, Property property) {

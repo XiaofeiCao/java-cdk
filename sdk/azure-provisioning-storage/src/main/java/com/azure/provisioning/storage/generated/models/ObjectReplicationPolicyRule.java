@@ -32,6 +32,10 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.sourceContainer.assign(sourceContainer);
         return this;
     }
+    public ObjectReplicationPolicyRule setSourceContainer(String sourceContainer) {
+        return this.setSourceContainer(BicepValue.from(sourceContainer));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -40,6 +44,10 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ObjectReplicationPolicyRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getDestinationContainer() {
         return this.destinationContainer;
     }
@@ -48,6 +56,10 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.destinationContainer.assign(destinationContainer);
         return this;
     }
+    public ObjectReplicationPolicyRule setDestinationContainer(String destinationContainer) {
+        return this.setDestinationContainer(BicepValue.from(destinationContainer));
+    }
+
     public BicepValue<ObjectReplicationPolicyFilter> getFilters() {
         return this.filters;
     }
@@ -56,6 +68,10 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.filters.assign(filters);
         return this;
     }
+    public ObjectReplicationPolicyRule setFilters(ObjectReplicationPolicyFilter filters) {
+        return this.setFilters(BicepValue.from(filters));
+    }
+
     public BicepValue<String> getRuleId() {
         return this.ruleId;
     }
@@ -64,4 +80,8 @@ public class ObjectReplicationPolicyRule extends ProvisioningConstruct {
         this.ruleId.assign(ruleId);
         return this;
     }
+    public ObjectReplicationPolicyRule setRuleId(String ruleId) {
+        return this.setRuleId(BicepValue.from(ruleId));
+    }
+
 }

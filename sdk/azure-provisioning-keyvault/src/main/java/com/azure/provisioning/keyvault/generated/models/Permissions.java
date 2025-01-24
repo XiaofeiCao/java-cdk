@@ -34,6 +34,10 @@ public class Permissions extends ProvisioningConstruct {
         this.keys.assign(keys);
         return this;
     }
+    public Permissions setKeys(List<KeyPermissions> keys) {
+        return this.setKeys(BicepList.from(keys));
+    }
+
     public BicepList<SecretPermissions> getSecrets() {
         return this.secrets;
     }
@@ -42,6 +46,10 @@ public class Permissions extends ProvisioningConstruct {
         this.secrets.assign(secrets);
         return this;
     }
+    public Permissions setSecrets(List<SecretPermissions> secrets) {
+        return this.setSecrets(BicepList.from(secrets));
+    }
+
     public BicepList<StoragePermissions> getStorage() {
         return this.storage;
     }
@@ -50,6 +58,10 @@ public class Permissions extends ProvisioningConstruct {
         this.storage.assign(storage);
         return this;
     }
+    public Permissions setStorage(List<StoragePermissions> storage) {
+        return this.setStorage(BicepList.from(storage));
+    }
+
     public BicepList<CertificatePermissions> getCertificates() {
         return this.certificates;
     }
@@ -58,4 +70,8 @@ public class Permissions extends ProvisioningConstruct {
         this.certificates.assign(certificates);
         return this;
     }
+    public Permissions setCertificates(List<CertificatePermissions> certificates) {
+        return this.setCertificates(BicepList.from(certificates));
+    }
+
 }

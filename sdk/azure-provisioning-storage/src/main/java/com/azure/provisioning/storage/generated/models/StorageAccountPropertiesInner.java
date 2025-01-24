@@ -127,6 +127,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.keyPolicy.assign(keyPolicy);
         return this;
     }
+    public StorageAccountPropertiesInner setKeyPolicy(KeyPolicy keyPolicy) {
+        return this.setKeyPolicy(BicepValue.from(keyPolicy));
+    }
+
     public BicepValue<KeyCreationTime> getKeyCreationTime() {
         return this.keyCreationTime;
     }
@@ -135,6 +139,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.keyCreationTime.assign(keyCreationTime);
         return this;
     }
+    public StorageAccountPropertiesInner setKeyCreationTime(KeyCreationTime keyCreationTime) {
+        return this.setKeyCreationTime(BicepValue.from(keyCreationTime));
+    }
+
     public BicepValue<PublicNetworkAccess> getPublicNetworkAccess() {
         return this.publicNetworkAccess;
     }
@@ -143,6 +151,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.publicNetworkAccess.assign(publicNetworkAccess);
         return this;
     }
+    public StorageAccountPropertiesInner setPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        return this.setPublicNetworkAccess(BicepValue.from(publicNetworkAccess));
+    }
+
     public BicepList<PrivateEndpointConnectionInner> getPrivateEndpointConnections() {
         return this.privateEndpointConnections;
     }
@@ -151,6 +163,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.privateEndpointConnections.assign(privateEndpointConnections);
         return this;
     }
+    public StorageAccountPropertiesInner setPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+        return this.setPrivateEndpointConnections(BicepList.from(privateEndpointConnections));
+    }
+
     public BicepValue<ImmutableStorageAccount> getImmutableStorageWithVersioning() {
         return this.immutableStorageWithVersioning;
     }
@@ -159,6 +175,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.immutableStorageWithVersioning.assign(immutableStorageWithVersioning);
         return this;
     }
+    public StorageAccountPropertiesInner setImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning) {
+        return this.setImmutableStorageWithVersioning(BicepValue.from(immutableStorageWithVersioning));
+    }
+
     public BicepValue<LargeFileSharesState> getLargeFileSharesState() {
         return this.largeFileSharesState;
     }
@@ -167,6 +187,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.largeFileSharesState.assign(largeFileSharesState);
         return this;
     }
+    public StorageAccountPropertiesInner setLargeFileSharesState(LargeFileSharesState largeFileSharesState) {
+        return this.setLargeFileSharesState(BicepValue.from(largeFileSharesState));
+    }
+
     public BicepValue<Boolean> getDefaultToOAuthAuthentication() {
         return this.defaultToOAuthAuthentication;
     }
@@ -175,6 +199,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.defaultToOAuthAuthentication.assign(defaultToOAuthAuthentication);
         return this;
     }
+    public StorageAccountPropertiesInner setDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication) {
+        return this.setDefaultToOAuthAuthentication(BicepValue.from(defaultToOAuthAuthentication));
+    }
+
     public BicepValue<StorageAccountSkuConversionStatus> getStorageAccountSkuConversionStatus() {
         return this.storageAccountSkuConversionStatus;
     }
@@ -183,6 +211,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.storageAccountSkuConversionStatus.assign(storageAccountSkuConversionStatus);
         return this;
     }
+    public StorageAccountPropertiesInner setStorageAccountSkuConversionStatus(StorageAccountSkuConversionStatus storageAccountSkuConversionStatus) {
+        return this.setStorageAccountSkuConversionStatus(BicepValue.from(storageAccountSkuConversionStatus));
+    }
+
     public BicepValue<Encryption> getEncryption() {
         return this.encryption;
     }
@@ -191,6 +223,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.encryption.assign(encryption);
         return this;
     }
+    public StorageAccountPropertiesInner setEncryption(Encryption encryption) {
+        return this.setEncryption(BicepValue.from(encryption));
+    }
+
     public BicepValue<AzureFilesIdentityBasedAuthentication> getAzureFilesIdentityBasedAuthentication() {
         return this.azureFilesIdentityBasedAuthentication;
     }
@@ -199,6 +235,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.azureFilesIdentityBasedAuthentication.assign(azureFilesIdentityBasedAuthentication);
         return this;
     }
+    public StorageAccountPropertiesInner setAzureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication azureFilesIdentityBasedAuthentication) {
+        return this.setAzureFilesIdentityBasedAuthentication(BicepValue.from(azureFilesIdentityBasedAuthentication));
+    }
+
     public BicepValue<Boolean> getEnableExtendedGroups() {
         return this.enableExtendedGroups;
     }
@@ -207,6 +247,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.enableExtendedGroups.assign(enableExtendedGroups);
         return this;
     }
+    public StorageAccountPropertiesInner setEnableExtendedGroups(Boolean enableExtendedGroups) {
+        return this.setEnableExtendedGroups(BicepValue.from(enableExtendedGroups));
+    }
+
     public BicepValue<MinimumTlsVersion> getMinimumTlsVersion() {
         return this.minimumTlsVersion;
     }
@@ -215,6 +259,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.minimumTlsVersion.assign(minimumTlsVersion);
         return this;
     }
+    public StorageAccountPropertiesInner setMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion) {
+        return this.setMinimumTlsVersion(BicepValue.from(minimumTlsVersion));
+    }
+
     public BicepValue<Boolean> getIsSftpEnabled() {
         return this.isSftpEnabled;
     }
@@ -223,6 +271,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.isSftpEnabled.assign(isSftpEnabled);
         return this;
     }
+    public StorageAccountPropertiesInner setIsSftpEnabled(Boolean isSftpEnabled) {
+        return this.setIsSftpEnabled(BicepValue.from(isSftpEnabled));
+    }
+
     public BicepValue<AccessTier> getAccessTier() {
         return this.accessTier;
     }
@@ -231,6 +283,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.accessTier.assign(accessTier);
         return this;
     }
+    public StorageAccountPropertiesInner setAccessTier(AccessTier accessTier) {
+        return this.setAccessTier(BicepValue.from(accessTier));
+    }
+
     public BicepValue<GeoReplicationStats> getGeoReplicationStats() {
         return this.geoReplicationStats;
     }
@@ -239,6 +295,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.geoReplicationStats.assign(geoReplicationStats);
         return this;
     }
+    public StorageAccountPropertiesInner setGeoReplicationStats(GeoReplicationStats geoReplicationStats) {
+        return this.setGeoReplicationStats(BicepValue.from(geoReplicationStats));
+    }
+
     public BicepValue<String> getSecondaryLocation() {
         return this.secondaryLocation;
     }
@@ -247,6 +307,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.secondaryLocation.assign(secondaryLocation);
         return this;
     }
+    public StorageAccountPropertiesInner setSecondaryLocation(String secondaryLocation) {
+        return this.setSecondaryLocation(BicepValue.from(secondaryLocation));
+    }
+
     public BicepValue<BlobRestoreStatusInner> getBlobRestoreStatus() {
         return this.blobRestoreStatus;
     }
@@ -255,6 +319,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.blobRestoreStatus.assign(blobRestoreStatus);
         return this;
     }
+    public StorageAccountPropertiesInner setBlobRestoreStatus(BlobRestoreStatusInner blobRestoreStatus) {
+        return this.setBlobRestoreStatus(BicepValue.from(blobRestoreStatus));
+    }
+
     public BicepValue<AccountStatus> getStatusOfSecondary() {
         return this.statusOfSecondary;
     }
@@ -263,6 +331,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.statusOfSecondary.assign(statusOfSecondary);
         return this;
     }
+    public StorageAccountPropertiesInner setStatusOfSecondary(AccountStatus statusOfSecondary) {
+        return this.setStatusOfSecondary(BicepValue.from(statusOfSecondary));
+    }
+
     public BicepValue<Boolean> getIsSkuConversionBlocked() {
         return this.isSkuConversionBlocked;
     }
@@ -271,6 +343,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.isSkuConversionBlocked.assign(isSkuConversionBlocked);
         return this;
     }
+    public StorageAccountPropertiesInner setIsSkuConversionBlocked(Boolean isSkuConversionBlocked) {
+        return this.setIsSkuConversionBlocked(BicepValue.from(isSkuConversionBlocked));
+    }
+
     public BicepValue<Boolean> getAllowBlobPublicAccess() {
         return this.allowBlobPublicAccess;
     }
@@ -279,6 +355,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.allowBlobPublicAccess.assign(allowBlobPublicAccess);
         return this;
     }
+    public StorageAccountPropertiesInner setAllowBlobPublicAccess(Boolean allowBlobPublicAccess) {
+        return this.setAllowBlobPublicAccess(BicepValue.from(allowBlobPublicAccess));
+    }
+
     public BicepValue<Endpoints> getPrimaryEndpoints() {
         return this.primaryEndpoints;
     }
@@ -287,6 +367,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.primaryEndpoints.assign(primaryEndpoints);
         return this;
     }
+    public StorageAccountPropertiesInner setPrimaryEndpoints(Endpoints primaryEndpoints) {
+        return this.setPrimaryEndpoints(BicepValue.from(primaryEndpoints));
+    }
+
     public BicepValue<CustomDomain> getCustomDomain() {
         return this.customDomain;
     }
@@ -295,6 +379,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.customDomain.assign(customDomain);
         return this;
     }
+    public StorageAccountPropertiesInner setCustomDomain(CustomDomain customDomain) {
+        return this.setCustomDomain(BicepValue.from(customDomain));
+    }
+
     public BicepValue<Boolean> getEnableNfsV3() {
         return this.enableNfsV3;
     }
@@ -303,6 +391,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.enableNfsV3.assign(enableNfsV3);
         return this;
     }
+    public StorageAccountPropertiesInner setEnableNfsV3(Boolean enableNfsV3) {
+        return this.setEnableNfsV3(BicepValue.from(enableNfsV3));
+    }
+
     public BicepValue<Endpoints> getSecondaryEndpoints() {
         return this.secondaryEndpoints;
     }
@@ -311,6 +403,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.secondaryEndpoints.assign(secondaryEndpoints);
         return this;
     }
+    public StorageAccountPropertiesInner setSecondaryEndpoints(Endpoints secondaryEndpoints) {
+        return this.setSecondaryEndpoints(BicepValue.from(secondaryEndpoints));
+    }
+
     public BicepValue<AccountStatus> getStatusOfPrimary() {
         return this.statusOfPrimary;
     }
@@ -319,6 +415,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.statusOfPrimary.assign(statusOfPrimary);
         return this;
     }
+    public StorageAccountPropertiesInner setStatusOfPrimary(AccountStatus statusOfPrimary) {
+        return this.setStatusOfPrimary(BicepValue.from(statusOfPrimary));
+    }
+
     public BicepValue<Boolean> getEnableHttpsTrafficOnly() {
         return this.enableHttpsTrafficOnly;
     }
@@ -327,6 +427,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.enableHttpsTrafficOnly.assign(enableHttpsTrafficOnly);
         return this;
     }
+    public StorageAccountPropertiesInner setEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly) {
+        return this.setEnableHttpsTrafficOnly(BicepValue.from(enableHttpsTrafficOnly));
+    }
+
     public BicepValue<AllowedCopyScope> getAllowedCopyScope() {
         return this.allowedCopyScope;
     }
@@ -335,6 +439,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.allowedCopyScope.assign(allowedCopyScope);
         return this;
     }
+    public StorageAccountPropertiesInner setAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        return this.setAllowedCopyScope(BicepValue.from(allowedCopyScope));
+    }
+
     public BicepValue<RoutingPreference> getRoutingPreference() {
         return this.routingPreference;
     }
@@ -343,6 +451,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.routingPreference.assign(routingPreference);
         return this;
     }
+    public StorageAccountPropertiesInner setRoutingPreference(RoutingPreference routingPreference) {
+        return this.setRoutingPreference(BicepValue.from(routingPreference));
+    }
+
     public BicepValue<Boolean> getAccountMigrationInProgress() {
         return this.accountMigrationInProgress;
     }
@@ -351,6 +463,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.accountMigrationInProgress.assign(accountMigrationInProgress);
         return this;
     }
+    public StorageAccountPropertiesInner setAccountMigrationInProgress(Boolean accountMigrationInProgress) {
+        return this.setAccountMigrationInProgress(BicepValue.from(accountMigrationInProgress));
+    }
+
     public BicepValue<Boolean> getAllowCrossTenantReplication() {
         return this.allowCrossTenantReplication;
     }
@@ -359,6 +475,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.allowCrossTenantReplication.assign(allowCrossTenantReplication);
         return this;
     }
+    public StorageAccountPropertiesInner setAllowCrossTenantReplication(Boolean allowCrossTenantReplication) {
+        return this.setAllowCrossTenantReplication(BicepValue.from(allowCrossTenantReplication));
+    }
+
     public BicepValue<Boolean> getIsHnsEnabled() {
         return this.isHnsEnabled;
     }
@@ -367,6 +487,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.isHnsEnabled.assign(isHnsEnabled);
         return this;
     }
+    public StorageAccountPropertiesInner setIsHnsEnabled(Boolean isHnsEnabled) {
+        return this.setIsHnsEnabled(BicepValue.from(isHnsEnabled));
+    }
+
     public BicepValue<Boolean> getAllowSharedKeyAccess() {
         return this.allowSharedKeyAccess;
     }
@@ -375,6 +499,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.allowSharedKeyAccess.assign(allowSharedKeyAccess);
         return this;
     }
+    public StorageAccountPropertiesInner setAllowSharedKeyAccess(Boolean allowSharedKeyAccess) {
+        return this.setAllowSharedKeyAccess(BicepValue.from(allowSharedKeyAccess));
+    }
+
     public BicepValue<OffsetDateTime> getLastGeoFailoverTime() {
         return this.lastGeoFailoverTime;
     }
@@ -383,6 +511,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.lastGeoFailoverTime.assign(lastGeoFailoverTime);
         return this;
     }
+    public StorageAccountPropertiesInner setLastGeoFailoverTime(OffsetDateTime lastGeoFailoverTime) {
+        return this.setLastGeoFailoverTime(BicepValue.from(lastGeoFailoverTime));
+    }
+
     public BicepValue<ProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -391,6 +523,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public StorageAccountPropertiesInner setProvisioningState(ProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<OffsetDateTime> getCreationTime() {
         return this.creationTime;
     }
@@ -399,6 +535,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.creationTime.assign(creationTime);
         return this;
     }
+    public StorageAccountPropertiesInner setCreationTime(OffsetDateTime creationTime) {
+        return this.setCreationTime(BicepValue.from(creationTime));
+    }
+
     public BicepValue<Boolean> getIsLocalUserEnabled() {
         return this.isLocalUserEnabled;
     }
@@ -407,6 +547,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.isLocalUserEnabled.assign(isLocalUserEnabled);
         return this;
     }
+    public StorageAccountPropertiesInner setIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        return this.setIsLocalUserEnabled(BicepValue.from(isLocalUserEnabled));
+    }
+
     public BicepValue<String> getPrimaryLocation() {
         return this.primaryLocation;
     }
@@ -415,6 +559,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.primaryLocation.assign(primaryLocation);
         return this;
     }
+    public StorageAccountPropertiesInner setPrimaryLocation(String primaryLocation) {
+        return this.setPrimaryLocation(BicepValue.from(primaryLocation));
+    }
+
     public BicepValue<SasPolicy> getSasPolicy() {
         return this.sasPolicy;
     }
@@ -423,6 +571,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.sasPolicy.assign(sasPolicy);
         return this;
     }
+    public StorageAccountPropertiesInner setSasPolicy(SasPolicy sasPolicy) {
+        return this.setSasPolicy(BicepValue.from(sasPolicy));
+    }
+
     public BicepValue<Boolean> getFailoverInProgress() {
         return this.failoverInProgress;
     }
@@ -431,6 +583,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.failoverInProgress.assign(failoverInProgress);
         return this;
     }
+    public StorageAccountPropertiesInner setFailoverInProgress(Boolean failoverInProgress) {
+        return this.setFailoverInProgress(BicepValue.from(failoverInProgress));
+    }
+
     public BicepValue<NetworkRuleSet> getNetworkRuleSet() {
         return this.networkRuleSet;
     }
@@ -439,6 +595,10 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.networkRuleSet.assign(networkRuleSet);
         return this;
     }
+    public StorageAccountPropertiesInner setNetworkRuleSet(NetworkRuleSet networkRuleSet) {
+        return this.setNetworkRuleSet(BicepValue.from(networkRuleSet));
+    }
+
     public BicepValue<DnsEndpointType> getDnsEndpointType() {
         return this.dnsEndpointType;
     }
@@ -447,4 +607,8 @@ public class StorageAccountPropertiesInner extends ProvisioningConstruct {
         this.dnsEndpointType.assign(dnsEndpointType);
         return this;
     }
+    public StorageAccountPropertiesInner setDnsEndpointType(DnsEndpointType dnsEndpointType) {
+        return this.setDnsEndpointType(BicepValue.from(dnsEndpointType));
+    }
+
 }

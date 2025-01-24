@@ -27,6 +27,10 @@ public class RoutingPreference extends ProvisioningConstruct {
         this.publishMicrosoftEndpoints.assign(publishMicrosoftEndpoints);
         return this;
     }
+    public RoutingPreference setPublishMicrosoftEndpoints(Boolean publishMicrosoftEndpoints) {
+        return this.setPublishMicrosoftEndpoints(BicepValue.from(publishMicrosoftEndpoints));
+    }
+
     public BicepValue<Boolean> getPublishInternetEndpoints() {
         return this.publishInternetEndpoints;
     }
@@ -35,6 +39,10 @@ public class RoutingPreference extends ProvisioningConstruct {
         this.publishInternetEndpoints.assign(publishInternetEndpoints);
         return this;
     }
+    public RoutingPreference setPublishInternetEndpoints(Boolean publishInternetEndpoints) {
+        return this.setPublishInternetEndpoints(BicepValue.from(publishInternetEndpoints));
+    }
+
     public BicepValue<RoutingChoice> getRoutingChoice() {
         return this.routingChoice;
     }
@@ -43,4 +51,8 @@ public class RoutingPreference extends ProvisioningConstruct {
         this.routingChoice.assign(routingChoice);
         return this;
     }
+    public RoutingPreference setRoutingChoice(RoutingChoice routingChoice) {
+        return this.setRoutingChoice(BicepValue.from(routingChoice));
+    }
+
 }

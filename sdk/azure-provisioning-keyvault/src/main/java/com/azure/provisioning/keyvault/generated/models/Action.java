@@ -23,4 +23,8 @@ public class Action extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public Action setType(KeyRotationPolicyActionType type) {
+        return this.setType(BicepValue.from(type));
+    }
+
 }

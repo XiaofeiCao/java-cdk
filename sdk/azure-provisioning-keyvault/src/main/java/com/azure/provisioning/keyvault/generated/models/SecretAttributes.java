@@ -24,6 +24,10 @@ public class SecretAttributes extends ProvisioningConstruct {
         this.created.assign(created);
         return this;
     }
+    public SecretAttributes setCreated(Long created) {
+        return this.setCreated(BicepValue.from(created));
+    }
+
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
@@ -32,4 +36,8 @@ public class SecretAttributes extends ProvisioningConstruct {
         this.updated.assign(updated);
         return this;
     }
+    public SecretAttributes setUpdated(Long updated) {
+        return this.setUpdated(BicepValue.from(updated));
+    }
+
 }

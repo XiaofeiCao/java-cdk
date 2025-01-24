@@ -27,6 +27,10 @@ public class QueueProperties extends ProvisioningConstruct {
         this.approximateMessageCount.assign(approximateMessageCount);
         return this;
     }
+    public QueueProperties setApproximateMessageCount(Integer approximateMessageCount) {
+        return this.setApproximateMessageCount(BicepValue.from(approximateMessageCount));
+    }
+
     public BicepDictionary<String> getMetadata() {
         return this.metadata;
     }
@@ -35,4 +39,8 @@ public class QueueProperties extends ProvisioningConstruct {
         this.metadata.assign(metadata);
         return this;
     }
+    public QueueProperties setMetadata(Map<String,String> metadata) {
+        return this.setMetadata(BicepValue.from(metadata));
+    }
+
 }

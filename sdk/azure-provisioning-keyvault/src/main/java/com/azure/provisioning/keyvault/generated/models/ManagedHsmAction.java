@@ -23,4 +23,8 @@ public class ManagedHsmAction extends ProvisioningConstruct {
         this.type.assign(type);
         return this;
     }
+    public ManagedHsmAction setType(KeyRotationPolicyActionType type) {
+        return this.setType(BicepValue.from(type));
+    }
+
 }

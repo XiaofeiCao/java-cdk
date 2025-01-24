@@ -33,6 +33,10 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.privateEndpoint.assign(privateEndpoint);
         return this;
     }
+    public PrivateEndpointConnectionItem setPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        return this.setPrivateEndpoint(BicepValue.from(privateEndpoint));
+    }
+
     public BicepValue<PrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
         return this.privateLinkServiceConnectionState;
     }
@@ -41,6 +45,10 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
         return this;
     }
+    public PrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        return this.setPrivateLinkServiceConnectionState(BicepValue.from(privateLinkServiceConnectionState));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -49,6 +57,10 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public PrivateEndpointConnectionItem setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
     public BicepValue<PrivateEndpointConnectionProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -57,6 +69,10 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public PrivateEndpointConnectionItem setProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<String> getEtag() {
         return this.etag;
     }
@@ -65,4 +81,8 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         this.etag.assign(etag);
         return this;
     }
+    public PrivateEndpointConnectionItem setEtag(String etag) {
+        return this.setEtag(BicepValue.from(etag));
+    }
+
 }

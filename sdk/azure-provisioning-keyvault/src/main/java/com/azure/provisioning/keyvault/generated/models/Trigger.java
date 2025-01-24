@@ -24,6 +24,10 @@ public class Trigger extends ProvisioningConstruct {
         this.timeBeforeExpiry.assign(timeBeforeExpiry);
         return this;
     }
+    public Trigger setTimeBeforeExpiry(String timeBeforeExpiry) {
+        return this.setTimeBeforeExpiry(BicepValue.from(timeBeforeExpiry));
+    }
+
     public BicepValue<String> getTimeAfterCreate() {
         return this.timeAfterCreate;
     }
@@ -32,4 +36,8 @@ public class Trigger extends ProvisioningConstruct {
         this.timeAfterCreate.assign(timeAfterCreate);
         return this;
     }
+    public Trigger setTimeAfterCreate(String timeAfterCreate) {
+        return this.setTimeAfterCreate(BicepValue.from(timeAfterCreate));
+    }
+
 }

@@ -32,6 +32,10 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobInventoryPolicyRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getDestination() {
         return this.destination;
     }
@@ -40,6 +44,10 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.destination.assign(destination);
         return this;
     }
+    public BlobInventoryPolicyRule setDestination(String destination) {
+        return this.setDestination(BicepValue.from(destination));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -48,6 +56,10 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public BlobInventoryPolicyRule setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<Boolean> getEnabled() {
         return this.enabled;
     }
@@ -56,6 +68,10 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public BlobInventoryPolicyRule setEnabled(boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<BlobInventoryPolicyDefinition> getDefinition() {
         return this.definition;
     }
@@ -64,4 +80,8 @@ public class BlobInventoryPolicyRule extends ProvisioningConstruct {
         this.definition.assign(definition);
         return this;
     }
+    public BlobInventoryPolicyRule setDefinition(BlobInventoryPolicyDefinition definition) {
+        return this.setDefinition(BicepValue.from(definition));
+    }
+
 }

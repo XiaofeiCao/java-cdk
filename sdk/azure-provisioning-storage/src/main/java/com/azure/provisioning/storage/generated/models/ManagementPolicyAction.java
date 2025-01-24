@@ -29,6 +29,10 @@ public class ManagementPolicyAction extends ProvisioningConstruct {
         this.version.assign(version);
         return this;
     }
+    public ManagementPolicyAction setVersion(ManagementPolicyVersion version) {
+        return this.setVersion(BicepValue.from(version));
+    }
+
     public BicepValue<ManagementPolicyBaseBlob> getBaseBlob() {
         return this.baseBlob;
     }
@@ -37,6 +41,10 @@ public class ManagementPolicyAction extends ProvisioningConstruct {
         this.baseBlob.assign(baseBlob);
         return this;
     }
+    public ManagementPolicyAction setBaseBlob(ManagementPolicyBaseBlob baseBlob) {
+        return this.setBaseBlob(BicepValue.from(baseBlob));
+    }
+
     public BicepValue<ManagementPolicySnapShot> getSnapshot() {
         return this.snapshot;
     }
@@ -45,4 +53,8 @@ public class ManagementPolicyAction extends ProvisioningConstruct {
         this.snapshot.assign(snapshot);
         return this;
     }
+    public ManagementPolicyAction setSnapshot(ManagementPolicySnapShot snapshot) {
+        return this.setSnapshot(BicepValue.from(snapshot));
+    }
+
 }

@@ -24,6 +24,10 @@ public class EncryptionProperties extends ProvisioningConstruct {
         this.keyIdentifier.assign(keyIdentifier);
         return this;
     }
+    public EncryptionProperties setKeyIdentifier(String keyIdentifier) {
+        return this.setKeyIdentifier(BicepValue.from(keyIdentifier));
+    }
+
     public BicepValue<String> getIdentityClientId() {
         return this.identityClientId;
     }
@@ -32,4 +36,8 @@ public class EncryptionProperties extends ProvisioningConstruct {
         this.identityClientId.assign(identityClientId);
         return this;
     }
+    public EncryptionProperties setIdentityClientId(String identityClientId) {
+        return this.setIdentityClientId(BicepValue.from(identityClientId));
+    }
+
 }

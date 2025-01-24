@@ -27,6 +27,10 @@ public class ExecutionTarget extends ProvisioningConstruct {
         this.prefix.assign(prefix);
         return this;
     }
+    public ExecutionTarget setPrefix(List<String> prefix) {
+        return this.setPrefix(BicepList.from(prefix));
+    }
+
     public BicepList<String> getExcludePrefix() {
         return this.excludePrefix;
     }
@@ -35,4 +39,8 @@ public class ExecutionTarget extends ProvisioningConstruct {
         this.excludePrefix.assign(excludePrefix);
         return this;
     }
+    public ExecutionTarget setExcludePrefix(List<String> excludePrefix) {
+        return this.setExcludePrefix(BicepList.from(excludePrefix));
+    }
+
 }

@@ -25,6 +25,10 @@ public class SignedIdentifier extends ProvisioningConstruct {
         this.accessPolicy.assign(accessPolicy);
         return this;
     }
+    public SignedIdentifier setAccessPolicy(AccessPolicy accessPolicy) {
+        return this.setAccessPolicy(BicepValue.from(accessPolicy));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -33,4 +37,8 @@ public class SignedIdentifier extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public SignedIdentifier setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
 }

@@ -27,6 +27,10 @@ public class AccessPolicy extends ProvisioningConstruct {
         this.expiryTime.assign(expiryTime);
         return this;
     }
+    public AccessPolicy setExpiryTime(OffsetDateTime expiryTime) {
+        return this.setExpiryTime(BicepValue.from(expiryTime));
+    }
+
     public BicepValue<String> getPermission() {
         return this.permission;
     }
@@ -35,6 +39,10 @@ public class AccessPolicy extends ProvisioningConstruct {
         this.permission.assign(permission);
         return this;
     }
+    public AccessPolicy setPermission(String permission) {
+        return this.setPermission(BicepValue.from(permission));
+    }
+
     public BicepValue<OffsetDateTime> getStartTime() {
         return this.startTime;
     }
@@ -43,4 +51,8 @@ public class AccessPolicy extends ProvisioningConstruct {
         this.startTime.assign(startTime);
         return this;
     }
+    public AccessPolicy setStartTime(OffsetDateTime startTime) {
+        return this.setStartTime(BicepValue.from(startTime));
+    }
+
 }

@@ -25,6 +25,10 @@ public class IpRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public IpRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getValue() {
         return this.value;
     }
@@ -33,4 +37,8 @@ public class IpRule extends ProvisioningConstruct {
         this.value.assign(value);
         return this;
     }
+    public IpRule setValue(String value) {
+        return this.setValue(BicepValue.from(value));
+    }
+
 }

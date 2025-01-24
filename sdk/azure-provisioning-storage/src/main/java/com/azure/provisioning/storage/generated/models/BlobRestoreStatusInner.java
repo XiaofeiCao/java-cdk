@@ -30,6 +30,10 @@ public class BlobRestoreStatusInner extends ProvisioningConstruct {
         this.parameters.assign(parameters);
         return this;
     }
+    public BlobRestoreStatusInner setParameters(BlobRestoreParameters parameters) {
+        return this.setParameters(BicepValue.from(parameters));
+    }
+
     public BicepValue<String> getFailureReason() {
         return this.failureReason;
     }
@@ -38,6 +42,10 @@ public class BlobRestoreStatusInner extends ProvisioningConstruct {
         this.failureReason.assign(failureReason);
         return this;
     }
+    public BlobRestoreStatusInner setFailureReason(String failureReason) {
+        return this.setFailureReason(BicepValue.from(failureReason));
+    }
+
     public BicepValue<String> getRestoreId() {
         return this.restoreId;
     }
@@ -46,6 +54,10 @@ public class BlobRestoreStatusInner extends ProvisioningConstruct {
         this.restoreId.assign(restoreId);
         return this;
     }
+    public BlobRestoreStatusInner setRestoreId(String restoreId) {
+        return this.setRestoreId(BicepValue.from(restoreId));
+    }
+
     public BicepValue<BlobRestoreProgressStatus> getStatus() {
         return this.status;
     }
@@ -54,4 +66,8 @@ public class BlobRestoreStatusInner extends ProvisioningConstruct {
         this.status.assign(status);
         return this;
     }
+    public BlobRestoreStatusInner setStatus(BlobRestoreProgressStatus status) {
+        return this.setStatus(BicepValue.from(status));
+    }
+
 }

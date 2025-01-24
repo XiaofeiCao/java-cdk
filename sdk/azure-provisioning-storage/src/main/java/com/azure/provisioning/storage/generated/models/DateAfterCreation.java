@@ -24,6 +24,10 @@ public class DateAfterCreation extends ProvisioningConstruct {
         this.daysAfterCreationGreaterThan.assign(daysAfterCreationGreaterThan);
         return this;
     }
+    public DateAfterCreation setDaysAfterCreationGreaterThan(float daysAfterCreationGreaterThan) {
+        return this.setDaysAfterCreationGreaterThan(BicepValue.from(daysAfterCreationGreaterThan));
+    }
+
     public BicepValue<Float> getDaysAfterLastTierChangeGreaterThan() {
         return this.daysAfterLastTierChangeGreaterThan;
     }
@@ -32,4 +36,8 @@ public class DateAfterCreation extends ProvisioningConstruct {
         this.daysAfterLastTierChangeGreaterThan.assign(daysAfterLastTierChangeGreaterThan);
         return this;
     }
+    public DateAfterCreation setDaysAfterLastTierChangeGreaterThan(Float daysAfterLastTierChangeGreaterThan) {
+        return this.setDaysAfterLastTierChangeGreaterThan(BicepValue.from(daysAfterLastTierChangeGreaterThan));
+    }
+
 }

@@ -28,6 +28,10 @@ public class ManagementPolicySchema extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ManagementPolicySchema setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepList<ManagementPolicyRule> getRules() {
         return this.rules;
     }
@@ -36,4 +40,8 @@ public class ManagementPolicySchema extends ProvisioningConstruct {
         this.rules.assign(rules);
         return this;
     }
+    public ManagementPolicySchema setRules(List<ManagementPolicyRule> rules) {
+        return this.setRules(BicepList.from(rules));
+    }
+
 }

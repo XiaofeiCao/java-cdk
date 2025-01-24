@@ -38,6 +38,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.microsoftEndpoints.assign(microsoftEndpoints);
         return this;
     }
+    public Endpoints setMicrosoftEndpoints(StorageAccountMicrosoftEndpoints microsoftEndpoints) {
+        return this.setMicrosoftEndpoints(BicepValue.from(microsoftEndpoints));
+    }
+
     public BicepValue<StorageAccountInternetEndpoints> getInternetEndpoints() {
         return this.internetEndpoints;
     }
@@ -46,6 +50,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.internetEndpoints.assign(internetEndpoints);
         return this;
     }
+    public Endpoints setInternetEndpoints(StorageAccountInternetEndpoints internetEndpoints) {
+        return this.setInternetEndpoints(BicepValue.from(internetEndpoints));
+    }
+
     public BicepValue<String> getWeb() {
         return this.web;
     }
@@ -54,6 +62,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.web.assign(web);
         return this;
     }
+    public Endpoints setWeb(String web) {
+        return this.setWeb(BicepValue.from(web));
+    }
+
     public BicepValue<String> getFile() {
         return this.file;
     }
@@ -62,6 +74,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.file.assign(file);
         return this;
     }
+    public Endpoints setFile(String file) {
+        return this.setFile(BicepValue.from(file));
+    }
+
     public BicepValue<String> getQueue() {
         return this.queue;
     }
@@ -70,6 +86,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.queue.assign(queue);
         return this;
     }
+    public Endpoints setQueue(String queue) {
+        return this.setQueue(BicepValue.from(queue));
+    }
+
     public BicepValue<String> getTable() {
         return this.table;
     }
@@ -78,6 +98,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.table.assign(table);
         return this;
     }
+    public Endpoints setTable(String table) {
+        return this.setTable(BicepValue.from(table));
+    }
+
     public BicepValue<String> getBlob() {
         return this.blob;
     }
@@ -86,6 +110,10 @@ public class Endpoints extends ProvisioningConstruct {
         this.blob.assign(blob);
         return this;
     }
+    public Endpoints setBlob(String blob) {
+        return this.setBlob(BicepValue.from(blob));
+    }
+
     public BicepValue<String> getDfs() {
         return this.dfs;
     }
@@ -94,4 +122,8 @@ public class Endpoints extends ProvisioningConstruct {
         this.dfs.assign(dfs);
         return this;
     }
+    public Endpoints setDfs(String dfs) {
+        return this.setDfs(BicepValue.from(dfs));
+    }
+
 }

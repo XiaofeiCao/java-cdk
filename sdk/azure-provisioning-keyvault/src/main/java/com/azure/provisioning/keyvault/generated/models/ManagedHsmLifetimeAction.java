@@ -26,6 +26,10 @@ public class ManagedHsmLifetimeAction extends ProvisioningConstruct {
         this.action.assign(action);
         return this;
     }
+    public ManagedHsmLifetimeAction setAction(ManagedHsmAction action) {
+        return this.setAction(BicepValue.from(action));
+    }
+
     public BicepValue<ManagedHsmTrigger> getTrigger() {
         return this.trigger;
     }
@@ -34,4 +38,8 @@ public class ManagedHsmLifetimeAction extends ProvisioningConstruct {
         this.trigger.assign(trigger);
         return this;
     }
+    public ManagedHsmLifetimeAction setTrigger(ManagedHsmTrigger trigger) {
+        return this.setTrigger(BicepValue.from(trigger));
+    }
+
 }

@@ -25,6 +25,10 @@ public class MhsmVirtualNetworkRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public MhsmVirtualNetworkRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getId() {
         return this.id;
     }
@@ -33,4 +37,8 @@ public class MhsmVirtualNetworkRule extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public MhsmVirtualNetworkRule setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
 }

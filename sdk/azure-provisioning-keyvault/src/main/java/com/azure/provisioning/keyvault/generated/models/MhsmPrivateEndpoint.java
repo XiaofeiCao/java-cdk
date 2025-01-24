@@ -22,4 +22,8 @@ public class MhsmPrivateEndpoint extends ProvisioningConstruct {
         this.id.assign(id);
         return this;
     }
+    public MhsmPrivateEndpoint setId(String id) {
+        return this.setId(BicepValue.from(id));
+    }
+
 }

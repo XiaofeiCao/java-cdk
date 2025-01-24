@@ -34,6 +34,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
+    public NetworkRuleSet setVirtualNetworkRules(List<VirtualNetworkRule> virtualNetworkRules) {
+        return this.setVirtualNetworkRules(BicepList.from(virtualNetworkRules));
+    }
+
     public BicepValue<NetworkRuleAction> getDefaultAction() {
         return this.defaultAction;
     }
@@ -42,6 +46,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.defaultAction.assign(defaultAction);
         return this;
     }
+    public NetworkRuleSet setDefaultAction(NetworkRuleAction defaultAction) {
+        return this.setDefaultAction(BicepValue.from(defaultAction));
+    }
+
     public BicepValue<NetworkRuleBypassOptions> getBypass() {
         return this.bypass;
     }
@@ -50,6 +58,10 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.bypass.assign(bypass);
         return this;
     }
+    public NetworkRuleSet setBypass(NetworkRuleBypassOptions bypass) {
+        return this.setBypass(BicepValue.from(bypass));
+    }
+
     public BicepList<IpRule> getIpRules() {
         return this.ipRules;
     }
@@ -58,4 +70,8 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         this.ipRules.assign(ipRules);
         return this;
     }
+    public NetworkRuleSet setIpRules(List<IpRule> ipRules) {
+        return this.setIpRules(BicepList.from(ipRules));
+    }
+
 }

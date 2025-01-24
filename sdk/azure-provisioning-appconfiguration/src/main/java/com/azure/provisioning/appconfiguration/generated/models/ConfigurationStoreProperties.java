@@ -48,6 +48,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.enablePurgeProtection.assign(enablePurgeProtection);
         return this;
     }
+    public ConfigurationStoreProperties setEnablePurgeProtection(Boolean enablePurgeProtection) {
+        return this.setEnablePurgeProtection(BicepValue.from(enablePurgeProtection));
+    }
+
     public BicepValue<String> getEndpoint() {
         return this.endpoint;
     }
@@ -56,6 +60,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.endpoint.assign(endpoint);
         return this;
     }
+    public ConfigurationStoreProperties setEndpoint(String endpoint) {
+        return this.setEndpoint(BicepValue.from(endpoint));
+    }
+
     public BicepValue<Boolean> getDisableLocalAuth() {
         return this.disableLocalAuth;
     }
@@ -64,6 +72,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.disableLocalAuth.assign(disableLocalAuth);
         return this;
     }
+    public ConfigurationStoreProperties setDisableLocalAuth(Boolean disableLocalAuth) {
+        return this.setDisableLocalAuth(BicepValue.from(disableLocalAuth));
+    }
+
     public BicepValue<Integer> getSoftDeleteRetentionInDays() {
         return this.softDeleteRetentionInDays;
     }
@@ -72,6 +84,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.softDeleteRetentionInDays.assign(softDeleteRetentionInDays);
         return this;
     }
+    public ConfigurationStoreProperties setSoftDeleteRetentionInDays(Integer softDeleteRetentionInDays) {
+        return this.setSoftDeleteRetentionInDays(BicepValue.from(softDeleteRetentionInDays));
+    }
+
     public BicepValue<ProvisioningState> getProvisioningState() {
         return this.provisioningState;
     }
@@ -80,6 +96,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public ConfigurationStoreProperties setProvisioningState(ProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<EncryptionProperties> getEncryption() {
         return this.encryption;
     }
@@ -88,6 +108,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.encryption.assign(encryption);
         return this;
     }
+    public ConfigurationStoreProperties setEncryption(EncryptionProperties encryption) {
+        return this.setEncryption(BicepValue.from(encryption));
+    }
+
     public BicepList<PrivateEndpointConnectionReference> getPrivateEndpointConnections() {
         return this.privateEndpointConnections;
     }
@@ -96,6 +120,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.privateEndpointConnections.assign(privateEndpointConnections);
         return this;
     }
+    public ConfigurationStoreProperties setPrivateEndpointConnections(List<PrivateEndpointConnectionReference> privateEndpointConnections) {
+        return this.setPrivateEndpointConnections(BicepList.from(privateEndpointConnections));
+    }
+
     public BicepValue<CreateMode> getCreateMode() {
         return this.createMode;
     }
@@ -104,6 +132,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.createMode.assign(createMode);
         return this;
     }
+    public ConfigurationStoreProperties setCreateMode(CreateMode createMode) {
+        return this.setCreateMode(BicepValue.from(createMode));
+    }
+
     public BicepValue<PublicNetworkAccess> getPublicNetworkAccess() {
         return this.publicNetworkAccess;
     }
@@ -112,6 +144,10 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.publicNetworkAccess.assign(publicNetworkAccess);
         return this;
     }
+    public ConfigurationStoreProperties setPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        return this.setPublicNetworkAccess(BicepValue.from(publicNetworkAccess));
+    }
+
     public BicepValue<OffsetDateTime> getCreationDate() {
         return this.creationDate;
     }
@@ -120,4 +156,8 @@ public class ConfigurationStoreProperties extends ProvisioningConstruct {
         this.creationDate.assign(creationDate);
         return this;
     }
+    public ConfigurationStoreProperties setCreationDate(OffsetDateTime creationDate) {
+        return this.setCreationDate(BicepValue.from(creationDate));
+    }
+
 }

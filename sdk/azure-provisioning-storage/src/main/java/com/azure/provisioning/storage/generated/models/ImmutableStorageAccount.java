@@ -25,6 +25,10 @@ public class ImmutableStorageAccount extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public ImmutableStorageAccount setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<AccountImmutabilityPolicyProperties> getImmutabilityPolicy() {
         return this.immutabilityPolicy;
     }
@@ -33,4 +37,8 @@ public class ImmutableStorageAccount extends ProvisioningConstruct {
         this.immutabilityPolicy.assign(immutabilityPolicy);
         return this;
     }
+    public ImmutableStorageAccount setImmutabilityPolicy(AccountImmutabilityPolicyProperties immutabilityPolicy) {
+        return this.setImmutabilityPolicy(BicepValue.from(immutabilityPolicy));
+    }
+
 }

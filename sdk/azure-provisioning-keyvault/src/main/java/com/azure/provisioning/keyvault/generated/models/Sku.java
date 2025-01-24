@@ -29,6 +29,10 @@ public class Sku extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public Sku setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<SkuFamily> getFamily() {
         return this.family;
     }
@@ -37,6 +41,10 @@ public class Sku extends ProvisioningConstruct {
         this.family.assign(family);
         return this;
     }
+    public Sku setFamily(SkuFamily family) {
+        return this.setFamily(BicepValue.from(family));
+    }
+
     public BicepValue<SkuName> getName() {
         return this.name;
     }
@@ -45,4 +53,8 @@ public class Sku extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public Sku setName(SkuName name) {
+        return this.setName(BicepValue.from(name));
+    }
+
 }

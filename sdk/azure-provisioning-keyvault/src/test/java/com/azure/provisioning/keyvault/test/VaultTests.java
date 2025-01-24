@@ -13,13 +13,10 @@ import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.azure.identity.implementation.util.IdentityUtil;
 import com.azure.json.JsonProviders;
 import com.azure.json.JsonReader;
-import com.azure.provisioning.BicepList;
-import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.Infrastructure;
 import com.azure.provisioning.ProvisioningContext;
 import com.azure.provisioning.ProvisioningPlan;
 import com.azure.provisioning.bicep.BicepProvisioningPlan;
-import com.azure.provisioning.implementation.bicep.syntax.BicepTypeMapping;
 import com.azure.provisioning.keyvault.generated.KeyResource;
 import com.azure.provisioning.keyvault.generated.SecretResource;
 import com.azure.provisioning.keyvault.generated.VaultResource;
@@ -96,7 +93,7 @@ public class VaultTests extends TestBase {
      * <p/>
      * To run the test:
      * 1. Before running test, run `az login` in terminal to login Azure cloud
-     * 2. Set test environment variable `AZURE_TENANT_ID`
+     * 2. Set test environment variable `AZURE_TENANT_ID` and `AZURE_SUBSCRIPTION_ID`
      */
     @Test
     public void testCreateVaultWithKeyAndSecret() throws IOException {
@@ -105,37 +102,36 @@ public class VaultTests extends TestBase {
         vaultResource.setLocation(region.name());
         vaultResource.setName(vaultName);
         VaultProperties vaultProperties = new VaultProperties();
-        vaultProperties.setTenantId(BicepValue.from(UUID.fromString(Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID"))))
-                .setSku(BicepValue.from(new Sku().setFamily(BicepValue.from(SkuFamily.A)).setName(BicepValue.from(SkuName.STANDARD))))
-                .setNetworkAcls(BicepValue.from(new NetworkRuleSet().setBypass(BicepValue.from(NetworkRuleBypassOptions.AZURE_SERVICES))
-                        .setIpRules(BicepList.from(List.of(new IpRule().setValue(BicepValue.from("0.0.0.0/0")))))))
-                .setAccessPolicies(BicepList.from(List.of(
+        vaultProperties.setTenantId(UUID.fromString(Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID")))
+                .setSku(new Sku().setFamily(SkuFamily.A).setName(SkuName.STANDARD))
+                .setNetworkAcls(new NetworkRuleSet().setBypass(NetworkRuleBypassOptions.AZURE_SERVICES)
+                        .setIpRules(List.of(new IpRule().setValue("0.0.0.0/0"))))
+                .setAccessPolicies(List.of(
                         new AccessPolicyEntry()
-                                .setTenantId(BicepValue.from(UUID.fromString(Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID"))))
-                                .setObjectId(BicepValue.from(azureCliSignedInUser().id()))
-                                .setPermissions(BicepValue.from(
+                                .setTenantId(UUID.fromString(Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID")))
+                                .setObjectId(azureCliSignedInUser().id())
+                                .setPermissions(
                                         new Permissions()
-                                                .setKeys(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(KeyPermissions.ALL))))
-                                                .setCertificates(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(CertificatePermissions.GET, CertificatePermissions.LIST, CertificatePermissions.CREATE))))
-                                                .setSecrets(BicepList.fromExpression(null, BicepTypeMapping.toBicep(List.of(SecretPermissions.ALL))))
+                                                .setKeys(List.of(KeyPermissions.ALL))
+                                                .setCertificates(List.of(CertificatePermissions.GET, CertificatePermissions.LIST, CertificatePermissions.CREATE))
+                                                .setSecrets(List.of(SecretPermissions.ALL))
                                 ))
-                )));
+                );
         vaultResource.setProperties(vaultProperties);
 
         String keyName = testResourceNamer.randomName("key", 20);
         KeyResource keyResource = new KeyResource(keyName, KeyResource.ResourceVersions.V2023_07_01);
         keyResource.setName(keyName)
                 .setProperties(new KeyProperties()
-                        .setKty(BicepValue.from(JsonWebKeyType.RSA))
-                        .setKeyOps(BicepList.from(List.of(JsonWebKeyOperation.SIGN, JsonWebKeyOperation.VERIFY)))
+                        .setKty(JsonWebKeyType.RSA)
+                        .setKeyOps(List.of(JsonWebKeyOperation.SIGN, JsonWebKeyOperation.VERIFY))
                 ).setParent(vaultResource);
 
         String secretName = testResourceNamer.randomName("secret", 20);
         SecretResource secretResource = new SecretResource(secretName, KeyResource.ResourceVersions.V2023_07_01);
         secretResource.setName(secretName)
-                .setProperties(BicepValue.from(new SecretProperties()
-                        .setValue(BicepValue.from("Some secret value"))
-                ))
+                .setProperties(new SecretProperties()
+                        .setValue("Some secret value"))
                 .setParent(vaultResource);
 
         Infrastructure infrastructure = new Infrastructure();

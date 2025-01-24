@@ -36,6 +36,10 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.allowProtectedAppendWritesAll.assign(allowProtectedAppendWritesAll);
         return this;
     }
+    public ImmutabilityPolicyProperties setAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll) {
+        return this.setAllowProtectedAppendWritesAll(BicepValue.from(allowProtectedAppendWritesAll));
+    }
+
     public BicepValue<Integer> getImmutabilityPeriodSinceCreationInDays() {
         return this.immutabilityPeriodSinceCreationInDays;
     }
@@ -44,6 +48,10 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.immutabilityPeriodSinceCreationInDays.assign(immutabilityPeriodSinceCreationInDays);
         return this;
     }
+    public ImmutabilityPolicyProperties setImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays) {
+        return this.setImmutabilityPeriodSinceCreationInDays(BicepValue.from(immutabilityPeriodSinceCreationInDays));
+    }
+
     public BicepList<UpdateHistoryProperty> getUpdateHistory() {
         return this.updateHistory;
     }
@@ -52,6 +60,10 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.updateHistory.assign(updateHistory);
         return this;
     }
+    public ImmutabilityPolicyProperties setUpdateHistory(List<UpdateHistoryProperty> updateHistory) {
+        return this.setUpdateHistory(BicepList.from(updateHistory));
+    }
+
     public BicepValue<ImmutabilityPolicyState> getState() {
         return this.state;
     }
@@ -60,6 +72,10 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.state.assign(state);
         return this;
     }
+    public ImmutabilityPolicyProperties setState(ImmutabilityPolicyState state) {
+        return this.setState(BicepValue.from(state));
+    }
+
     public BicepValue<Boolean> getAllowProtectedAppendWrites() {
         return this.allowProtectedAppendWrites;
     }
@@ -68,6 +84,10 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
         return this;
     }
+    public ImmutabilityPolicyProperties setAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
+        return this.setAllowProtectedAppendWrites(BicepValue.from(allowProtectedAppendWrites));
+    }
+
     public BicepValue<String> getEtag() {
         return this.etag;
     }
@@ -76,4 +96,8 @@ public class ImmutabilityPolicyProperties extends ProvisioningConstruct {
         this.etag.assign(etag);
         return this;
     }
+    public ImmutabilityPolicyProperties setEtag(String etag) {
+        return this.setEtag(BicepValue.from(etag));
+    }
+
 }

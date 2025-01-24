@@ -27,6 +27,10 @@ public class ManagedHsmKeyReleasePolicy extends ProvisioningConstruct {
         this.contentType.assign(contentType);
         return this;
     }
+    public ManagedHsmKeyReleasePolicy setContentType(String contentType) {
+        return this.setContentType(BicepValue.from(contentType));
+    }
+
     public BicepValue<byte[]> getEMPTYBYTEARRAY() {
         return this.eMPTY_BYTE_ARRAY;
     }
@@ -35,6 +39,10 @@ public class ManagedHsmKeyReleasePolicy extends ProvisioningConstruct {
         this.eMPTY_BYTE_ARRAY.assign(eMPTY_BYTE_ARRAY);
         return this;
     }
+    public ManagedHsmKeyReleasePolicy setEMPTYBYTEARRAY(byte[] eMPTY_BYTE_ARRAY) {
+        return this.setEMPTYBYTEARRAY(BicepValue.from(eMPTY_BYTE_ARRAY));
+    }
+
     public BicepValue<Base64Url> getData() {
         return this.data;
     }
@@ -43,4 +51,8 @@ public class ManagedHsmKeyReleasePolicy extends ProvisioningConstruct {
         this.data.assign(data);
         return this;
     }
+    public ManagedHsmKeyReleasePolicy setData(Base64Url data) {
+        return this.setData(BicepValue.from(data));
+    }
+
 }

@@ -29,6 +29,10 @@ public class EncryptionServices extends ProvisioningConstruct {
         this.file.assign(file);
         return this;
     }
+    public EncryptionServices setFile(EncryptionService file) {
+        return this.setFile(BicepValue.from(file));
+    }
+
     public BicepValue<EncryptionService> getTable() {
         return this.table;
     }
@@ -37,6 +41,10 @@ public class EncryptionServices extends ProvisioningConstruct {
         this.table.assign(table);
         return this;
     }
+    public EncryptionServices setTable(EncryptionService table) {
+        return this.setTable(BicepValue.from(table));
+    }
+
     public BicepValue<EncryptionService> getBlob() {
         return this.blob;
     }
@@ -45,6 +53,10 @@ public class EncryptionServices extends ProvisioningConstruct {
         this.blob.assign(blob);
         return this;
     }
+    public EncryptionServices setBlob(EncryptionService blob) {
+        return this.setBlob(BicepValue.from(blob));
+    }
+
     public BicepValue<EncryptionService> getQueue() {
         return this.queue;
     }
@@ -53,4 +65,8 @@ public class EncryptionServices extends ProvisioningConstruct {
         this.queue.assign(queue);
         return this;
     }
+    public EncryptionServices setQueue(EncryptionService queue) {
+        return this.setQueue(BicepValue.from(queue));
+    }
+
 }

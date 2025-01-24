@@ -28,6 +28,10 @@ public class ImmutableStorageWithVersioning extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public ImmutableStorageWithVersioning setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<MigrationState> getMigrationState() {
         return this.migrationState;
     }
@@ -36,6 +40,10 @@ public class ImmutableStorageWithVersioning extends ProvisioningConstruct {
         this.migrationState.assign(migrationState);
         return this;
     }
+    public ImmutableStorageWithVersioning setMigrationState(MigrationState migrationState) {
+        return this.setMigrationState(BicepValue.from(migrationState));
+    }
+
     public BicepValue<OffsetDateTime> getTimestamp() {
         return this.timestamp;
     }
@@ -44,4 +52,8 @@ public class ImmutableStorageWithVersioning extends ProvisioningConstruct {
         this.timestamp.assign(timestamp);
         return this;
     }
+    public ImmutableStorageWithVersioning setTimestamp(OffsetDateTime timestamp) {
+        return this.setTimestamp(BicepValue.from(timestamp));
+    }
+
 }

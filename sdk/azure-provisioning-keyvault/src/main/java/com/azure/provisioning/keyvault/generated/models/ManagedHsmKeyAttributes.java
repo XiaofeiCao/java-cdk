@@ -35,6 +35,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public ManagedHsmKeyAttributes setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
         return this.recoveryLevel;
     }
@@ -43,6 +47,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.recoveryLevel.assign(recoveryLevel);
         return this;
     }
+    public ManagedHsmKeyAttributes setRecoveryLevel(DeletionRecoveryLevel recoveryLevel) {
+        return this.setRecoveryLevel(BicepValue.from(recoveryLevel));
+    }
+
     public BicepValue<Long> getNotBefore() {
         return this.notBefore;
     }
@@ -51,6 +59,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.notBefore.assign(notBefore);
         return this;
     }
+    public ManagedHsmKeyAttributes setNotBefore(Long notBefore) {
+        return this.setNotBefore(BicepValue.from(notBefore));
+    }
+
     public BicepValue<Long> getExpires() {
         return this.expires;
     }
@@ -59,6 +71,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.expires.assign(expires);
         return this;
     }
+    public ManagedHsmKeyAttributes setExpires(Long expires) {
+        return this.setExpires(BicepValue.from(expires));
+    }
+
     public BicepValue<Long> getCreated() {
         return this.created;
     }
@@ -67,6 +83,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.created.assign(created);
         return this;
     }
+    public ManagedHsmKeyAttributes setCreated(Long created) {
+        return this.setCreated(BicepValue.from(created));
+    }
+
     public BicepValue<Long> getUpdated() {
         return this.updated;
     }
@@ -75,6 +95,10 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.updated.assign(updated);
         return this;
     }
+    public ManagedHsmKeyAttributes setUpdated(Long updated) {
+        return this.setUpdated(BicepValue.from(updated));
+    }
+
     public BicepValue<Boolean> getExportable() {
         return this.exportable;
     }
@@ -83,4 +107,8 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         this.exportable.assign(exportable);
         return this;
     }
+    public ManagedHsmKeyAttributes setExportable(Boolean exportable) {
+        return this.setExportable(BicepValue.from(exportable));
+    }
+
 }

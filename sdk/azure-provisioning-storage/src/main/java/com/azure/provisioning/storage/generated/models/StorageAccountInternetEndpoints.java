@@ -28,6 +28,10 @@ public class StorageAccountInternetEndpoints extends ProvisioningConstruct {
         this.web.assign(web);
         return this;
     }
+    public StorageAccountInternetEndpoints setWeb(String web) {
+        return this.setWeb(BicepValue.from(web));
+    }
+
     public BicepValue<String> getFile() {
         return this.file;
     }
@@ -36,6 +40,10 @@ public class StorageAccountInternetEndpoints extends ProvisioningConstruct {
         this.file.assign(file);
         return this;
     }
+    public StorageAccountInternetEndpoints setFile(String file) {
+        return this.setFile(BicepValue.from(file));
+    }
+
     public BicepValue<String> getBlob() {
         return this.blob;
     }
@@ -44,6 +52,10 @@ public class StorageAccountInternetEndpoints extends ProvisioningConstruct {
         this.blob.assign(blob);
         return this;
     }
+    public StorageAccountInternetEndpoints setBlob(String blob) {
+        return this.setBlob(BicepValue.from(blob));
+    }
+
     public BicepValue<String> getDfs() {
         return this.dfs;
     }
@@ -52,4 +64,8 @@ public class StorageAccountInternetEndpoints extends ProvisioningConstruct {
         this.dfs.assign(dfs);
         return this;
     }
+    public StorageAccountInternetEndpoints setDfs(String dfs) {
+        return this.setDfs(BicepValue.from(dfs));
+    }
+
 }

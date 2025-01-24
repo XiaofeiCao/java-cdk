@@ -27,6 +27,10 @@ public class ObjectReplicationPolicyFilter extends ProvisioningConstruct {
         this.minCreationTime.assign(minCreationTime);
         return this;
     }
+    public ObjectReplicationPolicyFilter setMinCreationTime(String minCreationTime) {
+        return this.setMinCreationTime(BicepValue.from(minCreationTime));
+    }
+
     public BicepList<String> getPrefixMatch() {
         return this.prefixMatch;
     }
@@ -35,4 +39,8 @@ public class ObjectReplicationPolicyFilter extends ProvisioningConstruct {
         this.prefixMatch.assign(prefixMatch);
         return this;
     }
+    public ObjectReplicationPolicyFilter setPrefixMatch(List<String> prefixMatch) {
+        return this.setPrefixMatch(BicepList.from(prefixMatch));
+    }
+
 }

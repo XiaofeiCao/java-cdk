@@ -29,6 +29,10 @@ public class TagFilter extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public TagFilter setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -37,6 +41,10 @@ public class TagFilter extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public TagFilter setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<String> getValue() {
         return this.value;
     }
@@ -45,6 +53,10 @@ public class TagFilter extends ProvisioningConstruct {
         this.value.assign(value);
         return this;
     }
+    public TagFilter setValue(String value) {
+        return this.setValue(BicepValue.from(value));
+    }
+
     public BicepValue<String> getOp() {
         return this.op;
     }
@@ -53,4 +65,8 @@ public class TagFilter extends ProvisioningConstruct {
         this.op.assign(op);
         return this;
     }
+    public TagFilter setOp(String op) {
+        return this.setOp(BicepValue.from(op));
+    }
+
 }

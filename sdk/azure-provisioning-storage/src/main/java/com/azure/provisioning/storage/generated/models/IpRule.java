@@ -28,6 +28,10 @@ public class IpRule extends ProvisioningConstruct {
         this.ipAddressOrRange.assign(ipAddressOrRange);
         return this;
     }
+    public IpRule setIpAddressOrRange(String ipAddressOrRange) {
+        return this.setIpAddressOrRange(BicepValue.from(ipAddressOrRange));
+    }
+
     public BicepValue<Action> getAction() {
         return this.action;
     }
@@ -36,6 +40,10 @@ public class IpRule extends ProvisioningConstruct {
         this.action.assign(action);
         return this;
     }
+    public IpRule setAction(Action action) {
+        return this.setAction(BicepValue.from(action));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -44,4 +52,8 @@ public class IpRule extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public IpRule setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
 }

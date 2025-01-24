@@ -46,6 +46,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.releasePolicy.assign(releasePolicy);
         return this;
     }
+    public ManagedHsmKeyProperties setReleasePolicy(ManagedHsmKeyReleasePolicy releasePolicy) {
+        return this.setReleasePolicy(BicepValue.from(releasePolicy));
+    }
+
     public BicepValue<String> getKeyUri() {
         return this.keyUri;
     }
@@ -54,6 +58,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.keyUri.assign(keyUri);
         return this;
     }
+    public ManagedHsmKeyProperties setKeyUri(String keyUri) {
+        return this.setKeyUri(BicepValue.from(keyUri));
+    }
+
     public BicepValue<JsonWebKeyType> getKty() {
         return this.kty;
     }
@@ -62,6 +70,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.kty.assign(kty);
         return this;
     }
+    public ManagedHsmKeyProperties setKty(JsonWebKeyType kty) {
+        return this.setKty(BicepValue.from(kty));
+    }
+
     public BicepValue<Integer> getKeySize() {
         return this.keySize;
     }
@@ -70,6 +82,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.keySize.assign(keySize);
         return this;
     }
+    public ManagedHsmKeyProperties setKeySize(Integer keySize) {
+        return this.setKeySize(BicepValue.from(keySize));
+    }
+
     public BicepValue<ManagedHsmRotationPolicy> getRotationPolicy() {
         return this.rotationPolicy;
     }
@@ -78,6 +94,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.rotationPolicy.assign(rotationPolicy);
         return this;
     }
+    public ManagedHsmKeyProperties setRotationPolicy(ManagedHsmRotationPolicy rotationPolicy) {
+        return this.setRotationPolicy(BicepValue.from(rotationPolicy));
+    }
+
     public BicepValue<ManagedHsmKeyAttributes> getAttributes() {
         return this.attributes;
     }
@@ -86,6 +106,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.attributes.assign(attributes);
         return this;
     }
+    public ManagedHsmKeyProperties setAttributes(ManagedHsmKeyAttributes attributes) {
+        return this.setAttributes(BicepValue.from(attributes));
+    }
+
     public BicepList<JsonWebKeyOperation> getKeyOps() {
         return this.keyOps;
     }
@@ -94,6 +118,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.keyOps.assign(keyOps);
         return this;
     }
+    public ManagedHsmKeyProperties setKeyOps(List<JsonWebKeyOperation> keyOps) {
+        return this.setKeyOps(BicepList.from(keyOps));
+    }
+
     public BicepValue<String> getKeyUriWithVersion() {
         return this.keyUriWithVersion;
     }
@@ -102,6 +130,10 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.keyUriWithVersion.assign(keyUriWithVersion);
         return this;
     }
+    public ManagedHsmKeyProperties setKeyUriWithVersion(String keyUriWithVersion) {
+        return this.setKeyUriWithVersion(BicepValue.from(keyUriWithVersion));
+    }
+
     public BicepValue<JsonWebKeyCurveName> getCurveName() {
         return this.curveName;
     }
@@ -110,4 +142,8 @@ public class ManagedHsmKeyProperties extends ProvisioningConstruct {
         this.curveName.assign(curveName);
         return this;
     }
+    public ManagedHsmKeyProperties setCurveName(JsonWebKeyCurveName curveName) {
+        return this.setCurveName(BicepValue.from(curveName));
+    }
+
 }

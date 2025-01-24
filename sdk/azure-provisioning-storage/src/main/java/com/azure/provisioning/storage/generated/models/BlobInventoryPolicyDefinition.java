@@ -40,6 +40,10 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.filters.assign(filters);
         return this;
     }
+    public BlobInventoryPolicyDefinition setFilters(BlobInventoryPolicyFilter filters) {
+        return this.setFilters(BicepValue.from(filters));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -48,6 +52,10 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobInventoryPolicyDefinition setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<Schedule> getSchedule() {
         return this.schedule;
     }
@@ -56,6 +64,10 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.schedule.assign(schedule);
         return this;
     }
+    public BlobInventoryPolicyDefinition setSchedule(Schedule schedule) {
+        return this.setSchedule(BicepValue.from(schedule));
+    }
+
     public BicepValue<ObjectType> getObjectType() {
         return this.objectType;
     }
@@ -64,6 +76,10 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.objectType.assign(objectType);
         return this;
     }
+    public BlobInventoryPolicyDefinition setObjectType(ObjectType objectType) {
+        return this.setObjectType(BicepValue.from(objectType));
+    }
+
     public BicepList<String> getSchemaFields() {
         return this.schemaFields;
     }
@@ -72,6 +88,10 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.schemaFields.assign(schemaFields);
         return this;
     }
+    public BlobInventoryPolicyDefinition setSchemaFields(List<String> schemaFields) {
+        return this.setSchemaFields(BicepList.from(schemaFields));
+    }
+
     public BicepValue<Format> getFormat() {
         return this.format;
     }
@@ -80,4 +100,8 @@ public class BlobInventoryPolicyDefinition extends ProvisioningConstruct {
         this.format.assign(format);
         return this;
     }
+    public BlobInventoryPolicyDefinition setFormat(Format format) {
+        return this.setFormat(BicepValue.from(format));
+    }
+
 }

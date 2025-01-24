@@ -33,6 +33,10 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.tierToHot.assign(tierToHot);
         return this;
     }
+    public ManagementPolicyBaseBlob setTierToHot(DateAfterModification tierToHot) {
+        return this.setTierToHot(BicepValue.from(tierToHot));
+    }
+
     public BicepValue<DateAfterModification> getTierToCool() {
         return this.tierToCool;
     }
@@ -41,6 +45,10 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.tierToCool.assign(tierToCool);
         return this;
     }
+    public ManagementPolicyBaseBlob setTierToCool(DateAfterModification tierToCool) {
+        return this.setTierToCool(BicepValue.from(tierToCool));
+    }
+
     public BicepValue<DateAfterModification> getTierToArchive() {
         return this.tierToArchive;
     }
@@ -49,6 +57,10 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.tierToArchive.assign(tierToArchive);
         return this;
     }
+    public ManagementPolicyBaseBlob setTierToArchive(DateAfterModification tierToArchive) {
+        return this.setTierToArchive(BicepValue.from(tierToArchive));
+    }
+
     public BicepValue<DateAfterModification> getTierToCold() {
         return this.tierToCold;
     }
@@ -57,6 +69,10 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.tierToCold.assign(tierToCold);
         return this;
     }
+    public ManagementPolicyBaseBlob setTierToCold(DateAfterModification tierToCold) {
+        return this.setTierToCold(BicepValue.from(tierToCold));
+    }
+
     public BicepValue<DateAfterModification> getDelete() {
         return this.delete;
     }
@@ -65,6 +81,10 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.delete.assign(delete);
         return this;
     }
+    public ManagementPolicyBaseBlob setDelete(DateAfterModification delete) {
+        return this.setDelete(BicepValue.from(delete));
+    }
+
     public BicepValue<Boolean> getEnableAutoTierToHotFromCool() {
         return this.enableAutoTierToHotFromCool;
     }
@@ -73,4 +93,8 @@ public class ManagementPolicyBaseBlob extends ProvisioningConstruct {
         this.enableAutoTierToHotFromCool.assign(enableAutoTierToHotFromCool);
         return this;
     }
+    public ManagementPolicyBaseBlob setEnableAutoTierToHotFromCool(Boolean enableAutoTierToHotFromCool) {
+        return this.setEnableAutoTierToHotFromCool(BicepValue.from(enableAutoTierToHotFromCool));
+    }
+
 }

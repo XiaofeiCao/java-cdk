@@ -24,6 +24,10 @@ public class EncryptionIdentity extends ProvisioningConstruct {
         this.encryptionUserAssignedIdentity.assign(encryptionUserAssignedIdentity);
         return this;
     }
+    public EncryptionIdentity setEncryptionUserAssignedIdentity(String encryptionUserAssignedIdentity) {
+        return this.setEncryptionUserAssignedIdentity(BicepValue.from(encryptionUserAssignedIdentity));
+    }
+
     public BicepValue<String> getEncryptionFederatedIdentityClientId() {
         return this.encryptionFederatedIdentityClientId;
     }
@@ -32,4 +36,8 @@ public class EncryptionIdentity extends ProvisioningConstruct {
         this.encryptionFederatedIdentityClientId.assign(encryptionFederatedIdentityClientId);
         return this;
     }
+    public EncryptionIdentity setEncryptionFederatedIdentityClientId(String encryptionFederatedIdentityClientId) {
+        return this.setEncryptionFederatedIdentityClientId(BicepValue.from(encryptionFederatedIdentityClientId));
+    }
+
 }

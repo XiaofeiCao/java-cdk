@@ -33,6 +33,10 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public AccessPolicyEntry setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<UUID> getTenantId() {
         return this.tenantId;
     }
@@ -41,6 +45,10 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
+    public AccessPolicyEntry setTenantId(UUID tenantId) {
+        return this.setTenantId(BicepValue.from(tenantId));
+    }
+
     public BicepValue<UUID> getApplicationId() {
         return this.applicationId;
     }
@@ -49,6 +57,10 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.applicationId.assign(applicationId);
         return this;
     }
+    public AccessPolicyEntry setApplicationId(UUID applicationId) {
+        return this.setApplicationId(BicepValue.from(applicationId));
+    }
+
     public BicepValue<Permissions> getPermissions() {
         return this.permissions;
     }
@@ -57,6 +69,10 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.permissions.assign(permissions);
         return this;
     }
+    public AccessPolicyEntry setPermissions(Permissions permissions) {
+        return this.setPermissions(BicepValue.from(permissions));
+    }
+
     public BicepValue<String> getObjectId() {
         return this.objectId;
     }
@@ -65,4 +81,8 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         this.objectId.assign(objectId);
         return this;
     }
+    public AccessPolicyEntry setObjectId(String objectId) {
+        return this.setObjectId(BicepValue.from(objectId));
+    }
+
 }

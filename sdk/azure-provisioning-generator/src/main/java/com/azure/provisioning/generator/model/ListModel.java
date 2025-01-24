@@ -29,4 +29,9 @@ public class ListModel extends ModelBase {
     public String getTypeReference() {
         return "List<" + elementType.getTypeReference() + ">";
     }
+
+    @Override
+    public String bicepValueExpression(String reference) {
+        return String.format("BicepList.from(%s)", reference);
+    }
 }

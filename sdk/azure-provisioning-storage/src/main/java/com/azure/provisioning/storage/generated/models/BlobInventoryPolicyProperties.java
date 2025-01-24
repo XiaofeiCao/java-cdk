@@ -29,6 +29,10 @@ public class BlobInventoryPolicyProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobInventoryPolicyProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<BlobInventoryPolicySchema> getPolicy() {
         return this.policy;
     }
@@ -37,6 +41,10 @@ public class BlobInventoryPolicyProperties extends ProvisioningConstruct {
         this.policy.assign(policy);
         return this;
     }
+    public BlobInventoryPolicyProperties setPolicy(BlobInventoryPolicySchema policy) {
+        return this.setPolicy(BicepValue.from(policy));
+    }
+
     public BicepValue<OffsetDateTime> getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -45,4 +53,8 @@ public class BlobInventoryPolicyProperties extends ProvisioningConstruct {
         this.lastModifiedTime.assign(lastModifiedTime);
         return this;
     }
+    public BlobInventoryPolicyProperties setLastModifiedTime(OffsetDateTime lastModifiedTime) {
+        return this.setLastModifiedTime(BicepValue.from(lastModifiedTime));
+    }
+
 }

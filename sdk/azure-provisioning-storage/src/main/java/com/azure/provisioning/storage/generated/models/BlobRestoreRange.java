@@ -27,6 +27,10 @@ public class BlobRestoreRange extends ProvisioningConstruct {
         this.startRange.assign(startRange);
         return this;
     }
+    public BlobRestoreRange setStartRange(String startRange) {
+        return this.setStartRange(BicepValue.from(startRange));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -35,6 +39,10 @@ public class BlobRestoreRange extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public BlobRestoreRange setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getEndRange() {
         return this.endRange;
     }
@@ -43,4 +51,8 @@ public class BlobRestoreRange extends ProvisioningConstruct {
         this.endRange.assign(endRange);
         return this;
     }
+    public BlobRestoreRange setEndRange(String endRange) {
+        return this.setEndRange(BicepValue.from(endRange));
+    }
+
 }

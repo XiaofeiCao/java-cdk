@@ -27,6 +27,10 @@ public class CustomDomain extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public CustomDomain setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getName() {
         return this.name;
     }
@@ -35,6 +39,10 @@ public class CustomDomain extends ProvisioningConstruct {
         this.name.assign(name);
         return this;
     }
+    public CustomDomain setName(String name) {
+        return this.setName(BicepValue.from(name));
+    }
+
     public BicepValue<Boolean> getUseSubDomainName() {
         return this.useSubDomainName;
     }
@@ -43,4 +51,8 @@ public class CustomDomain extends ProvisioningConstruct {
         this.useSubDomainName.assign(useSubDomainName);
         return this;
     }
+    public CustomDomain setUseSubDomainName(Boolean useSubDomainName) {
+        return this.setUseSubDomainName(BicepValue.from(useSubDomainName));
+    }
+
 }

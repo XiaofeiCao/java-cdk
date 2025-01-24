@@ -85,6 +85,10 @@ public abstract class ModelBase {
         return getNullable();
     }
 
+    public String bicepValueExpression(String reference) {
+        return String.format("BicepValue.from(%s)", reference);
+    }
+
     private String getNullable() {
         return switch (name) {
             case "boolean" -> "Boolean";

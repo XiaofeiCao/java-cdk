@@ -30,6 +30,10 @@ public class TableAccessPolicy extends ProvisioningConstruct {
         this.expiryTime.assign(expiryTime);
         return this;
     }
+    public TableAccessPolicy setExpiryTime(OffsetDateTime expiryTime) {
+        return this.setExpiryTime(BicepValue.from(expiryTime));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -38,6 +42,10 @@ public class TableAccessPolicy extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public TableAccessPolicy setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getPermission() {
         return this.permission;
     }
@@ -46,6 +54,10 @@ public class TableAccessPolicy extends ProvisioningConstruct {
         this.permission.assign(permission);
         return this;
     }
+    public TableAccessPolicy setPermission(String permission) {
+        return this.setPermission(BicepValue.from(permission));
+    }
+
     public BicepValue<OffsetDateTime> getStartTime() {
         return this.startTime;
     }
@@ -54,4 +66,8 @@ public class TableAccessPolicy extends ProvisioningConstruct {
         this.startTime.assign(startTime);
         return this;
     }
+    public TableAccessPolicy setStartTime(OffsetDateTime startTime) {
+        return this.setStartTime(BicepValue.from(startTime));
+    }
+
 }

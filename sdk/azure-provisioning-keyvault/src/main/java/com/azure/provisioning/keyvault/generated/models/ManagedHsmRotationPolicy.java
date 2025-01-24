@@ -28,6 +28,10 @@ public class ManagedHsmRotationPolicy extends ProvisioningConstruct {
         this.attributes.assign(attributes);
         return this;
     }
+    public ManagedHsmRotationPolicy setAttributes(ManagedHsmKeyRotationPolicyAttributes attributes) {
+        return this.setAttributes(BicepValue.from(attributes));
+    }
+
     public BicepList<ManagedHsmLifetimeAction> getLifetimeActions() {
         return this.lifetimeActions;
     }
@@ -36,4 +40,8 @@ public class ManagedHsmRotationPolicy extends ProvisioningConstruct {
         this.lifetimeActions.assign(lifetimeActions);
         return this;
     }
+    public ManagedHsmRotationPolicy setLifetimeActions(List<ManagedHsmLifetimeAction> lifetimeActions) {
+        return this.setLifetimeActions(BicepList.from(lifetimeActions));
+    }
+
 }

@@ -46,6 +46,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.samAccountName.assign(samAccountName);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setSamAccountName(String samAccountName) {
+        return this.setSamAccountName(BicepValue.from(samAccountName));
+    }
+
     public BicepValue<String> getDomainName() {
         return this.domainName;
     }
@@ -54,6 +58,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.domainName.assign(domainName);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setDomainName(String domainName) {
+        return this.setDomainName(BicepValue.from(domainName));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -62,6 +70,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<DirectoryServiceOptions> getDirectoryServiceOptions() {
         return this.directoryServiceOptions;
     }
@@ -70,6 +82,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.directoryServiceOptions.assign(directoryServiceOptions);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setDirectoryServiceOptions(DirectoryServiceOptions directoryServiceOptions) {
+        return this.setDirectoryServiceOptions(BicepValue.from(directoryServiceOptions));
+    }
+
     public BicepValue<String> getAzureStorageSid() {
         return this.azureStorageSid;
     }
@@ -78,6 +94,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.azureStorageSid.assign(azureStorageSid);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setAzureStorageSid(String azureStorageSid) {
+        return this.setAzureStorageSid(BicepValue.from(azureStorageSid));
+    }
+
     public BicepValue<String> getNetBiosDomainName() {
         return this.netBiosDomainName;
     }
@@ -86,6 +106,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.netBiosDomainName.assign(netBiosDomainName);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setNetBiosDomainName(String netBiosDomainName) {
+        return this.setNetBiosDomainName(BicepValue.from(netBiosDomainName));
+    }
+
     public BicepValue<String> getDomainGuid() {
         return this.domainGuid;
     }
@@ -94,6 +118,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.domainGuid.assign(domainGuid);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setDomainGuid(String domainGuid) {
+        return this.setDomainGuid(BicepValue.from(domainGuid));
+    }
+
     public BicepValue<ActiveDirectoryPropertiesAccountType> getAccountType() {
         return this.accountType;
     }
@@ -102,6 +130,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.accountType.assign(accountType);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setAccountType(ActiveDirectoryPropertiesAccountType accountType) {
+        return this.setAccountType(BicepValue.from(accountType));
+    }
+
     public BicepValue<String> getForestName() {
         return this.forestName;
     }
@@ -110,6 +142,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.forestName.assign(forestName);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setForestName(String forestName) {
+        return this.setForestName(BicepValue.from(forestName));
+    }
+
     public BicepValue<DefaultSharePermission> getDefaultSharePermission() {
         return this.defaultSharePermission;
     }
@@ -118,6 +154,10 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.defaultSharePermission.assign(defaultSharePermission);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setDefaultSharePermission(DefaultSharePermission defaultSharePermission) {
+        return this.setDefaultSharePermission(BicepValue.from(defaultSharePermission));
+    }
+
     public BicepValue<String> getDomainSid() {
         return this.domainSid;
     }
@@ -126,4 +166,8 @@ public class AzureFilesIdentityBasedAuthentication extends ProvisioningConstruct
         this.domainSid.assign(domainSid);
         return this;
     }
+    public AzureFilesIdentityBasedAuthentication setDomainSid(String domainSid) {
+        return this.setDomainSid(BicepValue.from(domainSid));
+    }
+
 }

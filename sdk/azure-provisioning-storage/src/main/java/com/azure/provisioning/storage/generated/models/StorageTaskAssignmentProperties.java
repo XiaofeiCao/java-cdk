@@ -41,6 +41,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.provisioningState.assign(provisioningState);
         return this;
     }
+    public StorageTaskAssignmentProperties setProvisioningState(ProvisioningState provisioningState) {
+        return this.setProvisioningState(BicepValue.from(provisioningState));
+    }
+
     public BicepValue<ClientLogger> getLOGGER() {
         return this.lOGGER;
     }
@@ -49,6 +53,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public StorageTaskAssignmentProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<StorageTaskAssignmentReport> getReport() {
         return this.report;
     }
@@ -57,6 +65,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.report.assign(report);
         return this;
     }
+    public StorageTaskAssignmentProperties setReport(StorageTaskAssignmentReport report) {
+        return this.setReport(BicepValue.from(report));
+    }
+
     public BicepValue<Boolean> getEnabled() {
         return this.enabled;
     }
@@ -65,6 +77,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.enabled.assign(enabled);
         return this;
     }
+    public StorageTaskAssignmentProperties setEnabled(boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
+    }
+
     public BicepValue<String> getTaskId() {
         return this.taskId;
     }
@@ -73,6 +89,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.taskId.assign(taskId);
         return this;
     }
+    public StorageTaskAssignmentProperties setTaskId(String taskId) {
+        return this.setTaskId(BicepValue.from(taskId));
+    }
+
     public BicepValue<String> getDescription() {
         return this.description;
     }
@@ -81,6 +101,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.description.assign(description);
         return this;
     }
+    public StorageTaskAssignmentProperties setDescription(String description) {
+        return this.setDescription(BicepValue.from(description));
+    }
+
     public BicepValue<StorageTaskReportProperties> getRunStatus() {
         return this.runStatus;
     }
@@ -89,6 +113,10 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.runStatus.assign(runStatus);
         return this;
     }
+    public StorageTaskAssignmentProperties setRunStatus(StorageTaskReportProperties runStatus) {
+        return this.setRunStatus(BicepValue.from(runStatus));
+    }
+
     public BicepValue<StorageTaskAssignmentExecutionContext> getExecutionContext() {
         return this.executionContext;
     }
@@ -97,4 +125,8 @@ public class StorageTaskAssignmentProperties extends ProvisioningConstruct {
         this.executionContext.assign(executionContext);
         return this;
     }
+    public StorageTaskAssignmentProperties setExecutionContext(StorageTaskAssignmentExecutionContext executionContext) {
+        return this.setExecutionContext(BicepValue.from(executionContext));
+    }
+
 }

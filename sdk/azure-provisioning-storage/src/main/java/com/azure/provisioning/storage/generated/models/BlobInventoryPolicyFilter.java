@@ -38,6 +38,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.includeBlobVersions.assign(includeBlobVersions);
         return this;
     }
+    public BlobInventoryPolicyFilter setIncludeBlobVersions(Boolean includeBlobVersions) {
+        return this.setIncludeBlobVersions(BicepValue.from(includeBlobVersions));
+    }
+
     public BicepValue<Boolean> getIncludeDeleted() {
         return this.includeDeleted;
     }
@@ -46,6 +50,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.includeDeleted.assign(includeDeleted);
         return this;
     }
+    public BlobInventoryPolicyFilter setIncludeDeleted(Boolean includeDeleted) {
+        return this.setIncludeDeleted(BicepValue.from(includeDeleted));
+    }
+
     public BicepValue<Boolean> getIncludeSnapshots() {
         return this.includeSnapshots;
     }
@@ -54,6 +62,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.includeSnapshots.assign(includeSnapshots);
         return this;
     }
+    public BlobInventoryPolicyFilter setIncludeSnapshots(Boolean includeSnapshots) {
+        return this.setIncludeSnapshots(BicepValue.from(includeSnapshots));
+    }
+
     public BicepList<String> getBlobTypes() {
         return this.blobTypes;
     }
@@ -62,6 +74,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.blobTypes.assign(blobTypes);
         return this;
     }
+    public BlobInventoryPolicyFilter setBlobTypes(List<String> blobTypes) {
+        return this.setBlobTypes(BicepList.from(blobTypes));
+    }
+
     public BicepList<String> getPrefixMatch() {
         return this.prefixMatch;
     }
@@ -70,6 +86,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.prefixMatch.assign(prefixMatch);
         return this;
     }
+    public BlobInventoryPolicyFilter setPrefixMatch(List<String> prefixMatch) {
+        return this.setPrefixMatch(BicepList.from(prefixMatch));
+    }
+
     public BicepValue<BlobInventoryCreationTime> getCreationTime() {
         return this.creationTime;
     }
@@ -78,6 +98,10 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.creationTime.assign(creationTime);
         return this;
     }
+    public BlobInventoryPolicyFilter setCreationTime(BlobInventoryCreationTime creationTime) {
+        return this.setCreationTime(BicepValue.from(creationTime));
+    }
+
     public BicepList<String> getExcludePrefix() {
         return this.excludePrefix;
     }
@@ -86,4 +110,8 @@ public class BlobInventoryPolicyFilter extends ProvisioningConstruct {
         this.excludePrefix.assign(excludePrefix);
         return this;
     }
+    public BlobInventoryPolicyFilter setExcludePrefix(List<String> excludePrefix) {
+        return this.setExcludePrefix(BicepList.from(excludePrefix));
+    }
+
 }

@@ -37,6 +37,10 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.lOGGER.assign(lOGGER);
         return this;
     }
+    public ObjectReplicationPolicyProperties setLOGGER(ClientLogger lOGGER) {
+        return this.setLOGGER(BicepValue.from(lOGGER));
+    }
+
     public BicepValue<String> getSourceAccount() {
         return this.sourceAccount;
     }
@@ -45,6 +49,10 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.sourceAccount.assign(sourceAccount);
         return this;
     }
+    public ObjectReplicationPolicyProperties setSourceAccount(String sourceAccount) {
+        return this.setSourceAccount(BicepValue.from(sourceAccount));
+    }
+
     public BicepList<ObjectReplicationPolicyRule> getRules() {
         return this.rules;
     }
@@ -53,6 +61,10 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.rules.assign(rules);
         return this;
     }
+    public ObjectReplicationPolicyProperties setRules(List<ObjectReplicationPolicyRule> rules) {
+        return this.setRules(BicepList.from(rules));
+    }
+
     public BicepValue<String> getDestinationAccount() {
         return this.destinationAccount;
     }
@@ -61,6 +73,10 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.destinationAccount.assign(destinationAccount);
         return this;
     }
+    public ObjectReplicationPolicyProperties setDestinationAccount(String destinationAccount) {
+        return this.setDestinationAccount(BicepValue.from(destinationAccount));
+    }
+
     public BicepValue<String> getPolicyId() {
         return this.policyId;
     }
@@ -69,6 +85,10 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.policyId.assign(policyId);
         return this;
     }
+    public ObjectReplicationPolicyProperties setPolicyId(String policyId) {
+        return this.setPolicyId(BicepValue.from(policyId));
+    }
+
     public BicepValue<OffsetDateTime> getEnabledTime() {
         return this.enabledTime;
     }
@@ -77,4 +97,8 @@ public class ObjectReplicationPolicyProperties extends ProvisioningConstruct {
         this.enabledTime.assign(enabledTime);
         return this;
     }
+    public ObjectReplicationPolicyProperties setEnabledTime(OffsetDateTime enabledTime) {
+        return this.setEnabledTime(BicepValue.from(enabledTime));
+    }
+
 }

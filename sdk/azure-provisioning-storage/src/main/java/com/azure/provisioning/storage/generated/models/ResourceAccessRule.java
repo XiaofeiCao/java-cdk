@@ -24,6 +24,10 @@ public class ResourceAccessRule extends ProvisioningConstruct {
         this.resourceId.assign(resourceId);
         return this;
     }
+    public ResourceAccessRule setResourceId(String resourceId) {
+        return this.setResourceId(BicepValue.from(resourceId));
+    }
+
     public BicepValue<String> getTenantId() {
         return this.tenantId;
     }
@@ -32,4 +36,8 @@ public class ResourceAccessRule extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
+    public ResourceAccessRule setTenantId(String tenantId) {
+        return this.setTenantId(BicepValue.from(tenantId));
+    }
+
 }

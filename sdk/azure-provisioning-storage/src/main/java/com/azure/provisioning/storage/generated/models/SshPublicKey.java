@@ -24,6 +24,10 @@ public class SshPublicKey extends ProvisioningConstruct {
         this.key.assign(key);
         return this;
     }
+    public SshPublicKey setKey(String key) {
+        return this.setKey(BicepValue.from(key));
+    }
+
     public BicepValue<String> getDescription() {
         return this.description;
     }
@@ -32,4 +36,8 @@ public class SshPublicKey extends ProvisioningConstruct {
         this.description.assign(description);
         return this;
     }
+    public SshPublicKey setDescription(String description) {
+        return this.setDescription(BicepValue.from(description));
+    }
+
 }

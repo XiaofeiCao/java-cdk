@@ -38,6 +38,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.allowProtectedAppendWritesAll.assign(allowProtectedAppendWritesAll);
         return this;
     }
+    public UpdateHistoryProperty setAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll) {
+        return this.setAllowProtectedAppendWritesAll(BicepValue.from(allowProtectedAppendWritesAll));
+    }
+
     public BicepValue<OffsetDateTime> getTimestamp() {
         return this.timestamp;
     }
@@ -46,6 +50,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.timestamp.assign(timestamp);
         return this;
     }
+    public UpdateHistoryProperty setTimestamp(OffsetDateTime timestamp) {
+        return this.setTimestamp(BicepValue.from(timestamp));
+    }
+
     public BicepValue<String> getUpn() {
         return this.upn;
     }
@@ -54,6 +62,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.upn.assign(upn);
         return this;
     }
+    public UpdateHistoryProperty setUpn(String upn) {
+        return this.setUpn(BicepValue.from(upn));
+    }
+
     public BicepValue<Integer> getImmutabilityPeriodSinceCreationInDays() {
         return this.immutabilityPeriodSinceCreationInDays;
     }
@@ -62,6 +74,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.immutabilityPeriodSinceCreationInDays.assign(immutabilityPeriodSinceCreationInDays);
         return this;
     }
+    public UpdateHistoryProperty setImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays) {
+        return this.setImmutabilityPeriodSinceCreationInDays(BicepValue.from(immutabilityPeriodSinceCreationInDays));
+    }
+
     public BicepValue<String> getTenantId() {
         return this.tenantId;
     }
@@ -70,6 +86,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.tenantId.assign(tenantId);
         return this;
     }
+    public UpdateHistoryProperty setTenantId(String tenantId) {
+        return this.setTenantId(BicepValue.from(tenantId));
+    }
+
     public BicepValue<String> getObjectIdentifier() {
         return this.objectIdentifier;
     }
@@ -78,6 +98,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.objectIdentifier.assign(objectIdentifier);
         return this;
     }
+    public UpdateHistoryProperty setObjectIdentifier(String objectIdentifier) {
+        return this.setObjectIdentifier(BicepValue.from(objectIdentifier));
+    }
+
     public BicepValue<ImmutabilityPolicyUpdateType> getUpdate() {
         return this.update;
     }
@@ -86,6 +110,10 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.update.assign(update);
         return this;
     }
+    public UpdateHistoryProperty setUpdate(ImmutabilityPolicyUpdateType update) {
+        return this.setUpdate(BicepValue.from(update));
+    }
+
     public BicepValue<Boolean> getAllowProtectedAppendWrites() {
         return this.allowProtectedAppendWrites;
     }
@@ -94,4 +122,8 @@ public class UpdateHistoryProperty extends ProvisioningConstruct {
         this.allowProtectedAppendWrites.assign(allowProtectedAppendWrites);
         return this;
     }
+    public UpdateHistoryProperty setAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
+        return this.setAllowProtectedAppendWrites(BicepValue.from(allowProtectedAppendWrites));
+    }
+
 }
