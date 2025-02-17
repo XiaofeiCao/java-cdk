@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.test.TestBase;
 import com.azure.core.util.Configuration;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.azure.identity.implementation.util.IdentityUtil;
@@ -239,6 +240,9 @@ public class VaultTests extends TestBase {
                 Map<String, Object> signedInUserInfo = reader.readMap(JsonReader::readUntyped);
                 String userPrincipalName = (String) signedInUserInfo.get("userPrincipalName");
                 String id = (String) signedInUserInfo.get("id");
+                if (CoreUtils.isNullOrEmpty(id)) {
+                    id = (String) signedInUserInfo.get("objectId");
+                }
                 azureCliUser = new AzureUser(testResourceNamer, id, userPrincipalName);
             }
         } catch (IOException | InterruptedException e) {
