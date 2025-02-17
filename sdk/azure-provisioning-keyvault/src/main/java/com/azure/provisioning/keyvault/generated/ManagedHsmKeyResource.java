@@ -10,8 +10,8 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmKeyResource extends Resource {
 
-    private final BicepValue<ManagedHsmKeyProperties> properties;
     private final BicepValue<String> name;
+    private final BicepValue<ManagedHsmKeyProperties> properties;
 
     public ManagedHsmKeyResource(String identifierName) {
         this(identifierName, null);
@@ -19,21 +19,8 @@ public class ManagedHsmKeyResource extends Resource {
 
     public ManagedHsmKeyResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs/keys"), resourceVersion);
-        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
-    }
-
-    public BicepValue<ManagedHsmKeyProperties> getProperties() {
-        return this.properties;
-    }
-
-    public ManagedHsmKeyResource setProperties(BicepValue<ManagedHsmKeyProperties> properties) {
-        this.properties.assign(properties);
-        return this;
-    }
-
-    public ManagedHsmKeyResource setProperties(ManagedHsmKeyProperties properties) {
-        return this.setProperties(BicepValue.from(properties));
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
     }
 
     public BicepValue<String> getName() {
@@ -47,6 +34,19 @@ public class ManagedHsmKeyResource extends Resource {
 
     public ManagedHsmKeyResource setName(String name) {
         return this.setName(BicepValue.from(name));
+    }
+
+    public BicepValue<ManagedHsmKeyProperties> getProperties() {
+        return this.properties;
+    }
+
+    public ManagedHsmKeyResource setProperties(BicepValue<ManagedHsmKeyProperties> properties) {
+        this.properties.assign(properties);
+        return this;
+    }
+
+    public ManagedHsmKeyResource setProperties(ManagedHsmKeyProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
 

@@ -9,34 +9,22 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
 
-    private final BicepValue<Boolean> enabled;
     private final BicepValue<DeletionRecoveryLevel> recoveryLevel;
-    private final BicepValue<Long> notBefore;
-    private final BicepValue<Long> expires;
+    private final BicepValue<Boolean> enabled;
+    private final BicepValue<Long> exp;
+    private final BicepValue<Boolean> exportable;
+    private final BicepValue<Long> nbf;
     private final BicepValue<Long> created;
     private final BicepValue<Long> updated;
-    private final BicepValue<Boolean> exportable;
 
     public ManagedHsmKeyAttributes() {
-        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
         recoveryLevel = BicepValue.defineProperty(this, "recoveryLevel", new String[] { "recoveryLevel" }, null);
-        notBefore = BicepValue.defineProperty(this, "notBefore", new String[] { "notBefore" }, null);
-        expires = BicepValue.defineProperty(this, "expires", new String[] { "expires" }, null);
+        enabled = BicepValue.defineProperty(this, "enabled", new String[] { "enabled" }, null);
+        exp = BicepValue.defineProperty(this, "exp", new String[] { "exp" }, null);
+        exportable = BicepValue.defineProperty(this, "exportable", new String[] { "exportable" }, null);
+        nbf = BicepValue.defineProperty(this, "nbf", new String[] { "nbf" }, null);
         created = BicepValue.defineProperty(this, "created", new String[] { "created" }, null);
         updated = BicepValue.defineProperty(this, "updated", new String[] { "updated" }, null);
-        exportable = BicepValue.defineProperty(this, "exportable", new String[] { "exportable" }, null);
-    }
-
-    public BicepValue<Boolean> getEnabled() {
-        return this.enabled;
-    }
-
-    public ManagedHsmKeyAttributes setEnabled(BicepValue<Boolean> enabled) {
-        this.enabled.assign(enabled);
-        return this;
-    }
-    public ManagedHsmKeyAttributes setEnabled(Boolean enabled) {
-        return this.setEnabled(BicepValue.from(enabled));
     }
 
     public BicepValue<DeletionRecoveryLevel> getRecoveryLevel() {
@@ -51,28 +39,52 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
         return this.setRecoveryLevel(BicepValue.from(recoveryLevel));
     }
 
-    public BicepValue<Long> getNotBefore() {
-        return this.notBefore;
+    public BicepValue<Boolean> getEnabled() {
+        return this.enabled;
     }
 
-    public ManagedHsmKeyAttributes setNotBefore(BicepValue<Long> notBefore) {
-        this.notBefore.assign(notBefore);
+    public ManagedHsmKeyAttributes setEnabled(BicepValue<Boolean> enabled) {
+        this.enabled.assign(enabled);
         return this;
     }
-    public ManagedHsmKeyAttributes setNotBefore(Long notBefore) {
-        return this.setNotBefore(BicepValue.from(notBefore));
+    public ManagedHsmKeyAttributes setEnabled(Boolean enabled) {
+        return this.setEnabled(BicepValue.from(enabled));
     }
 
-    public BicepValue<Long> getExpires() {
-        return this.expires;
+    public BicepValue<Long> getExp() {
+        return this.exp;
     }
 
-    public ManagedHsmKeyAttributes setExpires(BicepValue<Long> expires) {
-        this.expires.assign(expires);
+    public ManagedHsmKeyAttributes setExp(BicepValue<Long> exp) {
+        this.exp.assign(exp);
         return this;
     }
-    public ManagedHsmKeyAttributes setExpires(Long expires) {
-        return this.setExpires(BicepValue.from(expires));
+    public ManagedHsmKeyAttributes setExp(Long exp) {
+        return this.setExp(BicepValue.from(exp));
+    }
+
+    public BicepValue<Boolean> getExportable() {
+        return this.exportable;
+    }
+
+    public ManagedHsmKeyAttributes setExportable(BicepValue<Boolean> exportable) {
+        this.exportable.assign(exportable);
+        return this;
+    }
+    public ManagedHsmKeyAttributes setExportable(Boolean exportable) {
+        return this.setExportable(BicepValue.from(exportable));
+    }
+
+    public BicepValue<Long> getNbf() {
+        return this.nbf;
+    }
+
+    public ManagedHsmKeyAttributes setNbf(BicepValue<Long> nbf) {
+        this.nbf.assign(nbf);
+        return this;
+    }
+    public ManagedHsmKeyAttributes setNbf(Long nbf) {
+        return this.setNbf(BicepValue.from(nbf));
     }
 
     public BicepValue<Long> getCreated() {
@@ -97,18 +109,6 @@ public class ManagedHsmKeyAttributes extends ProvisioningConstruct {
     }
     public ManagedHsmKeyAttributes setUpdated(Long updated) {
         return this.setUpdated(BicepValue.from(updated));
-    }
-
-    public BicepValue<Boolean> getExportable() {
-        return this.exportable;
-    }
-
-    public ManagedHsmKeyAttributes setExportable(BicepValue<Boolean> exportable) {
-        this.exportable.assign(exportable);
-        return this;
-    }
-    public ManagedHsmKeyAttributes setExportable(Boolean exportable) {
-        return this.setExportable(BicepValue.from(exportable));
     }
 
 }

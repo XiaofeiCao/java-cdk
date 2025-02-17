@@ -3,7 +3,6 @@
 
 package com.azure.provisioning.keyvault.generated.models;
 
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.provisioning.keyvault.generated.models.Permissions;
 import java.util.UUID;
 import com.azure.provisioning.BicepValue;
@@ -11,30 +10,16 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class AccessPolicyEntry extends ProvisioningConstruct {
 
-    private final BicepValue<ClientLogger> lOGGER;
     private final BicepValue<UUID> tenantId;
-    private final BicepValue<UUID> applicationId;
     private final BicepValue<Permissions> permissions;
+    private final BicepValue<UUID> applicationId;
     private final BicepValue<String> objectId;
 
     public AccessPolicyEntry() {
-        lOGGER = BicepValue.defineProperty(this, "lOGGER", new String[] { "lOGGER" }, null);
         tenantId = BicepValue.defineProperty(this, "tenantId", new String[] { "tenantId" }, null);
-        applicationId = BicepValue.defineProperty(this, "applicationId", new String[] { "applicationId" }, null);
         permissions = BicepValue.defineProperty(this, "permissions", new String[] { "permissions" }, null);
+        applicationId = BicepValue.defineProperty(this, "applicationId", new String[] { "applicationId" }, null);
         objectId = BicepValue.defineProperty(this, "objectId", new String[] { "objectId" }, null);
-    }
-
-    public BicepValue<ClientLogger> getLOGGER() {
-        return this.lOGGER;
-    }
-
-    public AccessPolicyEntry setLOGGER(BicepValue<ClientLogger> lOGGER) {
-        this.lOGGER.assign(lOGGER);
-        return this;
-    }
-    public AccessPolicyEntry setLOGGER(ClientLogger lOGGER) {
-        return this.setLOGGER(BicepValue.from(lOGGER));
     }
 
     public BicepValue<UUID> getTenantId() {
@@ -49,18 +34,6 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
         return this.setTenantId(BicepValue.from(tenantId));
     }
 
-    public BicepValue<UUID> getApplicationId() {
-        return this.applicationId;
-    }
-
-    public AccessPolicyEntry setApplicationId(BicepValue<UUID> applicationId) {
-        this.applicationId.assign(applicationId);
-        return this;
-    }
-    public AccessPolicyEntry setApplicationId(UUID applicationId) {
-        return this.setApplicationId(BicepValue.from(applicationId));
-    }
-
     public BicepValue<Permissions> getPermissions() {
         return this.permissions;
     }
@@ -71,6 +44,18 @@ public class AccessPolicyEntry extends ProvisioningConstruct {
     }
     public AccessPolicyEntry setPermissions(Permissions permissions) {
         return this.setPermissions(BicepValue.from(permissions));
+    }
+
+    public BicepValue<UUID> getApplicationId() {
+        return this.applicationId;
+    }
+
+    public AccessPolicyEntry setApplicationId(BicepValue<UUID> applicationId) {
+        this.applicationId.assign(applicationId);
+        return this;
+    }
+    public AccessPolicyEntry setApplicationId(UUID applicationId) {
+        return this.setApplicationId(BicepValue.from(applicationId));
     }
 
     public BicepValue<String> getObjectId() {

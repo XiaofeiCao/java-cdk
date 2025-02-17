@@ -7,35 +7,35 @@ import java.util.List;
 import com.azure.provisioning.keyvault.generated.models.NetworkRuleBypassOptions;
 import com.azure.provisioning.keyvault.generated.models.NetworkRuleAction;
 import com.azure.provisioning.keyvault.generated.models.VirtualNetworkRule;
-import com.azure.provisioning.BicepList;
 import com.azure.provisioning.keyvault.generated.models.IpRule;
+import com.azure.provisioning.BicepList;
 import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class NetworkRuleSet extends ProvisioningConstruct {
 
-    private final BicepList<VirtualNetworkRule> virtualNetworkRules;
+    private final BicepList<IpRule> ipRules;
     private final BicepValue<NetworkRuleAction> defaultAction;
     private final BicepValue<NetworkRuleBypassOptions> bypass;
-    private final BicepList<IpRule> ipRules;
+    private final BicepList<VirtualNetworkRule> virtualNetworkRules;
 
     public NetworkRuleSet() {
-        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
+        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
         defaultAction = BicepValue.defineProperty(this, "defaultAction", new String[] { "defaultAction" }, null);
         bypass = BicepValue.defineProperty(this, "bypass", new String[] { "bypass" }, null);
-        ipRules = BicepList.defineProperty(this, "ipRules", new String[] { "ipRules" }, false, false);
+        virtualNetworkRules = BicepList.defineProperty(this, "virtualNetworkRules", new String[] { "virtualNetworkRules" }, false, false);
     }
 
-    public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
-        return this.virtualNetworkRules;
+    public BicepList<IpRule> getIpRules() {
+        return this.ipRules;
     }
 
-    public NetworkRuleSet setVirtualNetworkRules(BicepList<VirtualNetworkRule> virtualNetworkRules) {
-        this.virtualNetworkRules.assign(virtualNetworkRules);
+    public NetworkRuleSet setIpRules(BicepList<IpRule> ipRules) {
+        this.ipRules.assign(ipRules);
         return this;
     }
-    public NetworkRuleSet setVirtualNetworkRules(List<VirtualNetworkRule> virtualNetworkRules) {
-        return this.setVirtualNetworkRules(BicepList.from(virtualNetworkRules));
+    public NetworkRuleSet setIpRules(List<IpRule> ipRules) {
+        return this.setIpRules(BicepList.from(ipRules));
     }
 
     public BicepValue<NetworkRuleAction> getDefaultAction() {
@@ -62,16 +62,16 @@ public class NetworkRuleSet extends ProvisioningConstruct {
         return this.setBypass(BicepValue.from(bypass));
     }
 
-    public BicepList<IpRule> getIpRules() {
-        return this.ipRules;
+    public BicepList<VirtualNetworkRule> getVirtualNetworkRules() {
+        return this.virtualNetworkRules;
     }
 
-    public NetworkRuleSet setIpRules(BicepList<IpRule> ipRules) {
-        this.ipRules.assign(ipRules);
+    public NetworkRuleSet setVirtualNetworkRules(BicepList<VirtualNetworkRule> virtualNetworkRules) {
+        this.virtualNetworkRules.assign(virtualNetworkRules);
         return this;
     }
-    public NetworkRuleSet setIpRules(List<IpRule> ipRules) {
-        return this.setIpRules(BicepList.from(ipRules));
+    public NetworkRuleSet setVirtualNetworkRules(List<VirtualNetworkRule> virtualNetworkRules) {
+        return this.setVirtualNetworkRules(BicepList.from(virtualNetworkRules));
     }
 
 }

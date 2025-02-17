@@ -12,6 +12,7 @@ public class KeyResource extends Resource {
 
     private final BicepValue<KeyProperties> properties;
     private final BicepValue<String> name;
+    private final BicepValue<String> tags;
     private final BicepValue<String> location;
 
     public KeyResource(String identifierName) {
@@ -22,6 +23,7 @@ public class KeyResource extends Resource {
         super(identifierName, new ResourceType("Microsoft.KeyVault/vaults/keys"), resourceVersion);
         properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
+        tags = BicepValue.defineProperty(this, "tags", new String[] { "tags" }, false, false, false, null);
         location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
     }
 
@@ -49,6 +51,19 @@ public class KeyResource extends Resource {
 
     public KeyResource setName(String name) {
         return this.setName(BicepValue.from(name));
+    }
+
+    public BicepValue<String> getTags() {
+        return this.tags;
+    }
+
+    public KeyResource setTags(BicepValue<String> tags) {
+        this.tags.assign(tags);
+        return this;
+    }
+
+    public KeyResource setTags(String tags) {
+        return this.setTags(BicepValue.from(tags));
     }
 
     public BicepValue<String> getLocation() {

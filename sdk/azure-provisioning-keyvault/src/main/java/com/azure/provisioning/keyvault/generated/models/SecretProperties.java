@@ -10,17 +10,17 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 public class SecretProperties extends ProvisioningConstruct {
 
     private final BicepValue<String> contentType;
-    private final BicepValue<String> secretUriWithVersion;
     private final BicepValue<String> value;
     private final BicepValue<SecretAttributes> attributes;
     private final BicepValue<String> secretUri;
+    private final BicepValue<String> secretUriWithVersion;
 
     public SecretProperties() {
         contentType = BicepValue.defineProperty(this, "contentType", new String[] { "contentType" }, null);
-        secretUriWithVersion = BicepValue.defineProperty(this, "secretUriWithVersion", new String[] { "secretUriWithVersion" }, null);
         value = BicepValue.defineProperty(this, "value", new String[] { "value" }, null);
         attributes = BicepValue.defineProperty(this, "attributes", new String[] { "attributes" }, null);
         secretUri = BicepValue.defineProperty(this, "secretUri", new String[] { "secretUri" }, null);
+        secretUriWithVersion = BicepValue.defineProperty(this, "secretUriWithVersion", new String[] { "secretUriWithVersion" }, null);
     }
 
     public BicepValue<String> getContentType() {
@@ -33,18 +33,6 @@ public class SecretProperties extends ProvisioningConstruct {
     }
     public SecretProperties setContentType(String contentType) {
         return this.setContentType(BicepValue.from(contentType));
-    }
-
-    public BicepValue<String> getSecretUriWithVersion() {
-        return this.secretUriWithVersion;
-    }
-
-    public SecretProperties setSecretUriWithVersion(BicepValue<String> secretUriWithVersion) {
-        this.secretUriWithVersion.assign(secretUriWithVersion);
-        return this;
-    }
-    public SecretProperties setSecretUriWithVersion(String secretUriWithVersion) {
-        return this.setSecretUriWithVersion(BicepValue.from(secretUriWithVersion));
     }
 
     public BicepValue<String> getValue() {
@@ -81,6 +69,18 @@ public class SecretProperties extends ProvisioningConstruct {
     }
     public SecretProperties setSecretUri(String secretUri) {
         return this.setSecretUri(BicepValue.from(secretUri));
+    }
+
+    public BicepValue<String> getSecretUriWithVersion() {
+        return this.secretUriWithVersion;
+    }
+
+    public SecretProperties setSecretUriWithVersion(BicepValue<String> secretUriWithVersion) {
+        this.secretUriWithVersion.assign(secretUriWithVersion);
+        return this;
+    }
+    public SecretProperties setSecretUriWithVersion(String secretUriWithVersion) {
+        return this.setSecretUriWithVersion(BicepValue.from(secretUriWithVersion));
     }
 
 }

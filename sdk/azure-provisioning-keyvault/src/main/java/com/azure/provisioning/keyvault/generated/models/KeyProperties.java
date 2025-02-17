@@ -7,47 +7,35 @@ import com.azure.provisioning.keyvault.generated.models.JsonWebKeyType;
 import java.util.List;
 import com.azure.provisioning.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.provisioning.keyvault.generated.models.JsonWebKeyOperation;
-import com.azure.provisioning.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.provisioning.keyvault.generated.models.KeyAttributes;
-import com.azure.provisioning.BicepList;
+import com.azure.provisioning.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.provisioning.keyvault.generated.models.RotationPolicy;
+import com.azure.provisioning.BicepList;
 import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class KeyProperties extends ProvisioningConstruct {
 
-    private final BicepValue<JsonWebKeyType> kty;
     private final BicepValue<String> keyUri;
-    private final BicepList<JsonWebKeyOperation> keyOps;
     private final BicepValue<RotationPolicy> rotationPolicy;
-    private final BicepValue<KeyReleasePolicy> releasePolicy;
+    private final BicepValue<JsonWebKeyCurveName> curveName;
+    private final BicepValue<JsonWebKeyType> kty;
+    private final BicepList<JsonWebKeyOperation> keyOps;
     private final BicepValue<KeyAttributes> attributes;
     private final BicepValue<Integer> keySize;
     private final BicepValue<String> keyUriWithVersion;
-    private final BicepValue<JsonWebKeyCurveName> curveName;
+    private final BicepValue<KeyReleasePolicy> release_policy;
 
     public KeyProperties() {
-        kty = BicepValue.defineProperty(this, "kty", new String[] { "kty" }, null);
         keyUri = BicepValue.defineProperty(this, "keyUri", new String[] { "keyUri" }, null);
-        keyOps = BicepList.defineProperty(this, "keyOps", new String[] { "keyOps" }, false, false);
         rotationPolicy = BicepValue.defineProperty(this, "rotationPolicy", new String[] { "rotationPolicy" }, null);
-        releasePolicy = BicepValue.defineProperty(this, "releasePolicy", new String[] { "releasePolicy" }, null);
+        curveName = BicepValue.defineProperty(this, "curveName", new String[] { "curveName" }, null);
+        kty = BicepValue.defineProperty(this, "kty", new String[] { "kty" }, null);
+        keyOps = BicepList.defineProperty(this, "keyOps", new String[] { "keyOps" }, false, false);
         attributes = BicepValue.defineProperty(this, "attributes", new String[] { "attributes" }, null);
         keySize = BicepValue.defineProperty(this, "keySize", new String[] { "keySize" }, null);
         keyUriWithVersion = BicepValue.defineProperty(this, "keyUriWithVersion", new String[] { "keyUriWithVersion" }, null);
-        curveName = BicepValue.defineProperty(this, "curveName", new String[] { "curveName" }, null);
-    }
-
-    public BicepValue<JsonWebKeyType> getKty() {
-        return this.kty;
-    }
-
-    public KeyProperties setKty(BicepValue<JsonWebKeyType> kty) {
-        this.kty.assign(kty);
-        return this;
-    }
-    public KeyProperties setKty(JsonWebKeyType kty) {
-        return this.setKty(BicepValue.from(kty));
+        release_policy = BicepValue.defineProperty(this, "release_policy", new String[] { "release_policy" }, null);
     }
 
     public BicepValue<String> getKeyUri() {
@@ -62,18 +50,6 @@ public class KeyProperties extends ProvisioningConstruct {
         return this.setKeyUri(BicepValue.from(keyUri));
     }
 
-    public BicepList<JsonWebKeyOperation> getKeyOps() {
-        return this.keyOps;
-    }
-
-    public KeyProperties setKeyOps(BicepList<JsonWebKeyOperation> keyOps) {
-        this.keyOps.assign(keyOps);
-        return this;
-    }
-    public KeyProperties setKeyOps(List<JsonWebKeyOperation> keyOps) {
-        return this.setKeyOps(BicepList.from(keyOps));
-    }
-
     public BicepValue<RotationPolicy> getRotationPolicy() {
         return this.rotationPolicy;
     }
@@ -86,16 +62,40 @@ public class KeyProperties extends ProvisioningConstruct {
         return this.setRotationPolicy(BicepValue.from(rotationPolicy));
     }
 
-    public BicepValue<KeyReleasePolicy> getReleasePolicy() {
-        return this.releasePolicy;
+    public BicepValue<JsonWebKeyCurveName> getCurveName() {
+        return this.curveName;
     }
 
-    public KeyProperties setReleasePolicy(BicepValue<KeyReleasePolicy> releasePolicy) {
-        this.releasePolicy.assign(releasePolicy);
+    public KeyProperties setCurveName(BicepValue<JsonWebKeyCurveName> curveName) {
+        this.curveName.assign(curveName);
         return this;
     }
-    public KeyProperties setReleasePolicy(KeyReleasePolicy releasePolicy) {
-        return this.setReleasePolicy(BicepValue.from(releasePolicy));
+    public KeyProperties setCurveName(JsonWebKeyCurveName curveName) {
+        return this.setCurveName(BicepValue.from(curveName));
+    }
+
+    public BicepValue<JsonWebKeyType> getKty() {
+        return this.kty;
+    }
+
+    public KeyProperties setKty(BicepValue<JsonWebKeyType> kty) {
+        this.kty.assign(kty);
+        return this;
+    }
+    public KeyProperties setKty(JsonWebKeyType kty) {
+        return this.setKty(BicepValue.from(kty));
+    }
+
+    public BicepList<JsonWebKeyOperation> getKeyOps() {
+        return this.keyOps;
+    }
+
+    public KeyProperties setKeyOps(BicepList<JsonWebKeyOperation> keyOps) {
+        this.keyOps.assign(keyOps);
+        return this;
+    }
+    public KeyProperties setKeyOps(List<JsonWebKeyOperation> keyOps) {
+        return this.setKeyOps(BicepList.from(keyOps));
     }
 
     public BicepValue<KeyAttributes> getAttributes() {
@@ -134,16 +134,16 @@ public class KeyProperties extends ProvisioningConstruct {
         return this.setKeyUriWithVersion(BicepValue.from(keyUriWithVersion));
     }
 
-    public BicepValue<JsonWebKeyCurveName> getCurveName() {
-        return this.curveName;
+    public BicepValue<KeyReleasePolicy> getReleasePolicy() {
+        return this.release_policy;
     }
 
-    public KeyProperties setCurveName(BicepValue<JsonWebKeyCurveName> curveName) {
-        this.curveName.assign(curveName);
+    public KeyProperties setReleasePolicy(BicepValue<KeyReleasePolicy> release_policy) {
+        this.release_policy.assign(release_policy);
         return this;
     }
-    public KeyProperties setCurveName(JsonWebKeyCurveName curveName) {
-        return this.setCurveName(BicepValue.from(curveName));
+    public KeyProperties setReleasePolicy(KeyReleasePolicy release_policy) {
+        return this.setReleasePolicy(BicepValue.from(release_policy));
     }
 
 }

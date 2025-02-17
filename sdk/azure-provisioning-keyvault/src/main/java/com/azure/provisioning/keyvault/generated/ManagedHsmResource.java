@@ -10,9 +10,10 @@ import com.azure.provisioning.tmp.ResourceType;
 
 public class ManagedHsmResource extends Resource {
 
+    private final BicepValue<String> tags;
+    private final BicepValue<String> location;
     private final BicepValue<ManagedHsmProperties> properties;
     private final BicepValue<String> name;
-    private final BicepValue<String> location;
 
     public ManagedHsmResource(String identifierName) {
         this(identifierName, null);
@@ -20,9 +21,36 @@ public class ManagedHsmResource extends Resource {
 
     public ManagedHsmResource(String identifierName, String resourceVersion) {
         super(identifierName, new ResourceType("Microsoft.KeyVault/managedHSMs"), resourceVersion);
+        tags = BicepValue.defineProperty(this, "tags", new String[] { "tags" }, false, false, false, null);
+        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
         properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, false, false, false, null);
         name = BicepValue.defineProperty(this, "name", new String[] { "name" }, false, false, false, null);
-        location = BicepValue.defineProperty(this, "location", new String[] { "location" }, false, false, false, null);
+    }
+
+    public BicepValue<String> getTags() {
+        return this.tags;
+    }
+
+    public ManagedHsmResource setTags(BicepValue<String> tags) {
+        this.tags.assign(tags);
+        return this;
+    }
+
+    public ManagedHsmResource setTags(String tags) {
+        return this.setTags(BicepValue.from(tags));
+    }
+
+    public BicepValue<String> getLocation() {
+        return this.location;
+    }
+
+    public ManagedHsmResource setLocation(BicepValue<String> location) {
+        this.location.assign(location);
+        return this;
+    }
+
+    public ManagedHsmResource setLocation(String location) {
+        return this.setLocation(BicepValue.from(location));
     }
 
     public BicepValue<ManagedHsmProperties> getProperties() {
@@ -49,19 +77,6 @@ public class ManagedHsmResource extends Resource {
 
     public ManagedHsmResource setName(String name) {
         return this.setName(BicepValue.from(name));
-    }
-
-    public BicepValue<String> getLocation() {
-        return this.location;
-    }
-
-    public ManagedHsmResource setLocation(BicepValue<String> location) {
-        this.location.assign(location);
-        return this;
-    }
-
-    public ManagedHsmResource setLocation(String location) {
-        return this.setLocation(BicepValue.from(location));
     }
 
 

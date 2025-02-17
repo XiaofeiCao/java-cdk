@@ -3,50 +3,20 @@
 
 package com.azure.provisioning.keyvault.generated.models;
 
-import com.azure.provisioning.keyvault.generated.models.PrivateEndpointConnectionProvisioningState;
-import com.azure.provisioning.keyvault.generated.models.PrivateLinkServiceConnectionState;
-import com.azure.provisioning.keyvault.generated.models.PrivateEndpoint;
+import com.azure.provisioning.keyvault.generated.models.PrivateEndpointConnectionProperties;
 import com.azure.provisioning.BicepValue;
 import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
 
-    private final BicepValue<PrivateEndpoint> privateEndpoint;
-    private final BicepValue<PrivateLinkServiceConnectionState> privateLinkServiceConnectionState;
     private final BicepValue<String> id;
-    private final BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState;
     private final BicepValue<String> etag;
+    private final BicepValue<PrivateEndpointConnectionProperties> properties;
 
     public PrivateEndpointConnectionItem() {
-        privateEndpoint = BicepValue.defineProperty(this, "privateEndpoint", new String[] { "privateEndpoint" }, null);
-        privateLinkServiceConnectionState = BicepValue.defineProperty(this, "privateLinkServiceConnectionState", new String[] { "privateLinkServiceConnectionState" }, null);
         id = BicepValue.defineProperty(this, "id", new String[] { "id" }, null);
-        provisioningState = BicepValue.defineProperty(this, "provisioningState", new String[] { "provisioningState" }, null);
         etag = BicepValue.defineProperty(this, "etag", new String[] { "etag" }, null);
-    }
-
-    public BicepValue<PrivateEndpoint> getPrivateEndpoint() {
-        return this.privateEndpoint;
-    }
-
-    public PrivateEndpointConnectionItem setPrivateEndpoint(BicepValue<PrivateEndpoint> privateEndpoint) {
-        this.privateEndpoint.assign(privateEndpoint);
-        return this;
-    }
-    public PrivateEndpointConnectionItem setPrivateEndpoint(PrivateEndpoint privateEndpoint) {
-        return this.setPrivateEndpoint(BicepValue.from(privateEndpoint));
-    }
-
-    public BicepValue<PrivateLinkServiceConnectionState> getPrivateLinkServiceConnectionState() {
-        return this.privateLinkServiceConnectionState;
-    }
-
-    public PrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(BicepValue<PrivateLinkServiceConnectionState> privateLinkServiceConnectionState) {
-        this.privateLinkServiceConnectionState.assign(privateLinkServiceConnectionState);
-        return this;
-    }
-    public PrivateEndpointConnectionItem setPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
-        return this.setPrivateLinkServiceConnectionState(BicepValue.from(privateLinkServiceConnectionState));
+        properties = BicepValue.defineProperty(this, "properties", new String[] { "properties" }, null);
     }
 
     public BicepValue<String> getId() {
@@ -61,18 +31,6 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
         return this.setId(BicepValue.from(id));
     }
 
-    public BicepValue<PrivateEndpointConnectionProvisioningState> getProvisioningState() {
-        return this.provisioningState;
-    }
-
-    public PrivateEndpointConnectionItem setProvisioningState(BicepValue<PrivateEndpointConnectionProvisioningState> provisioningState) {
-        this.provisioningState.assign(provisioningState);
-        return this;
-    }
-    public PrivateEndpointConnectionItem setProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
-        return this.setProvisioningState(BicepValue.from(provisioningState));
-    }
-
     public BicepValue<String> getEtag() {
         return this.etag;
     }
@@ -83,6 +41,18 @@ public class PrivateEndpointConnectionItem extends ProvisioningConstruct {
     }
     public PrivateEndpointConnectionItem setEtag(String etag) {
         return this.setEtag(BicepValue.from(etag));
+    }
+
+    public BicepValue<PrivateEndpointConnectionProperties> getProperties() {
+        return this.properties;
+    }
+
+    public PrivateEndpointConnectionItem setProperties(BicepValue<PrivateEndpointConnectionProperties> properties) {
+        this.properties.assign(properties);
+        return this;
+    }
+    public PrivateEndpointConnectionItem setProperties(PrivateEndpointConnectionProperties properties) {
+        return this.setProperties(BicepValue.from(properties));
     }
 
 }

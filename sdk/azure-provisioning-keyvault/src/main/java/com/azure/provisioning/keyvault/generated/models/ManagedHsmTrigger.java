@@ -8,24 +8,12 @@ import com.azure.provisioning.primitives.ProvisioningConstruct;
 
 public class ManagedHsmTrigger extends ProvisioningConstruct {
 
-    private final BicepValue<String> timeBeforeExpiry;
     private final BicepValue<String> timeAfterCreate;
+    private final BicepValue<String> timeBeforeExpiry;
 
     public ManagedHsmTrigger() {
-        timeBeforeExpiry = BicepValue.defineProperty(this, "timeBeforeExpiry", new String[] { "timeBeforeExpiry" }, null);
         timeAfterCreate = BicepValue.defineProperty(this, "timeAfterCreate", new String[] { "timeAfterCreate" }, null);
-    }
-
-    public BicepValue<String> getTimeBeforeExpiry() {
-        return this.timeBeforeExpiry;
-    }
-
-    public ManagedHsmTrigger setTimeBeforeExpiry(BicepValue<String> timeBeforeExpiry) {
-        this.timeBeforeExpiry.assign(timeBeforeExpiry);
-        return this;
-    }
-    public ManagedHsmTrigger setTimeBeforeExpiry(String timeBeforeExpiry) {
-        return this.setTimeBeforeExpiry(BicepValue.from(timeBeforeExpiry));
+        timeBeforeExpiry = BicepValue.defineProperty(this, "timeBeforeExpiry", new String[] { "timeBeforeExpiry" }, null);
     }
 
     public BicepValue<String> getTimeAfterCreate() {
@@ -38,6 +26,18 @@ public class ManagedHsmTrigger extends ProvisioningConstruct {
     }
     public ManagedHsmTrigger setTimeAfterCreate(String timeAfterCreate) {
         return this.setTimeAfterCreate(BicepValue.from(timeAfterCreate));
+    }
+
+    public BicepValue<String> getTimeBeforeExpiry() {
+        return this.timeBeforeExpiry;
+    }
+
+    public ManagedHsmTrigger setTimeBeforeExpiry(BicepValue<String> timeBeforeExpiry) {
+        this.timeBeforeExpiry.assign(timeBeforeExpiry);
+        return this;
+    }
+    public ManagedHsmTrigger setTimeBeforeExpiry(String timeBeforeExpiry) {
+        return this.setTimeBeforeExpiry(BicepValue.from(timeBeforeExpiry));
     }
 
 }
